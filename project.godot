@@ -22,6 +22,13 @@ SceneLoader="*res://addons/maaacks_game_template/base/nodes/autoloads/scene_load
 ProjectMusicController="*res://addons/maaacks_game_template/base/nodes/autoloads/music_controller/project_music_controller.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/nodes/autoloads/ui_sound_controller/project_ui_sound_controller.tscn"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+gdscript/warnings/unsafe_call_argument=1
+
 [display]
 
 window/size/viewport_width=1280
