@@ -5,8 +5,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2m4rl"]
 
-[node name="Character" type="CharacterBody2D" unique_id=860493929]
+[node name="Character" type="CharacterBody2D" unique_id=860493929 node_paths=PackedStringArray("debug_label")]
 script = ExtResource("1_pi01j")
+debug_label = NodePath("DebugLabel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1172182283]
 shape = SubResource("CircleShape2D_2m4rl")

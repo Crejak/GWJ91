@@ -2,6 +2,8 @@ class_name Character
 
 extends CharacterBody2D
 
+@export_group("Movement")
+
 @export var can_move: bool = false;
 
 ## Minimum walking speed, in pixel per second
@@ -13,7 +15,16 @@ extends CharacterBody2D
 ## Maximum distance between the mouse and the character that makes the player moves at minimum speed.
 ## If the mouse is at a greater distance than this value, the speed of the player scales with the mouse distance.
 @export var min_speed_mouse_range: float = 50.;
+## Distance between the mouse and the character that makes the character move at their
+## maximum speed.
 @export var max_speed_mouse_range: float = 200.;
+
+@export_group("Debug")
+@export var debug_label: Label;
+
+func _process(_delta: float) -> void:
+	if OS.is_debug_build():
+		debug_label.text = "Speed : %s" % roundi(velocity.length());
 
 func _physics_process(_delta: float) -> void:
 	if !can_move:
