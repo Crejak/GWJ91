@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://vh0pqvrgxxio"]
+
+[ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_blg1p"]
+
+[node name="CharacterTestScene" type="Node2D" unique_id=676201234]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=36749124]
+position = Vector2(228, 142)
+
+[node name="Character" parent="." unique_id=860493929 instance=ExtResource("1_blg1p")]
+can_move = true

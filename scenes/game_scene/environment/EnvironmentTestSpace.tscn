@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dqsg7gpb2xc2o"]
+
+[ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_wsmtu"]
+[ext_resource type="PackedScene" uid="uid://du5ta6j1ncwqb" path="res://scenes/game_scene/environment/Painting.tscn" id="2_jqyq6"]
+
+[node name="EnvironmentTestSpace" type="Node2D" unique_id=25503905]
+
+[node name="Character" parent="." unique_id=860493929 instance=ExtResource("1_wsmtu")]
+position = Vector2(581, 237)
+can_move = true
+
+[node name="Painting" parent="." unique_id=734972761 instance=ExtResource("2_jqyq6")]
+position = Vector2(747, 226)
