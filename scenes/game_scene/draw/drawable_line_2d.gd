@@ -1,6 +1,8 @@
 extends Line2D
 class_name drawable_line_2d
 
+@export var color: Color
+
 const min_step = 20
 var last_point: Vector2
 
@@ -13,4 +15,4 @@ func add_new_point(mouse_pos: Vector2) -> void:
 
 func _draw() -> void:
 	if get_point_count() == 1:
-		draw_circle(last_point, width/2, default_color)
+		draw_circle(last_point, width/2, color)
