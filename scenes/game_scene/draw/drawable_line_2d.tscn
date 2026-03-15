@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://n63f22xokvxw"]
+
+[ext_resource type="Script" uid="uid://bx5iub8ismy5l" path="res://drawable_line_2d.gd" id="1_b78qn"]
+
+[node name="DrawableLine2D" type="Line2D" unique_id=358179101]
+default_color = Color(1, 0.33111748, 0.30593708, 1)
+joint_mode = 2
+script = ExtResource("1_b78qn")
