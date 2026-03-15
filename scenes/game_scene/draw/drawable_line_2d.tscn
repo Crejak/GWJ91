@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cu5ehek2ni4wo" path="res://scenes/game_scene/draw/hand-drawn-red.webp" id="1_k0q2u"]
 
 [node name="DrawableLine2D" type="Line2D" unique_id=358179101]
-default_color = Color(0.88555384, 0.20743471, 0.20750144, 1)
 texture = ExtResource("1_k0q2u")
 texture_mode = 1
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("1_b78qn")
+color = Color(0.97501665, 0.4949003, 0.46151316, 1)
