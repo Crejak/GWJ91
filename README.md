@@ -1,181 +1,109 @@
-# Godot Game Template
-For Godot 4.6 (4.3+ compatible)
+# GWJ91 - Projet sans titre pour l'instant
 
-This template has a main menu, options menus, pause menu, credits, scene loader, extra tools, and an example game scene.  
+Ce projet est la soumission pour la Godot Wild Jam #91 de l'équipe suivante :
 
-[Example on itch.io](https://maaack.itch.io/godot-game-template)  
+- Raphaël Bonneval
+- Mario Giraud
+- Brice Maussang
+- Yvan Roux
+- Valentin Rigolle
 
-[Featured Games](#featured-games)  
+Le projet est basé sur le template de Maaack : [Voir le README du template](./MAAACK_README.md)
 
-### Videos
+## Présentation du jeu
 
-[![Quick Intro Video](https://img.youtube.com/vi/U9CB3vKINVw/hqdefault.jpg)](https://youtu.be/U9CB3vKINVw)  
-[More Videos](/addons/maaacks_game_template/docs/Videos.md)
+## Résumé et objectifs
 
-### Screenshots
-![Main Menu](/addons/maaacks_game_template/media/screenshot-6-main-menu-5.png)  
-![Key Rebinding](/addons/maaacks_game_template/media/screenshot-6-input-list-8.png)  
-![Audio Controls](/addons/maaacks_game_template/media/screenshot-6-audio-options-2.png)  
-![Video Controls](/addons/maaacks_game_template/media/screenshot-6-video-options-5.png)  
-![Pause Menu](/addons/maaacks_game_template/media/screenshot-6-pause-menu-3.png)  
-[More Screenshots](/addons/maaacks_game_template/docs/Screenshots.md)  
-
-## Objective
-
-Setup menus and accessibility features in about 15 minutes.
-
-The template can be the start of a new project, or plug into an existing one. It is game agnostic (2D or 3D) and can work with multiple target resolutions, up to 4k and down to 640x360. It's meant to cover the needs for a typical game jam, while remaining scalable and extensible enough to support commercial games.
-
-## Features
-
-### Base
-
-The `base/` folder holds the core components of the menus application.
-
--   Main Menu    
--   Options Menus
--   Pause Menu
--   Credits
--   Loading Screen
--   Opening Scene
--   Persistent Settings
--   Simple Config Interface
--   Extensible Overlay Menus
--   Keyboard/Mouse Support
--   Gamepad Support
--   UI Sound Controller
--   Background Music Controller
--   Credits Reader (Markdown File Parser)
--   Global State Management (Basic Saving/Loading)
--   Global Config Autoload
-
-### Extras
-
-The `extras/` folder holds components that extend the core application.
-
--   Level Loaders
--   Level Progress Manager
--   Win / Lose Manager
--   Script for Releasing on [itch.io](https://itch.io/) with [butler](https://itch.io/docs/butler/)
- 
-### Examples 
-
-The `examples/` folder contains an example project using inherited scenes from the `base/` and `extras/`.
-
--   Game Scene
--   Level Class & 3 Levels
--   Tutorial Windows & 3 Tutorial Messages
--   Win & Lose Windows
--   Master Options Menu
--   End Credits
--   Main Menu w/ Animations
--   Opening w/ Godot Logo
--   Game and Level State Management
-
-### Minimal
-
-Users that want a minimal set of features can try [Maaack's Minimal Game Template](https://github.com/Maaack/Godot-Minimal-Game-Template) or other options from the [plugin suite](/addons/maaacks_game_template/docs/PluginSuite.md).  
+Le but du jeu est de préparer un cambriolage. Sur votre bureau, vous avez le plan du bâtiment dans lequel vous
+allez vous infiltrer : vous avez un temps limité pour prendre des notes avant que la simulation de cambriolage
+commence ! La nuit tombée, vous ne voyez rien, donc vous devrez vous baser uniquement sur vos notes.
+Déplacez-vous discrètement de pièce en pièce, en évitant les gardes, les meubles et les chats qui roupillent.
+Atteignez votre butin et ramenez-le sans vous faire repérer !
 
 
-## Installation
+### Boucle de gameplay
 
-### Godot Asset Library
-This package is available as both a template and a plugin, meaning it can be used to start a new project, or added to an existing project. 
+Le jeu est découpé en niveaux, qui se déroulent en 2 phases :
 
-![Package Icon](/addons/maaacks_game_template/media/game-icon-black-transparent-256x256.png)  
+- Phase de reconnaissance : le joueur voit un plan du bâtiment à infiltrer. On peut y voir la configuration des pièces,
+les rondes des gardes, l'emplacement des caméras, etc. Il a un temps limité pour prendre des notes par-dessus le plan.
+- Phase d'infiltration : le joueur essaye maintenant de s'infiltrer dans le bâtiment. Il fait maintenant sombre et le
+plan est caché. Le joueur peut déplacer son personnage dans le bâtiment à infiltrer, mais il ne voit rien. En se basant
+sur les indices sonores, les notes qu'il a prises et parfois sur ses erreurs (se cogner à un meuble, etc.), il doit
+atteindre son butin et le ramener.
 
-When starting a new project:
+Chaque niveau est contextualisé par un scénario : qui est le voleur et pourquoi cherche-t-il à cambrioler cet endroit
+en particulier ? Les niveaux suivent une trame narrative cohérente qui amènent le joueur à découvrir des personnages
+issus de milieux divers, leurs situations, leurs problématiques.
 
-1.  Go to the `Asset Library Projects` tab.
-2.  Search for "Maaack's Game Template".
-3.  Click on the result to open the template details.
-4.  Click to Download.
-5.  Give the project a new name and destination.
-6.  Click to Install & Edit.
-7.  Continue with the [New Project Instructions](/addons/maaacks_game_template/docs/NewProject.md)
+#### Phase de reconnaissance
 
-When editing an existing project:
+#### Phase d'infiltration 
 
-1.  Go to the `AssetLib` tab.
-2.  Search for "Maaack's Game Template Plugin".
-3.  Click on the result to open the plugin details.
-4.  Click to Download.
-5.  Check that contents are getting installed to `addons/` and there are no conflicts.
-6.  Click to Install.
-7.  Reload the project (you may see errors before you do this).
-8.  Enable the plugin from the Project Settings > Plugins tab.  
-    If it's enabled for the first time,
-    1.  A dialogue window will appear asking to copy the example scenes out of `addons/`.
-    2.  Another dialogue window will ask to update the project's main scene.
-9.  Continue with the [Existing Project Instructions](/addons/maaacks_game_template/docs/ExistingProject.md)  
+Mécaniques de gameplay importantes :
 
+- Contrôle du personnage à la souris : cela donne une impression "organique" et un peu "fouillie" pour diriger son
+personnage. Calme, le joueur peut être précis et naviger parmi les obstacles, mais dans la panique, les mouvements
+soudains peuvent amener son personnage à faire du bruit en se cognant dans les meubles.
+    - Le personnage se dirige vers le curseur de la souris en ligne droite. C'est au joueur de s'assurer qu'il n'y a
+    pas d'obstacle sur la trajectoire du personnage.
+    - Le personnage a une vitesse maximale de course. Cette vitesse peut être affectée si le joueur transporte un
+    butin lourd, par exemple une télévision.
+- Le personnage ne voit pas son environnement, seulement ses notes. Les notes sont superposées à la pièce dans lequel
+le personnage se trouve, et peuvent donc servir à marquer l'emplacement des obstacles pour les éviter.
+- La perception de l'environnement passe par le son : un chat qui miaule, des bruits de pas d'un garde, etc. Ces indices
+sonores sont aussi représentés graphiquement, par des onomatopées par exemple.
+    - Si le personnage se cogne contre un meuble par exemple, le joueur peut avoir un bref indice visuel sur
+    l'emplacement de l'obstacle.
+- Le bruit que fait le joueur a des conséquences. Notamment, il peut se faire repérer s'il n'est pas assez prudent. 
+Selon les niveaux, les risques peuvent être une personne qui dort, des gardes qui patrouillent ou encore des caméras 
+fixes. Le joueur a droit à l'erreur : s'il fait un peu de bruit à proximité d'un garde, ce dernier va se méfier et aller
+fouiller la source du son, mais pas déclencher immédiatement un game over. Le game over arrive si le joueur se fait
+attraper.
+- Le joueur peut interagir avec certains éléments de l'environnement.
+    - Des portes peuvent être dévérouillées.
+    - Des meubles peuvent être déplacés.
+- Certaines missions peuvent être effectuées par plusieurs voleurs en même temps. Le joueur les contrôle à tour de rôle.
 
-### GitHub
+### Style graphique
 
+Le jeu adopte un style en noir et blanc, inspiré des polars noirs avec par exemple _Sin City_ comme référence. Le
+contexte du jeu, une préparation de cambriolage à partir d'un plan et de notes dessinés sur un bureau, se prête à
+une esthétique "dessinée à la main".
 
-1.  Download the latest release version from [GitHub](https://github.com/Maaack/Godot-Game-Template/releases/latest).  
-2.  Extract the contents of the archive.
-3.  Move the `addons/maaacks_game_template` folder into your project's `addons/` folder.  
-4.  Open/Reload the project.  
-5.  Enable the plugin from the Project Settings > Plugins tab.  
-    If it's enabled for the first time,
-    1.  A dialogue window will appear asking to copy the example scenes out of `addons/`.
-    2.  Another dialogue window will ask to update the project's main scene.
-6.  Continue with the [Existing Project Instructions](/addons/maaacks_game_template/docs/ExistingProject.md) 
+Les notes du joueur sont en couleur pour contraster avec l'environnement.
 
+### Sound design
 
-## Usage
+Le son admet un rôle particulièrement important : avec les notes du joueur, c'est le principal retour sensoriel
+lors des phases d'infiltration. Quelques exemples de sons :
 
-### New Project
-These instructions assume starting with the entire contents of the project folder. This will be the case when cloning the repo, or starting from the *template* version in the Godot Asset Library.
-  
+- Les bruits de pas reflètent la surface du sol (plancher, carrelage, moquette, etc.) et la précipitation du joueur
+(courir fait plus de bruit).
+- Les gardes et autres personnages qui patrouillent émettent également des bruits de pas.
+- Les habitants endormis peuvent ronfler.
+- Des éléments de décor peuvent émettre des sons (le tic-tac d'une horloge).
+- Se cogner contre un meuble fait du bruit.
+- Des bruits de fond créent une ambiance pendant l'infiltration : bruit de ville, circulation au loin, sirènes...
 
-[New Project Instructions](/addons/maaacks_game_template/docs/NewProject.md)
+Pour faire du son une information exploitable par le joueur et augmenter l'immersion, le son est __spatialisé__ et 
+est affecté par l'environnement (un bruit de l'autre côté d'un mur est atténué).
 
-### Existing Project
+### Narration
 
-These instructions assume starting with just the contents of `addons/`. This will be the case when installing the *plugin* version in the Godot Asset Library.
+La narration passe par deux vecteurs principaux :
 
-[Existing Project Instructions](/addons/maaacks_game_template/docs/ExistingProject.md)  
-   
-### More Documentation
+- Un scénario explicite, qui permet d'introduire et de conclure chaque niveau, et de faire la transition entre les
+niveaux.
+- Des éléments de décors, par exemple des coupures de journal sur le bureau, qui permettent d'approfondir l'univers
+du jeu et la place qu'y prennent les cambriolages qu'on effectue.
 
-[Main Menu Setup](/addons/maaacks_game_template/docs/MainMenuSetup.md)  
-[Game Scene Setup](/addons/maaacks_game_template/docs/GameSceneSetup.md)  
-[Loading Scenes](/addons/maaacks_game_template/docs/LoadingScenes.md)  
-[Input Icon Mapping](/addons/maaacks_game_template/docs/InputIconMapping.md)  
-[Joypad Inputs](/addons/maaacks_game_template/docs/JoypadInputs.md)  
-[Blending Music](/addons/maaacks_game_template/docs/BlendingMusic.md)  
-[Add UI Sound Effects](/addons/maaacks_game_template/docs/AddingUISFX.md)  
-[Add Custom Options](/addons/maaacks_game_template/docs/AddingCustomOptions.md)  
-[Game Saving](/addons/maaacks_game_template/docs/GameSaving.md)  
-[How Parts Work](/addons/maaacks_game_template/docs/HowPartsWork.md)  
-[Moving Files](/addons/maaacks_game_template/docs/MovingFiles.md)  
-[Uploading to itch.io](/addons/maaacks_game_template/docs/UploadingToItchIo.md)  
-[Build and Publish Your Game Using CICD](/addons/maaacks_game_template/docs/BuildAndPublish.md)  
-[Automatic Updating](/addons/maaacks_game_template/docs/AutomaticUpdating.md)  
-[Exhibiting Your Game](/addons/maaacks_game_template/docs/Exhibiting.md)  
+## Développement du jeu
 
----
+### Prototype
 
-## Featured Games
+Un premier prototype du jeu sera produit avec un nombre restreint d'éléments :
 
-| Baking Godium | Spud Customs | Rent Seek Kill |  
-| :-------:| :-------: | :-------: |
-| ![Baking Godium](/addons/maaacks_game_template/media/thumbnail-game-baking-godium.png) | ![Spud Customs](/addons/maaacks_game_template/media/thumbnail-game-spud-customs.png) | ![Rent-Seek-Kill](/addons/maaacks_game_template/media/thumbnail-game-rent-seek-kill.png) |
-|  [Play on itch.io](https://maaack.itch.io/baking-godium) | [Find on Steam](https://store.steampowered.com/app/3291880/Spud_Customs/) | [Play on itch.io](https://xandruher.itch.io/rent-seek-kill)  |
-
-
-[All Shared Games](/addons/maaacks_game_template/docs/GamesMade.md)  
-
-
-## Community
-
-Join the [Discord server](https://discord.gg/AyZrJh5AMp ) and share your work with others. It's also a space for getting or giving feedback, and asking for help. 
- 
-
-## Links
-[Attribution](/addons/maaacks_game_template/ATTRIBUTION.md)  
-[License](/addons/maaacks_game_template/LICENSE.txt)  
-[Godot Asset Library - Template](https://godotengine.org/asset-library/asset/2703)  
-[Godot Asset Library - Plugin](https://godotengine.org/asset-library/asset/2709)  
+- Un seul niveau simple, de 2 ou 3 salles.
+- Un seul "ennemi", une personne qui dort à ne pas réveiller.
+- Un seul butin à ramener.
