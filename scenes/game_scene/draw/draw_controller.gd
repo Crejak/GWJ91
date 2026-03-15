@@ -1,3 +1,5 @@
+class_name DrawController
+
 extends Node2D
 
 @export var enable_draw = true

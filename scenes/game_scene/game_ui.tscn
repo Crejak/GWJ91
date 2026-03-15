@@ -65,7 +65,7 @@ stretch = true
 handle_input_locally = false
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
-size = Vector2i(1280, 720)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 script = ExtResource("11_ulq3g")
 
@@ -74,10 +74,11 @@ script = ExtResource("12_gpor5")
 
 [node name="DrawController" parent="." unique_id=1158203384 instance=ExtResource("13_7aihr")]
 
-[node name="PhaseManager" type="Node" parent="." unique_id=1757349659 node_paths=PackedStringArray("preparation_phase_timer", "preparation_phase_timer_label")]
+[node name="PhaseManager" type="Node" parent="." unique_id=1757349659 node_paths=PackedStringArray("preparation_phase_timer", "preparation_phase_timer_label", "draw_controller")]
 script = ExtResource("14_3re04")
 preparation_phase_timer = NodePath("../PreparationPhaseTimer")
 preparation_phase_timer_label = NodePath("../PreparationPhaseTimerLabel")
+draw_controller = NodePath("../DrawController")
 
 [node name="PreparationPhaseTimer" type="Timer" parent="." unique_id=781148600]
 wait_time = 5.0

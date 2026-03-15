@@ -5,6 +5,8 @@ signal level_won(level_path : String)
 @warning_ignore("unused_signal")
 signal level_changed(level_path : String)
 
+@export var character: Character;
+
 ## Optional path to the next level if using an open world level system.
 @export_file("*.tscn") var next_level_path : String
 
@@ -24,10 +26,11 @@ func open_tutorials() -> void:
 
 func _ready() -> void:
 	level_state = GameState.get_level_state(scene_file_path)
+	SignalBus.infiltration_phase_started.connect(on_infiltration_phase_started);
 	#%ColorPickerButton.color = level_state.color
 	#%BackgroundColor.color = level_state.color
-	if not level_state.tutorial_read:
-		open_tutorials()
+	#if not level_state.tutorial_read:
+		#open_tutorials()
 
 func _on_color_picker_button_color_changed(color : Color) -> void:
 	pass
@@ -37,3 +40,6 @@ func _on_color_picker_button_color_changed(color : Color) -> void:
 
 func _on_tutorial_button_pressed() -> void:
 	open_tutorials()
+
+func on_infiltration_phase_started() -> void:
+	character.can_move = true;
