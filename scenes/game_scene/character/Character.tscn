@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://yrcct0ibsfea"]
 
 [ext_resource type="Texture2D" uid="uid://ctfl5lq83mmic" path="res://icon.png" id="1_dltb6"]
-[ext_resource type="Script" uid="uid://dhhfhx3n5d4nr" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
+[ext_resource type="Script" uid="uid://btmubwnqhy8bt" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
+[ext_resource type="Script" uid="uid://co1hord8xgkc2" path="res://scenes/game_scene/character/object_pusher.gd" id="3_n57ve"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2m4rl"]
 radius = 40.0
@@ -23,3 +24,6 @@ offset_left = -57.0
 offset_top = -64.0
 offset_right = 58.0
 offset_bottom = -35.0
+
+[node name="ObjectPusher" type="Node2D" parent="." unique_id=1368329182]
+script = ExtResource("3_n57ve")
