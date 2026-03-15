@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://yrcct0ibsfea"]
+
+[ext_resource type="Texture2D" uid="uid://ctfl5lq83mmic" path="res://icon.png" id="1_dltb6"]
+[ext_resource type="Script" uid="uid://btmubwnqhy8bt" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2m4rl"]
+
+[node name="Character" type="CharacterBody2D" unique_id=860493929]
+script = ExtResource("1_pi01j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1172182283]
+shape = SubResource("CircleShape2D_2m4rl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1383117335]
+texture = ExtResource("1_dltb6")
+
+[node name="DebugLabel" type="Label" parent="." unique_id=1590354430]
+offset_left = -57.0
+offset_top = -64.0
+offset_right = 58.0
+offset_bottom = -35.0
