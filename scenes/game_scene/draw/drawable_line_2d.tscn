@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://n63f22xokvxw"]
 
-[ext_resource type="Script" uid="uid://bx5iub8ismy5l" path="res://drawable_line_2d.gd" id="1_b78qn"]
+[ext_resource type="Script" uid="uid://bx5iub8ismy5l" path="res://scenes/game_scene/draw/drawable_line_2d.gd" id="1_b78qn"]
 [ext_resource type="Texture2D" uid="uid://cu5ehek2ni4wo" path="res://scenes/game_scene/draw/hand-drawn-red.webp" id="1_k0q2u"]
 
 [node name="DrawableLine2D" type="Line2D" unique_id=358179101]
-default_color = Color(0.9844088, 0.56228983, 0.54229265, 1)
+default_color = Color(0.88555384, 0.20743471, 0.20750144, 1)
 texture = ExtResource("1_k0q2u")
 texture_mode = 1
 joint_mode = 2
