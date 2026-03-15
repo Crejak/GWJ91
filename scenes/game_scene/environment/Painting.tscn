@@ -17,6 +17,7 @@ script = ExtResource("1_6khig")
 texture = SubResource("PlaceholderTexture2D_1etil")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1273655842]
+collision_layer = 0
 collision_mask = 2
 
 [node name="Interactable" parent="Area2D" unique_id=1627385928 instance=ExtResource("1_tb42x")]
