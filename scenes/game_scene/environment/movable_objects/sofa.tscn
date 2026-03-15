@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cjfng3oo6ocry"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_fdomc"]
+[ext_resource type="Texture2D" uid="uid://byn45lditcft6" path="res://assets/art/props/sofa.PNG" id="2_fdomc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q28vf"]
+size = Vector2(223, 86)
+
+[node name="Sofa" unique_id=1203108321 instance=ExtResource("1_fdomc")]
+can_move = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(112.99999, -39)
+rotation = -0.018828658
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_fdomc")
+region_enabled = true
+region_rect = Rect2(1, 337, 1341, 662.9223)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(111.5, -43)
+shape = SubResource("RectangleShape2D_q28vf")

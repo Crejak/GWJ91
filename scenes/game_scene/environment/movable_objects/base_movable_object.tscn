@@ -1,19 +1,47 @@
 [gd_scene format=3 uid="uid://crkldk5p4brma"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfon2"]
-size = Vector2(72, 72)
+[ext_resource type="Script" uid="uid://bhryykolcb06" path="res://scenes/game_scene/environment/movable_objects/movable_object.gd" id="1_endn7"]
+[ext_resource type="Script" uid="uid://7sqvwtt1v4ua" path="res://scenes/test_room/on_hit_component.gd" id="2_bv5x4"]
 
 [sub_resource type="Gradient" id="Gradient_jta4f"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jsl7c"]
 gradient = SubResource("Gradient_jta4f")
 
+[sub_resource type="Shader" id="Shader_0uwjo"]
+code = "shader_type canvas_item;
+uniform sampler2D existing_screen_texture: hint_screen_texture, filter_linear_mipmap;
+uniform bool is_active;
+
+void fragment(){
+	if (is_active){
+		COLOR.rgb = 1.0 - COLOR.rgb;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivvnn"]
+shader = SubResource("Shader_0uwjo")
+shader_parameter/is_active = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfon2"]
+size = Vector2(153, 88)
+
 [node name="BaseMovableObjectRb2d" type="RigidBody2D" unique_id=1203108321]
 gravity_scale = 0.0
+lock_rotation = true
 linear_damp = 8.0
+script = ExtResource("1_endn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1306474058]
+unique_name_in_owner = true
+texture = SubResource("GradientTexture2D_jsl7c")
+
+[node name="OnHitComponent" type="Node" parent="Sprite2D" unique_id=2037795534 node_paths=PackedStringArray("movable_object")]
+script = ExtResource("2_bv5x4")
+shader = SubResource("ShaderMaterial_ivvnn")
+movable_object = NodePath("../..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=815921628]
 shape = SubResource("RectangleShape2D_gfon2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1306474058]
-texture = SubResource("GradientTexture2D_jsl7c")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=93953150]

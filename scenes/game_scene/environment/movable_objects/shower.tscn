@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://lkifrpwii4pk"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_3o3fd"]
+[ext_resource type="Texture2D" uid="uid://ccipxgx5b4nd" path="res://assets/art/props/shower.PNG" id="2_3o3fd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ndh"]
+size = Vector2(105, 123)
+
+[node name="TV" unique_id=1203108321 instance=ExtResource("1_3o3fd")]
+can_move = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(50, -93)
+rotation = -0.049241893
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_3o3fd")
+region_enabled = true
+region_rect = Rect2(49, 1, 916.8437, 1021.07544)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(47.5, -61.5)
+shape = SubResource("RectangleShape2D_r8ndh")

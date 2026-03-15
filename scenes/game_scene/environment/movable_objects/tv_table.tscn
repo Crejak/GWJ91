@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dsfk75vd7ub0f"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_yh7h0"]
+[ext_resource type="Texture2D" uid="uid://cmaqyta231mms" path="res://assets/art/props/tv_table.PNG" id="2_yh7h0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ndh"]
+size = Vector2(163, 80)
+
+[node name="TV_Table" unique_id=1203108321 instance=ExtResource("1_yh7h0")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(82, -38)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_yh7h0")
+region_enabled = true
+region_rect = Rect2(0.25358582, 149.237, 936.2464, 509.00006)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(80.5, -37)
+shape = SubResource("RectangleShape2D_r8ndh")
