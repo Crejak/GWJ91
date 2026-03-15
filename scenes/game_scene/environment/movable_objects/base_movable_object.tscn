@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://crkldk5p4brma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfon2"]
+size = Vector2(72, 72)
+
+[sub_resource type="Gradient" id="Gradient_jta4f"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jsl7c"]
+gradient = SubResource("Gradient_jta4f")
+
+[node name="BaseMovableObjectRb2d" type="RigidBody2D" unique_id=1203108321]
+gravity_scale = 0.0
+linear_damp = 8.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=815921628]
+shape = SubResource("RectangleShape2D_gfon2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1306474058]
+texture = SubResource("GradientTexture2D_jsl7c")
