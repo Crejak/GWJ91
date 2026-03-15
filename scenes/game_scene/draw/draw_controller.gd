@@ -12,9 +12,6 @@ func _input(event: InputEvent) -> void:
 		add_child(current_line)
 	
 	elif event.is_action_released("draw"):
-		if current_line != null:
-			current_line.end_of_line()
-		
 		current_line = null
 
 func _process(delta: float) -> void:

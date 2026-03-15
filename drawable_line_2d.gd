@@ -11,10 +11,6 @@ func add_new_point(mouse_pos: Vector2) -> void:
 	add_point(mouse_pos)
 	last_point = mouse_pos
 
-func end_of_line() -> void:
-	if get_point_count() == 1:
-		queue_redraw()
-
 func _draw() -> void:
-	if last_point != Vector2.ZERO:
+	if get_point_count() == 1:
 		draw_circle(last_point, width/2, default_color)
