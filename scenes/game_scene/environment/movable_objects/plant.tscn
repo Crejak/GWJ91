@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dlymfa518gs55"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_xbe24"]
+[ext_resource type="Texture2D" uid="uid://cnlxhlurkh7xw" path="res://assets/art/props/plant.PNG" id="2_xbe24"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13hox"]
+radius = 23.0
+
+[node name="Plant" unique_id=1203108321 instance=ExtResource("1_xbe24")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(23, -45)
+scale = Vector2(0.16414694, 0.16414694)
+texture = ExtResource("2_xbe24")
+region_enabled = true
+region_rect = Rect2(0, -2, 456, 594)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(22, -21)
+shape = SubResource("CircleShape2D_13hox")

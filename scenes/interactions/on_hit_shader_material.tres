@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dtidqqbx5o0du"]
+
+[sub_resource type="Shader" id="Shader_0uwjo"]
+code = "shader_type canvas_item;
+uniform sampler2D existing_screen_texture: hint_screen_texture, filter_linear_mipmap;
+uniform bool is_active;
+
+void fragment(){
+	if (is_active){
+		COLOR.rgb = 1.0 - COLOR.rgb;
+	}
+}"
+
+[resource]
+shader = SubResource("Shader_0uwjo")
+shader_parameter/is_active = false
