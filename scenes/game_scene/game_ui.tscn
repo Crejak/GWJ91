@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://c2c3f1ywjlrff" path="res://scenes/loading_screen/level_loading_screen.tscn" id="10_0v86b"]
 [ext_resource type="Script" uid="uid://bnhmjy582mlax" path="res://scenes/game_scene/configurable_sub_viewport.gd" id="11_ulq3g"]
 [ext_resource type="Script" uid="uid://bmcttnpvsi36l" path="res://scenes/game_scene/game_timer.gd" id="12_gpor5"]
+[ext_resource type="PackedScene" uid="uid://2nqgyp0nd5py" path="res://scenes/game_scene/draw/draw_controller.tscn" id="13_7aihr"]
+[ext_resource type="Script" uid="uid://stw34u71s4c5" path="res://scenes/game_scene/phase_manager.gd" id="14_3re04"]
 
 [node name="GameUI" type="Control" unique_id=672765824]
 layout_mode = 3
@@ -44,7 +46,7 @@ level_won_scene = ExtResource("8_rkfhe")
 
 [node name="SceneLister" type="Node" parent="LevelManager" unique_id=492884432]
 script = ExtResource("9_g2ndc")
-files = Array[String](["uid://da00hutaakwk6", "uid://danrqx83o0lal", "uid://rpyqx1valdin"])
+files = Array[String](["uid://deb4sc71p5ym6", "uid://da00hutaakwk6", "uid://danrqx83o0lal", "uid://rpyqx1valdin"])
 directory = "res://scenes/game_scene/levels"
 
 [node name="LevelLoadingScreen" parent="." unique_id=1322915730 instance=ExtResource("10_0v86b")]
@@ -69,3 +71,22 @@ script = ExtResource("11_ulq3g")
 
 [node name="GameTimer" type="Node" parent="." unique_id=885493004]
 script = ExtResource("12_gpor5")
+
+[node name="DrawController" parent="." unique_id=1158203384 instance=ExtResource("13_7aihr")]
+
+[node name="PhaseManager" type="Node" parent="." unique_id=1757349659 node_paths=PackedStringArray("preparation_phase_timer", "preparation_phase_timer_label")]
+script = ExtResource("14_3re04")
+preparation_phase_timer = NodePath("../PreparationPhaseTimer")
+preparation_phase_timer_label = NodePath("../PreparationPhaseTimerLabel")
+
+[node name="PreparationPhaseTimer" type="Timer" parent="." unique_id=781148600]
+wait_time = 5.0
+one_shot = true
+
+[node name="PreparationPhaseTimerLabel" type="Label" parent="." unique_id=492104975]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="level_ready" from="LevelLoader" to="PhaseManager" method="_on_level_loader_level_ready"]
+[connection signal="timeout" from="PreparationPhaseTimer" to="PhaseManager" method="_on_preparation_phase_timer_timeout"]
