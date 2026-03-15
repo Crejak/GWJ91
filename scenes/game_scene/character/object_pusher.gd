@@ -10,4 +10,6 @@ func _physics_process(_delta) -> void:
 			var col: KinematicCollision2D = body.get_slide_collision(i)
 			if col.get_collider() is RigidBody2D:
 				var object: RigidBody2D = col.get_collider()
-				object.apply_force(col.get_normal() * - pushForce)
+				if "can_move" in object and object.can_move:
+					object.apply_force(col.get_normal() * - pushForce)
+					
