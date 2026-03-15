@@ -9,6 +9,7 @@ enum Phase {
 
 @export var preparation_phase_timer: Timer;
 @export var preparation_phase_timer_label: Label;
+@export var draw_controller: DrawController;
 
 var current_phase: Phase = Phase.PREPARATION;
 
@@ -22,3 +23,5 @@ func _on_level_loader_level_ready() -> void:
 func _on_preparation_phase_timer_timeout() -> void:
 	print("Preparation phase finished");
 	current_phase = Phase.INFILTRATION;
+	draw_controller.enable_draw = false;
+	
