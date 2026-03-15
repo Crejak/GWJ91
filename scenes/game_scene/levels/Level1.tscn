@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://deb4sc71p5ym6"]
 
+[ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_7yctp"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_50hnf"]
 [ext_resource type="PackedScene" uid="uid://du5ta6j1ncwqb" path="res://scenes/game_scene/environment/Painting.tscn" id="1_pl87g"]
 
@@ -10,6 +11,7 @@ size = Vector2(200, 20)
 size = Vector2(200, 20)
 
 [node name="Level1" type="Node2D" unique_id=471474300]
+script = ExtResource("1_7yctp")
 
 [node name="Environment" type="Node2D" parent="." unique_id=1773112354]
 
