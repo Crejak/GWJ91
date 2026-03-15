@@ -10,14 +10,16 @@ size = Vector2(200, 20)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_50hnf"]
 size = Vector2(200, 20)
 
-[node name="Level1" type="Node2D" unique_id=471474300]
+[node name="Level1" type="Node2D" unique_id=471474300 node_paths=PackedStringArray("character")]
 script = ExtResource("1_7yctp")
+character = NodePath("Character")
 
 [node name="Environment" type="Node2D" parent="." unique_id=1773112354]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment" unique_id=1736195507]
 position = Vector2(464, 318)
 rotation = 1.5707964
+collision_mask = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D" unique_id=1298360266]
@@ -29,6 +31,7 @@ texture = SubResource("PlaceholderTexture2D_50hnf")
 [node name="StaticBody2D2" type="StaticBody2D" parent="Environment" unique_id=162276291]
 position = Vector2(773, 363)
 rotation = 1.5707964
+collision_mask = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D2" unique_id=331395273]
@@ -40,6 +43,7 @@ texture = SubResource("PlaceholderTexture2D_50hnf")
 [node name="StaticBody2D3" type="StaticBody2D" parent="Environment" unique_id=89850011]
 position = Vector2(607, 458)
 rotation = 1.5707964
+collision_mask = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D3" unique_id=739889759]

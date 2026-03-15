@@ -17,11 +17,11 @@ func _process(_delta: float) -> void:
 	preparation_phase_timer_label.text = "Time left : %s" % preparation_phase_timer.time_left;
 
 func _on_level_loader_level_ready() -> void:
-	print("Level ready");
 	preparation_phase_timer.start();
+	SignalBus.preparation_phase_started.emit();
 
 func _on_preparation_phase_timer_timeout() -> void:
-	print("Preparation phase finished");
-	current_phase = Phase.INFILTRATION;
 	draw_controller.enable_draw = false;
-	
+	SignalBus.preparation_phase_ended.emit();
+	current_phase = Phase.INFILTRATION;
+	SignalBus.infiltration_phase_started.emit();
