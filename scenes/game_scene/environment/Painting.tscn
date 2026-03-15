@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://du5ta6j1ncwqb"]
+
+[ext_resource type="Script" uid="uid://bglhkbmfey3o6" path="res://scenes/game_scene/environment/painting.gd" id="1_6khig"]
+[ext_resource type="PackedScene" uid="uid://cqcnccpjk1n2n" path="res://scenes/game_scene/environment/Interactable.tscn" id="1_tb42x"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1etil"]
+size = Vector2(40, 30)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tb42x"]
+radius = 30.0
+height = 70.0
+
+[node name="Painting" type="Node2D" unique_id=734972761]
+script = ExtResource("1_6khig")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1352726995]
+texture = SubResource("PlaceholderTexture2D_1etil")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1273655842]
+collision_mask = 2
+
+[node name="Interactable" parent="Area2D" unique_id=1627385928 instance=ExtResource("1_tb42x")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=498607122]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tb42x")
+
+[connection signal="player_interacted" from="Area2D/Interactable" to="." method="_on_interactable_player_interacted"]

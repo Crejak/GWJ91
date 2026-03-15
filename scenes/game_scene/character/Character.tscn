@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://yrcct0ibsfea"]
 
 [ext_resource type="Texture2D" uid="uid://ctfl5lq83mmic" path="res://icon.png" id="1_dltb6"]
-[ext_resource type="Script" uid="uid://btmubwnqhy8bt" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
+[ext_resource type="Script" uid="uid://dhhfhx3n5d4nr" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2m4rl"]
+radius = 40.0
 
 [node name="Character" type="CharacterBody2D" unique_id=860493929 node_paths=PackedStringArray("debug_label")]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_pi01j")
 debug_label = NodePath("DebugLabel")
 
