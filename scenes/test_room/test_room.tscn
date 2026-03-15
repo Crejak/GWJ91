@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://ba21f72lm23w"]
+
+[ext_resource type="Texture2D" uid="uid://dyxwb0oxd8i8l" path="res://assets/art/blueprints/blueprint_test_room_no_doors.png" id="1_56hba"]
+[ext_resource type="Texture2D" uid="uid://bwn17ib558ic2" path="res://assets/art/props/bed.PNG" id="2_2ape5"]
+[ext_resource type="Texture2D" uid="uid://831n8hxmh0yc" path="res://assets/art/props/tapis.PNG" id="2_mklop"]
+[ext_resource type="Texture2D" uid="uid://c7mpwhm75bijy" path="res://assets/art/props/bed_table.PNG" id="3_lwucv"]
+[ext_resource type="Texture2D" uid="uid://cessvuln7jjyu" path="res://assets/art/props/christmas_tree.PNG" id="4_vbiqp"]
+[ext_resource type="Texture2D" uid="uid://oyl7moeq1yjf" path="res://assets/art/props/christmas_present.PNG" id="5_rwitn"]
+[ext_resource type="Texture2D" uid="uid://itrvqgjt607f" path="res://assets/art/props/computer_table.PNG" id="7_k8x4p"]
+[ext_resource type="Texture2D" uid="uid://b2e4kmdypcjyv" path="res://assets/art/props/door.PNG" id="8_sdr2y"]
+[ext_resource type="Texture2D" uid="uid://c86cs7678jhi2" path="res://assets/art/props/fridge.PNG" id="9_0uwjo"]
+[ext_resource type="Texture2D" uid="uid://vcjm8q3k23jm" path="res://assets/art/props/kitchen_sink.PNG" id="10_vgfr6"]
+[ext_resource type="Texture2D" uid="uid://bpmxm6vchsurs" path="res://assets/art/props/kitchen_table.PNG" id="11_05ukp"]
+[ext_resource type="Texture2D" uid="uid://c11t25865hy1x" path="res://assets/art/props/lampe2.PNG" id="12_imeoc"]
+[ext_resource type="Texture2D" uid="uid://cnlxhlurkh7xw" path="res://assets/art/props/plant.PNG" id="13_2ihpt"]
+[ext_resource type="Texture2D" uid="uid://ev2n7q6did2v" path="res://assets/art/props/sink.PNG" id="14_jtacr"]
+[ext_resource type="Texture2D" uid="uid://byn45lditcft6" path="res://assets/art/props/sofa.PNG" id="15_50tyd"]
+[ext_resource type="Texture2D" uid="uid://mnagecl04tr6" path="res://assets/art/props/square_table.PNG" id="16_51dik"]
+[ext_resource type="Texture2D" uid="uid://ryrwrhpcve5m" path="res://assets/art/props/stove.PNG" id="17_2c5gh"]
+[ext_resource type="Texture2D" uid="uid://r4ovjwiauuwu" path="res://assets/art/props/table_salon.PNG" id="18_o6mwe"]
+[ext_resource type="Texture2D" uid="uid://110eq0wpy44m" path="res://assets/art/props/toilet.PNG" id="19_ax41o"]
+[ext_resource type="Texture2D" uid="uid://ck2cq2m1mxgd2" path="res://assets/art/props/tv.PNG" id="20_slkys"]
+[ext_resource type="Texture2D" uid="uid://dm5it114a5ruh" path="res://assets/art/props/windows.PNG" id="21_3x2ig"]
+[ext_resource type="Texture2D" uid="uid://d4b06k0jfksd" path="res://assets/art/props/chair.PNG" id="22_drlj2"]
+[ext_resource type="Texture2D" uid="uid://ybsf7i3w3qt" path="res://assets/art/props/c7a873af-1426-431d-a27c-6294a720fe1d.jpg.PNG" id="23_1bvhb"]
+[ext_resource type="Texture2D" uid="uid://ccipxgx5b4nd" path="res://assets/art/props/shower.PNG" id="24_sdr2y"]
+[ext_resource type="Texture2D" uid="uid://bgvg8wqutr5tt" path="res://assets/art/props/tapish.PNG" id="25_0uwjo"]
+
+[node name="TestRoom" type="Node2D" unique_id=2058501475]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1844503784]
+offset_right = 1883.0
+offset_bottom = 1066.0
+color = Color(0.4305108, 0.41666043, 0.4120441, 1)
+
+[node name="blueprint" type="Sprite2D" parent="." unique_id=190581227]
+texture = ExtResource("1_56hba")
+centered = false
+
+[node name="Collisions" type="Node2D" parent="." unique_id=2008365336]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=1486430070]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D" unique_id=207135049]
+position = Vector2(1005, 342)
+polygon = PackedVector2Array(0, -6, 0, -1, -158, -1, -158, 90, -164, 90, -164, 0, -848, 0, -848, 145, -901, 145, -901, -54, -208, -54, -207, -297, 724, -298, 724, 647, -207, 647, -207, 453, -900, 454, -901, 209, -848, 209, -848, 400, -164, 400, -164, 214, -158, 214, -158, 322, -4, 322, -4, 327, -158, 327, -158, 584, 666, 585, 666, 327, 531, 327, 531, 321, 665, 321, 666, -247, 281, -247, 282, -195, 276, -195, 276, -247, -158, -247, -158, -6)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collisions/StaticBody2D" unique_id=159792039]
+position = Vector2(1129, 336)
+polygon = PackedVector2Array(0, 5, 152, 5, 152, 327, -6, 327, -6, 333, 284, 333, 284, 328, 158, 328, 158, -67, 152, -67, 152, -2, 0, -1)
+
+[node name="Tapis" type="Sprite2D" parent="." unique_id=1655987953]
+position = Vector2(486.00006, 496)
+scale = Vector2(0.19224426, 0.19224428)
+texture = ExtResource("2_mklop")
+
+[node name="Bed" type="Sprite2D" parent="." unique_id=1015510382]
+position = Vector2(1559.0001, 466)
+rotation = 1.5967773
+scale = Vector2(0.23567204, 0.23567209)
+texture = ExtResource("2_2ape5")
+
+[node name="BedTable" type="Sprite2D" parent="." unique_id=663164156]
+position = Vector2(1650, 249.99997)
+rotation = 1.5847808
+scale = Vector2(0.15605095, 0.15605097)
+texture = ExtResource("3_lwucv")
+
+[node name="ChristmasTree" type="Sprite2D" parent="." unique_id=1109414659]
+position = Vector2(1119, 463)
+scale = Vector2(0.21407625, 0.21407625)
+texture = ExtResource("4_vbiqp")
+
+[node name="ChristmasPresent" type="Sprite2D" parent="." unique_id=1084153849]
+position = Vector2(1079.875, 543.1458)
+scale = Vector2(0.22773296, 0.22773296)
+texture = ExtResource("5_rwitn")
+
+[node name="ChristmasPresent2" type="Sprite2D" parent="." unique_id=1594885657]
+position = Vector2(1123, 550)
+scale = Vector2(0.22773296, 0.22773296)
+texture = ExtResource("5_rwitn")
+
+[node name="ChristmasPresent3" type="Sprite2D" parent="." unique_id=1481535075]
+position = Vector2(1163, 538)
+scale = Vector2(0.22773296, 0.22773296)
+texture = ExtResource("5_rwitn")
+
+[node name="ComputerTable" type="Sprite2D" parent="." unique_id=1759360587]
+position = Vector2(1328.9999, 582)
+rotation = -1.6308304
+scale = Vector2(0.120507665, 0.12050765)
+texture = ExtResource("7_k8x4p")
+
+[node name="Door" type="Sprite2D" parent="." unique_id=2102829270]
+position = Vector2(129, 524)
+rotation = -1.5678376
+scale = Vector2(0.13645867, 0.09791893)
+texture = ExtResource("8_sdr2y")
+
+[node name="Fridge" type="Sprite2D" parent="." unique_id=166122533]
+position = Vector2(888.00006, 718)
+scale = Vector2(0.16936791, 0.16936791)
+texture = ExtResource("9_0uwjo")
+
+[node name="KitchenSink" type="Sprite2D" parent="." unique_id=2106995008]
+position = Vector2(1235, 757)
+rotation = -1.6357217
+scale = Vector2(0.16052637, 0.16052637)
+texture = ExtResource("10_vgfr6")
+
+[node name="KitchenTable" type="Sprite2D" parent="." unique_id=1660010923]
+position = Vector2(1038, 864)
+scale = Vector2(0.11580519, 0.115805164)
+texture = ExtResource("11_05ukp")
+
+[node name="Lampe2" type="Sprite2D" parent="." unique_id=1947291109]
+position = Vector2(1271, 623.00006)
+scale = Vector2(0.097490355, 0.09749035)
+texture = ExtResource("12_imeoc")
+
+[node name="Plant" type="Sprite2D" parent="." unique_id=1387367736]
+position = Vector2(925.00006, 364.99994)
+scale = Vector2(0.13408192, 0.1340819)
+texture = ExtResource("13_2ihpt")
+
+[node name="Plant2" type="Sprite2D" parent="." unique_id=645009171]
+position = Vector2(242.00012, 359)
+scale = Vector2(0.13408192, 0.1340819)
+texture = ExtResource("13_2ihpt")
+
+[node name="Plant3" type="Sprite2D" parent="." unique_id=782827920]
+position = Vector2(841.99994, 702)
+scale = Vector2(0.13408192, 0.1340819)
+texture = ExtResource("13_2ihpt")
+
+[node name="Sink" type="Sprite2D" parent="." unique_id=1054717341]
+position = Vector2(917, 98)
+scale = Vector2(0.09710019, 0.07311149)
+texture = ExtResource("14_jtacr")
+
+[node name="Sofa" type="Sprite2D" parent="." unique_id=1867935020]
+position = Vector2(483, 376)
+scale = Vector2(0.19574943, 0.19574945)
+texture = ExtResource("15_50tyd")
+
+[node name="SquareTable" type="Sprite2D" parent="." unique_id=1765192571]
+position = Vector2(535, 512)
+scale = Vector2(0.23531778, 0.15296803)
+texture = ExtResource("16_51dik")
+
+[node name="Stove" type="Sprite2D" parent="." unique_id=668302804]
+position = Vector2(966.99994, 713)
+scale = Vector2(0.07360004, 0.09928281)
+texture = ExtResource("17_2c5gh")
+
+[node name="TableSalon" type="Sprite2D" parent="." unique_id=1853314438]
+position = Vector2(220, 683)
+scale = Vector2(0.15884195, 0.15884194)
+texture = ExtResource("18_o6mwe")
+
+[node name="Toilet" type="Sprite2D" parent="." unique_id=345764656]
+position = Vector2(1230, 109.00001)
+scale = Vector2(0.0745543, 0.074554294)
+texture = ExtResource("19_ax41o")
+
+[node name="Tv" type="Sprite2D" parent="." unique_id=684993273]
+position = Vector2(493.99997, 736)
+rotation = -3.1340358
+scale = Vector2(0.18558393, 0.1428688)
+texture = ExtResource("20_slkys")
+
+[node name="Windows" type="Sprite2D" parent="." unique_id=216695953]
+position = Vector2(1504.7822, 85)
+scale = Vector2(0.11482897, 0.049786627)
+texture = ExtResource("21_3x2ig")
+
+[node name="Chair" type="Sprite2D" parent="." unique_id=933689748]
+position = Vector2(1428, 767.99994)
+scale = Vector2(0.070702374, 0.070702374)
+texture = ExtResource("22_drlj2")
+
+[node name="Chair2" type="Sprite2D" parent="." unique_id=417915911]
+position = Vector2(1483, 766)
+scale = Vector2(0.070702374, 0.070702374)
+texture = ExtResource("22_drlj2")
+
+[node name="Chair3" type="Sprite2D" parent="." unique_id=2057103571]
+position = Vector2(1549, 767)
+scale = Vector2(0.070702374, 0.070702374)
+texture = ExtResource("22_drlj2")
+
+[node name="Chair5" type="Sprite2D" parent="." unique_id=1297866284]
+position = Vector2(1429.0001, 854)
+rotation = -3.134326
+scale = Vector2(0.070702374, 0.070702374)
+texture = ExtResource("22_drlj2")
+
+[node name="Chair6" type="Sprite2D" parent="." unique_id=1339831393]
+position = Vector2(1490, 854.00006)
+rotation = -3.134326
+scale = Vector2(0.070702374, 0.070702374)
+texture = ExtResource("22_drlj2")
+
+[node name="C7a873Af1426431dA27c6294a720Fe1d_jpg" type="Sprite2D" parent="." unique_id=116467306]
+position = Vector2(1470, 814)
+scale = Vector2(0.13619012, 0.11603827)
+texture = ExtResource("23_1bvhb")
+
+[node name="Chair4" type="Sprite2D" parent="." unique_id=1770795066]
+position = Vector2(1382, 867.00006)
+rotation = -3.134326
+scale = Vector2(0.070702374, 0.070702374)
+texture = ExtResource("22_drlj2")
+
+[node name="Shower" type="Sprite2D" parent="." unique_id=1741617477]
+position = Vector2(1043.6875, 105.29738)
+scale = Vector2(0.11074237, 0.110742375)
+texture = ExtResource("24_sdr2y")
+
+[node name="Tapish" type="Sprite2D" parent="." unique_id=1773224855]
+position = Vector2(1041, 191.99994)
+scale = Vector2(0.14397906, 0.14397906)
+texture = ExtResource("25_0uwjo")
