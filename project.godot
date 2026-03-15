@@ -119,6 +119,7 @@ locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/t
 
 2d_physics/layer_1="Environment"
 2d_physics/layer_2="PlayerCharacter"
+2d_physics/layer_8="DoorBlocking"
 
 [maaacks_game_template]
 
