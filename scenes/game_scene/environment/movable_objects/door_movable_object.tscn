@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cr8u03wjxqfmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjkpp"]
+size = Vector2(130, 18)
+
+[sub_resource type="Gradient" id="Gradient_kgwss"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bi3a0"]
+gradient = SubResource("Gradient_kgwss")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv40h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi3a0"]
+size = Vector2(19.75, 12)
+
+[node name="DoorMovableObject" type="Node2D" unique_id=2049277762]
+
+[node name="Door" type="RigidBody2D" parent="." unique_id=1811971028]
+collision_mask = 129
+gravity_scale = 0.0
+linear_damp = 8.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1133960002]
+position = Vector2(36, -22)
+shape = SubResource("RectangleShape2D_cjkpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1968023749]
+position = Vector2(34.5, -22.5)
+scale = Vector2(2.078125, 0.296875)
+texture = SubResource("GradientTexture2D_bi3a0")
+
+[node name="DoorAttachPoint" type="StaticBody2D" parent="." unique_id=2032277193]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAttachPoint" unique_id=1278323767]
+position = Vector2(113, -22)
+shape = SubResource("RectangleShape2D_rv40h")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2103500417]
+position = Vector2(96, -21)
+node_a = NodePath("../Door")
+node_b = NodePath("../DoorAttachPoint")
+
+[node name="DoorBlockingPoint" type="StaticBody2D" parent="." unique_id=614576422]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorBlockingPoint" unique_id=238904713]
+position = Vector2(219, 7)
+shape = SubResource("RectangleShape2D_bi3a0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DoorBlockingPoint" unique_id=1871299008]
+position = Vector2(219, -44)
+shape = SubResource("RectangleShape2D_bi3a0")
