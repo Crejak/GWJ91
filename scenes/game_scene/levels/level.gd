@@ -42,4 +42,4 @@ func _on_tutorial_button_pressed() -> void:
 
 func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.COMPLETED:
-		pass
+		level_won.emit();
