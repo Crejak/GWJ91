@@ -1,3 +1,5 @@
+## All level root nodes must use this script
+class_name Level
 extends Node
 
 signal level_lost

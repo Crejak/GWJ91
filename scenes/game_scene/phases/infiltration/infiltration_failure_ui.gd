@@ -9,3 +9,6 @@ func _on_character_caught() -> void:
 
 func _on_retry_level_button_pressed() -> void:
 	SceneLoader.reload_current_scene();
+
+func _on_main_menu_button_pressed() -> void:
+	SceneLoader.load_scene(AppConfig.main_menu_scene_path)
