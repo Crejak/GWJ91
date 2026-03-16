@@ -36,7 +36,7 @@
 
 [node name="TestRoom" type="Node2D" unique_id=2058501475]
 script = ExtResource("1_05ukp")
-state_on_ready = 1
+state_on_ready = 3
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1844503784]
 offset_right = 1883.0
