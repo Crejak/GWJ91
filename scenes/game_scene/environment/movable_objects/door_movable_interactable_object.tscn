@@ -73,3 +73,4 @@ position = Vector2(219, -44)
 shape = SubResource("RectangleShape2D_bi3a0")
 
 [connection signal="player_interacted" from="Door/GripInteractArea2D/Interactable" to="." method="_on_interactable_player_interacted"]
+[connection signal="player_stop_interaction" from="Door/GripInteractArea2D/Interactable" to="." method="_on_interactable_player_stop_interaction"]
