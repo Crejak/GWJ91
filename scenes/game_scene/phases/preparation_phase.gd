@@ -5,8 +5,8 @@ extends Control
 
 @export_group("Internal nodes")
 
-@export var timer: Timer;
-@export var timer_label: Label;
+@onready var timer: Timer = %Timer;
+@onready var timer_label: Label = %TimerLabel;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(on_phase_started);
