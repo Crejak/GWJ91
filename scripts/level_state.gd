@@ -22,18 +22,14 @@ enum Phase {
 @export var total_stolen_value: int = 0;
 @export var danger_level: float = 0.:
 	set(value):
-		if danger_level >= 1.:
-			return;
-		if value >= 1.:
+		if value >= 1. && danger_level < 1.:
 			SignalBus.character_caught.emit();
 		danger_level = clamp(value, 0., 1.);
-
-func _init() -> void:
-	print("New state");
 
 func reset() -> void:
 	set_phase(Phase.UNLOADED);
 	total_stolen_value = 0;
+	danger_level = 0.;
 
 func set_phase(new_phase: Phase) -> void:
 		if new_phase == current_phase:

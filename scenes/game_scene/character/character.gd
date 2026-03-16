@@ -28,6 +28,7 @@ var picked_up_mass: float = 0.;
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
+	SignalBus.character_caught.connect(_on_character_caught);
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
@@ -66,6 +67,9 @@ func _on_phase_started(phase: LevelState.Phase) -> void:
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
 		can_move = false;
+
+func _on_character_caught() -> void:
+	can_move = false;
 
 func pick_up(mass: float, value: int) -> void:
 	print("Picked up an object that weighs %.1f kilos, and is worth %d dollars !" % [mass, value]);

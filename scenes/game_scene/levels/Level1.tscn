@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://s5vb6wd8f87" path="res://scenes/game_scene/environment/danger/ExampleDangerZone.tscn" id="8_armk4"]
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="8_ktfe1"]
 [ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="11_75gx0"]
-[ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/InfiltrationPhaseUI.tscn" id="12_75gx0"]
+[ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 
 [node name="Level1" type="Control" unique_id=1713301915]
 layout_mode = 3
