@@ -4,6 +4,7 @@ class_name Interactable
 extends Node
 
 signal player_interacted(source: Character);
+signal player_stop_interaction();
 
 var parent_area_2d: Area2D;
 var character_in_range: Character;
@@ -27,6 +28,8 @@ func _process(_delta: float) -> void:
 		return;
 	if character_in_range && Input.is_action_just_pressed("interact"):
 		player_interacted.emit(character_in_range);
+	if Input.is_action_just_released("interact"):
+		player_stop_interaction.emit()
 
 func on_body_entered(body: Node2D) -> void:
 	character_in_range = body as Character;
