@@ -1,6 +1,6 @@
 class_name Character
 
-extends CharacterBody2D
+extends RigidBody2D
 
 @export_group("Movement")
 
@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 ## Minimum walking speed, in pixel per second
 @export var min_speed: float = 25.;
-## Maximum running speed, in pexel per second
+## Maximum running speed, in pexel per second if linear dump = 0
 @export var max_speed: float = 100.;
 ## Minimum distance between the mouse and the character that triggers movement, in pixels
 @export var min_mouse_detection_range: float = 10.;
@@ -32,14 +32,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
-		debug_label.text = "Speed : %s" % roundi(velocity.length());
+		debug_label.text = "Speed : %s" % roundi(linear_velocity.length())
 
 func _physics_process(_delta: float) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
-	velocity = get_velocity_from_distance_to_cursor(distance);
-	move_and_slide();
+	var velocity = get_velocity_from_distance_to_cursor(distance);
+	apply_force(velocity);
 	
 func get_mouse_distance_in_viewport_space() -> float:
 	var viewport_mouse_position := get_viewport().get_mouse_position();
@@ -48,6 +48,8 @@ func get_mouse_distance_in_viewport_space() -> float:
 	return viewport_mouse_position.distance_to(viewport_player_position);
 
 func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
+	if linear_velocity.length() >= max_speed:
+		return Vector2.ZERO
 	if distance < min_mouse_detection_range:
 		return Vector2.ZERO;
 	else:
