@@ -26,6 +26,10 @@ enum Phase {
 func _init() -> void:
 	print("New state");
 
+func reset() -> void:
+	set_phase(Phase.UNLOADED);
+	total_stolen_value = 0;
+
 func set_phase(new_phase: Phase) -> void:
 		if new_phase == current_phase:
 			push_warning("Tried to set a phase that already exists");

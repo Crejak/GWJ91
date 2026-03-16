@@ -18,6 +18,7 @@ func _on_win_button_pressed() -> void:
 
 func _ready() -> void:
 	level_state = GameState.get_level_state(scene_file_path)
+	level_state.reset();
 	level_state.set_phase(LevelState.Phase.INTRODUCTION);
 	SignalBus.phase_started.connect(on_phase_started);
 
