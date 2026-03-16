@@ -8,12 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct8mj"]
-size = Vector2(200, 20)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_50hnf"]
-size = Vector2(200, 20)
+[ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="8_ktfe1"]
+[ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="11_75gx0"]
 
 [node name="Level1" type="Control" unique_id=1713301915]
 layout_mode = 3
@@ -47,47 +43,37 @@ script = ExtResource("4_pv3ef")
 
 [node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1773112354]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PlayableEnvironment/Environment" unique_id=1736195507]
-position = Vector2(464, 318)
-rotation = 1.5707964
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableEnvironment/Environment/StaticBody2D" unique_id=1298360266]
-shape = SubResource("RectangleShape2D_ct8mj")
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayableEnvironment/Environment/StaticBody2D" unique_id=1285089494]
-texture = SubResource("PlaceholderTexture2D_50hnf")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="PlayableEnvironment/Environment" unique_id=162276291]
-position = Vector2(773, 363)
-rotation = 1.5707964
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableEnvironment/Environment/StaticBody2D2" unique_id=331395273]
-shape = SubResource("RectangleShape2D_ct8mj")
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayableEnvironment/Environment/StaticBody2D2" unique_id=928655595]
-texture = SubResource("PlaceholderTexture2D_50hnf")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="PlayableEnvironment/Environment" unique_id=89850011]
-position = Vector2(607, 458)
-rotation = 1.5707964
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableEnvironment/Environment/StaticBody2D3" unique_id=739889759]
-shape = SubResource("RectangleShape2D_ct8mj")
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayableEnvironment/Environment/StaticBody2D3" unique_id=1915026392]
-texture = SubResource("PlaceholderTexture2D_50hnf")
-
 [node name="Painting" parent="PlayableEnvironment/Environment" unique_id=734972761 instance=ExtResource("1_pl87g")]
-position = Vector2(949, 368)
+position = Vector2(872, 434)
 
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
 position = Vector2(214, 421)
+
+[node name="Table2" parent="PlayableEnvironment/Environment" unique_id=266045507 instance=ExtResource("8_ktfe1")]
+position = Vector2(454, 444)
+
+[node name="Sofa" parent="PlayableEnvironment/Environment" unique_id=752978625 instance=ExtResource("11_75gx0")]
+position = Vector2(527, 336)
+rotation = -0.5578765
+
+[node name="Sofa4" parent="PlayableEnvironment/Environment" unique_id=1203108321 instance=ExtResource("11_75gx0")]
+position = Vector2(703, 172.99998)
+rotation = 0.58013743
+
+[node name="Sofa6" parent="PlayableEnvironment/Environment" unique_id=116508571 instance=ExtResource("11_75gx0")]
+position = Vector2(915, 285.99997)
+rotation = 0.8797637
+
+[node name="Sofa2" parent="PlayableEnvironment/Environment" unique_id=1610452943 instance=ExtResource("11_75gx0")]
+position = Vector2(490, 491.99997)
+rotation = 1.2665405
+
+[node name="Sofa3" parent="PlayableEnvironment/Environment" unique_id=1357359471 instance=ExtResource("11_75gx0")]
+position = Vector2(654, 699)
+
+[node name="Sofa5" parent="PlayableEnvironment/Environment" unique_id=1757913039 instance=ExtResource("11_75gx0")]
+position = Vector2(932, 666)
+rotation = -0.6924503
 
 [node name="Character" parent="PlayableEnvironment" unique_id=860493929 instance=ExtResource("1_50hnf")]
 position = Vector2(306, 309)
