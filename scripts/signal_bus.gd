@@ -1,10 +1,6 @@
 extends Node
 
 @warning_ignore("unused_signal")
-signal preparation_phase_started;
+signal phase_ended(phase: LevelState.Phase);
 @warning_ignore("unused_signal")
-signal preparation_phase_ended;
-@warning_ignore("unused_signal")
-signal infiltration_phase_started;
-@warning_ignore("unused_signal")
-signal infiltration_phase_ended;
+signal phase_started(phase: LevelState.Phase);
