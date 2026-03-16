@@ -1,9 +1,5 @@
 extends Control
 
-@export var dialogs :Array[ConversationRes]
-
-@onready var conversation_container = %ConversationContainer
-@onready var dialog_text_label = %ConversationTextLabel
 
 @onready var animation_player :AnimationPlayer = %AnimationPlayer
 
@@ -13,17 +9,21 @@ extends Control
 @onready var ringing_state :StateMachineState = %RingingState
 @onready var calling_state :StateMachineState = %CallingState
 
+# Dialog
+@onready var conversation_container = %ConversationContainer
+@onready var dialog_text_label = %ConversationTextLabel
+@onready var phone_screen = %PhoneScreenInfos
+@onready var phone_text = %CallingText
+@onready var phone_caller_name = %IncommingCallName
+
+@export var dialogs :Array[ConversationRes]
+var current_dialog :ConversationRes = ConversationRes.new()
 
 
 func _ready() -> void:
 	dialog_text_label.end_dialog.connect(_on_dialog_ended)
 
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("move_down"):
-		state_machine.set_current_state(ringing_state)
-	if Input.is_action_just_pressed("move_up"):
-		state_machine.set_current_state(disable_state)
+	current_dialog = dialogs[0]
 
 
 func _on_btn_phone_pressed() -> void:
@@ -31,12 +31,26 @@ func _on_btn_phone_pressed() -> void:
 		state_machine.set_current_state(calling_state)
 
 
+func display_screen_caller_name() -> void:
+	phone_caller_name.text = current_dialog.caller_name
+	phone_caller_name.add_theme_color_override("default_color", current_dialog.text_color)
+	phone_caller_name.add_theme_color_override("font_outline_color", current_dialog.outline_color)
+	phone_screen.visible = true
+
+
 func display_conversation(enabled :bool = true) -> void:
 	if enabled:
-		dialog_text_label.init(dialogs[0])
+		dialog_text_label.init(current_dialog)
 	
 	conversation_container.visible = enabled
 
 
 func _on_dialog_ended() -> void:
 	state_machine.set_current_state(disable_state)
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("move_down"):
+		state_machine.set_current_state(ringing_state)
+	if Input.is_action_just_pressed("move_up"):
+		state_machine.set_current_state(disable_state)

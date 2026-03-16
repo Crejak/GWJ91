@@ -161,11 +161,14 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_top = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PhoneContainer/TextureRect/MarginContainer" unique_id=2106217853]
+[node name="PhoneScreenInfos" type="VBoxContainer" parent="PhoneContainer/TextureRect/MarginContainer" unique_id=2106217853]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 mouse_filter = 2
 
-[node name="CallingText" type="RichTextLabel" parent="PhoneContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=2042286386]
+[node name="CallingText" type="RichTextLabel" parent="PhoneContainer/TextureRect/MarginContainer/PhoneScreenInfos" unique_id=2042286386]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0.20152658, 0.20152658, 0.20152658, 1)
 theme_override_colors/selection_color = Color(0.101960786, 0.101960786, 1, 0)
@@ -180,11 +183,9 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="IncommingCallName" type="RichTextLabel" parent="PhoneContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1889112318]
+[node name="IncommingCallName" type="RichTextLabel" parent="PhoneContainer/TextureRect/MarginContainer/PhoneScreenInfos" unique_id=1889112318]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/default_color = Color(0.7634397, 0.24688107, 0, 1)
-theme_override_colors/font_outline_color = Color(0.39869434, 0.11218525, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("2_732jb")
 theme_override_font_sizes/normal_font_size = 65

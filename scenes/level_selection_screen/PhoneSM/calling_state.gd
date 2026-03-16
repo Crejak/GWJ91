@@ -8,12 +8,14 @@ func _enter_state() -> void:
 	print("CallingState")
 
 	_play_open_phone_animation()
+	parentRef.phone_text.text = "Calling ..."
 
 
 func _exit_state() -> void:
 	parentRef.animation_player.stop()
 	parentRef.animation_player.play_backwards("open_phone")
 	parentRef.display_conversation(false)
+	parentRef.phone_screen.visible = false
 
 
 func _play_open_phone_animation() -> void:

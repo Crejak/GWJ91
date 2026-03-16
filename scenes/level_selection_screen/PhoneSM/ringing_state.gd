@@ -9,6 +9,9 @@ func _enter_state() -> void:
 
 	_play_ringing_animation()
 
+	parentRef.phone_text.text = "Incomming call ..."
+	parentRef.display_screen_caller_name()
+
 
 func _exit_state() -> void:
 	parentRef.animation_player.animation_finished.disconnect(_on_ringing_anim_finished)
@@ -24,3 +27,5 @@ func _play_ringing_animation() -> void:
 func _on_ringing_anim_finished(anim_name :String) -> void:
 	if is_current_state():
 		_play_ringing_animation()
+
+	
