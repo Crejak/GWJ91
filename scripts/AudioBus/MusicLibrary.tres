@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SoundLibrary" format=3 uid="uid://bocrd8fhnbxu1"]
+
+[ext_resource type="Script" uid="uid://b67yl2mlejqp" path="res://scripts/AudioBus/sound_res.gd" id="1_gjcnp"]
+[ext_resource type="Script" uid="uid://d2y0k5tchu4bs" path="res://scripts/AudioBus/sound_library.gd" id="2_uvkfa"]
+
+[resource]
+script = ExtResource("2_uvkfa")
+metadata/_custom_type_script = "uid://d2y0k5tchu4bs"
