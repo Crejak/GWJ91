@@ -2,19 +2,17 @@
 
 [ext_resource type="Script" uid="uid://d2avujuskkspu" path="res://scenes/level_selection_screen/phone_scene.gd" id="1_pxw76"]
 [ext_resource type="Texture2D" uid="uid://bqcs80ycs8vsl" path="res://scenes/level_selection_screen/images/phone.png" id="1_w7kj7"]
+[ext_resource type="Script" uid="uid://dyj0dslk8ye7w" path="res://scenes/level_selection_screen/conversations/conversation_res.gd" id="2_416um"]
+[ext_resource type="FontFile" uid="uid://cueqeii2qfmj4" path="res://assets/fonts/wscallme/WSCallMe.ttf" id="2_732jb"]
+[ext_resource type="Resource" uid="uid://8fpudoe02wm4" path="res://scenes/level_selection_screen/conversations/0-MrBrown.tres" id="3_hvy2e"]
 [ext_resource type="Script" uid="uid://dwqv65m8ieqgg" path="res://addons/finite_state_machine/scripts/state_machine.gd" id="3_pxw76"]
 [ext_resource type="Script" uid="uid://caogrioovm5op" path="res://scenes/level_selection_screen/PhoneSM/disable_state.gd" id="4_8x6ky"]
+[ext_resource type="PackedScene" uid="uid://dedm322vxvy7d" path="res://scenes/level_selection_screen/dialog_text_label.tscn" id="4_hvy2e"]
 [ext_resource type="Script" uid="uid://cfcdhu8umxuco" path="res://scenes/level_selection_screen/PhoneSM/ringing_state.gd" id="5_732jb"]
 [ext_resource type="Script" uid="uid://dwbf6wtnqcy06" path="res://scenes/level_selection_screen/PhoneSM/calling_state.gd" id="6_8x6ky"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x6ky"]
-bg_color = Color(0.03839716, 0.038397174, 0.038397126, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(1, 1, 1, 1)
-border_blend = true
+bg_color = Color(0.039215688, 0.039215688, 0.039215688, 0.47058824)
 
 [sub_resource type="Animation" id="Animation_w7kj7"]
 length = 0.001
@@ -22,7 +20,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("PhoneContainer:theme_override_constants/margin_bottom")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
@@ -95,6 +93,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pxw76")
+dialogs = Array[ExtResource("2_416um")]([ExtResource("3_hvy2e")])
 
 [node name="Background" type="PanelContainer" parent="." unique_id=1585940864]
 layout_mode = 1
@@ -103,6 +102,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ConversationContainer" type="MarginContainer" parent="." unique_id=2045488799]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -307.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TextBackground" type="PanelContainer" parent="ConversationContainer" unique_id=355646490]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8x6ky")
+
+[node name="MarginContainer" type="MarginContainer" parent="ConversationContainer/TextBackground" unique_id=1407633600]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 50
+
+[node name="ConversationTextLabel" parent="ConversationContainer/TextBackground/MarginContainer" unique_id=922039934 instance=ExtResource("4_hvy2e")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="PhoneContainer" type="MarginContainer" parent="." unique_id=476103651]
 layout_mode = 1
@@ -140,7 +168,12 @@ mouse_filter = 2
 [node name="CallingText" type="RichTextLabel" parent="PhoneContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=2042286386]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.20152658, 0.20152658, 0.20152658, 1)
-theme_override_font_sizes/normal_font_size = 32
+theme_override_colors/selection_color = Color(0.101960786, 0.101960786, 1, 0)
+theme_override_colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("2_732jb")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
 text = "Incomming call ..."
 fit_content = true
 autowrap_mode = 0
@@ -150,8 +183,10 @@ vertical_alignment = 1
 [node name="IncommingCallName" type="RichTextLabel" parent="PhoneContainer/TextureRect/MarginContainer/VBoxContainer" unique_id=1889112318]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/default_color = Color(0.57224303, 0.17514434, 0, 1)
+theme_override_colors/default_color = Color(0.7634397, 0.24688107, 0, 1)
+theme_override_colors/font_outline_color = Color(0.39869434, 0.11218525, 0, 1)
 theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("2_732jb")
 theme_override_font_sizes/normal_font_size = 65
 text = "Mr Brown"
 fit_content = true
@@ -166,41 +201,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
-
-[node name="ConversationContainer" type="MarginContainer" parent="." unique_id=2045488799]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 350
-theme_override_constants/margin_bottom = 50
-
-[node name="TextBackground" type="PanelContainer" parent="ConversationContainer" unique_id=355646490]
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8x6ky")
-
-[node name="MarginContainer" type="MarginContainer" parent="ConversationContainer/TextBackground" unique_id=1407633600]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
-
-[node name="ConversationTextLabel" type="RichTextLabel" parent="ConversationContainer/TextBackground/MarginContainer" unique_id=843858499]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
-text = "TEXT
-TEXT
-TEXT"
-fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=774633039]
 unique_name_in_owner = true

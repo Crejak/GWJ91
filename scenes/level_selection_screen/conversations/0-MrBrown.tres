@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConversationRes" format=3 uid="uid://8fpudoe02wm4"]
+
+[ext_resource type="Script" uid="uid://dyj0dslk8ye7w" path="res://scenes/level_selection_screen/conversations/conversation_res.gd" id="1_owoh2"]
+
+[resource]
+script = ExtResource("1_owoh2")
+caller_name = "Mr. Brown"
+text_color = Color(0.7647059, 0.24705882, 0, 1)
+outline_color = Color(0.44588196, 0.12957358, 0, 1)
+dialogs = Array[String](["This is the first line of text", "... a second line is displayed, just after the first one", "still going, a line after another. Maybe the text will never ends"])
+metadata/_custom_type_script = "uid://dyj0dslk8ye7w"

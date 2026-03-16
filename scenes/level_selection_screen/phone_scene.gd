@@ -1,7 +1,10 @@
 extends Control
 
+@export var dialogs :Array[ConversationRes]
 
 @onready var conversation_container = %ConversationContainer
+@onready var dialog_text_label = %ConversationTextLabel
+
 @onready var animation_player :AnimationPlayer = %AnimationPlayer
 
 # State Machine
@@ -10,6 +13,10 @@ extends Control
 @onready var ringing_state :StateMachineState = %RingingState
 @onready var calling_state :StateMachineState = %CallingState
 
+
+
+func _ready() -> void:
+	dialog_text_label.end_dialog.connect(_on_dialog_ended)
 
 
 func _process(delta: float) -> void:
@@ -25,4 +32,11 @@ func _on_btn_phone_pressed() -> void:
 
 
 func display_conversation(enabled :bool = true) -> void:
+	if enabled:
+		dialog_text_label.init(dialogs[0])
+	
 	conversation_container.visible = enabled
+
+
+func _on_dialog_ended() -> void:
+	state_machine.set_current_state(disable_state)

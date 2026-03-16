@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dedm322vxvy7d"]
+
+[ext_resource type="FontFile" uid="uid://cueqeii2qfmj4" path="res://assets/fonts/wscallme/WSCallMe.ttf" id="1_upnfk"]
+[ext_resource type="Script" uid="uid://drurk72oe2afv" path="res://scenes/level_selection_screen/dialog_text_label.gd" id="2_63xs2"]
+
+[node name="ConversationTextLabel" type="RichTextLabel" unique_id=922039934]
+theme_override_fonts/normal_font = ExtResource("1_upnfk")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "TEXT
+TEXT
+TEXT"
+fit_content = true
+script = ExtResource("2_63xs2")
