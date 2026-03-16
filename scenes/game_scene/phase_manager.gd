@@ -10,11 +10,8 @@ func _process(_delta: float) -> void:
 	preparation_phase_timer_label.text = "Time left : %s" % preparation_phase_timer.time_left;
 
 func _on_level_loader_level_ready() -> void:
-	print("Level loaded");
 	preparation_phase_timer.start();
-	draw_controller.enable_draw = true;
 	GameState.get_current_level_state().current_phase = LevelState.Phase.PREPARATION;
 
 func _on_preparation_phase_timer_timeout() -> void:
-	draw_controller.enable_draw = false;
 	GameState.get_current_level_state().current_phase = LevelState.Phase.INFILTRATION;
