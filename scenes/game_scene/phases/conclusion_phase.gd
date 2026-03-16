@@ -5,6 +5,7 @@ extends Control
 
 @onready var title_label: Label = %TitleLabel;
 @onready var conclusion_label: RichTextLabel = %ConclusionLabel;
+@onready var score_label: Label = %ScoreLabel;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(on_phase_started);
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.CONCLUSION:
+		score_label.text = "Congratulations ! You stole %s $" % GameState.get_current_level_state().total_stolen_value;
 		visible = true;
 	
 func on_phase_ended(phase: LevelState.Phase) -> void:

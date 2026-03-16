@@ -22,8 +22,8 @@ extends CharacterBody2D
 @export_group("Debug")
 @export var debug_label: Label;
 
-var _picked_up_value: int = 0;
-var _picked_up_mass: float = 0.;
+var picked_up_value: int = 0;
+var picked_up_mass: float = 0.;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -69,5 +69,5 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 
 func pick_up(mass: float, value: int) -> void:
 	print("Picked up an object that weighs %.1f kilos, and is worth %d dollars !" % [mass, value]);
-	_picked_up_mass += mass;
-	_picked_up_value += value;
+	picked_up_mass += mass;
+	picked_up_value += value;
