@@ -21,7 +21,7 @@ func _ready() -> void:
 	if movable_object:
 		movable_object.on_start_pushing.connect(_display)
 		movable_object.on_finished_pushing.connect(_hide)
-	SignalBus.infiltration_phase_started.connect(_hide)
+	SignalBus.phase_started.connect(_on_phase_started)
 
 func _display() -> void:
 	if t:
@@ -36,3 +36,7 @@ func _hide() -> void:
 	t = create_tween()
 	t.tween_property(sprite, "modulate", Color.TRANSPARENT, 0.5)
 	t.tween_callback(func() -> void: sprite.visible = false)
+
+func _on_phase_started(phase: LevelState.Phase) -> void:
+	if phase == LevelState.Phase.INFILTRATION:
+		_hide();

@@ -10,8 +10,8 @@ var last_mouse_position: Vector2
 var current_line: drawable_line_2d = null
 
 func _ready() -> void:
-	SignalBus.phase_started.connect(on_phase_started);
-	SignalBus.phase_ended.connect(on_phase_ended);
+	SignalBus.phase_started.connect(_on_phase_started);
+	SignalBus.phase_ended.connect(_on_phase_ended);
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("draw"):
@@ -29,10 +29,18 @@ func _process(delta: float) -> void:
 		last_mouse_position = get_global_mouse_position()
 		current_line.add_new_point(last_mouse_position)
 
-func on_phase_started(phase: LevelState.Phase) -> void:
+func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.PREPARATION:
 		enable_draw = true;
+		visible = true;
 
-func on_phase_ended(phase: LevelState.Phase) -> void:
+func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.PREPARATION:
 		enable_draw = false;
+	if phase == LevelState.Phase.INFILTRATION:
+		visible = false;
+		erase_lines();
+		
+func erase_lines() -> void:
+	for child: Node in get_children():
+		child.queue_free();

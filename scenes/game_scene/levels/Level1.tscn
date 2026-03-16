@@ -5,15 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://du5ta6j1ncwqb" path="res://scenes/game_scene/environment/Painting.tscn" id="1_pl87g"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
+[ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
+[ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
+[ext_resource type="PackedScene" uid="uid://1c0toj14pbg3" path="res://scenes/game_scene/environment/movable_objects/tv.tscn" id="7_ktfe1"]
+[ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="8_ktfe1"]
+[ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="11_75gx0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct8mj"]
-size = Vector2(200, 20)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_50hnf"]
-size = Vector2(200, 20)
-
-[node name="Level1" type="Control" unique_id=1713301915 node_paths=PackedStringArray("character")]
+[node name="Level1" type="Control" unique_id=1713301915]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,61 +20,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7yctp")
-character = NodePath("PlayableEnvironment/Character")
+
+[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367]
+script = ExtResource("4_pv3ef")
+
+[node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1685777892]
+
+[node name="Painting" parent="PlayableEnvironment/Environment" unique_id=734972761 instance=ExtResource("1_pl87g")]
+position = Vector2(824, 201)
+
+[node name="Sofa" parent="PlayableEnvironment/Environment" unique_id=1203108321 instance=ExtResource("11_75gx0")]
+position = Vector2(499, 236)
+
+[node name="Table" parent="PlayableEnvironment/Environment" unique_id=606120785 instance=ExtResource("8_ktfe1")]
+position = Vector2(532, 412)
+
+[node name="TV" parent="PlayableEnvironment/Environment" unique_id=84861146 instance=ExtResource("7_ktfe1")]
+position = Vector2(536, 623)
+flip_v = true
+
+[node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
+position = Vector2(205, 181)
+
+[node name="Character" parent="PlayableEnvironment" unique_id=860493929 instance=ExtResource("1_50hnf")]
+position = Vector2(313, 201)
 
 [node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("2_r2bnq")]
+visible = false
 layout_mode = 1
-title = "Level 1"
+title = "Level 1 - Introduction"
 introduction_text = "This is a really cool story.
 Please read it to understand all the lore. I promise it's really cool."
 
 [node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_7plab")]
 visible = false
 layout_mode = 1
+preparation_time = 5.0
 
-[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367]
-script = ExtResource("4_pv3ef")
-
-[node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1773112354]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="PlayableEnvironment/Environment" unique_id=1736195507]
-position = Vector2(464, 318)
-rotation = 1.5707964
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableEnvironment/Environment/StaticBody2D" unique_id=1298360266]
-shape = SubResource("RectangleShape2D_ct8mj")
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayableEnvironment/Environment/StaticBody2D" unique_id=1285089494]
-texture = SubResource("PlaceholderTexture2D_50hnf")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="PlayableEnvironment/Environment" unique_id=162276291]
-position = Vector2(773, 363)
-rotation = 1.5707964
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableEnvironment/Environment/StaticBody2D2" unique_id=331395273]
-shape = SubResource("RectangleShape2D_ct8mj")
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayableEnvironment/Environment/StaticBody2D2" unique_id=928655595]
-texture = SubResource("PlaceholderTexture2D_50hnf")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="PlayableEnvironment/Environment" unique_id=89850011]
-position = Vector2(607, 458)
-rotation = 1.5707964
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableEnvironment/Environment/StaticBody2D3" unique_id=739889759]
-shape = SubResource("RectangleShape2D_ct8mj")
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayableEnvironment/Environment/StaticBody2D3" unique_id=1915026392]
-texture = SubResource("PlaceholderTexture2D_50hnf")
-
-[node name="Painting" parent="PlayableEnvironment/Environment" unique_id=734972761 instance=ExtResource("1_pl87g")]
-position = Vector2(949, 368)
-
-[node name="Character" parent="PlayableEnvironment" unique_id=860493929 instance=ExtResource("1_50hnf")]
-position = Vector2(306, 309)
+[node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("4_jwlce")]
+visible = false
+layout_mode = 1
+title = "Level 1 - Conclusion"
+conclusion_text = "Wow ! You beat the first level !!
+This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"

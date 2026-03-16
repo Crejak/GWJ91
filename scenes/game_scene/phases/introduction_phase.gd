@@ -1,7 +1,7 @@
 extends Control
 
-@export var title: String;
-@export_multiline var introduction_text: String;
+@export var title: String = "";
+@export_multiline var introduction_text: String = "";
 
 @onready var title_label: Label = %TitleLabel;
 @onready var intro_label: RichTextLabel = %IntroLabel;
