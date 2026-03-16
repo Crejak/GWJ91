@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
+[ext_resource type="PackedScene" uid="uid://1c0toj14pbg3" path="res://scenes/game_scene/environment/movable_objects/tv.tscn" id="7_ktfe1"]
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="8_ktfe1"]
 [ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="11_75gx0"]
 
@@ -20,6 +21,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7yctp")
 
+[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367]
+script = ExtResource("4_pv3ef")
+
+[node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1685777892]
+
+[node name="Painting" parent="PlayableEnvironment/Environment" unique_id=734972761 instance=ExtResource("1_pl87g")]
+position = Vector2(824, 201)
+
+[node name="Sofa" parent="PlayableEnvironment/Environment" unique_id=1203108321 instance=ExtResource("11_75gx0")]
+position = Vector2(499, 236)
+
+[node name="Table" parent="PlayableEnvironment/Environment" unique_id=606120785 instance=ExtResource("8_ktfe1")]
+position = Vector2(532, 412)
+
+[node name="TV" parent="PlayableEnvironment/Environment" unique_id=84861146 instance=ExtResource("7_ktfe1")]
+position = Vector2(536, 623)
+flip_v = true
+
+[node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
+position = Vector2(205, 181)
+
+[node name="Character" parent="PlayableEnvironment" unique_id=860493929 instance=ExtResource("1_50hnf")]
+position = Vector2(313, 201)
+
 [node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("2_r2bnq")]
 visible = false
 layout_mode = 1
@@ -30,6 +55,7 @@ Please read it to understand all the lore. I promise it's really cool."
 [node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_7plab")]
 visible = false
 layout_mode = 1
+preparation_time = 5.0
 
 [node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("4_jwlce")]
 visible = false
@@ -37,43 +63,3 @@ layout_mode = 1
 title = "Level 1 - Conclusion"
 conclusion_text = "Wow ! You beat the first level !!
 This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"
-
-[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367]
-script = ExtResource("4_pv3ef")
-
-[node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1773112354]
-
-[node name="Painting" parent="PlayableEnvironment/Environment" unique_id=734972761 instance=ExtResource("1_pl87g")]
-position = Vector2(872, 434)
-
-[node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
-position = Vector2(214, 421)
-
-[node name="Table2" parent="PlayableEnvironment/Environment" unique_id=266045507 instance=ExtResource("8_ktfe1")]
-position = Vector2(454, 444)
-
-[node name="Sofa" parent="PlayableEnvironment/Environment" unique_id=752978625 instance=ExtResource("11_75gx0")]
-position = Vector2(527, 336)
-rotation = -0.5578765
-
-[node name="Sofa4" parent="PlayableEnvironment/Environment" unique_id=1203108321 instance=ExtResource("11_75gx0")]
-position = Vector2(703, 172.99998)
-rotation = 0.58013743
-
-[node name="Sofa6" parent="PlayableEnvironment/Environment" unique_id=116508571 instance=ExtResource("11_75gx0")]
-position = Vector2(915, 285.99997)
-rotation = 0.8797637
-
-[node name="Sofa2" parent="PlayableEnvironment/Environment" unique_id=1610452943 instance=ExtResource("11_75gx0")]
-position = Vector2(490, 491.99997)
-rotation = 1.2665405
-
-[node name="Sofa3" parent="PlayableEnvironment/Environment" unique_id=1357359471 instance=ExtResource("11_75gx0")]
-position = Vector2(654, 699)
-
-[node name="Sofa5" parent="PlayableEnvironment/Environment" unique_id=1757913039 instance=ExtResource("11_75gx0")]
-position = Vector2(932, 666)
-rotation = -0.6924503
-
-[node name="Character" parent="PlayableEnvironment" unique_id=860493929 instance=ExtResource("1_50hnf")]
-position = Vector2(306, 309)

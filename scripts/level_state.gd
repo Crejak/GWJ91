@@ -21,6 +21,10 @@ enum Phase {
 @export var tutorial_read : bool = false
 @export var current_phase: Phase = Phase.UNLOADED:
 	set = set_phase;
+@export var total_stolen_value: int = 0;
+
+func _init() -> void:
+	print("New state");
 
 func set_phase(new_phase: Phase) -> void:
 		if new_phase == current_phase:
