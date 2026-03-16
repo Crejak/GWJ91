@@ -49,6 +49,8 @@ func get_mouse_distance_in_viewport_space() -> float:
 	return viewport_mouse_position.distance_to(viewport_player_position);
 
 func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
+	if linear_velocity.length() >= max_speed:
+		return Vector2.ZERO
 	if distance < min_mouse_detection_range:
 		return Vector2.ZERO;
 	else:
