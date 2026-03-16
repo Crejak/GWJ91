@@ -17,18 +17,19 @@ enum Phase {
 	COMPLETED
 }
 
-@export var color : Color
-@export var tutorial_read : bool = false
 @export var current_phase: Phase = Phase.UNLOADED:
 	set = set_phase;
 @export var total_stolen_value: int = 0;
-
-func _init() -> void:
-	print("New state");
+@export var danger_level: float = 0.:
+	set(value):
+		if value >= 1. && danger_level < 1.:
+			SignalBus.character_caught.emit();
+		danger_level = clamp(value, 0., 1.);
 
 func reset() -> void:
 	set_phase(Phase.UNLOADED);
 	total_stolen_value = 0;
+	danger_level = 0.;
 
 func set_phase(new_phase: Phase) -> void:
 		if new_phase == current_phase:

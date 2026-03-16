@@ -4,6 +4,8 @@ extends Node
 signal phase_ended(phase: LevelState.Phase);
 @warning_ignore("unused_signal")
 signal phase_started(phase: LevelState.Phase);
+@warning_ignore("unused_signal")
+signal character_caught;
 
 func _ready() -> void:
 	if OS.is_debug_build():
@@ -12,4 +14,7 @@ func _ready() -> void:
 		);
 		phase_started.connect(func (phase: LevelState.Phase) -> void:
 			print("Phase started : %s" % phase);
+		);
+		character_caught.connect(func () -> void:
+			print("Character caught");
 		);

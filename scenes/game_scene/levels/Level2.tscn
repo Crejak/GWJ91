@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="7_3n6yu"]
 [ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="8_h5dmj"]
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="9_67g1p"]
+[ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="11_67g1p"]
 
 [node name="Level2" type="Control" unique_id=53077869]
 layout_mode = 3
@@ -77,3 +78,6 @@ layout_mode = 1
 title = "Level 2 - Conclusion"
 conclusion_text = "It's the end of the second level :o
 Who knows where the story will go from there ???"
+
+[node name="InfiltrationPhaseUI" parent="." unique_id=1199558180 instance=ExtResource("11_67g1p")]
+layout_mode = 1
