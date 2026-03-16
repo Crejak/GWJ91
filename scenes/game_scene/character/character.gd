@@ -8,10 +8,8 @@ extends RigidBody2D
 
 ## Minimum walking speed, in pixel per second
 @export var min_speed: float = 25.;
-## Maximum running speed, in pexel per second
+## Maximum running speed, in pexel per second if linear dump = 0
 @export var max_speed: float = 100.;
-## change this value to scale speed of the player
-@export var speed_multiplier: float = 25;
 ## Minimum distance between the mouse and the character that triggers movement, in pixels
 @export var min_mouse_detection_range: float = 10.;
 ## Maximum distance between the mouse and the character that makes the player moves at minimum speed.
@@ -61,7 +59,7 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 				remap(distance, min_speed_mouse_range, max_speed_mouse_range, min_speed, max_speed),
 				min_speed, max_speed
 			);
-		return direction * speed * speed_multiplier;
+		return direction * speed;
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:

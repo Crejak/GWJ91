@@ -10,8 +10,8 @@
 [node name="Character" parent="." unique_id=860493929 instance=ExtResource("1_gfon2")]
 position = Vector2(291, 162)
 collision_layer = 1
-mass = 50.0
 can_move = true
+speed_multiplier = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=36749124]
 position = Vector2(228, 142)

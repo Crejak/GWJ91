@@ -14,7 +14,9 @@ height = 154.0
 [node name="Character" type="RigidBody2D" unique_id=424702170 node_paths=PackedStringArray("debug_label")]
 collision_layer = 2
 lock_rotation = true
+linear_damp = 1.0
 script = ExtResource("1_pi01j")
+speed_multiplier = 50.0
 debug_label = NodePath("DebugLabel")
 
 [node name="Visual" type="Node2D" parent="." unique_id=1015642632]
