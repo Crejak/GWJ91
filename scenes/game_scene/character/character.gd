@@ -22,6 +22,13 @@ extends CharacterBody2D
 @export_group("Debug")
 @export var debug_label: Label;
 
+var picked_up_value: int = 0;
+var picked_up_mass: float = 0.;
+
+func _ready() -> void:
+	SignalBus.phase_started.connect(_on_phase_started);
+	SignalBus.phase_ended.connect(_on_phase_ended);
+
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
 		debug_label.text = "Speed : %s" % roundi(velocity.length());
@@ -51,3 +58,16 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 				min_speed, max_speed
 			);
 		return direction * speed;
+
+func _on_phase_started(phase: LevelState.Phase) -> void:
+	if phase == LevelState.Phase.INFILTRATION:
+		can_move = true;
+
+func _on_phase_ended(phase: LevelState.Phase) -> void:
+	if phase == LevelState.Phase.INFILTRATION:
+		can_move = false;
+
+func pick_up(mass: float, value: int) -> void:
+	print("Picked up an object that weighs %.1f kilos, and is worth %d dollars !" % [mass, value]);
+	picked_up_mass += mass;
+	picked_up_value += value;

@@ -3,10 +3,10 @@ class_name Interactable
 
 extends Node
 
-signal player_interacted;
+signal player_interacted(source: Character);
 
 var parent_area_2d: Area2D;
-var is_player_in_range: bool;
+var character_in_range: Character;
 
 func _ready() -> void:
 	var parent := get_parent();
@@ -25,11 +25,11 @@ func _get_configuration_warnings() -> PackedStringArray:
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return;
-	if is_player_in_range && Input.is_action_just_pressed("interact"):
-		player_interacted.emit();
+	if character_in_range && Input.is_action_just_pressed("interact"):
+		player_interacted.emit(character_in_range);
 
-func on_body_entered(_body: Node2D) -> void:
-	is_player_in_range = true;
+func on_body_entered(body: Node2D) -> void:
+	character_in_range = body as Character;
 
 func on_body_exited(_body: Node2D) -> void:
-	is_player_in_range = false;
+	character_in_range = null;

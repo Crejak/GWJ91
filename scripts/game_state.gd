@@ -36,6 +36,11 @@ static func get_current_level_path() -> String:
 	var game_state := get_or_create_state()
 	return game_state.current_level_path
 
+static func get_current_level_state() -> LevelState:
+	if get_current_level_path() == "":
+		return null;
+	return get_level_state(get_current_level_path());
+
 static func get_checkpoint_level_path() -> String:
 	if not has_game_state(): 
 		return ""
