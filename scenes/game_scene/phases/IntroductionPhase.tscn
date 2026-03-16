@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dxy1c6jiifmmk"]
+
+[ext_resource type="Script" uid="uid://168160qmxoou" path="res://scenes/game_scene/phases/introduction_phase.gd" id="1_daejk"]
+
+[node name="IntroductionPhase" type="Control" unique_id=2114512006]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_daejk")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1375599428]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -361.0
+offset_right = 361.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Sample introduction title"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1257016636]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IntroLabel" type="RichTextLabel" parent="CenterContainer" unique_id=533272696]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+text = "Sample introduction text"
+fit_content = true
+
+[node name="StartLevelButton" type="Button" parent="." unique_id=2035233434]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -42.0
+offset_right = 62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Start level"
+
+[connection signal="pressed" from="StartLevelButton" to="." method="_on_start_level_button_pressed"]

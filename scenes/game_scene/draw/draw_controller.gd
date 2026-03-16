@@ -9,6 +9,9 @@ const DRAWABLE_LINE_2D: PackedScene = preload("uid://n63f22xokvxw")
 var last_mouse_position: Vector2
 var current_line: drawable_line_2d = null
 
+func _ready() -> void:
+	SignalBus.phase_started.connect(on_phase_started);
+	SignalBus.phase_ended.connect(on_phase_ended);
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("draw"):
@@ -25,3 +28,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("draw") && current_line != null:
 		last_mouse_position = get_global_mouse_position()
 		current_line.add_new_point(last_mouse_position)
+
+func on_phase_started(phase: LevelState.Phase) -> void:
+	if phase == LevelState.Phase.PREPARATION:
+		enable_draw = true;
+
+func on_phase_ended(phase: LevelState.Phase) -> void:
+	if phase == LevelState.Phase.PREPARATION:
+		enable_draw = false;
