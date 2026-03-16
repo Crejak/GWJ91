@@ -17,11 +17,16 @@ enum Phase {
 	COMPLETED
 }
 
-@export var color : Color
-@export var tutorial_read : bool = false
 @export var current_phase: Phase = Phase.UNLOADED:
 	set = set_phase;
 @export var total_stolen_value: int = 0;
+@export var danger_level: float = 0.:
+	set(value):
+		if danger_level >= 1.:
+			return;
+		if value >= 1.:
+			SignalBus.character_caught.emit();
+		danger_level = clamp(value, 0., 1.);
 
 func _init() -> void:
 	print("New state");

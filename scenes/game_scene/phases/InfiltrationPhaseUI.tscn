@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dvm62ep2q40tt"]
+
+[ext_resource type="Script" uid="uid://cvv4rn1nnorph" path="res://scenes/game_scene/phases/infiltration_phase_ui.gd" id="1_ii0v8"]
+
+[node name="InfiltrationPhaseUI" type="Control" unique_id=1199558180]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ii0v8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=651139523]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.5
+offset_right = 155.5
+offset_bottom = 83.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=602362958]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Infiltration"
+horizontal_alignment = 1
+
+[node name="DangerLabel" type="Label" parent="VBoxContainer" unique_id=551463762]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Danger level"
+horizontal_alignment = 1
+
+[node name="DangerBar" type="ProgressBar" parent="VBoxContainer" unique_id=1833423987]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
