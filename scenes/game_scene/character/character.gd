@@ -1,6 +1,6 @@
 class_name Character
 
-extends CharacterBody2D
+extends RigidBody2D
 
 @export_group("Movement")
 
@@ -10,6 +10,8 @@ extends CharacterBody2D
 @export var min_speed: float = 25.;
 ## Maximum running speed, in pexel per second
 @export var max_speed: float = 100.;
+## change this value to scale speed of the player
+@export var speed_multiplier: float = 25;
 ## Minimum distance between the mouse and the character that triggers movement, in pixels
 @export var min_mouse_detection_range: float = 10.;
 ## Maximum distance between the mouse and the character that makes the player moves at minimum speed.
@@ -31,14 +33,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
-		debug_label.text = "Speed : %s" % roundi(velocity.length());
+		debug_label.text = "Speed : %s" % roundi(linear_velocity.length())
 
 func _physics_process(_delta: float) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
-	velocity = get_velocity_from_distance_to_cursor(distance);
-	move_and_slide();
+	var velocity = get_velocity_from_distance_to_cursor(distance);
+	apply_force(velocity);
 	
 func get_mouse_distance_in_viewport_space() -> float:
 	var viewport_mouse_position := get_viewport().get_mouse_position();
@@ -57,7 +59,7 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 				remap(distance, min_speed_mouse_range, max_speed_mouse_range, min_speed, max_speed),
 				min_speed, max_speed
 			);
-		return direction * speed;
+		return direction * speed * speed_multiplier;
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:

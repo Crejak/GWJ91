@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dhhfhx3n5d4nr" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
 [ext_resource type="Texture2D" uid="uid://coequeusuck5b" path="res://assets/art/characters/player.png" id="2_n57ve"]
-[ext_resource type="Script" uid="uid://co1hord8xgkc2" path="res://scenes/game_scene/character/object_pusher.gd" id="3_n57ve"]
 [ext_resource type="Script" uid="uid://co6jrdhjo83kh" path="res://scenes/game_scene/character/reveal_area.gd" id="4_4d22m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2m4rl"]
@@ -12,8 +11,9 @@ radius = 29.15476
 radius = 41.0
 height = 154.0
 
-[node name="Character" type="CharacterBody2D" unique_id=860493929 node_paths=PackedStringArray("debug_label")]
+[node name="Character" type="RigidBody2D" unique_id=424702170 node_paths=PackedStringArray("debug_label")]
 collision_layer = 2
+lock_rotation = true
 script = ExtResource("1_pi01j")
 debug_label = NodePath("DebugLabel")
 
@@ -32,9 +32,6 @@ offset_left = -57.0
 offset_top = -64.0
 offset_right = 58.0
 offset_bottom = -35.0
-
-[node name="ObjectPusher" type="Node2D" parent="." unique_id=1368329182]
-script = ExtResource("3_n57ve")
 
 [node name="RevealArea" type="Area2D" parent="." unique_id=1675236577]
 collision_layer = 0
