@@ -16,29 +16,10 @@ func _on_lose_button_pressed() -> void:
 func _on_win_button_pressed() -> void:
 	level_won.emit(next_level_path)
 
-func open_tutorials() -> void:
-	#%TutorialManager.open_tutorials()
-	#level_state.tutorial_read = true
-	#GlobalState.save()
-	pass
-
 func _ready() -> void:
 	level_state = GameState.get_level_state(scene_file_path)
 	level_state.set_phase(LevelState.Phase.INTRODUCTION);
 	SignalBus.phase_started.connect(on_phase_started);
-	#%ColorPickerButton.color = level_state.color
-	#%BackgroundColor.color = level_state.color
-	#if not level_state.tutorial_read:
-		#open_tutorials()
-
-func _on_color_picker_button_color_changed(color : Color) -> void:
-	pass
-	#%BackgroundColor.color = color
-	#level_state.color = color
-	#GlobalState.save()
-
-func _on_tutorial_button_pressed() -> void:
-	open_tutorials()
 
 func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.COMPLETED:
