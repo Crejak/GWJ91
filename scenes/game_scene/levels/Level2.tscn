@@ -21,25 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_67g1p")
 
-[node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("1_76vmh")]
-visible = false
-layout_mode = 1
-title = "Level 2 - Introduction"
-introduction_text = "This is the story for the second level.
-It starts to get interesting !!!"
-
-[node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_0lrvg")]
-visible = false
-layout_mode = 1
-preparation_time = 5.0
-
-[node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("3_tcbo6")]
-visible = false
-layout_mode = 1
-title = "Level 2 - Conclusion"
-conclusion_text = "It's the end of the second level :o
-Who knows where the story will go from there ???"
-
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=771673376]
 script = ExtResource("4_h5dmj")
 
@@ -63,3 +44,22 @@ position = Vector2(688, 516)
 [node name="TV" parent="PlayableEnvironment" unique_id=553886747 instance=ExtResource("10_5o11u")]
 position = Vector2(692, 727)
 flip_v = true
+
+[node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("1_76vmh")]
+visible = false
+layout_mode = 1
+title = "Level 2 - Introduction"
+introduction_text = "This is the story for the second level.
+It starts to get interesting !!!"
+
+[node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_0lrvg")]
+visible = false
+layout_mode = 1
+preparation_time = 5.0
+
+[node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("3_tcbo6")]
+visible = false
+layout_mode = 1
+title = "Level 2 - Conclusion"
+conclusion_text = "It's the end of the second level :o
+Who knows where the story will go from there ???"
