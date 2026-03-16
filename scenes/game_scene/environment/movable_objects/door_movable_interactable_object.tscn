@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cr8u03wjxqfmn"]
+[gd_scene format=3 uid="uid://dhu6ro1ty2trc"]
 
 [ext_resource type="PackedScene" uid="uid://cqcnccpjk1n2n" path="res://scenes/game_scene/environment/Interactable.tscn" id="1_1bwg1"]
 [ext_resource type="Script" uid="uid://dj4upcc0ltxax" path="res://scenes/game_scene/environment/movable_objects/door_interactable.gd" id="1_nyggs"]
@@ -24,6 +24,7 @@ script = ExtResource("1_nyggs")
 
 [node name="Door" type="RigidBody2D" parent="." unique_id=1811971028]
 unique_name_in_owner = true
+collision_mask = 129
 mass = 0.1
 gravity_scale = 0.0
 linear_damp = 8.0
