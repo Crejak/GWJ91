@@ -18,11 +18,12 @@ enum Phase {
 @export var color : Color
 @export var tutorial_read : bool = false
 @export var current_phase: Phase = Phase.UNLOADED:
-	set(value):
-		if value == current_phase:
+	set = set_phase;
+
+func set_phase(new_phase: Phase) -> void:
+		if new_phase == current_phase:
 			push_warning("Tried to set a phase that already exists");
 			return;
 		SignalBus.phase_ended.emit(current_phase);
-		current_phase = value;
-		SignalBus.phase_started.emit(value);
-	
+		current_phase = new_phase;
+		SignalBus.phase_started.emit(new_phase);
