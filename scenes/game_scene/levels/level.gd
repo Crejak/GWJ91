@@ -5,8 +5,6 @@ signal level_won(level_path : String)
 @warning_ignore("unused_signal")
 signal level_changed(level_path : String)
 
-@export var character: Character;
-
 ## Optional path to the next level if using an open world level system.
 @export_file("*.tscn") var next_level_path : String
 
@@ -43,7 +41,5 @@ func _on_tutorial_button_pressed() -> void:
 	open_tutorials()
 
 func on_phase_started(phase: LevelState.Phase) -> void:
-	if phase == LevelState.Phase.INFILTRATION:
-		character.can_move = true;
-	else:
-		character.can_move = false;
+	if phase == LevelState.Phase.COMPLETED:
+		level_won.emit();
