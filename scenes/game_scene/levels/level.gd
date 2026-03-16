@@ -26,6 +26,7 @@ func open_tutorials() -> void:
 
 func _ready() -> void:
 	level_state = GameState.get_level_state(scene_file_path)
+	level_state.current_phase = LevelState.Phase.PREPARATION;
 	SignalBus.phase_started.connect(on_phase_started);
 	#%ColorPickerButton.color = level_state.color
 	#%BackgroundColor.color = level_state.color

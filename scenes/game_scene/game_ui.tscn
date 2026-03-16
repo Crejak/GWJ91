@@ -13,7 +13,8 @@
 [ext_resource type="Script" uid="uid://bnhmjy582mlax" path="res://scenes/game_scene/configurable_sub_viewport.gd" id="11_ulq3g"]
 [ext_resource type="Script" uid="uid://bmcttnpvsi36l" path="res://scenes/game_scene/game_timer.gd" id="12_gpor5"]
 [ext_resource type="PackedScene" uid="uid://2nqgyp0nd5py" path="res://scenes/game_scene/draw/draw_controller.tscn" id="13_7aihr"]
-[ext_resource type="Script" uid="uid://stw34u71s4c5" path="res://scenes/game_scene/phase_manager.gd" id="14_3re04"]
+[ext_resource type="Script" uid="uid://crj3rtn7yu44g" path="res://scenes/game_scene/preparation_phase_timer.gd" id="14_3re04"]
+[ext_resource type="Script" uid="uid://dqomshunckg6b" path="res://scenes/game_scene/preparation_phase_timer_label.gd" id="15_ascoc"]
 
 [node name="GameUI" type="Control" unique_id=672765824]
 layout_mode = 3
@@ -78,17 +79,13 @@ enable_draw = false
 [node name="PreparationPhaseTimer" type="Timer" parent="." unique_id=781148600]
 wait_time = 5.0
 one_shot = true
+script = ExtResource("14_3re04")
 
-[node name="PreparationPhaseTimerLabel" type="Label" parent="." unique_id=492104975]
+[node name="PreparationPhaseTimerLabel" type="Label" parent="." unique_id=492104975 node_paths=PackedStringArray("timer")]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+script = ExtResource("15_ascoc")
+timer = NodePath("../PreparationPhaseTimer")
 
-[node name="PhaseManager" type="Node" parent="." unique_id=1557244407 node_paths=PackedStringArray("preparation_phase_timer", "preparation_phase_timer_label", "draw_controller")]
-script = ExtResource("14_3re04")
-preparation_phase_timer = NodePath("../PreparationPhaseTimer")
-preparation_phase_timer_label = NodePath("../PreparationPhaseTimerLabel")
-draw_controller = NodePath("../DrawController")
-
-[connection signal="level_ready" from="LevelLoader" to="PhaseManager" method="_on_level_loader_level_ready"]
-[connection signal="timeout" from="PreparationPhaseTimer" to="PhaseManager" method="_on_preparation_phase_timer_timeout"]
+[connection signal="timeout" from="PreparationPhaseTimer" to="PreparationPhaseTimer" method="_on_timeout"]
