@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://du5ta6j1ncwqb" path="res://scenes/game_scene/environment/Painting.tscn" id="1_pl87g"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
+[ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ct8mj"]
@@ -25,13 +26,19 @@ character = NodePath("PlayableEnvironment/Character")
 
 [node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("2_r2bnq")]
 layout_mode = 1
-title = "Level 1"
+title = "Level 1 - Introduction"
 introduction_text = "This is a really cool story.
 Please read it to understand all the lore. I promise it's really cool."
 
 [node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_7plab")]
 visible = false
 layout_mode = 1
+
+[node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("4_jwlce")]
+layout_mode = 1
+title = "Level 1 - Conclusion"
+conclusion_text = "Wow ! You beat the first level !!
+This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"
 
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367]
 script = ExtResource("4_pv3ef")

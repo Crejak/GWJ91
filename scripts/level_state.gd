@@ -12,7 +12,9 @@ enum Phase {
 	## The player executes the infiltration
 	INFILTRATION,
 	## Plays conclusion cutscene
-	CONCLUSION
+	CONCLUSION,
+	## The player has cleared this level
+	COMPLETED
 }
 
 @export var color : Color
