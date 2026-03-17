@@ -26,10 +26,16 @@ enum Phase {
 			SignalBus.character_caught.emit();
 		danger_level = clamp(value, 0., 1.);
 
+var active_character: Character:
+	set(value):
+		active_character = value;
+		SignalBus.active_character_changed.emit(active_character);
+
 func reset() -> void:
 	set_phase(Phase.UNLOADED);
 	total_stolen_value = 0;
 	danger_level = 0.;
+	active_character = null;
 
 func set_phase(new_phase: Phase) -> void:
 		if new_phase == current_phase:

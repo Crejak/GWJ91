@@ -1,6 +1,7 @@
 class_name Character
-
 extends RigidBody2D
+
+signal inventory_changed;
 
 @export_group("Movement")
 
@@ -23,6 +24,8 @@ extends RigidBody2D
 @export var debug_label: Label;
 
 var picked_up_objects: Array[PickableObject] = [];
+
+const INVENTORY_SIZE: int = 4;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -73,9 +76,14 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 func _on_character_caught() -> void:
 	can_move = false;
 
-func pick_up(object: PickableObject) -> void:
+func pick_up(object: PickableObject) -> bool:
+	if picked_up_objects.size() >= INVENTORY_SIZE:
+		print("Cannot pick up item, inventory is full");
+		return false;
 	print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
 	picked_up_objects.push_back(object);
+	inventory_changed.emit();
+	return true;
 
 func get_total_picked_up_mass() -> float:
 	var total_mass: float = 0.;
