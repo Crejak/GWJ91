@@ -6,6 +6,8 @@ signal phase_ended(phase: LevelState.Phase);
 signal phase_started(phase: LevelState.Phase);
 @warning_ignore("unused_signal")
 signal character_caught;
+@warning_ignore("unused_signal")
+signal active_character_changed(character: Character);
 
 func _ready() -> void:
 	if OS.is_debug_build():
@@ -17,4 +19,7 @@ func _ready() -> void:
 		);
 		character_caught.connect(func () -> void:
 			print("Character caught");
+		);
+		active_character_changed.connect(func (character: Character) -> void:
+			print("Active character changed : %s" % character);
 		);

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="9_67g1p"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="11_67g1p"]
 
-[node name="Level2" type="Control" unique_id=53077869]
+[node name="Level2" type="Control" unique_id=53077869 node_paths=PackedStringArray("starting_character")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_67g1p")
+starting_character = NodePath("PlayableEnvironment/Character")
 
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=771673376]
 script = ExtResource("4_h5dmj")

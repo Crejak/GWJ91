@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dglmbxq712hj3"]
+
+[ext_resource type="Texture2D" uid="uid://831n8hxmh0yc" path="res://assets/art/props/tapis.PNG" id="1_frk4l"]
+[ext_resource type="Script" uid="uid://dihtle3ach8u3" path="res://scenes/game_scene/phases/infiltration/item_box.gd" id="1_x00m7"]
+
+[node name="ItemBox" type="Control" unique_id=1757605248]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("1_x00m7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=206561905]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1916163389]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_frk4l")
+expand_mode = 1
+stretch_mode = 5

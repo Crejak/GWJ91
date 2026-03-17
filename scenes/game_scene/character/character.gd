@@ -1,6 +1,7 @@
 class_name Character
-
 extends RigidBody2D
+
+signal inventory_changed;
 
 @export_group("Movement")
 
@@ -19,11 +20,18 @@ extends RigidBody2D
 ## maximum speed.
 @export var max_speed_mouse_range: float = 200.;
 
+@export_subgroup("Physics")
+## Mass of the character when not carrying anything.
+@export var default_mass: float = 1.;
+## Factor applied to the mass of picked up objects.
+@export var object_mass_factor: float = 0.05;
+
 @export_group("Debug")
 @export var debug_label: Label;
 
-var picked_up_value: int = 0;
-var picked_up_mass: float = 0.;
+var picked_up_objects: Array[PickableObject] = [];
+
+const INVENTORY_SIZE: int = 4;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -32,13 +40,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
-		debug_label.text = "Speed : %s" % roundi(linear_velocity.length())
+		debug_label.text = "Speed : %.1f px/s\nMass : %.1f kg\nValue : %s $" % \
+			[linear_velocity.length(), get_total_picked_up_mass(), get_total_picked_up_value()];
 
 func _physics_process(_delta: float) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
-	var velocity = get_velocity_from_distance_to_cursor(distance);
+	var velocity := get_velocity_from_distance_to_cursor(distance);
 	apply_force(velocity);
 	
 func get_mouse_distance_in_viewport_space() -> float:
@@ -73,7 +82,24 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 func _on_character_caught() -> void:
 	can_move = false;
 
-func pick_up(mass: float, value: int) -> void:
-	print("Picked up an object that weighs %.1f kilos, and is worth %d dollars !" % [mass, value]);
-	picked_up_mass += mass;
-	picked_up_value += value;
+func pick_up(object: PickableObject) -> bool:
+	if picked_up_objects.size() >= INVENTORY_SIZE:
+		print("Cannot pick up item, inventory is full");
+		return false;
+	print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
+	picked_up_objects.push_back(object);
+	mass = default_mass + get_total_picked_up_mass() * object_mass_factor;
+	inventory_changed.emit();
+	return true;
+
+func get_total_picked_up_mass() -> float:
+	var total_mass: float = 0.;
+	for object: PickableObject in picked_up_objects:
+		total_mass += object.mass;
+	return total_mass;
+
+func get_total_picked_up_value() -> int:
+	var total_value: int = 0;
+	for object: PickableObject in picked_up_objects:
+		total_value += object.monetary_value;
+	return total_value;

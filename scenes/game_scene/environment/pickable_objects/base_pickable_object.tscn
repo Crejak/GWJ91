@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://byghyk4j6hryj"]
+
+[ext_resource type="Script" uid="uid://c7cdthodmtnsw" path="res://scenes/game_scene/environment/pickable_objects/base_pickable_object.gd" id="1_ueh5w"]
+[ext_resource type="PackedScene" uid="uid://cqcnccpjk1n2n" path="res://scenes/game_scene/environment/Interactable.tscn" id="2_v2gt2"]
+
+[sub_resource type="Gradient" id="Gradient_a3ae0"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 0.65882355, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mm4kd"]
+gradient = SubResource("Gradient_a3ae0")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a3ae0"]
+radius = 60.0
+
+[node name="BasePickableObject" type="Node2D" unique_id=380902817]
+script = ExtResource("1_ueh5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=704099219]
+unique_name_in_owner = true
+texture = SubResource("GradientTexture2D_mm4kd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1883730427]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=657406156]
+shape = SubResource("CircleShape2D_a3ae0")
+
+[node name="Interactable" parent="Area2D" unique_id=1627385928 instance=ExtResource("2_v2gt2")]
+
+[connection signal="player_interacted" from="Area2D/Interactable" to="." method="_on_interactable_player_interacted"]
