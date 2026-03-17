@@ -13,3 +13,10 @@ func _ready() -> void:
 		phase_started.connect(func (phase: LevelState.Phase) -> void:
 			print("Phase started : %s" % phase);
 		);
+
+
+# Save Manager
+@warning_ignore("unused_signal")
+signal savegame_loaded
+@warning_ignore("unused_signal")
+signal save_requested
