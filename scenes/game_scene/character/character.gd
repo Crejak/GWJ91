@@ -31,10 +31,8 @@ signal object_dropped(source: Character, object: PickableObject);
 @export var debug_label: Label;
 
 var picked_up_objects: Array[PickableObject] = [];
-const INVENTORY_SIZE: int = 4;
 
 func _ready() -> void:
-	picked_up_objects.resize(INVENTORY_SIZE);
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
@@ -83,36 +81,28 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 func _on_character_caught() -> void:
 	can_move = false;
 
-func pick_up(object: PickableObject) -> bool:
-	for index: int in range(INVENTORY_SIZE):
-		if picked_up_objects.get(index) == null:
-			picked_up_objects.set(index, object);
-			inventory_changed.emit();
-			print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
-			return true;
-	print("Cannot pick up item, inventory is full");
-	return false;
+func pick_up(object: PickableObject) -> void:
+	picked_up_objects.push_back(object);
+	inventory_changed.emit();
 
 func get_total_picked_up_mass() -> float:
 	var total_mass: float = 0.;
 	for object: PickableObject in picked_up_objects:
-		if object != null:
-			total_mass += object.mass;
+		total_mass += object.mass;
 	return total_mass;
 
 func get_total_picked_up_value() -> int:
 	var total_value: int = 0;
 	for object: PickableObject in picked_up_objects:
-		if object != null:
-			total_value += object.monetary_value;
+		total_value += object.monetary_value;
 	return total_value;
 	
 func drop_object(index: int) -> void:
-	var object: PickableObject = picked_up_objects.get(index);
-	if object == null:
+	if index < 0 || index >= picked_up_objects.size():
 		return;
+	var object: PickableObject = picked_up_objects.get(index);
 	object_dropped.emit(self, object);
-	picked_up_objects.set(index, null);
+	picked_up_objects.remove_at(index);
 	inventory_changed.emit();
 
 func _on_inventory_changed() -> void:
