@@ -36,19 +36,19 @@ position = Vector2(518, 370)
 position = Vector2(551, 546)
 
 [node name="PickablePresent" parent="PlayableEnvironment/Environment" unique_id=380902817 instance=ExtResource("6_armk4")]
-position = Vector2(862, 576)
+position = Vector2(839, 638)
 
 [node name="PickablePresent4" parent="PlayableEnvironment/Environment" unique_id=217746486 instance=ExtResource("6_armk4")]
 position = Vector2(264, 732)
 
 [node name="PickablePresent2" parent="PlayableEnvironment/Environment" unique_id=1185791713 instance=ExtResource("6_armk4")]
-position = Vector2(959, 762)
+position = Vector2(865, 809)
 
 [node name="PickablePresent3" parent="PlayableEnvironment/Environment" unique_id=1532756180 instance=ExtResource("6_armk4")]
-position = Vector2(940, 410)
+position = Vector2(213, 552)
 
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
-position = Vector2(224, 315)
+position = Vector2(1011, 701)
 
 [node name="ExampleDangerZone" parent="PlayableEnvironment/Environment" unique_id=1971970911 instance=ExtResource("8_armk4")]
 position = Vector2(460, 113.99997)
@@ -58,7 +58,7 @@ position = Vector2(620, 740)
 rotation = -3.1415927
 
 [node name="Character" parent="PlayableEnvironment" unique_id=860493929 instance=ExtResource("1_50hnf")]
-position = Vector2(391, 414)
+position = Vector2(386, 421)
 
 [node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("2_r2bnq")]
 visible = false
