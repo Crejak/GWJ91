@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cwwfjsqeyxcfu"]
+
+[ext_resource type="Script" uid="uid://d4bj0ix6nb7wf" path="res://scenes/game_scene/environment/danger/danger_trigger.gd" id="1_gjp55"]
+
+[node name="DangerTrigger" type="Node" unique_id=1398122918]
+script = ExtResource("1_gjp55")

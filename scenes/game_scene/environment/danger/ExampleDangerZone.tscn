@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://s5vb6wd8f87"]
+
+[ext_resource type="PackedScene" uid="uid://cwwfjsqeyxcfu" path="res://scenes/game_scene/environment/danger/DangerTrigger.tscn" id="1_balt2"]
+
+[sub_resource type="Animation" id="Animation_balt2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.5235988]
+}
+
+[sub_resource type="Animation" id="Animation_nufc0"]
+resource_name = "swing"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.5235988, 0.0, 0.5235988, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uhth4"]
+_data = {
+&"RESET": SubResource("Animation_balt2"),
+&"swing": SubResource("Animation_nufc0")
+}
+
+[node name="ExampleDangerZone" type="Area2D" unique_id=1971970911]
+rotation = -0.5235988
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=77102165]
+polygon = PackedVector2Array(0, 0, 50, 100, -50, 100)
+
+[node name="DangerTrigger" parent="." unique_id=1398122918 instance=ExtResource("1_balt2")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1789264031]
+libraries/ = SubResource("AnimationLibrary_uhth4")
+autoplay = &"swing"
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=990994770]
+color = Color(1, 0, 0, 0.5019608)
+polygon = PackedVector2Array(-50, 100, 50, 100, 0, 0)

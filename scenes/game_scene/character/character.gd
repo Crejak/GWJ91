@@ -1,6 +1,6 @@
 class_name Character
 
-extends CharacterBody2D
+extends RigidBody2D
 
 @export_group("Movement")
 
@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 ## Minimum walking speed, in pixel per second
 @export var min_speed: float = 25.;
-## Maximum running speed, in pexel per second
+## Maximum running speed, in pexel per second if linear dump = 0
 @export var max_speed: float = 100.;
 ## Minimum distance between the mouse and the character that triggers movement, in pixels
 @export var min_mouse_detection_range: float = 10.;
@@ -28,17 +28,18 @@ var picked_up_mass: float = 0.;
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
+	SignalBus.character_caught.connect(_on_character_caught);
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
-		debug_label.text = "Speed : %s" % roundi(velocity.length());
+		debug_label.text = "Speed : %s" % roundi(linear_velocity.length())
 
 func _physics_process(_delta: float) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
-	velocity = get_velocity_from_distance_to_cursor(distance);
-	move_and_slide();
+	var velocity = get_velocity_from_distance_to_cursor(distance);
+	apply_force(velocity);
 	
 func get_mouse_distance_in_viewport_space() -> float:
 	var viewport_mouse_position := get_viewport().get_mouse_position();
@@ -47,6 +48,8 @@ func get_mouse_distance_in_viewport_space() -> float:
 	return viewport_mouse_position.distance_to(viewport_player_position);
 
 func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
+	if linear_velocity.length() >= max_speed:
+		return Vector2.ZERO
 	if distance < min_mouse_detection_range:
 		return Vector2.ZERO;
 	else:
@@ -66,6 +69,9 @@ func _on_phase_started(phase: LevelState.Phase) -> void:
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
 		can_move = false;
+
+func _on_character_caught() -> void:
+	can_move = false;
 
 func pick_up(mass: float, value: int) -> void:
 	print("Picked up an object that weighs %.1f kilos, and is worth %d dollars !" % [mass, value]);

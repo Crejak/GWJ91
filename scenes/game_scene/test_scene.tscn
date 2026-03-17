@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_gfon2"]
 [ext_resource type="PackedScene" uid="uid://2nqgyp0nd5py" path="res://scenes/game_scene/draw/draw_controller.tscn" id="2_jta4f"]
-[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="3_jta4f"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/door_movable_interactable_object.tscn" id="3_jta4f"]
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="4_jsl7c"]
 
 [node name="CharacterTestScene" type="Node2D" unique_id=676201234]
 
 [node name="Character" parent="." unique_id=860493929 instance=ExtResource("1_gfon2")]
 position = Vector2(291, 162)
 collision_layer = 1
-collision_mask = 1
 can_move = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=36749124]
@@ -17,4 +17,9 @@ position = Vector2(228, 142)
 
 [node name="DrawController" parent="." unique_id=1158203384 instance=ExtResource("2_jta4f")]
 
-[node name="BaseMovableObjectRb2d" parent="." unique_id=1203108321 instance=ExtResource("3_jta4f")]
+[node name="DoorMovableObject" parent="." unique_id=2049277762 instance=ExtResource("3_jta4f")]
+position = Vector2(25, 19)
+
+[node name="BaseMovableObjectRb2d" parent="." unique_id=1203108321 instance=ExtResource("4_jsl7c")]
+position = Vector2(-254, 154)
+mass = 0.5

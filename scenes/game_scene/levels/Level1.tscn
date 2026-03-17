@@ -9,8 +9,10 @@
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
 [ext_resource type="PackedScene" uid="uid://1c0toj14pbg3" path="res://scenes/game_scene/environment/movable_objects/tv.tscn" id="7_ktfe1"]
+[ext_resource type="PackedScene" uid="uid://s5vb6wd8f87" path="res://scenes/game_scene/environment/danger/ExampleDangerZone.tscn" id="8_armk4"]
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="8_ktfe1"]
 [ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="11_75gx0"]
+[ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 
 [node name="Level1" type="Control" unique_id=1713301915]
 layout_mode = 3
@@ -27,23 +29,26 @@ script = ExtResource("4_pv3ef")
 [node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1685777892]
 
 [node name="Painting" parent="PlayableEnvironment/Environment" unique_id=734972761 instance=ExtResource("1_pl87g")]
-position = Vector2(824, 201)
+position = Vector2(843, 335)
 
 [node name="Sofa" parent="PlayableEnvironment/Environment" unique_id=1203108321 instance=ExtResource("11_75gx0")]
-position = Vector2(499, 236)
+position = Vector2(518, 370)
 
 [node name="Table" parent="PlayableEnvironment/Environment" unique_id=606120785 instance=ExtResource("8_ktfe1")]
-position = Vector2(532, 412)
+position = Vector2(551, 546)
 
 [node name="TV" parent="PlayableEnvironment/Environment" unique_id=84861146 instance=ExtResource("7_ktfe1")]
-position = Vector2(536, 623)
+position = Vector2(555, 757)
 flip_v = true
 
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
-position = Vector2(205, 181)
+position = Vector2(224, 315)
+
+[node name="ExampleDangerZone" parent="PlayableEnvironment/Environment" unique_id=1971970911 instance=ExtResource("8_armk4")]
+position = Vector2(630, 143)
 
 [node name="Character" parent="PlayableEnvironment" unique_id=860493929 instance=ExtResource("1_50hnf")]
-position = Vector2(313, 201)
+position = Vector2(391, 414)
 
 [node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("2_r2bnq")]
 visible = false
@@ -63,3 +68,7 @@ layout_mode = 1
 title = "Level 1 - Conclusion"
 conclusion_text = "Wow ! You beat the first level !!
 This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"
+
+[node name="InfiltrationPhaseUI" parent="." unique_id=1199558180 instance=ExtResource("12_75gx0")]
+visible = false
+layout_mode = 1
