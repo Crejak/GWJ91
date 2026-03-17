@@ -20,6 +20,12 @@ signal inventory_changed;
 ## maximum speed.
 @export var max_speed_mouse_range: float = 200.;
 
+@export_subgroup("Physics")
+## Mass of the character when not carrying anything.
+@export var default_mass: float = 1.;
+## Factor applied to the mass of picked up objects.
+@export var object_mass_factor: float = 0.05;
+
 @export_group("Debug")
 @export var debug_label: Label;
 
@@ -82,6 +88,7 @@ func pick_up(object: PickableObject) -> bool:
 		return false;
 	print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
 	picked_up_objects.push_back(object);
+	mass = default_mass + get_total_picked_up_mass() * object_mass_factor;
 	inventory_changed.emit();
 	return true;
 
