@@ -8,6 +8,7 @@ var current_line_id :int = 0
 var current_character :int = 0
 
 var is_printing :bool = false
+var is_enabled :bool = false
 
 signal end_dialog
 
@@ -19,7 +20,10 @@ func init(new_dialog :ConversationRes) -> void:
 	_display_next_line()
 
 
-func _process(delta: float) -> void:	
+func _process(delta: float) -> void:
+	if !is_enabled:
+		return
+
 	if is_printing:
 		_display_next_character(delta)
 	
@@ -27,7 +31,7 @@ func _process(delta: float) -> void:
 
 
 func inputManagement():
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("skip_dialog"):
 		if is_printing:
 			_end_printing_line()
 		else:
@@ -35,11 +39,13 @@ func inputManagement():
 
 
 func _display_next_line() -> void:
+	if current_line_id >= dialog.dialogs.size():
+		end_dialog.emit()
+		print("emit end dialog")
+		return
+
 	text = ""
 	current_line = dialog.get_line(current_line_id)
-	if current_line.is_empty():
-		end_dialog.emit()
-		return
 	is_printing = true
 
 

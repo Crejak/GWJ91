@@ -27,3 +27,8 @@ func _on_open_anim_finished(anim_name :String) -> void:
 	if is_current_state():
 		parentRef.animation_player.play("calling_animation")
 		parentRef.display_conversation(true)
+
+
+#func _process(delta: float) -> void:
+#	if Input.is_action_just_pressed("skip_dialog"):
+#		parentRef.dialog_text_label.inputManagement()

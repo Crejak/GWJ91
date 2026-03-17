@@ -43,6 +43,8 @@ func display_conversation(enabled :bool = true) -> void:
 		dialog_text_label.init(current_dialog)
 	
 	conversation_container.visible = enabled
+	dialog_text_label.is_enabled = enabled
+
 
 
 func _on_dialog_ended() -> void:
