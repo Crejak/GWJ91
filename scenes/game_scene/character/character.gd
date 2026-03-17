@@ -32,13 +32,13 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
-		debug_label.text = "Speed : %s" % roundi(linear_velocity.length())
+		debug_label.text = "Speed : %.1f px/s\nMass : %.1f kg\nValue : %s $" % [linear_velocity.length(), picked_up_mass, picked_up_value];
 
 func _physics_process(_delta: float) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
-	var velocity = get_velocity_from_distance_to_cursor(distance);
+	var velocity := get_velocity_from_distance_to_cursor(distance);
 	apply_force(velocity);
 	
 func get_mouse_distance_in_viewport_space() -> float:
@@ -73,7 +73,7 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 func _on_character_caught() -> void:
 	can_move = false;
 
-func pick_up(mass: float, value: int) -> void:
-	print("Picked up an object that weighs %.1f kilos, and is worth %d dollars !" % [mass, value]);
-	picked_up_mass += mass;
-	picked_up_value += value;
+func pick_up(object: PickableObject) -> void:
+	print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
+	picked_up_mass += object.mass;
+	picked_up_value += object.monetary_value;

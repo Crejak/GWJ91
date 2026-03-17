@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_7yctp"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_50hnf"]
-[ext_resource type="PackedScene" uid="uid://du5ta6j1ncwqb" path="res://scenes/game_scene/environment/Painting.tscn" id="1_pl87g"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
+[ext_resource type="PackedScene" uid="uid://800pnvx3ax6e" path="res://scenes/game_scene/environment/pickable_objects/pickable_present.tscn" id="6_armk4"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
 [ext_resource type="PackedScene" uid="uid://1c0toj14pbg3" path="res://scenes/game_scene/environment/movable_objects/tv.tscn" id="7_ktfe1"]
 [ext_resource type="PackedScene" uid="uid://s5vb6wd8f87" path="res://scenes/game_scene/environment/danger/ExampleDangerZone.tscn" id="8_armk4"]
@@ -28,9 +28,6 @@ script = ExtResource("4_pv3ef")
 
 [node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1685777892]
 
-[node name="Painting" parent="PlayableEnvironment/Environment" unique_id=734972761 instance=ExtResource("1_pl87g")]
-position = Vector2(843, 335)
-
 [node name="Sofa" parent="PlayableEnvironment/Environment" unique_id=1203108321 instance=ExtResource("11_75gx0")]
 position = Vector2(518, 370)
 
@@ -40,6 +37,15 @@ position = Vector2(551, 546)
 [node name="TV" parent="PlayableEnvironment/Environment" unique_id=84861146 instance=ExtResource("7_ktfe1")]
 position = Vector2(555, 757)
 flip_v = true
+
+[node name="PickablePresent" parent="PlayableEnvironment/Environment" unique_id=380902817 instance=ExtResource("6_armk4")]
+position = Vector2(885, 547)
+
+[node name="PickablePresent2" parent="PlayableEnvironment/Environment" unique_id=1185791713 instance=ExtResource("6_armk4")]
+position = Vector2(885, 374)
+
+[node name="PickablePresent3" parent="PlayableEnvironment/Environment" unique_id=1532756180 instance=ExtResource("6_armk4")]
+position = Vector2(883, 203)
 
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
 position = Vector2(224, 315)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://800pnvx3ax6e"]
+
+[ext_resource type="PackedScene" uid="uid://byghyk4j6hryj" path="res://scenes/game_scene/environment/pickable_objects/base_pickable_object.tscn" id="1_agr86"]
+[ext_resource type="Texture2D" uid="uid://oyl7moeq1yjf" path="res://assets/art/props/christmas_present.PNG" id="2_5o33c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2pnuk"]
+radius = 60.0
+
+[node name="PickablePresent" unique_id=380902817 instance=ExtResource("1_agr86")]
+monetary_value = 30
+mass = 2.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=704099219]
+scale = Vector2(0.33724287, 0.33724287)
+texture = ExtResource("2_5o33c")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1883730427) index="0" unique_id=657406156]
+shape = SubResource("CircleShape2D_2pnuk")
