@@ -7,6 +7,7 @@
 size = Vector2(163, 80)
 
 [node name="TV_Table" unique_id=1203108321 instance=ExtResource("1_yh7h0")]
+mass = 20.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1306474058]
 position = Vector2(82, -38)
