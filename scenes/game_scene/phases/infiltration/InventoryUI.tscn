@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dglmbxq712hj3" path="res://scenes/game_scene/phases/infiltration/item_box.tscn" id="1_meyir"]
 [ext_resource type="Script" uid="uid://crlpeay8cd86a" path="res://scenes/game_scene/phases/infiltration/inventory_ui.gd" id="1_un3pq"]
 
-[node name="ItemBoxContainer" type="HBoxContainer" unique_id=493898363]
+[node name="InventoryUI" type="HBoxContainer" unique_id=493898363]
 offset_right = 280.0
 offset_bottom = 80.0
 theme_override_constants/separation = 20

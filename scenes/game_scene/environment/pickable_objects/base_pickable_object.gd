@@ -19,6 +19,7 @@ func _on_interactable_player_interacted(source: Character) -> void:
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
+		return
 		_hide();
 	
 func _on_phase_ended(phase: LevelState.Phase) -> void:

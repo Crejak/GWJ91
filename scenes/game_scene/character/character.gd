@@ -2,6 +2,7 @@ class_name Character
 extends RigidBody2D
 
 signal inventory_changed;
+signal object_dropped(source: Character, object: PickableObject);
 
 @export_group("Movement")
 
@@ -30,10 +31,10 @@ signal inventory_changed;
 @export var debug_label: Label;
 
 var picked_up_objects: Array[PickableObject] = [];
-
 const INVENTORY_SIZE: int = 4;
 
 func _ready() -> void:
+	picked_up_objects.resize(INVENTORY_SIZE);
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
@@ -83,23 +84,36 @@ func _on_character_caught() -> void:
 	can_move = false;
 
 func pick_up(object: PickableObject) -> bool:
-	if picked_up_objects.size() >= INVENTORY_SIZE:
-		print("Cannot pick up item, inventory is full");
-		return false;
-	print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
-	picked_up_objects.push_back(object);
-	mass = default_mass + get_total_picked_up_mass() * object_mass_factor;
-	inventory_changed.emit();
-	return true;
+	for index: int in range(INVENTORY_SIZE):
+		if picked_up_objects.get(index) == null:
+			picked_up_objects.set(index, object);
+			inventory_changed.emit();
+			print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
+			return true;
+	print("Cannot pick up item, inventory is full");
+	return false;
 
 func get_total_picked_up_mass() -> float:
 	var total_mass: float = 0.;
 	for object: PickableObject in picked_up_objects:
-		total_mass += object.mass;
+		if object != null:
+			total_mass += object.mass;
 	return total_mass;
 
 func get_total_picked_up_value() -> int:
 	var total_value: int = 0;
 	for object: PickableObject in picked_up_objects:
-		total_value += object.monetary_value;
+		if object != null:
+			total_value += object.monetary_value;
 	return total_value;
+	
+func drop_object(index: int) -> void:
+	var object: PickableObject = picked_up_objects.get(index);
+	if object == null:
+		return;
+	object_dropped.emit(self, object);
+	picked_up_objects.set(index, null);
+	inventory_changed.emit();
+
+func _on_inventory_changed() -> void:
+	mass = default_mass + get_total_picked_up_mass() * object_mass_factor;
