@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dd4rovtnhuj2x"]
+
+[ext_resource type="Texture2D" uid="uid://t6u3nvf0xqyd" path="res://scenes/end_level/images/newspaper.png" id="1_aogcy"]
+[ext_resource type="Script" uid="uid://vufnvroqxhtq" path="res://scenes/end_level/newspaper_panel.gd" id="1_iy6re"]
+
+[sub_resource type="Animation" id="Animation_iy6re"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewspaperBackground:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewspaperBackground:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewspaperBackground:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lpswp"]
+resource_name = "news_appearing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewspaperBackground:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586, 12.566370614359172, 18.84955592153876]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewspaperBackground:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewspaperBackground:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lxwud"]
+_data = {
+&"RESET": SubResource("Animation_iy6re"),
+&"news_appearing": SubResource("Animation_lpswp")
+}
+
+[node name="NewspaperPanel" type="Control" unique_id=1394745093]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iy6re")
+
+[node name="NewspaperBackground" type="Sprite2D" parent="." unique_id=683229185]
+visible = false
+position = Vector2(795, 427)
+texture = ExtResource("1_aogcy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NewspaperBackground" unique_id=1094901502]
+offset_left = -154.5
+offset_top = -23.499992
+offset_right = -50.19232
+offset_bottom = 22.500008
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Completion time : 10.0s"
+fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=670816663]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_lxwud")
