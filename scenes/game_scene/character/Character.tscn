@@ -48,3 +48,5 @@ script = ExtResource("4_4d22m")
 position = Vector2(-3, -48)
 shape = SubResource("CapsuleShape2D_4d22m")
 debug_color = Color(0.72156864, 0, 0.75686276, 0.12156863)
+
+[connection signal="inventory_changed" from="." to="." method="_on_inventory_changed"]

@@ -2,6 +2,7 @@ class_name Character
 extends RigidBody2D
 
 signal inventory_changed;
+signal object_dropped(source: Character, object: PickableObject);
 
 @export_group("Movement")
 
@@ -30,8 +31,6 @@ signal inventory_changed;
 @export var debug_label: Label;
 
 var picked_up_objects: Array[PickableObject] = [];
-
-const INVENTORY_SIZE: int = 4;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -82,15 +81,9 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 func _on_character_caught() -> void:
 	can_move = false;
 
-func pick_up(object: PickableObject) -> bool:
-	if picked_up_objects.size() >= INVENTORY_SIZE:
-		print("Cannot pick up item, inventory is full");
-		return false;
-	print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
+func pick_up(object: PickableObject) -> void:
 	picked_up_objects.push_back(object);
-	mass = default_mass + get_total_picked_up_mass() * object_mass_factor;
 	inventory_changed.emit();
-	return true;
 
 func get_total_picked_up_mass() -> float:
 	var total_mass: float = 0.;
@@ -103,3 +96,14 @@ func get_total_picked_up_value() -> int:
 	for object: PickableObject in picked_up_objects:
 		total_value += object.monetary_value;
 	return total_value;
+	
+func drop_object(index: int) -> void:
+	if index < 0 || index >= picked_up_objects.size():
+		return;
+	var object: PickableObject = picked_up_objects.get(index);
+	object_dropped.emit(self, object);
+	picked_up_objects.remove_at(index);
+	inventory_changed.emit();
+
+func _on_inventory_changed() -> void:
+	mass = default_mass + get_total_picked_up_mass() * object_mass_factor;

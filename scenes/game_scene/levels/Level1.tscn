@@ -24,8 +24,9 @@ grow_vertical = 2
 script = ExtResource("1_7yctp")
 starting_character = NodePath("PlayableEnvironment/Character")
 
-[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367]
+[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367 node_paths=PackedStringArray("prop_container_node")]
 script = ExtResource("4_pv3ef")
+prop_container_node = NodePath("Environment")
 
 [node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1685777892]
 
@@ -82,3 +83,5 @@ This is the conclusion of the story for this level. Please read it carefully it 
 [node name="InfiltrationPhaseUI" parent="." unique_id=1199558180 instance=ExtResource("12_75gx0")]
 visible = false
 layout_mode = 1
+
+[connection signal="object_dropped" from="PlayableEnvironment/Character" to="PlayableEnvironment" method="_on_character_object_dropped"]

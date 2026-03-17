@@ -14,8 +14,8 @@ func _ready() -> void:
 	SignalBus.phase_ended.connect(_on_phase_ended);
 
 func _on_interactable_player_interacted(source: Character) -> void:
-	if source.pick_up(self):
-		get_parent().remove_child(self);
+	source.pick_up(self);
+	get_parent().remove_child(self);
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
