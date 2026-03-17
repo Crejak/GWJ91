@@ -22,8 +22,7 @@ extends RigidBody2D
 @export_group("Debug")
 @export var debug_label: Label;
 
-var picked_up_value: int = 0;
-var picked_up_mass: float = 0.;
+var picked_up_objects: Array[PickableObject] = [];
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -32,7 +31,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
-		debug_label.text = "Speed : %.1f px/s\nMass : %.1f kg\nValue : %s $" % [linear_velocity.length(), picked_up_mass, picked_up_value];
+		debug_label.text = "Speed : %.1f px/s\nMass : %.1f kg\nValue : %s $" % \
+			[linear_velocity.length(), get_total_picked_up_mass(), get_total_picked_up_value()];
 
 func _physics_process(_delta: float) -> void:
 	if !can_move:
@@ -75,5 +75,16 @@ func _on_character_caught() -> void:
 
 func pick_up(object: PickableObject) -> void:
 	print("Picked up %s that weighs %.1f kilos, and is worth %d dollars !" % [object, object.mass, object.monetary_value]);
-	picked_up_mass += object.mass;
-	picked_up_value += object.monetary_value;
+	picked_up_objects.push_back(object);
+
+func get_total_picked_up_mass() -> float:
+	var total_mass: float = 0.;
+	for object: PickableObject in picked_up_objects:
+		total_mass += object.mass;
+	return total_mass;
+
+func get_total_picked_up_value() -> int:
+	var total_value: int = 0;
+	for object: PickableObject in picked_up_objects:
+		total_value += object.monetary_value;
+	return total_value;
