@@ -9,6 +9,7 @@ enum State {SLEEP, MOVE, WAIT, CHASE}
 	State.WAIT: %WAIT,
 	State.CHASE: %CHASE
 }
+signal state_changed(in_state: State)
 
 @export_group("Detection")
 var detection: float = 0.0
@@ -33,8 +34,10 @@ var timeline_index: int = 0
 var is_waiting_for_step_to_finish: bool
 @export var timeline: Array[Step]
 
+@export_group("Visual")
 @onready var status_animations: AnimatedSprite2D = %StatusAnimations
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var sprite: Sprite2D = %Sprite2D
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_game_phase_changed)
@@ -46,13 +49,29 @@ func _process(in_delta: float) -> void:
 
 func _on_game_phase_changed(in_phase: LevelState.Phase) -> void:
 	match in_phase:
-		LevelState.Phase.INFILTRATION, LevelState.Phase.INTRODUCTION:
+		LevelState.Phase.PREPARATION:
 			start_game_timer()
+			_display()
+		LevelState.Phase.INFILTRATION:
+			start_game_timer()
+			_hide()
+
+#region --- Visual ---
+func _hide() -> void:
+	var t: Tween = create_tween()
+	t.tween_property(sprite, "modulate", Color.TRANSPARENT, 0.5)
+
+func _display() -> void:
+	var t: Tween = create_tween()
+	t.tween_property(sprite, "modulate", Color.WHITE, 0.5)
+
+#endregion --- Visual ---
 
 #region --- Timeline ---
 func reset() -> void:
 	progress = 0.0
 	body.global_position = global_position
+	state_changed.emit(State.SLEEP)
 	state_machine.set_current_state(states[State.SLEEP])
 	if not timer:
 		timer = Timer.new()
@@ -94,11 +113,13 @@ func next_timeline_step() -> void:
 		is_waiting_for_step_to_finish = false
 		try_end_step()
 		, CONNECT_ONE_SHOT)
+	state_changed.emit(timeline[timeline_index].pnj_state)
 	state_machine.set_current_state(states[timeline[timeline_index].pnj_state])
 
 func try_end_step() -> void:
 	if is_waiting_for_step_to_finish: return
 	if timer.time_left > 0: return
+	if timeline.size() <= timeline_index: return
 	next_timeline_step()
 #endregion --- Timeline ---
 
