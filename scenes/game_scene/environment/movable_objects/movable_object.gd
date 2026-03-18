@@ -6,6 +6,7 @@ class_name MovableObject
 signal on_start_pushing()
 @warning_ignore("unused_signal")
 signal on_finished_pushing()
+signal on_light_changed(in_is_light_on: bool)
 
 @export var flip_h: bool = false:
 	set(value):
