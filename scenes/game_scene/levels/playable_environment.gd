@@ -18,5 +18,5 @@ func on_phase_ended(phase: LevelState.Phase) -> void:
 		visible = false;
 
 func _on_character_object_dropped(source: Character, object: MovableObject) -> void:
-	object.global_position = source.global_position;
 	prop_container_node.add_child(object);
+	object.global_position = source.global_position;
