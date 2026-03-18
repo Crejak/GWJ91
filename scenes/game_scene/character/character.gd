@@ -22,21 +22,22 @@ signal object_dropped(source: Character, object: MovableObject);
 @export var max_speed_mouse_range: float = 200.;
 
 @export_subgroup("Physics")
-## Mass of the character when not carrying anything.
-@export var default_mass: float = 1.;
 ## Factor applied to the mass of picked up objects.
-@export var object_mass_factor: float = 0.05;
+@export var speed_damp: float = 0.15;
+@export var speed_floor_ratio: float = 0.333;
+
+var speed_loss_factor: float = 1.;
 
 @export_group("Debug")
 @export var debug_label: Label;
 
 var picked_up_objects: Array[MovableObject] = [];
+var total_speed_loss: float = 0.;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
-	default_mass = mass
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
@@ -47,11 +48,12 @@ func _physics_process(_delta: float) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
-	var velocity := get_velocity_from_distance_to_cursor(distance)
+	var velocity := get_velocity_from_distance_to_cursor(distance);
 	if get_colliding_bodies().is_empty():
+		print("Empty colliding bodies");
 		linear_velocity = velocity
-		return
-	apply_force(velocity*mass)
+		return;
+	apply_force(velocity * mass)
 	
 func get_mouse_distance_in_viewport_space() -> float:
 	var viewport_mouse_position := get_viewport().get_mouse_position();
@@ -72,7 +74,7 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 				remap(distance, min_speed_mouse_range, max_speed_mouse_range, min_speed, max_speed),
 				min_speed, max_speed
 			);
-		return direction * speed;
+		return direction * speed * speed_loss_factor;
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
@@ -110,4 +112,5 @@ func drop_object(index: int) -> void:
 	inventory_changed.emit();
 
 func _on_inventory_changed() -> void:
-	mass = default_mass + get_total_picked_up_mass() * object_mass_factor;
+	speed_loss_factor = speed_floor_ratio + \
+		(1 - speed_floor_ratio) / (1 + speed_damp * get_total_picked_up_mass());
