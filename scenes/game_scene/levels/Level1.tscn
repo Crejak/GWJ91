@@ -91,3 +91,7 @@ layout_mode = 1
 [connection signal="object_dropped" from="PlayableEnvironment/Environment/TestRoom/Props/Character" to="PlayableEnvironment" method="_on_character_object_dropped"]
 
 [editable path="PlayableEnvironment/Environment/TestRoom"]
+[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room2"]
+[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room3"]
+[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room4"]
+[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room5"]
