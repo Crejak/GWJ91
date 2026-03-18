@@ -36,6 +36,7 @@ func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
+	default_mass = mass
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build():
