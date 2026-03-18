@@ -6,3 +6,5 @@ extends StateMachineState
 
 func _enter_state() -> void:
 	print("DisableState")
+
+	parentRef.background.modulate.a = 0

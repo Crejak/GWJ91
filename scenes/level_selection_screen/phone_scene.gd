@@ -1,13 +1,17 @@
 extends Control
+class_name PhoneDialogs
 
 
+@onready var background :PanelContainer = %Background
 @onready var animation_player :AnimationPlayer = %AnimationPlayer
 
 # State Machine
 @onready var state_machine :StateMachine = %PhoneStateMachine
 @onready var disable_state :StateMachineState = %DisableState
+@onready var appearing_state :StateMachineState = %AppearingState
 @onready var ringing_state :StateMachineState = %RingingState
 @onready var calling_state :StateMachineState = %CallingState
+@onready var disappearing_state :StateMachineState = %DisappearingState
 
 # Dialog
 @onready var conversation_container = %ConversationContainer
@@ -24,6 +28,16 @@ func _ready() -> void:
 	dialog_text_label.end_dialog.connect(_on_dialog_ended)
 
 	current_dialog = dialogs[0]
+
+	state_machine.set_current_state(disable_state)
+
+
+func start_dialog(dialog_index :int) -> void:
+	if dialog_index >= dialogs.size():
+		return
+
+	current_dialog = dialogs[dialog_index]
+	state_machine.set_current_state(appearing_state)
 
 
 func _on_btn_phone_pressed() -> void:
@@ -46,13 +60,12 @@ func display_conversation(enabled :bool = true) -> void:
 	dialog_text_label.is_enabled = enabled
 
 
-
 func _on_dialog_ended() -> void:
-	state_machine.set_current_state(disable_state)
+	state_machine.set_current_state(disappearing_state)
 
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("move_down"):
-		state_machine.set_current_state(ringing_state)
+		state_machine.set_current_state(appearing_state)
 	if Input.is_action_just_pressed("move_up"):
 		state_machine.set_current_state(disable_state)

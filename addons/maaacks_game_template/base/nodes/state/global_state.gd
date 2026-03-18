@@ -47,4 +47,5 @@ static func get_or_create_state(state_key : String, state_type_path : String) ->
 static func reset() -> void:
 	if current is not GlobalStateData: return
 	current.states.clear()
+	current.story_progression = StoryProgressionStats.new()
 	save()
