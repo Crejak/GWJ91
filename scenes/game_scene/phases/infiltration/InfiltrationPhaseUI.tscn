@@ -56,3 +56,11 @@ offset_right = 140.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="HelperLabel" type="Label" parent="." unique_id=1301410448]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Interact : right click / E
+Browse inventory : scroll up / down
+Drop item : A"

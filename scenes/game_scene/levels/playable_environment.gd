@@ -17,6 +17,6 @@ func on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
 		visible = false;
 
-func _on_character_object_dropped(source: Character, object: PickableObject) -> void:
-	object.global_position = source.global_position;
+func _on_character_object_dropped(source: Character, object: MovableObject) -> void:
 	prop_container_node.add_child(object);
+	object.global_position = source.global_position;

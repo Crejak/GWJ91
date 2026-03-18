@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhryykolcb06" path="res://scenes/game_scene/environment/movable_objects/movable_object.gd" id="1_endn7"]
 [ext_resource type="Script" uid="uid://7sqvwtt1v4ua" path="res://scenes/test_room/on_hit_component.gd" id="2_bv5x4"]
+[ext_resource type="PackedScene" uid="uid://cqcnccpjk1n2n" path="res://scenes/game_scene/environment/Interactable.tscn" id="3_ivvnn"]
 
 [sub_resource type="Gradient" id="Gradient_jta4f"]
 
@@ -24,7 +25,10 @@ shader = SubResource("Shader_0uwjo")
 shader_parameter/is_active = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfon2"]
-size = Vector2(153, 88)
+size = Vector2(151.5, 85)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bv5x4"]
+radius = 48.0
 
 [node name="BaseMovableObjectRb2d" type="RigidBody2D" unique_id=1203108321]
 collision_mask = 7
@@ -49,3 +53,18 @@ movable_object = NodePath("../..")
 shape = SubResource("RectangleShape2D_gfon2")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=93953150]
+
+[node name="PickableArea2D" type="Area2D" parent="." unique_id=1829687385]
+unique_name_in_owner = true
+visible = false
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickableArea2D" unique_id=109261683]
+shape = SubResource("CircleShape2D_bv5x4")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="PickUpInteractable" parent="PickableArea2D" unique_id=1627385928 instance=ExtResource("3_ivvnn")]
+
+[connection signal="player_interacted" from="PickableArea2D/PickUpInteractable" to="." method="_on_pick_up_interactable_player_interacted"]
