@@ -46,8 +46,11 @@ func _physics_process(_delta: float) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
-	var velocity := get_velocity_from_distance_to_cursor(distance);
-	apply_force(velocity);
+	var velocity := get_velocity_from_distance_to_cursor(distance)
+	if get_colliding_bodies().is_empty():
+		linear_velocity = velocity
+		return
+	apply_force(velocity*mass)
 	
 func get_mouse_distance_in_viewport_space() -> float:
 	var viewport_mouse_position := get_viewport().get_mouse_position();

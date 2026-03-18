@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://ba21f72lm23w"]
 
-[ext_resource type="Script" uid="uid://bjle4n1gl67sd" path="res://scenes/test_room/test_enviro.gd" id="1_05ukp"]
 [ext_resource type="Texture2D" uid="uid://dyxwb0oxd8i8l" path="res://assets/art/blueprints/blueprint_test_room_no_doors.png" id="1_56hba"]
 [ext_resource type="Texture2D" uid="uid://bwn17ib558ic2" path="res://assets/art/props/bed.PNG" id="2_2ape5"]
 [ext_resource type="Texture2D" uid="uid://831n8hxmh0yc" path="res://assets/art/props/tapis.PNG" id="2_mklop"]
@@ -26,17 +25,62 @@
 [ext_resource type="Texture2D" uid="uid://ybsf7i3w3qt" path="res://assets/art/props/c7a873af-1426-431d-a27c-6294a720fe1d.jpg.PNG" id="23_1bvhb"]
 [ext_resource type="Texture2D" uid="uid://ccipxgx5b4nd" path="res://assets/art/props/shower.PNG" id="24_sdr2y"]
 [ext_resource type="Texture2D" uid="uid://bgvg8wqutr5tt" path="res://assets/art/props/tapish.PNG" id="25_0uwjo"]
-[ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="27_vgfr6"]
 [ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="29_imeoc"]
 [ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/plant.tscn" id="29_jtacr"]
 [ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="30_50tyd"]
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="30_jtacr"]
 [ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/tv_table.tscn" id="31_50tyd"]
-[ext_resource type="PackedScene" uid="uid://1c0toj14pbg3" path="res://scenes/game_scene/environment/movable_objects/tv.tscn" id="32_51dik"]
+[ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="34_o6mwe"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="35_ax41o"]
+
+[sub_resource type="Curve2D" id="Curve2D_slkys"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 66, 53, 57.4, 38.7, -57.4, -38.7, 23, -154, 20.699997, -63.3, -20.699997, 63.3, -439, -153, 1, -175, -1, 175, -446, 153, -67.100006, -5.4000015, 67.100006, 5.4000015, -410, 461, -13.400002, 40.399998, 13.400002, -40.399998, -27, 463, 0, 0, 0, 0, -16, 309)
+}
+point_count = 7
+
+[sub_resource type="Resource" id="Resource_1eopy"]
+script = ExtResource("35_ax41o")
+duration = 5.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_s5m44"]
+script = ExtResource("35_ax41o")
+duration = 3.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_4jykf"]
+script = ExtResource("35_ax41o")
+duration = 10.0
+path_progress_destination = 771.81
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_j67lv"]
+script = ExtResource("35_ax41o")
+duration = 5.0
+path_progress_destination = 771.81
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_6sgi5"]
+script = ExtResource("35_ax41o")
+duration = 10.0
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_tnu40"]
+script = ExtResource("35_ax41o")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Curve2D" id="Curve2D_o6mwe"]
+_data = {
+"points": PackedVector2Array(4.1985655, 69.043076, -4.1985655, -69.043076, 1457, 227, 39.73896, -52.778305, -39.73896, 52.778305, 1057, 230, 54.02015, -57.745678, -54.02015, 57.745678, 1036, 489, 39.11804, -36.634354, -39.11804, 36.634354, 693, 487, 36.01343, -21.111322, -36.01343, 21.111322, 668, 602, 42.843567, 27.941456, -42.843567, -27.941456, 292, 589, 0, 0, 0, 0, 281, 484, -54.64107, -21.111322, 54.64107, 21.111322, 291, 602, -34.77159, 32.287907, 34.77159, -32.287907, 674, 606, -32.908825, 39.11804, 32.908825, -39.11804, 701, 495, -52.778305, -50.915543, 52.778305, 50.915543, 1031, 507, -64.57581, -65.19673, 64.57581, 65.19673, 1063, 811, -41.601723, 76.99423, 41.601723, -76.99423, 1458, 801, 0, 0, 0, 0, 1457, 227)
+}
+point_count = 14
 
 [node name="TestRoom" type="Node2D" unique_id=2058501475]
-script = ExtResource("1_05ukp")
-state_on_ready = 3
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1844503784]
 offset_right = 1883.0
@@ -61,6 +105,7 @@ position = Vector2(1129, 336)
 polygon = PackedVector2Array(0, 5, 152, 5, 152, 327, -6, 327, -6, 333, 284, 333, 284, 328, 158, 328, 158, -67, 152, -67, 152, -2, 0, -1)
 
 [node name="Deco" type="Node2D" parent="." unique_id=686808169]
+visible = false
 
 [node name="Tapis" type="Sprite2D" parent="Deco" unique_id=1655987953]
 position = Vector2(486.00006, 496)
@@ -237,9 +282,11 @@ y_sort_enabled = true
 [node name="Table" parent="Props" unique_id=260439253 instance=ExtResource("30_jtacr")]
 y_sort_enabled = true
 position = Vector2(404, 520)
+mass = 3.0
 
 [node name="Plant" parent="Props" unique_id=1203108321 instance=ExtResource("29_jtacr")]
 position = Vector2(169, 404)
+mass = 2.0
 
 [node name="Plant2" parent="Props" unique_id=2055209859 instance=ExtResource("29_jtacr")]
 position = Vector2(861, 400)
@@ -256,16 +303,8 @@ position = Vector2(367, 413)
 
 [node name="TV_Table" parent="Props" unique_id=1923517405 instance=ExtResource("31_50tyd")]
 position = Vector2(408, 751)
+mass = 10.0
 flip_v = true
-
-[node name="TV" parent="Props/TV_Table" unique_id=1425984428 instance=ExtResource("32_51dik")]
-position = Vector2(-3, 31)
-flip_v = true
-
-[node name="Character" parent="Props" unique_id=860493929 instance=ExtResource("27_vgfr6")]
-y_sort_enabled = true
-position = Vector2(171, 517)
-can_move = true
 
 [node name="light_system" type="Node" parent="." unique_id=535486438 node_paths=PackedStringArray("back_ground_color", "blueprint_sprite")]
 script = ExtResource("29_imeoc")
@@ -273,3 +312,18 @@ back_ground_color = NodePath("../ColorRect")
 color_infiltration = Color(0.12225217, 0.12225228, 0.12225217, 1)
 color_preparation = Color(0.69411767, 0.6901961, 0.68235296, 1)
 blueprint_sprite = NodePath("../blueprint")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=137920947]
+position = Vector2(1491, 362)
+curve = SubResource("Curve2D_slkys")
+
+[node name="PNJ2" parent="Path2D" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("34_o6mwe")]
+position = Vector2(66, 53)
+chase_threshold = 1.0
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("35_ax41o")]([SubResource("Resource_1eopy"), SubResource("Resource_s5m44"), SubResource("Resource_4jykf"), SubResource("Resource_j67lv"), SubResource("Resource_6sgi5"), SubResource("Resource_tnu40")])
+
+[node name="ChasePath" type="Path2D" parent="." unique_id=1261673405]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(7, 8)
+curve = SubResource("Curve2D_o6mwe")

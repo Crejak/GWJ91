@@ -33,9 +33,11 @@ gdscript/warnings/unsafe_call_argument=1
 
 [display]
 
-window/size/viewport_width=1700
-window/size/viewport_height=900
-window/stretch/mode="viewport"
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1700
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -47,7 +49,7 @@ movie_writer/movie_file="C:/Users/Patobeur/Videos/JamMovies/movie.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/editorscriptmanager/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/editorscriptmanager/plugin.cfg", "res://addons/finite_state_machine/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg")
 
 [gui]
 
@@ -148,6 +150,9 @@ locale/translations=PackedStringArray("res://addons/maaacks_game_template/base/t
 
 2d_physics/layer_1="Environment"
 2d_physics/layer_2="PlayerCharacter"
+2d_physics/layer_3="Walls"
+2d_physics/layer_4="Loot"
+2d_physics/layer_5="Rooms"
 2d_physics/layer_8="DoorBlocking"
 
 [maaacks_game_template]

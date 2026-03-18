@@ -7,6 +7,7 @@
 size = Vector2(223, 86)
 
 [node name="Sofa" unique_id=1203108321 instance=ExtResource("1_fdomc")]
+mass = 50.0
 can_move = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=1306474058]
