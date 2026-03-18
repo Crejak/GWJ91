@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dwqv65m8ieqgg" path="res://addons/finite_state_machine/scripts/state_machine.gd" id="3_joe27"]
 [ext_resource type="Texture2D" uid="uid://cvmvkys8fh7do" path="res://assets/art/animations/sleep.png" id="3_mbr25"]
 [ext_resource type="Script" uid="uid://bl73ob6dr63m7" path="res://scenes/game_scene/pnj/states/pnj_state.gd" id="4_3h3ax"]
+[ext_resource type="PackedScene" uid="uid://s5vb6wd8f87" path="res://scenes/game_scene/environment/danger/ExampleDangerZone.tscn" id="5_3mqs1"]
 [ext_resource type="Script" uid="uid://ds35tsbb5h6e7" path="res://scenes/game_scene/pnj/states/state_move.gd" id="5_llj0r"]
 [ext_resource type="Script" uid="uid://b06vvxj6t878h" path="res://scenes/game_scene/pnj/states/pnj_state_sleep.gd" id="5_prjxh"]
 [ext_resource type="Script" uid="uid://b4ik6sliqqu6y" path="res://scenes/game_scene/pnj/states/pnj_state_chase.gd" id="9_3mqs1"]
@@ -410,6 +411,14 @@ max_contacts_reported = 5
 linear_damp = 1.0
 angular_damp = 8.0
 
+[node name="ExampleDangerZone" parent="RigidBody2D" unique_id=1971970911 instance=ExtResource("5_3mqs1")]
+
+[node name="CollisionPolygon2D" parent="RigidBody2D/ExampleDangerZone" index="0" unique_id=77102165]
+polygon = PackedVector2Array(-2.246132, -164.10959, -144.62624, -83.5, -119.92563, 79.71728, 21.370491, 158.98523, 166.54483, 91.5359, 148.57626, -79.34163)
+
+[node name="Polygon2D" parent="RigidBody2D/ExampleDangerZone" index="3" unique_id=990994770]
+visible = false
+
 [node name="Visual" type="Node2D" parent="RigidBody2D" unique_id=390448743]
 scale = Vector2(0.85, 0.85)
 
@@ -473,3 +482,5 @@ script = ExtResource("9_3mqs1")
 pnj = NodePath("../..")
 done_on_start = true
 metadata/_custom_type_script = "uid://cy5cvsq5uplwa"
+
+[editable path="RigidBody2D/ExampleDangerZone"]
