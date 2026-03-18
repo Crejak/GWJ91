@@ -60,7 +60,6 @@ func display_conversation(enabled :bool = true) -> void:
 	dialog_text_label.is_enabled = enabled
 
 
-
 func _on_dialog_ended() -> void:
 	state_machine.set_current_state(disappearing_state)
 

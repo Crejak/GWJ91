@@ -17,6 +17,8 @@ func init(new_dialog :ConversationRes) -> void:
 	dialog = new_dialog
 	current_line_id = 0
 	current_character = 0
+	add_theme_color_override("default_color", dialog.text_color)
+	add_theme_color_override("font_outline_color", dialog.outline_color)
 	_display_next_line()
 
 
@@ -41,13 +43,12 @@ func inputManagement():
 func _display_next_line() -> void:
 	if current_line_id >= dialog.dialogs.size():
 		end_dialog.emit()
-		print("emit end dialog")
 		return
 
 	text = ""
 	current_line = dialog.get_line(current_line_id)
 	is_printing = true
-
+	
 
 func _end_printing_line() -> void:
 	is_printing = false

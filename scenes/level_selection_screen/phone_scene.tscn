@@ -8,7 +8,9 @@
 [ext_resource type="Script" uid="uid://dwqv65m8ieqgg" path="res://addons/finite_state_machine/scripts/state_machine.gd" id="3_pxw76"]
 [ext_resource type="Script" uid="uid://caogrioovm5op" path="res://scenes/level_selection_screen/PhoneSM/disable_state.gd" id="4_8x6ky"]
 [ext_resource type="PackedScene" uid="uid://dedm322vxvy7d" path="res://scenes/level_selection_screen/dialog_text_label.tscn" id="4_hvy2e"]
+[ext_resource type="Resource" uid="uid://c0sqpwmon2k7r" path="res://scenes/level_selection_screen/conversations/1-MrsYellow.tres" id="4_um2gg"]
 [ext_resource type="Script" uid="uid://cfcdhu8umxuco" path="res://scenes/level_selection_screen/PhoneSM/ringing_state.gd" id="5_732jb"]
+[ext_resource type="Resource" uid="uid://dj1804guv6rel" path="res://scenes/level_selection_screen/conversations/2-MrRed.tres" id="5_s63uo"]
 [ext_resource type="Script" uid="uid://dwbf6wtnqcy06" path="res://scenes/level_selection_screen/PhoneSM/calling_state.gd" id="6_8x6ky"]
 [ext_resource type="Script" uid="uid://dgpbmwvsv3pwx" path="res://scenes/level_selection_screen/PhoneSM/appearing_state.gd" id="9_voh3o"]
 [ext_resource type="Script" uid="uid://u8catqd2sctb" path="res://scenes/level_selection_screen/PhoneSM/disappearing_state.gd" id="12_avkif"]
@@ -165,7 +167,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pxw76")
-dialogs = Array[ExtResource("2_416um")]([ExtResource("3_hvy2e")])
+dialogs = Array[ExtResource("2_416um")]([ExtResource("3_hvy2e"), ExtResource("4_um2gg"), ExtResource("5_s63uo")])
 
 [node name="Background" type="PanelContainer" parent="." unique_id=1585940864]
 unique_name_in_owner = true

@@ -13,3 +13,4 @@ func _enter_state() -> void:
 func _on_disappearing_finished(anim_name :String):
 	if anim_name == "disappearing":
 		parentRef.state_machine.set_current_state(parentRef.disable_state)
+		parentRef.queue_free()

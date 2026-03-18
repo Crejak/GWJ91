@@ -10,6 +10,7 @@ Mission board
 Phone ringing -> demande de contrat
 
 Mission 1: locataire vs banquière
+FR:
 "Hey, j'ai vu que tu démarrai ton activité un peu... originale
 Ecoute, ma banquière vient de me refuser un prêt. Elle sait pas ce que c'est de galerer, je suis sûr que ses murs sont couvert d'oeuvre d'art hors de prix !
 Je me disais que tu pourrai lui rendre une petite visite et récuperer mon prêt... directement chez elle !
@@ -27,7 +28,15 @@ That'll let me pay back my landlord, and you can pay yourself with what you find
 I promise you won't be disappointed.
 
 
-Mission 2: banquière vs proprio
+Mission 2: banquière vs ex-mari
+FR:
 "Allô, l'appel est sécurisé j'espère... Bon...
 Je n'ai pas pour habitude d'avoir recours à ce genre de pratique... Mais là c'est trop !
 Mon ex mari ne veut pas me rendre mes affaires. Il sait que j'ai de l'argent et ne veut juste pas assumer que je le gère mieux que lui
+
+EN:
+Hello, I hope this is a secure call... Well...
+I'm not usually one to resort to this kind of thing... But this is too much!
+
+My ex-husband won't give me my things back.
+He knows I have money and just won't accept that I manage it better than he does.
