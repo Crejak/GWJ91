@@ -9,7 +9,7 @@ signal level_changed(level_path : String)
 
 ## Optional path to the next level if using an open world level system.
 @export_file("*.tscn") var next_level_path : String
-
+@export var level_id :int = 0
 @export var starting_character: Character;
 
 var level_state : LevelState
@@ -31,4 +31,5 @@ func _ready() -> void:
 
 func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.COMPLETED:
+		GlobalState.current.story_progression.set_story_progression(level_id)
 		level_won.emit();

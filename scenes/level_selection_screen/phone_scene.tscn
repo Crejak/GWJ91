@@ -8,8 +8,12 @@
 [ext_resource type="Script" uid="uid://dwqv65m8ieqgg" path="res://addons/finite_state_machine/scripts/state_machine.gd" id="3_pxw76"]
 [ext_resource type="Script" uid="uid://caogrioovm5op" path="res://scenes/level_selection_screen/PhoneSM/disable_state.gd" id="4_8x6ky"]
 [ext_resource type="PackedScene" uid="uid://dedm322vxvy7d" path="res://scenes/level_selection_screen/dialog_text_label.tscn" id="4_hvy2e"]
+[ext_resource type="Resource" uid="uid://c0sqpwmon2k7r" path="res://scenes/level_selection_screen/conversations/1-MrsYellow.tres" id="4_um2gg"]
 [ext_resource type="Script" uid="uid://cfcdhu8umxuco" path="res://scenes/level_selection_screen/PhoneSM/ringing_state.gd" id="5_732jb"]
+[ext_resource type="Resource" uid="uid://dj1804guv6rel" path="res://scenes/level_selection_screen/conversations/2-MrRed.tres" id="5_s63uo"]
 [ext_resource type="Script" uid="uid://dwbf6wtnqcy06" path="res://scenes/level_selection_screen/PhoneSM/calling_state.gd" id="6_8x6ky"]
+[ext_resource type="Script" uid="uid://dgpbmwvsv3pwx" path="res://scenes/level_selection_screen/PhoneSM/appearing_state.gd" id="9_voh3o"]
+[ext_resource type="Script" uid="uid://u8catqd2sctb" path="res://scenes/level_selection_screen/PhoneSM/disappearing_state.gd" id="12_avkif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x6ky"]
 bg_color = Color(0.039215688, 0.039215688, 0.039215688, 0.47058824)
@@ -26,7 +30,47 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [-300]
+"values": [-600]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hvy2e"]
+resource_name = "appearing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PhoneContainer:theme_override_constants/margin_bottom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-600, -300]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_8x6ky"]
@@ -44,6 +88,34 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-50, -70, -50]
+}
+
+[sub_resource type="Animation" id="Animation_voh3o"]
+resource_name = "disappearing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PhoneContainer:theme_override_constants/margin_bottom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-50, -600]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_732jb"]
@@ -80,7 +152,9 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fppo1"]
 _data = {
 &"RESET": SubResource("Animation_w7kj7"),
+&"appearing": SubResource("Animation_hvy2e"),
 &"calling_animation": SubResource("Animation_8x6ky"),
+&"disappearing": SubResource("Animation_voh3o"),
 &"open_phone": SubResource("Animation_732jb"),
 &"phone_ringing": SubResource("Animation_mtpsm")
 }
@@ -93,15 +167,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pxw76")
-dialogs = Array[ExtResource("2_416um")]([ExtResource("3_hvy2e")])
+dialogs = Array[ExtResource("2_416um")]([ExtResource("3_hvy2e"), ExtResource("4_um2gg"), ExtResource("5_s63uo")])
 
 [node name="Background" type="PanelContainer" parent="." unique_id=1585940864]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="ConversationContainer" type="MarginContainer" parent="." unique_id=2045488799]
 unique_name_in_owner = true
@@ -143,7 +219,7 @@ grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
 theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = -300
+theme_override_constants/margin_bottom = -600
 
 [node name="TextureRect" type="TextureRect" parent="PhoneContainer" unique_id=519678210]
 layout_mode = 2
@@ -207,14 +283,18 @@ flat = true
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_fppo1")
 
-[node name="PhoneStateMachine" type="Node" parent="." unique_id=895090593 node_paths=PackedStringArray("current_state")]
+[node name="PhoneStateMachine" type="Node" parent="." unique_id=895090593]
 unique_name_in_owner = true
 script = ExtResource("3_pxw76")
-current_state = NodePath("DisableState")
 
 [node name="DisableState" type="Node" parent="PhoneStateMachine" unique_id=1045629340 node_paths=PackedStringArray("parentRef")]
 unique_name_in_owner = true
 script = ExtResource("4_8x6ky")
+parentRef = NodePath("../..")
+
+[node name="AppearingState" type="Node" parent="PhoneStateMachine" unique_id=1046833946 node_paths=PackedStringArray("parentRef")]
+unique_name_in_owner = true
+script = ExtResource("9_voh3o")
 parentRef = NodePath("../..")
 
 [node name="RingingState" type="Node" parent="PhoneStateMachine" unique_id=361255276 node_paths=PackedStringArray("parentRef")]
@@ -225,6 +305,11 @@ parentRef = NodePath("../..")
 [node name="CallingState" type="Node" parent="PhoneStateMachine" unique_id=373489792 node_paths=PackedStringArray("parentRef")]
 unique_name_in_owner = true
 script = ExtResource("6_8x6ky")
+parentRef = NodePath("../..")
+
+[node name="DisappearingState" type="Node" parent="PhoneStateMachine" unique_id=701645713 node_paths=PackedStringArray("parentRef")]
+unique_name_in_owner = true
+script = ExtResource("12_avkif")
 parentRef = NodePath("../..")
 
 [connection signal="pressed" from="PhoneContainer/TextureRect/BtnPhone" to="." method="_on_btn_phone_pressed"]

@@ -13,7 +13,6 @@ func _enter_state() -> void:
 
 func _exit_state() -> void:
 	parentRef.animation_player.stop()
-	parentRef.animation_player.play_backwards("open_phone")
 	parentRef.display_conversation(false)
 	parentRef.phone_screen.visible = false
 

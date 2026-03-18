@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7yctp")
+level_id = 1
 starting_character = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Character")
 
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367 node_paths=PackedStringArray("prop_container_node")]

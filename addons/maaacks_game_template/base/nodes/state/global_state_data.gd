@@ -6,7 +6,7 @@ extends Resource
 @export var last_unix_time_opened : int
 @export var states : Dictionary
 
-@export var story_progression :int = 0
+@export var story_progression :StoryProgressionStats = StoryProgressionStats.new()
 
 func get_or_create_state(key_name : String, state_type_path : String) -> Resource:
 	var new_state : Resource
