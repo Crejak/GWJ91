@@ -2,7 +2,7 @@ class_name Character
 extends RigidBody2D
 
 signal inventory_changed;
-signal object_dropped(source: Character, object: PickableObject);
+signal object_dropped(source: Character, object: MovableObject);
 
 @export_group("Movement")
 
@@ -30,7 +30,7 @@ signal object_dropped(source: Character, object: PickableObject);
 @export_group("Debug")
 @export var debug_label: Label;
 
-var picked_up_objects: Array[PickableObject] = [];
+var picked_up_objects: Array[MovableObject] = [];
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -85,26 +85,26 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 func _on_character_caught() -> void:
 	can_move = false;
 
-func pick_up(object: PickableObject) -> void:
+func pick_up(object: MovableObject) -> void:
 	picked_up_objects.push_back(object);
 	inventory_changed.emit();
 
 func get_total_picked_up_mass() -> float:
 	var total_mass: float = 0.;
-	for object: PickableObject in picked_up_objects:
+	for object: MovableObject in picked_up_objects:
 		total_mass += object.mass;
 	return total_mass;
 
 func get_total_picked_up_value() -> int:
 	var total_value: int = 0;
-	for object: PickableObject in picked_up_objects:
+	for object: MovableObject in picked_up_objects:
 		total_value += object.monetary_value;
 	return total_value;
 	
 func drop_object(index: int) -> void:
 	if index < 0 || index >= picked_up_objects.size():
 		return;
-	var object: PickableObject = picked_up_objects.get(index);
+	var object: MovableObject = picked_up_objects.get(index);
 	object_dropped.emit(self, object);
 	picked_up_objects.remove_at(index);
 	inventory_changed.emit();

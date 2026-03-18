@@ -2,7 +2,7 @@
 class_name ItemBox
 extends Control
 
-@export var object: PickableObject:
+@export var object: MovableObject:
 	set = set_pickable_object;
 @export var inventory_index: int;
 @export var selected: bool = false:
@@ -15,7 +15,7 @@ extends Control
 @onready var texture: TextureRect = %TextureRect;
 @onready var selected_frame: Panel = %SelectedFrame;
 
-func set_pickable_object(pickable_object: PickableObject) -> void:
+func set_pickable_object(pickable_object: MovableObject) -> void:
 	object = pickable_object;
 	if object == null:
 		texture.texture = null;

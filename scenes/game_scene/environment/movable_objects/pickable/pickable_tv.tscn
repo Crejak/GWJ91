@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://m6sddgn1b7dx"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_2an4d"]
+[ext_resource type="Texture2D" uid="uid://ck2cq2m1mxgd2" path="res://assets/art/props/tv.PNG" id="2_qa7ao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qa7ao"]
+size = Vector2(165, 81)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qa7ao"]
+radius = 59.0
+height = 208.0
+
+[node name="PickableTV" unique_id=1203108321 instance=ExtResource("1_2an4d")]
+collision_layer = 8
+collision_mask = 14
+mass = 15.0
+pickable = true
+monetary_value = 300
+item_texture = ExtResource("2_qa7ao")
+item_name = "Smart TV"
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(93.7, -44.899994)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_qa7ao")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(91.5, -45.5)
+shape = SubResource("RectangleShape2D_qa7ao")
+
+[node name="AudioStreamPlayer2D" parent="." index="2" unique_id=93953150]
+position = Vector2(93.700005, -44.899998)
+
+[node name="PickableArea2D" parent="." index="3" unique_id=1829687385]
+visible = true
+position = Vector2(93.700005, -44.899998)
+monitoring = true
+
+[node name="CollisionShape2D" parent="PickableArea2D" index="0" unique_id=109261683]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qa7ao")
