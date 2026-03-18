@@ -76,5 +76,5 @@ func _on_level_select_button_pressed() -> void:
 		level_select_scene.connect("level_selected", load_game_scene)
 
 func _on_new_game_confirmation_confirmed() -> void:
-	GameState.reset()
+	GlobalState.reset()
 	load_game_scene()

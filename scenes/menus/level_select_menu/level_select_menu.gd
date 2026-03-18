@@ -20,12 +20,13 @@ func _ready() -> void:
 
 
 func _load_story_event() -> void:
-	if GlobalState.current.last_story_event < GlobalState.current.story_progression:
-		GlobalState.current.last_story_event = GlobalState.current.story_progression
+	var currentStoryProgression :StoryProgressionStats = GlobalState.current.story_progression
+	if currentStoryProgression.has_story_progressed():
+		currentStoryProgression.event_catch_up()
 		GlobalState.save()
 		var phone = phone_scene.instantiate()
 		add_child(phone)
-		phone.start_dialog(GlobalState.current.story_progression)
+		phone.start_dialog(currentStoryProgression.story_progression)
 
 	
 ## A fresh level list is propgated into the ItemList, and the file names are cleaned

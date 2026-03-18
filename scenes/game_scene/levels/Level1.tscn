@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
 [ext_resource type="PackedScene" uid="uid://ba21f72lm23w" path="res://scenes/test_room/test_room.tscn" id="3_75gx0"]
-[ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
-[ext_resource type="Script" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
+[ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://800pnvx3ax6e" path="res://scenes/game_scene/environment/pickable_objects/pickable_present.tscn" id="6_armk4"]
-[ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
 [ext_resource type="PackedScene" uid="uid://s5vb6wd8f87" path="res://scenes/game_scene/environment/danger/ExampleDangerZone.tscn" id="8_armk4"]
 [ext_resource type="PackedScene" uid="uid://bwpe8qi01nks" path="res://scenes/game_scene/environment/pickable_objects/pickable_tv.tscn" id="8_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7yctp")
+level_id = 1
 starting_character = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Character")
 
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367 node_paths=PackedStringArray("prop_container_node")]

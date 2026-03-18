@@ -130,7 +130,7 @@ flat = true
 [node name="Button2" type="Button" parent="MarginContainer2/HFlowContainer" unique_id=299601734]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-text = "LEVEL 1"
+text = "LEVEL 2"
 
 [node name="Control" type="Control" parent="." unique_id=1814828904]
 visible = false
