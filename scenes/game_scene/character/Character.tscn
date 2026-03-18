@@ -26,9 +26,10 @@ debug_label = NodePath("DebugLabel")
 [node name="Visual" type="Node2D" parent="." unique_id=1015642632]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=1383117335]
-position = Vector2(2, -56.5)
-scale = Vector2(0.155, 0.13159968)
+position = Vector2(2, -71.5)
+scale = Vector2(0.155, 0.15524034)
 texture = ExtResource("2_n57ve")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1172182283]
 rotation = 1.5707964
