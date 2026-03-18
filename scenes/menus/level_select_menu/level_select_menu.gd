@@ -11,8 +11,22 @@ signal level_selected
 @onready var scene_lister: SceneLister = $SceneLister
 var level_paths : Array[String]
 
+@onready var phone_scene :PackedScene = load("res://scenes/level_selection_screen/phone_scene.tscn")
+
+
 func _ready() -> void:
 	add_levels_to_container()
+	_load_story_event()
+
+
+func _load_story_event() -> void:
+	if GlobalState.current.last_story_event < GlobalState.current.story_progression:
+		GlobalState.current.last_story_event = GlobalState.current.story_progression
+		GlobalState.save()
+		var phone = phone_scene.instantiate()
+		add_child(phone)
+		phone.start_dialog(GlobalState.current.story_progression)
+
 	
 ## A fresh level list is propgated into the ItemList, and the file names are cleaned
 func add_levels_to_container() -> void:
@@ -28,6 +42,12 @@ func add_levels_to_container() -> void:
 		level_buttons_container.add_item(button_name)
 		level_paths.append(file_path)
 
+
 func _on_level_buttons_container_item_activated(index: int) -> void:
 	GameState.set_checkpoint_level_path(level_paths[index])
+	level_selected.emit()
+
+
+func _on_button_pressed() -> void:
+	GameState.set_checkpoint_level_path(level_paths[0])
 	level_selected.emit()
