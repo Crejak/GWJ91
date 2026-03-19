@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c70tal0jxldql"
-path="res://.godot/imported/torn-corrugated-cardboard-441029.webp-234a27a3f96a7cc543d7a230f380143c.ctex"
+uid="uid://bqd6hdrise76g"
+path="res://.godot/imported/PAPERLAND-PREVIEW.png-502647215a879e116f96d3ea118bbf29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/level_selection_screen/images/torn-corrugated-cardboard-441029.webp"
-dest_files=["res://.godot/imported/torn-corrugated-cardboard-441029.webp-234a27a3f96a7cc543d7a230f380143c.ctex"]
+source_file="res://assets/fonts/paperland/PAPERLAND-PREVIEW.png"
+dest_files=["res://.godot/imported/PAPERLAND-PREVIEW.png-502647215a879e116f96d3ea118bbf29.ctex"]
 
 [params]
 

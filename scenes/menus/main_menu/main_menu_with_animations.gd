@@ -67,8 +67,9 @@ func _ready() -> void:
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
 
 func _on_continue_game_button_pressed() -> void:
-	GameState.continue_game()
-	load_game_scene()
+	_on_level_select_button_pressed()
+	#GameState.continue_game()
+	#load_game_scene()
 
 func _on_level_select_button_pressed() -> void:
 	var level_select_scene := _open_sub_menu(level_select_packed_scene)
@@ -78,3 +79,10 @@ func _on_level_select_button_pressed() -> void:
 func _on_new_game_confirmation_confirmed() -> void:
 	GlobalState.reset()
 	load_game_scene()
+
+
+func _on_start_game_button_pressed() -> void:
+	GlobalState.reset()
+	var level_select_scene := _open_sub_menu(level_select_packed_scene)
+	if level_select_scene.has_signal("level_selected"):
+		level_select_scene.connect("level_selected", load_game_scene)
