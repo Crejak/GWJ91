@@ -16,10 +16,8 @@ script = ExtResource("1_luxbu")
 [node name="NotePad" parent="." unique_id=1505004609 instance=ExtResource("2_gcyn8")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = -334.0
-offset_top = -504.0
-offset_right = 327.0
-offset_bottom = 339.0
+offset_top = -490.04498
+offset_bottom = 352.95502
 
 [node name="PreparationPosition" type="Control" parent="." unique_id=371097150]
 unique_name_in_owner = true

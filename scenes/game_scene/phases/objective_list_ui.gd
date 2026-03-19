@@ -16,5 +16,7 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.PREPARATION:
 		visible = false;
 	if phase == LevelState.Phase.INTRODUCTION:
-		notepad.position = preparation_position.position;
-		notepad.scale = preparation_position.scale;
+		var t := create_tween();
+		t.set_parallel();
+		t.tween_property(notepad, "position", preparation_position.position, .5);
+		t.tween_property(notepad, "scale", preparation_position.scale, .5);
