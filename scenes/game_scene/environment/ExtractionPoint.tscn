@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://5h340t04vfey" path="res://scenes/game_scene/environment/extraction_point.gd" id="1_5yhbs"]
 [ext_resource type="PackedScene" uid="uid://cqcnccpjk1n2n" path="res://scenes/game_scene/environment/Interactable.tscn" id="1_sieb1"]
+[ext_resource type="Texture2D" uid="uid://jq6hwos7o2fv" path="res://assets/ui/entrypoint.png" id="3_r62ml"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p6wy2"]
 radius = 56.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p6wy2"]
-size = Vector2(40, 40)
 
 [node name="ExtractionPoint" type="Node2D" unique_id=1663210596]
 script = ExtResource("1_5yhbs")
@@ -23,16 +21,20 @@ debug_color = Color(1, 0.4, 0.84313726, 0.21176471)
 
 [node name="Interactable" parent="Area2D" unique_id=1627385928 instance=ExtResource("1_sieb1")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1216855650]
+[node name="VisibleLayer" type="CanvasGroup" parent="." unique_id=342117278]
+unique_name_in_owner = true
 visible = false
-texture = SubResource("PlaceholderTexture2D_p6wy2")
 
-[node name="Label" type="Label" parent="." unique_id=466532653]
-visible = false
-offset_left = -52.0
-offset_top = -47.0
-offset_right = 47.0
-offset_bottom = -24.0
+[node name="Label" type="Label" parent="VisibleLayer" unique_id=466532653]
+offset_left = -33.0
+offset_top = -44.0
+offset_right = 66.0
+offset_bottom = -21.0
 text = "Extract HERE"
+
+[node name="Sprite2D" type="Sprite2D" parent="VisibleLayer" unique_id=1367078198]
+position = Vector2(18, 0)
+scale = Vector2(0.19867548, 0.20833334)
+texture = ExtResource("3_r62ml")
 
 [connection signal="player_interacted" from="Area2D/Interactable" to="." method="_on_interactable_player_interacted"]
