@@ -49,5 +49,5 @@ func on_phase_started(phase: LevelState.Phase) -> void:
 		level_won.emit();
 		
 func _on_objective_picked_up(index: int, source: Character) -> void:
-	print("Objective picked up : %s by %s" % [objectives[index].name, source]);
+	SignalBus.objective_found.emit(source, index);
 	level_state.mark_objective_as_done(index);

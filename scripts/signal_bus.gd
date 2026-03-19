@@ -5,6 +5,7 @@ signal phase_ended(phase: LevelState.Phase);
 signal phase_started(phase: LevelState.Phase);
 signal character_caught;
 signal active_character_changed(character: Character);
+signal objective_found(character: Character, index: int);
 signal objective_list_updated;
 signal objective_list_cleared;
 signal character_entered;
@@ -24,6 +25,9 @@ func _ready() -> void:
 		);
 		active_character_changed.connect(func (character: Character) -> void:
 			print("Active character changed : %s" % character);
+		);
+		objective_found.connect(func (character: Character, index: int) -> void:
+			print("Objective found : %s by %s" % [index, character]);
 		);
 		objective_list_updated.connect(func () -> void:
 			print("Objective list updated");

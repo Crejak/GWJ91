@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cabp7qygfdjux"]
+
+[ext_resource type="FontFile" uid="uid://chfhrdtdihk2b" path="res://assets/fonts/callie_chalk/CallieChalkFont-Regular.otf" id="1_5of65"]
+[ext_resource type="Script" uid="uid://7n3ka08aesi2" path="res://scenes/game_scene/phases/infiltration/objective_found_effect/objective_found_effect.gd" id="1_gtc8l"]
+[ext_resource type="Script" uid="uid://tdlapscbyvv8" path="res://scenes/game_scene/phases/infiltration/objective_found_effect/strikethrough_line.gd" id="2_gtc8l"]
+
+[node name="ObjectiveFoundEffect" type="Label" unique_id=2085095584]
+offset_right = 1.0
+offset_bottom = 43.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("1_5of65")
+theme_override_font_sizes/font_size = 24
+script = ExtResource("1_gtc8l")
+
+[node name="StrikethroughLine" type="Control" parent="." unique_id=361320437]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gtc8l")
