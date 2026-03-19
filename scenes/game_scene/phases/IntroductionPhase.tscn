@@ -35,6 +35,7 @@ grow_vertical = 2
 
 [node name="IntroLabel" type="RichTextLabel" parent="CenterContainer" unique_id=533272696]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 24

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cvv4rn1nnorph" path="res://scenes/game_scene/phases/infiltration/infiltration_phase_ui.gd" id="1_ii0v8"]
 [ext_resource type="PackedScene" uid="uid://dx6xc08knusx0" path="res://scenes/game_scene/phases/infiltration/InfiltrationFailureUI.tscn" id="2_yrnet"]
-[ext_resource type="PackedScene" uid="uid://cs3jguxukgyr" path="res://scenes/game_scene/phases/infiltration/InventoryUI.tscn" id="3_6nfhw"]
 
 [node name="InfiltrationPhaseUI" type="Control" unique_id=1199558180]
 layout_mode = 3
@@ -42,25 +41,3 @@ max_value = 1.0
 
 [node name="InfiltrationFailureUi" parent="." unique_id=1299373946 instance=ExtResource("2_yrnet")]
 layout_mode = 1
-
-[node name="InventoryUI" parent="." unique_id=582719261 instance=ExtResource("3_6nfhw")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -140.0
-offset_top = -80.0
-offset_right = 140.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="HelperLabel" type="Label" parent="." unique_id=1301410448]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Interact : right click / E
-Browse inventory : scroll up / down
-Drop item : A"

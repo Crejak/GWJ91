@@ -7,6 +7,7 @@ signal on_start_pushing()
 @warning_ignore("unused_signal")
 signal on_finished_pushing()
 signal on_light_changed(in_is_light_on: bool)
+signal picked_up;
 
 @export var flip_h: bool = false:
 	set(value):
@@ -60,3 +61,4 @@ func _on_pick_up_interactable_player_interacted(source: Character) -> void:
 		return;
 	source.pick_up(self);
 	get_parent().remove_child(self);
+	picked_up.emit(source);
