@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ddpembp36spu0"]
 
 [ext_resource type="Script" uid="uid://bgrtey1hosj1b" path="res://scenes/menus/level_select_menu/level_select_menu.gd" id="1_i5r1y"]
-[ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_game_template/base/nodes/utilities/capture_focus.gd" id="2_k4pi0"]
 [ext_resource type="Script" uid="uid://wjq7li836lwj" path="res://addons/maaacks_game_template/extras/scripts/scene_lister.gd" id="3_8jd3o"]
 [ext_resource type="Texture2D" uid="uid://dtgkdb2k4wuyb" path="res://scenes/level_selection_screen/images/cardboard.png" id="3_8oyst"]
 [ext_resource type="Texture2D" uid="uid://bcngba27pskn4" path="res://scenes/menus/level_select_menu/images/corkboard_background.png" id="4_k4pi0"]
@@ -9,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ha50i3dg2ri" path="res://scenes/menus/level_select_menu/level_panel.tscn" id="5_8oyst"]
 [ext_resource type="Resource" uid="uid://0hyy8nu8fshu" path="res://scenes/menus/level_select_menu/resources/Level1.tres" id="6_rqjxd"]
 [ext_resource type="Resource" uid="uid://d1na8f3patjc1" path="res://scenes/menus/level_select_menu/resources/Level2.tres" id="7_0tw0e"]
+[ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="9_0tw0e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4pi0"]
 atlas = ExtResource("4_k4pi0")
@@ -102,8 +102,13 @@ visible = false
 layout_mode = 2
 level_panel_res = ExtResource("7_0tw0e")
 
-[node name="Control" type="Control" parent="." unique_id=1814828904]
-visible = false
+[node name="SceneLister" type="Node" parent="." unique_id=649336979]
+script = ExtResource("3_8jd3o")
+files = Array[String](["res://scenes/game_scene/levels/Level1.tscn", "res://scenes/game_scene/levels/Level2.tscn"])
+directory = "res://scenes/game_scene/levels"
+
+[node name="PhoneSceneNode" type="Control" parent="." unique_id=1100901421]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,32 +116,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("2_k4pi0")
 
-[node name="LevelButtonsContainer" type="ItemList" parent="Control" unique_id=495511343]
+[node name="ExitConfirmation" parent="." unique_id=1482267070 instance=ExtResource("9_0tw0e")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 0)
+visible = false
+custom_minimum_size = Vector2(300, 160)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -17.5
-offset_right = 200.0
-offset_bottom = 17.5
-grow_horizontal = 2
-grow_vertical = 2
-auto_height = true
-item_count = 1
-item_0/text = "1 - ExampleLevel"
-
-[node name="SceneLister" type="Node" parent="." unique_id=649336979]
-script = ExtResource("3_8jd3o")
-files = Array[String](["res://scenes/game_scene/levels/Level1.tscn", "res://scenes/game_scene/levels/Level2.tscn"])
-directory = "res://scenes/game_scene/levels"
+offset_left = -150.0
+offset_top = -80.0
+offset_right = 150.0
+offset_bottom = 80.0
+ui_cancel_closes = false
+text = "Really exit the game?"
+title_visible = false
 
 [connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel1" to="." method="_on_panel_container_clicked"]
 [connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel2" to="." method="_on_panel_container_clicked"]
-[connection signal="item_activated" from="Control/LevelButtonsContainer" to="." method="_on_level_buttons_container_item_activated"]

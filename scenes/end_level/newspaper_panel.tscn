@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://t6u3nvf0xqyd" path="res://scenes/end_level/images/newspaper.png" id="1_aogcy"]
 [ext_resource type="Script" uid="uid://vufnvroqxhtq" path="res://scenes/end_level/newspaper_panel.gd" id="1_iy6re"]
+[ext_resource type="FontFile" uid="uid://qx35gjnccfpc" path="res://assets/fonts/newspaper/Newspaper.ttf" id="3_lpswp"]
 
 [sub_resource type="Animation" id="Animation_iy6re"]
 length = 0.001
@@ -66,7 +67,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(2, 2)]
+"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -98,18 +99,44 @@ script = ExtResource("1_iy6re")
 
 [node name="NewspaperBackground" type="Sprite2D" parent="." unique_id=683229185]
 visible = false
-position = Vector2(795, 427)
+position = Vector2(749.99994, 540)
 texture = ExtResource("1_aogcy")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NewspaperBackground" unique_id=1094901502]
-offset_left = -154.5
-offset_top = -23.499992
-offset_right = -50.19232
-offset_bottom = 22.500008
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Completion time : 10.0s"
+[node name="RichTextLabel" type="RichTextLabel" parent="NewspaperBackground" unique_id=1081726984]
+offset_left = -639.99994
+offset_top = -555.71423
+offset_right = 722.9006
+offset_bottom = -251.71423
+theme_override_colors/default_color = Color(0.21176471, 0.21176471, 0.21176471, 1)
+theme_override_fonts/normal_font = ExtResource("3_lpswp")
+theme_override_font_sizes/normal_font_size = 303
+text = "New roberry"
 fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NewspaperBackground" unique_id=1680552322]
+offset_left = 182.05385
+offset_top = -155.9375
+offset_right = 755.62366
+offset_bottom = 576.9623
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=670816663]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_lxwud")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=568483796]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 60
+
+[node name="BtnContinue" type="Button" parent="MarginContainer" unique_id=1042376992]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Continue"
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]
