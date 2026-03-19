@@ -25,6 +25,7 @@ extends Node
 ## Optional path to an ending scene.
 ## Will attempt to read from AppConfig if left empty
 @export_file("*.tscn") var ending_scene_path : String
+@export_file("*.tscn") var level_select_scene_path : String
 ## Optional screen to be shown after the game is won.
 @export var game_won_scene : PackedScene
 ## Optional screen to be shown after the level is lost.
@@ -86,6 +87,11 @@ func get_ending_scene_path() -> String:
 		return AppConfig.ending_scene_path
 	return ending_scene_path
 
+func get_level_select_scene_path() -> String:
+	if level_select_scene_path.is_empty():
+		return AppConfig.level_select_scene_path
+	return level_select_scene_path
+
 func _load_ending() -> void:
 	if not get_ending_scene_path().is_empty():
 		SceneLoader.load_scene(get_ending_scene_path())
@@ -119,6 +125,9 @@ func _load_checkpoint_level() -> void:
 func _reload_level() -> void:
 	load_level(current_level_path)
 
+func _load_level_select_menu() -> void:
+	SceneLoader.load_scene(get_level_select_scene_path())
+
 func _load_win_screen_or_ending() -> void:
 	if game_won_scene:
 		var instance = game_won_scene.instantiate()
@@ -133,7 +142,7 @@ func _load_level_won_screen_or_checkpoint() -> void:
 	if level_won_scene:
 		var instance = level_won_scene.instantiate()
 		get_tree().current_scene.add_child(instance)
-		_try_connecting_signal_to_node(instance, &"continue_pressed", _load_checkpoint_level)
+		_try_connecting_signal_to_node(instance, &"continue_pressed", _load_level_select_menu)
 		_try_connecting_signal_to_node(instance, &"restart_pressed", _reload_level)
 		_try_connecting_signal_to_node(instance, &"main_menu_pressed", _load_main_menu)
 	else:

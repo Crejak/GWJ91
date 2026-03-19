@@ -6,4 +6,5 @@
 script = ExtResource("1_o0k5w")
 main_menu_scene_path = "res://scenes/menus/main_menu/main_menu_with_animations.tscn"
 game_scene_path = "res://scenes/game_scene/game_ui.tscn"
+level_select_scene_path = "uid://ddpembp36spu0"
 ending_scene_path = "res://scenes/end_credits/end_credits.tscn"

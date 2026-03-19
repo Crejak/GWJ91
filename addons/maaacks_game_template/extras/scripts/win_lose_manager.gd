@@ -6,6 +6,7 @@ extends Node
 ## Optional path to an ending scene.
 ## Will attempt to read from AppConfig if left empty.
 @export_file("*.tscn") var ending_scene_path : String
+@export_file("*.tscn") var level_select_scene_path : String
 ## Optional screen to be shown after the game is won.
 @export var game_won_scene : PackedScene
 ## Optional screen to be shown after the game is lost.
@@ -22,6 +23,11 @@ func get_main_menu_scene_path() -> String:
 	if main_menu_scene_path.is_empty():
 		return AppConfig.main_menu_scene_path
 	return main_menu_scene_path
+
+func get_level_select_scene_path() -> String:
+	if level_select_scene_path.is_empty():
+		return AppConfig.level_select_scene_path
+	return level_select_scene_path
 
 func _load_main_menu() -> void:
 	SceneLoader.load_scene(get_main_menu_scene_path())
