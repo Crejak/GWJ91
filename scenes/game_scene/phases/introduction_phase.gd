@@ -21,5 +21,5 @@ func on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INTRODUCTION:
 		visible = false;
 
-func _on_start_level_button_pressed() -> void:
+func _on_vcr_button_pressed() -> void:
 	GameState.get_current_level_state().set_phase(LevelState.Phase.PREPARATION);
