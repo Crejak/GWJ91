@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelPanelRes" format=3 uid="uid://0hyy8nu8fshu"]
+
+[ext_resource type="Script" uid="uid://r7un4f8i7vjl" path="res://scenes/menus/level_select_menu/resources/level_panel_res.gd" id="1_xeplx"]
+[ext_resource type="Resource" uid="uid://c0sqpwmon2k7r" path="res://scenes/level_selection_screen/conversations/1-MrsYellow.tres" id="1_xhmla"]
+
+[resource]
+script = ExtResource("1_xeplx")
+level_name = "Mrs Yellow's appartment"
+dialog_res = ExtResource("1_xhmla")
+metadata/_custom_type_script = "uid://r7un4f8i7vjl"

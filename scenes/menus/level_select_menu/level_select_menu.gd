@@ -15,8 +15,15 @@ var level_paths : Array[String]
 
 
 func _ready() -> void:
-	add_levels_to_container()
+	#add_levels_to_container()
+	_retreive_level_paths()
 	_load_story_event()
+
+
+func _retreive_level_paths() -> void:
+	$SceneLister._refresh_files()
+	for file :String in $SceneLister.files:
+		level_paths.append(file)
 
 
 func _load_story_event() -> void:
@@ -51,4 +58,9 @@ func _on_level_buttons_container_item_activated(index: int) -> void:
 
 func _on_button_pressed() -> void:
 	GameState.set_checkpoint_level_path(level_paths[0])
+	level_selected.emit()
+
+
+func _on_panel_container_clicked(level_id: int) -> void:
+	GameState.set_checkpoint_level_path(level_paths[level_id])
 	level_selected.emit()
