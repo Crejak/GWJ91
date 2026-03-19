@@ -20,6 +20,7 @@ func _ready() -> void:
 	_retreive_level_paths()
 	_update_level_panels()
 	_load_story_event()
+	AudioBus.play_music("TITLE_SCREEN")
 
 
 func _retreive_level_paths() -> void:

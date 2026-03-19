@@ -62,7 +62,7 @@ func _show_continue_if_set() -> void:
 
 func _ready() -> void:
 	super._ready()
-	_show_level_select_if_set()
+	#_show_level_select_if_set()
 	_show_continue_if_set()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
 

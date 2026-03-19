@@ -404,13 +404,19 @@ tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
-[node name="TitleContainer" parent="MenuContainer/TitleMargin" parent_id_path=PackedInt32Array(2112060331) index="0" unique_id=556427956]
+[node name="TitleMargin" parent="MenuContainer" parent_id_path=PackedInt32Array(396616752) index="0" unique_id=2112060331]
+visible = false
+
+[node name="TitleContainer" parent="MenuContainer/TitleMargin" index="0" unique_id=556427956]
 modulate = Color(1, 1, 1, 0)
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0" unique_id=359406872]
 text = "GWJ91"
 
-[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" parent_id_path=PackedInt32Array(1510335937) index="0" unique_id=930520368]
+[node name="SubTitleMargin" parent="MenuContainer" parent_id_path=PackedInt32Array(396616752) index="1" unique_id=1510335937]
+visible = false
+
+[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0" unique_id=930520368]
 modulate = Color(1, 1, 1, 0)
 
 [node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(210553886) index="0" unique_id=116448484]
