@@ -26,6 +26,11 @@ signal object_dropped(source: Character, object: MovableObject);
 @export var speed_damp: float = 0.15;
 @export var speed_floor_ratio: float = 0.333;
 
+@export_group("Movement/Detection")
+@export var max_silent_speed: float = 26
+
+@export var base_noise_value: float = 5
+
 var speed_loss_factor: float = 1.;
 
 @export_group("Debug")
@@ -39,18 +44,20 @@ func _ready() -> void:
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if linear_velocity.length() > max_silent_speed:
+		SignalBus.detection.on_player_move.emit(global_position, (base_noise_value + get_total_picked_up_mass()) * linear_velocity.length_squared() * delta)
+
 	if OS.is_debug_build():
 		debug_label.text = "Speed : %.1f px/s\nMass : %.1f kg\nValue : %s $" % \
 			[linear_velocity.length(), get_total_picked_up_mass(), get_total_picked_up_value()];
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
 	var velocity := get_velocity_from_distance_to_cursor(distance);
 	if get_colliding_bodies().is_empty():
-		print("Empty colliding bodies");
 		linear_velocity = velocity
 		return;
 	apply_force(velocity * mass)

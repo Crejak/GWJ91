@@ -38,6 +38,7 @@ func _on_body_exited(in_body: Node2D) -> void:
 
 
 func display_room() -> void:
+	if not visible: return
 	if light_on: return
 	light_on = true
 	var t: Tween = create_tween()
@@ -69,6 +70,7 @@ func _on_pnj_change_state(in_state: PNJ.State) -> void:
 
 
 func try_hide_room() -> void:
+	if not visible: return
 	if not light_on: return
 	if pnjs.any(func(in_pnj: PNJ) -> bool: return in_pnj.state_machine.current_state != in_pnj.states[PNJ.State.SLEEP]):
 		return

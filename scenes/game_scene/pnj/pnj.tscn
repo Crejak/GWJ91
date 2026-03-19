@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://coequeusuck5b" path="res://assets/art/characters/player.png" id="1_n5u52"]
 [ext_resource type="Script" uid="uid://bauh26rm4nnmy" path="res://scenes/game_scene/pnj/pnj.gd" id="1_pnd87"]
 [ext_resource type="Texture2D" uid="uid://cr6ay0iyu1lq2" path="res://assets/art/animations/chase.png" id="3_2ke15"]
-[ext_resource type="Script" uid="uid://dwqv65m8ieqgg" path="res://addons/finite_state_machine/scripts/state_machine.gd" id="3_joe27"]
+[ext_resource type="Script" path="res://addons/finite_state_machine/scripts/state_machine.gd" id="3_joe27"]
 [ext_resource type="Texture2D" uid="uid://cvmvkys8fh7do" path="res://assets/art/animations/sleep.png" id="3_mbr25"]
 [ext_resource type="Script" uid="uid://bl73ob6dr63m7" path="res://scenes/game_scene/pnj/states/pnj_state.gd" id="4_3h3ax"]
-[ext_resource type="PackedScene" uid="uid://s5vb6wd8f87" path="res://scenes/game_scene/environment/danger/ExampleDangerZone.tscn" id="5_3mqs1"]
+[ext_resource type="Texture2D" uid="uid://d1kesro0ht5q6" path="res://assets/art/animations/warning.png" id="5_3mqs1"]
 [ext_resource type="Script" uid="uid://ds35tsbb5h6e7" path="res://scenes/game_scene/pnj/states/state_move.gd" id="5_llj0r"]
 [ext_resource type="Script" uid="uid://b06vvxj6t878h" path="res://scenes/game_scene/pnj/states/pnj_state_sleep.gd" id="5_prjxh"]
 [ext_resource type="Script" uid="uid://b4ik6sliqqu6y" path="res://scenes/game_scene/pnj/states/pnj_state_chase.gd" id="9_3mqs1"]
@@ -171,6 +171,98 @@ region = Rect2(1536, 1536, 512, 512)
 atlas = ExtResource("3_mbr25")
 region = Rect2(2048, 1536, 512, 512)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_24fxg"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0b0v"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqsj5"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p24yt"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikhuf"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thcvw"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbw23"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eydnc"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esf7a"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1536, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xrs3"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(2048, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s2w4"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxmwe"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnqps"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gyf8"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1536, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88dod"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(2048, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_483l4"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jll5l"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(512, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkup0"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1024, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glb17"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1536, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r4aa"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(2048, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wswj"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(0, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmdmx"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(512, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjvir"]
+atlas = ExtResource("5_3mqs1")
+region = Rect2(1024, 2048, 512, 512)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_llj0r"]
 animations = [{
 "frames": [{
@@ -302,6 +394,80 @@ animations = [{
 "loop": true,
 "name": &"sleep",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24fxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0b0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqsj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p24yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikhuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thcvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbw23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eydnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esf7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xrs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s2w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxmwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnqps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gyf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88dod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_483l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jll5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkup0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glb17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r4aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wswj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmdmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjvir")
+}],
+"loop": false,
+"name": &"warning",
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnd87"]
@@ -397,6 +563,7 @@ _data = {
 rotates = false
 loop = false
 script = ExtResource("1_pnd87")
+chase_threshold = 2.0
 path_following_speed = 150.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=997370158 groups=["PNJ"]]
@@ -411,14 +578,6 @@ max_contacts_reported = 5
 linear_damp = 1.0
 angular_damp = 8.0
 
-[node name="ExampleDangerZone" parent="RigidBody2D" unique_id=1971970911 instance=ExtResource("5_3mqs1")]
-
-[node name="CollisionPolygon2D" parent="RigidBody2D/ExampleDangerZone" index="0" unique_id=77102165]
-polygon = PackedVector2Array(-2.246132, -164.10959, -144.62624, -83.5, -119.92563, 79.71728, 21.370491, 158.98523, 166.54483, 91.5359, 148.57626, -79.34163)
-
-[node name="Polygon2D" parent="RigidBody2D/ExampleDangerZone" index="3" unique_id=990994770]
-visible = false
-
 [node name="Visual" type="Node2D" parent="RigidBody2D" unique_id=390448743]
 scale = Vector2(0.85, 0.85)
 
@@ -430,10 +589,12 @@ texture = ExtResource("1_n5u52")
 
 [node name="StatusAnimations" type="AnimatedSprite2D" parent="RigidBody2D/Visual" unique_id=1954057949]
 unique_name_in_owner = true
-position = Vector2(1.1764698, -230.58826)
-scale = Vector2(0.9, 0.9)
+position = Vector2(11.764709, -192.94116)
+scale = Vector2(0.42702204, 0.42702204)
 sprite_frames = SubResource("SpriteFrames_llj0r")
-animation = &"chase"
+animation = &"warning"
+frame = 22
+frame_progress = 1.0
 
 [node name="DetectionProgressBar" type="ProgressBar" parent="RigidBody2D/Visual" unique_id=1443591310]
 unique_name_in_owner = true
@@ -480,5 +641,3 @@ script = ExtResource("9_3mqs1")
 pnj = NodePath("../..")
 done_on_start = true
 metadata/_custom_type_script = "uid://cy5cvsq5uplwa"
-
-[editable path="RigidBody2D/ExampleDangerZone"]
