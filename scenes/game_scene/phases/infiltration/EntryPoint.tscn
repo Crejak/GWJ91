@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://djp1efqdx0jxb"]
+
+[ext_resource type="Script" uid="uid://cf8hcyxxlj1l0" path="res://scenes/game_scene/phases/infiltration/entry_point.gd" id="1_u3web"]
+[ext_resource type="Texture2D" uid="uid://jq6hwos7o2fv" path="res://assets/ui/entrypoint.png" id="2_hpssm"]
+
+[node name="EntryPoint" type="Control" unique_id=1056506662]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u3web")
+
+[node name="Label" type="Label" parent="." unique_id=739788738]
+layout_mode = 0
+offset_left = -59.0
+offset_top = -45.0
+offset_right = 66.0
+offset_bottom = -22.0
+text = "Start infiltration"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=619046498]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 14.458336
+offset_bottom = 15.0
+texture_normal = ExtResource("2_hpssm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

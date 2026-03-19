@@ -91,9 +91,10 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
-		can_move = true;
+		# EntryPoint is now responsible for managing the character initialization
+		#can_move = true;
 		can_sleep = false;
-		visible = true;
+		#visible = true;
 
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:

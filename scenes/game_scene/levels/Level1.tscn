@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://m6sddgn1b7dx" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_tv.tscn" id="5_75gx0"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
+[ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 [ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
 
@@ -94,7 +95,7 @@ min_speed = 15.0
 max_speed = 150.0
 
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
-position = Vector2(96, 523)
+position = Vector2(78, 524)
 
 [node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("2_r2bnq")]
 visible = false
@@ -106,7 +107,7 @@ Please read it to understand all the lore. I promise it's really cool."
 [node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_7plab")]
 visible = false
 layout_mode = 1
-preparation_time = 35.0
+preparation_time = 3.0
 
 [node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("4_jwlce")]
 visible = false
@@ -122,6 +123,14 @@ layout_mode = 1
 [node name="ObjectiveListUi" parent="." unique_id=1932395075 instance=ExtResource("14_sh55l")]
 visible = false
 layout_mode = 1
+
+[node name="EntryPoint" parent="." unique_id=804974359 node_paths=PackedStringArray("character") instance=ExtResource("9_sh55l")]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 527.0
+offset_right = 193.0
+offset_bottom = 527.0
+character = NodePath("../PlayableEnvironment/Environment/TestRoom/Props/Character")
 
 [connection signal="object_dropped" from="PlayableEnvironment/Environment/TestRoom/Props/Character" to="PlayableEnvironment" method="_on_character_object_dropped"]
 

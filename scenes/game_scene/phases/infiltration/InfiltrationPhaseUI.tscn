@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ii0v8")
 
 [node name="TopVBoxContainer" type="VBoxContainer" parent="." unique_id=651139523]
@@ -22,10 +23,11 @@ offset_right = 155.5
 offset_bottom = 83.0
 grow_horizontal = 2
 
-[node name="Title" type="Label" parent="TopVBoxContainer" unique_id=602362958]
+[node name="HelperLabel" type="Label" parent="TopVBoxContainer" unique_id=602362958]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "Infiltration"
+text = "Click on your character to start"
 horizontal_alignment = 1
 
 [node name="DangerLabel" type="Label" parent="TopVBoxContainer" unique_id=551463762]

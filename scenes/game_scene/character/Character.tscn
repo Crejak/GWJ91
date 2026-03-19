@@ -35,6 +35,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_n57ve")
 
 [node name="DebugLabel" type="Label" parent="." unique_id=1590354430]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
