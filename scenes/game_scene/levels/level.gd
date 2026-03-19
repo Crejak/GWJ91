@@ -27,6 +27,7 @@ func _on_win_button_pressed() -> void:
 	level_won.emit(next_level_path)
 
 func _ready() -> void:
+	current = self;
 	if starting_character == null:
 		push_error("A level must have a starting character");
 	level_state = GameState.get_level_state(scene_file_path);
@@ -41,7 +42,6 @@ func _ready() -> void:
 			_on_objective_picked_up(index, source);
 		);
 	level_state.init_objectives(objectives.size());
-	current = self;
 
 func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.COMPLETED:

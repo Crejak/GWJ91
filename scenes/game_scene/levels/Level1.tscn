@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_7yctp"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_50hnf"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
-[ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
+[ext_resource type="Script" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
 [ext_resource type="PackedScene" uid="uid://ba21f72lm23w" path="res://scenes/test_room/test_room.tscn" id="3_75gx0"]
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="4_75gx0"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
 [ext_resource type="PackedScene" uid="uid://s5vb6wd8f87" path="res://scenes/game_scene/environment/danger/ExampleDangerZone.tscn" id="8_armk4"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
+[ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
 
 [sub_resource type="Resource" id="Resource_armk4"]
 script = ExtResource("2_armk4")
@@ -120,6 +121,9 @@ This is the conclusion of the story for this level. Please read it carefully it 
 
 [node name="InfiltrationPhaseUI" parent="." unique_id=1199558180 instance=ExtResource("12_75gx0")]
 visible = false
+layout_mode = 1
+
+[node name="ObjectiveListUi" parent="." unique_id=1932395075 instance=ExtResource("14_sh55l")]
 layout_mode = 1
 
 [connection signal="object_dropped" from="PlayableEnvironment/Environment/TestRoom/Props/Character" to="PlayableEnvironment" method="_on_character_object_dropped"]

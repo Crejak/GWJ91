@@ -41,12 +41,3 @@ max_value = 1.0
 
 [node name="InfiltrationFailureUi" parent="." unique_id=1299373946 instance=ExtResource("2_yrnet")]
 layout_mode = 1
-
-[node name="ObjectiveListLabel" type="Label" parent="." unique_id=674845542]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Objectives :
-[ ] blabla
-[ ] blabla"
