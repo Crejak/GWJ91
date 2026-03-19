@@ -72,3 +72,6 @@ func add_levels_to_container() -> void:
 func _on_panel_container_clicked(level_id: int) -> void:
 	GameState.set_checkpoint_level_path(level_paths[level_id])
 	load_game_scene()
+
+func _on_exit_confirmation_confirmed():
+	super._on_exit_confirmation_confirmed()
