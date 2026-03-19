@@ -107,7 +107,7 @@ Please read it to understand all the lore. I promise it's really cool."
 [node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_7plab")]
 visible = false
 layout_mode = 1
-preparation_time = 3.0
+preparation_time = 35.0
 
 [node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("4_jwlce")]
 visible = false
