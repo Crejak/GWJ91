@@ -9,6 +9,8 @@ signal phase_started(phase: LevelState.Phase);
 signal character_caught;
 @warning_ignore("unused_signal")
 signal active_character_changed(character: Character);
+@warning_ignore("unused_signal")
+signal objective_list_updated;
 
 @onready var detection: Detection = Detection.new() 
 
@@ -25,6 +27,9 @@ func _ready() -> void:
 		);
 		active_character_changed.connect(func (character: Character) -> void:
 			print("Active character changed : %s" % character);
+		);
+		objective_list_updated.connect(func () -> void:
+			print("Objective list updated");
 		);
 		detection.on_movable_object_noise_start.connect(func(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float) -> void:
 			print("Noise Detection start: %s, at %s, intensity: %f" % [in_object.name, str(in_position), in_sound_intensity]))

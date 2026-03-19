@@ -25,7 +25,10 @@ var danger_level: float = 0.:
 		if value >= 1. && danger_level < 1.:
 			SignalBus.character_caught.emit();
 		danger_level = clamp(value, 0., 1.);
-var objectives: Dictionary[int, bool] = {};
+var objectives: Dictionary[int, bool] = {}:
+	set(value):
+		objectives = value;
+		SignalBus.objective_list_updated.emit();
 
 var active_character: Character:
 	set(value):
@@ -49,4 +52,4 @@ func set_phase(new_phase: Phase) -> void:
 		
 func mark_objective_as_done(index: int) -> void:
 	objectives[index] = true;
-	print("Objective done : %s" % index);
+	SignalBus.objective_list_updated.emit();

@@ -17,6 +17,9 @@ signal level_changed(level_path : String)
 
 var level_state : LevelState
 
+## It's dirty but it's the easiest way to access the current level for now
+static var current: Level;
+
 func _on_lose_button_pressed() -> void:
 	level_lost.emit()
 
@@ -37,6 +40,7 @@ func _ready() -> void:
 		object.on_picked_up.connect(func (source: Character) -> void:
 			_on_objective_picked_up(index, source);
 		);
+	current = self;
 
 func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.COMPLETED:
