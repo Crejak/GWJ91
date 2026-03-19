@@ -46,6 +46,7 @@ func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
+	visible = false;
 
 func _process(delta: float) -> void:
 	if linear_velocity.length() > max_silent_speed:
@@ -90,13 +91,16 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
-		can_move = true;
+		# EntryPoint is now responsible for managing the character initialization
+		#can_move = true;
 		can_sleep = false;
+		#visible = true;
 
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
 		can_move = false;
 		can_sleep = true;
+		visible = false;
 
 func _on_character_caught() -> void:
 	can_move = false;

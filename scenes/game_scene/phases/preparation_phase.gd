@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if !visible:
 		return;
-	timer_label.text = "Preparation time remaining : %.2f" % timer.time_left;
+	timer_label.text = ">> %.2f" % (timer.wait_time - timer.time_left);
 
 func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.PREPARATION:

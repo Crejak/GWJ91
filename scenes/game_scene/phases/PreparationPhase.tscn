@@ -1,6 +1,33 @@
 [gd_scene format=3 uid="uid://gv1he4q57gpp"]
 
 [ext_resource type="Script" uid="uid://dsum6xmh2fxwt" path="res://scenes/game_scene/phases/preparation_phase.gd" id="1_8e7co"]
+[ext_resource type="Shader" uid="uid://c65nb30njhqsr" path="res://scenes/game_scene/phases/crt_filter.gdshader" id="2_wxhly"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxwhb"]
+shader = ExtResource("2_wxhly")
+shader_parameter/pixel_size = 2.0
+shader_parameter/lod_blur = 0.7
+shader_parameter/chroma_offset_px = 0.8
+shader_parameter/saturation = 0.78
+shader_parameter/contrast = 0.9
+shader_parameter/shadow_lift = 0.06
+shader_parameter/scanline_strength = 0.04
+shader_parameter/vignette_strength = 0.1
+shader_parameter/noise_strength = 0.025
+shader_parameter/noise_speed = 18.0
+shader_parameter/base_jitter_px = 0.08
+shader_parameter/base_jitter_speed = 12.0
+shader_parameter/glitchiness = 0.18
+shader_parameter/glitch_rate = 6.0
+shader_parameter/glitch_shift_px = 1.8
+shader_parameter/glitch_window_min = 0.03
+shader_parameter/glitch_window_max = 0.1
+shader_parameter/blue_band_start_y = 0.45
+shader_parameter/blue_band_speed = 0.06
+shader_parameter/blue_band_width = 0.035
+shader_parameter/blue_band_strength = 0.1
+shader_parameter/blue_band_glitch = 0.25
+shader_parameter/blue_band_distort_px = 1.2
 
 [node name="PreparationPhase" type="Control" unique_id=1630391834]
 layout_mode = 3
@@ -13,26 +40,29 @@ script = ExtResource("1_8e7co")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1902487165]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -223.0
-offset_right = 223.0
-offset_bottom = 69.0
-grow_horizontal = 2
+offset_right = 535.0
+offset_bottom = 121.0
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=121776580]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "Preparation phase"
-horizontal_alignment = 1
+text = "Playing"
 
 [node name="TimerLabel" type="Label" parent="VBoxContainer" unique_id=1190628990]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Time remaining : 0.00"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 40
+text = "0.00"
+
+[node name="CRTFilter" type="ColorRect" parent="." unique_id=841910558]
+material = SubResource("ShaderMaterial_jxwhb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=292092678]
 unique_name_in_owner = true
