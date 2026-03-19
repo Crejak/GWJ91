@@ -1,7 +1,7 @@
 extends Control
 
 @onready var notepad: NotePad = %NotePad;
-@onready var in_game_position: Control = %IngamePosition;
+@onready var preparation_position: Control = %PreparationPosition;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -13,8 +13,8 @@ func _on_phase_started(phase: LevelState.Phase) -> void:
 	notepad.set_anchors_preset(Control.PRESET_CENTER, true);
 
 func _on_phase_ended(phase: LevelState.Phase) -> void:
-	if phase == LevelState.Phase.INFILTRATION:
+	if phase == LevelState.Phase.PREPARATION:
 		visible = false;
 	if phase == LevelState.Phase.INTRODUCTION:
-		notepad.position = in_game_position.position;
-		notepad.scale = in_game_position.scale;
+		notepad.position = preparation_position.position;
+		notepad.scale = preparation_position.scale;
