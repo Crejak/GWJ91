@@ -24,6 +24,9 @@ class_name PhoneDialogs
 var current_dialog :ConversationRes = ConversationRes.new()
 
 
+signal dialog_terminated
+
+
 func _ready() -> void:
 	dialog_text_label.end_dialog.connect(_on_dialog_ended)
 
@@ -62,6 +65,7 @@ func display_conversation(enabled :bool = true) -> void:
 
 func _on_dialog_ended() -> void:
 	state_machine.set_current_state(disappearing_state)
+	dialog_terminated.emit()
 
 
 func _process(delta: float) -> void:

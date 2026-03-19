@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://cibc5lu34wly3" path="res://assets/fonts/paperkind/Paperkind.ttf" id="4_rqjxd"]
 [ext_resource type="PackedScene" uid="uid://ha50i3dg2ri" path="res://scenes/menus/level_select_menu/level_panel.tscn" id="5_8oyst"]
 [ext_resource type="Resource" uid="uid://0hyy8nu8fshu" path="res://scenes/menus/level_select_menu/resources/Level1.tres" id="6_rqjxd"]
+[ext_resource type="Resource" uid="uid://d1na8f3patjc1" path="res://scenes/menus/level_select_menu/resources/Level2.tres" id="7_0tw0e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4pi0"]
 atlas = ExtResource("4_k4pi0")
@@ -86,13 +87,20 @@ theme_override_constants/margin_top = 400
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 50
 
-[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer2" unique_id=943097619]
+[node name="LevelPanelContainer" type="HFlowContainer" parent="MarginContainer2" unique_id=943097619]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 100
 
-[node name="PanelContainer" parent="MarginContainer2/HFlowContainer" unique_id=1760663543 instance=ExtResource("5_8oyst")]
+[node name="LevelPanel1" parent="MarginContainer2/LevelPanelContainer" unique_id=1760663543 instance=ExtResource("5_8oyst")]
+visible = false
 layout_mode = 2
 level_panel_res = ExtResource("6_rqjxd")
+
+[node name="LevelPanel2" parent="MarginContainer2/LevelPanelContainer" unique_id=251727607 instance=ExtResource("5_8oyst")]
+visible = false
+layout_mode = 2
+level_panel_res = ExtResource("7_0tw0e")
 
 [node name="Control" type="Control" parent="." unique_id=1814828904]
 visible = false
@@ -129,5 +137,6 @@ script = ExtResource("3_8jd3o")
 files = Array[String](["res://scenes/game_scene/levels/Level1.tscn", "res://scenes/game_scene/levels/Level2.tscn"])
 directory = "res://scenes/game_scene/levels"
 
-[connection signal="clicked" from="MarginContainer2/HFlowContainer/PanelContainer" to="." method="_on_panel_container_clicked"]
+[connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel1" to="." method="_on_panel_container_clicked"]
+[connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel2" to="." method="_on_panel_container_clicked"]
 [connection signal="item_activated" from="Control/LevelButtonsContainer" to="." method="_on_level_buttons_container_item_activated"]

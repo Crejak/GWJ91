@@ -7,6 +7,7 @@ extends Control
 
 signal level_selected
 
+@onready var level_panel_container = %LevelPanelContainer
 @onready var level_buttons_container: ItemList = %LevelButtonsContainer
 @onready var scene_lister: SceneLister = $SceneLister
 var level_paths : Array[String]
@@ -17,6 +18,7 @@ var level_paths : Array[String]
 func _ready() -> void:
 	#add_levels_to_container()
 	_retreive_level_paths()
+	_update_level_panels()
 	_load_story_event()
 
 
@@ -26,12 +28,20 @@ func _retreive_level_paths() -> void:
 		level_paths.append(file)
 
 
+func _update_level_panels() -> void:
+	var currentStoryProgression :StoryProgressionStats = GlobalState.current.story_progression
+	for panel :LevelPanel in level_panel_container.get_children():
+		panel.visible = (currentStoryProgression.last_story_event >= panel.level_panel_res.level_id)
+
+
+
 func _load_story_event() -> void:
 	var currentStoryProgression :StoryProgressionStats = GlobalState.current.story_progression
 	if currentStoryProgression.has_story_progressed():
 		currentStoryProgression.event_catch_up()
 		GlobalState.save()
-		var phone = phone_scene.instantiate()
+		var phone :PhoneDialogs = phone_scene.instantiate()
+		phone.dialog_terminated.connect(_update_level_panels)
 		add_child(phone)
 		phone.start_dialog(currentStoryProgression.story_progression)
 

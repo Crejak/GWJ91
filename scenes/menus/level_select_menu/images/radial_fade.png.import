@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtgkdb2k4wuyb"
-path="res://.godot/imported/cardboard.png-fdbcc751e593807629828863817b1b42.ctex"
+uid="uid://bs6ljnia3m8pe"
+path="res://.godot/imported/radial_fade.png-5375960294a6fb83d01d4dc0c2043c53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/level_selection_screen/images/cardboard.png"
-dest_files=["res://.godot/imported/cardboard.png-fdbcc751e593807629828863817b1b42.ctex"]
+source_file="res://scenes/menus/level_select_menu/images/radial_fade.png"
+dest_files=["res://.godot/imported/radial_fade.png-5375960294a6fb83d01d4dc0c2043c53.ctex"]
 
 [params]
 
@@ -22,9 +22,9 @@ compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=1
+compress/channel_pack=0
 mipmaps/generate=false
-mipmaps/limit=15
+mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0
