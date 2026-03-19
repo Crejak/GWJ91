@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://sew38c8nl2du"]
+
+[ext_resource type="Script" uid="uid://0d46wlnn0lar" path="res://scenes/test_room/room.gd" id="1_7q54m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c5gh"]
+size = Vector2(670, 386)
+
+[sub_resource type="Gradient" id="Gradient_51dik"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.5686275, 0.5686275, 0.5686275, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2c5gh"]
+gradient = SubResource("Gradient_51dik")
+
+[node name="Room" type="Area2D" unique_id=727033528]
+collision_layer = 0
+collision_mask = 11
+monitorable = false
+script = ExtResource("1_7q54m")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=473306914]
+position = Vector2(19, 6)
+shape = SubResource("RectangleShape2D_2c5gh")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=71484989]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(17.999998, 5.499999)
+scale = Vector2(2.695313, 407.00003)
+texture = SubResource("GradientTexture1D_2c5gh")

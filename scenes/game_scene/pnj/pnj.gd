@@ -9,6 +9,7 @@ enum State {SLEEP, MOVE, WAIT, CHASE}
 	State.WAIT: %WAIT,
 	State.CHASE: %CHASE
 }
+signal state_changed(in_state: State)
 
 @export_group("Detection")
 var detection: float = 0.0
@@ -33,26 +34,47 @@ var timeline_index: int = 0
 var is_waiting_for_step_to_finish: bool
 @export var timeline: Array[Step]
 
+@export_group("Visual")
 @onready var status_animations: AnimatedSprite2D = %StatusAnimations
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var sprite: Sprite2D = %Sprite2D
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_game_phase_changed)
 	SignalBus.detection.on_movable_object_noise_start.connect(_on_movable_object_noise_start)
 	SignalBus.detection.on_movable_object_noise_stop.connect(_on_movable_object_noise_stop)
+	SignalBus.detection.on_player_move.connect(_on_player_move_detection)
 
 func _process(in_delta: float) -> void:
 	_increase_detection(in_delta)
 
 func _on_game_phase_changed(in_phase: LevelState.Phase) -> void:
 	match in_phase:
-		LevelState.Phase.INFILTRATION, LevelState.Phase.INTRODUCTION:
+		LevelState.Phase.PREPARATION:
 			start_game_timer()
+			_display()
+		LevelState.Phase.INFILTRATION:
+			start_game_timer()
+			_hide()
+		LevelState.Phase.CONCLUSION:
+			reset()
+
+#region --- Visual ---
+func _hide() -> void:
+	var t: Tween = create_tween()
+	t.tween_property(sprite, "modulate", Color.TRANSPARENT, 0.5)
+
+func _display() -> void:
+	var t: Tween = create_tween()
+	t.tween_property(sprite, "modulate", Color.WHITE, 0.5)
+
+#endregion --- Visual ---
 
 #region --- Timeline ---
 func reset() -> void:
 	progress = 0.0
 	body.global_position = global_position
+	state_changed.emit(State.SLEEP)
 	state_machine.set_current_state(states[State.SLEEP])
 	if not timer:
 		timer = Timer.new()
@@ -90,15 +112,18 @@ func next_timeline_step() -> void:
 		timer.start(timeline[timeline_index].duration)
 
 	# change state
+	var new_state: State = timeline[timeline_index].pnj_state
 	step_done.connect(func() -> void: 
 		is_waiting_for_step_to_finish = false
 		try_end_step()
 		, CONNECT_ONE_SHOT)
-	state_machine.set_current_state(states[timeline[timeline_index].pnj_state])
+	state_machine.set_current_state(states[new_state])
+	state_changed.emit(new_state)
 
 func try_end_step() -> void:
 	if is_waiting_for_step_to_finish: return
 	if timer.time_left > 0: return
+	if timeline.size() <= timeline_index: return
 	next_timeline_step()
 #endregion --- Timeline ---
 
@@ -107,19 +132,38 @@ var object_making_noise: Dictionary[MovableObject, float]
 
 func _on_movable_object_noise_start(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float) -> void:
 	object_making_noise[in_object] = in_sound_intensity / body.global_position.distance_squared_to(in_position)
-	detection += object_making_noise[in_object]
+	add_detection(object_making_noise[in_object] * 0.2)
+
 
 func _on_movable_object_noise_stop(in_object: MovableObject) -> void:
 	object_making_noise.erase(in_object)
 
+
+func _on_player_move_detection(in_position: Vector2, in_sound_intensity: float) -> void:
+	add_detection(in_sound_intensity / body.global_position.distance_squared_to(in_position))
+
+
 func _increase_detection(in_delta: float) -> void:
-	if state_machine.get_current_state() == states[State.CHASE]: return
 	for obj: MovableObject in object_making_noise:
-		detection += object_making_noise[obj] * in_delta
-		detection_progress_bar.value = detection
-		if detection >= chase_threshold:
-			print(name, " start CHASE")
-			state_machine.set_current_state(states[State.CHASE])
-			break
+		add_detection(object_making_noise[obj] * in_delta)
+
+var warning_index: int = 0
+func add_detection(in_value: float) -> void:
+	if state_machine.get_current_state() == states[State.CHASE]: return
+	if state_machine.get_current_state() == states[State.SLEEP]:
+		detection += in_value / 2
+	else:
+		detection += in_value
+	if int(detection * 5) > warning_index:
+		status_animations.play("warning")
+		warning_index = int(detection * 5)
+		await status_animations.animation_finished
+		if state_machine.get_current_state() == states[State.SLEEP]:
+			status_animations.play("sleep")
+	detection_progress_bar.value = detection
+	if detection >= chase_threshold:
+		print(name, " start CHASE")
+		state_machine.set_current_state(states[State.CHASE])
+	
 
 #endregion --- Detection ---
