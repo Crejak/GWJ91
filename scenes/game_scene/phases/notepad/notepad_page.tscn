@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b8wkdcol8ae44"]
+
+[ext_resource type="FontFile" uid="uid://chfhrdtdihk2b" path="res://assets/fonts/callie_chalk/CallieChalkFont-Regular.otf" id="1_8he58"]
+[ext_resource type="Script" uid="uid://xulu3gk2opxa" path="res://scenes/game_scene/phases/notepad/notepad_page.gd" id="1_8wiru"]
+[ext_resource type="FontFile" uid="uid://cueqeii2qfmj4" path="res://assets/fonts/wscallme/WSCallMe.ttf" id="2_8wiru"]
+
+[node name="NotepadPage" type="VBoxContainer" unique_id=960050972]
+script = ExtResource("1_8wiru")
+
+[node name="Title" type="Label" parent="." unique_id=592483772]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8he58")
+theme_override_font_sizes/font_size = 40
+text = "Your mission"
+horizontal_alignment = 1
+
+[node name="Content" type="Label" parent="." unique_id=814133781]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8wiru")
+theme_override_font_sizes/font_size = 36
+text = "  Look at the footage, find
+your objectives and study your target. Remember to take notes !"
+autowrap_mode = 3

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6qr8ihac2xwq"]
 
 [ext_resource type="Script" uid="uid://cjpsxxh82qo4o" path="res://scenes/game_scene/phases/objective_list_ui.gd" id="1_luxbu"]
-[ext_resource type="PackedScene" uid="uid://dd8dsna4pwrrc" path="res://scenes/game_scene/phases/note_pad.tscn" id="2_gcyn8"]
+[ext_resource type="PackedScene" uid="uid://dd8dsna4pwrrc" path="res://scenes/game_scene/phases/notepad/note_pad.tscn" id="2_gcyn8"]
 
 [node name="ObjectiveListUi" type="Control" unique_id=1932395075]
 layout_mode = 3

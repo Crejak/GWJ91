@@ -1,5 +1,10 @@
 extends Control
 
+@export var pages: Array[NotepadPageContent]:
+	set(value):
+		pages = value;
+		(%NotePad as NotePad).pages = pages;
+
 @onready var notepad: NotePad = %NotePad;
 @onready var preparation_position: Control = %PreparationPosition;
 
