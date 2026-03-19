@@ -7,6 +7,7 @@ signal character_caught;
 signal active_character_changed(character: Character);
 signal objective_list_updated;
 signal objective_list_cleared;
+signal character_entered;
 
 @onready var detection: Detection = Detection.new() 
 
@@ -29,6 +30,9 @@ func _ready() -> void:
 		);
 		objective_list_cleared.connect(func () -> void:
 			print("Objective list cleared");
+		);
+		character_entered.connect(func () -> void:
+			print("Character entered");
 		);
 		detection.on_movable_object_noise_start.connect(func(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float) -> void:
 			print("Noise Detection start: %s, at %s, intensity: %f" % [in_object.name, str(in_position), in_sound_intensity]))

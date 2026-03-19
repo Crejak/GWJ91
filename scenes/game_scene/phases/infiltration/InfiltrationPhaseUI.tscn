@@ -31,6 +31,7 @@ text = "Click on your character to start"
 horizontal_alignment = 1
 
 [node name="DangerLabel" type="Label" parent="TopVBoxContainer" unique_id=551463762]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Danger level"
@@ -38,6 +39,7 @@ horizontal_alignment = 1
 
 [node name="DangerBar" type="ProgressBar" parent="TopVBoxContainer" unique_id=1833423987]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 max_value = 1.0
 

@@ -95,7 +95,7 @@ min_speed = 15.0
 max_speed = 150.0
 
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
-position = Vector2(78, 524)
+position = Vector2(127, 526)
 
 [node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("2_r2bnq")]
 visible = false
