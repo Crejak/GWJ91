@@ -26,11 +26,6 @@ signal object_dropped(source: Character, object: MovableObject);
 @export var speed_damp: float = 0.15;
 @export var speed_floor_ratio: float = 0.333;
 
-@export_group("Movement/Detection")
-@export var max_silent_speed: float = 26
-
-@export var base_noise_value: float = 5
-
 var speed_loss_factor: float = 1.;
 
 var last_position: Vector2 = Vector2.ZERO;
@@ -47,10 +42,7 @@ func _ready() -> void:
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
 
-func _process(delta: float) -> void:
-	if linear_velocity.length() > max_silent_speed:
-		SignalBus.detection.on_player_move.emit(global_position, (base_noise_value + get_total_picked_up_mass()) * linear_velocity.length_squared() * delta)
-
+func _process(_delta: float) -> void:
 	if OS.is_debug_build():
 		debug_label.text = "Speed : %.1f px/s\nMass : %.1f kg\nValue : %s $" % \
 			[last_frame_velocity, get_total_picked_up_mass(), get_total_picked_up_value()];

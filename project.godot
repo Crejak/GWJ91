@@ -51,10 +51,6 @@ movie_writer/movie_file="C:/Users/Patobeur/Videos/JamMovies/movie.avi"
 
 enabled=PackedStringArray("res://addons/editorscriptmanager/plugin.cfg", "res://addons/finite_state_machine/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg")
 
-[global_group]
-
-PNJ=""
-
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
