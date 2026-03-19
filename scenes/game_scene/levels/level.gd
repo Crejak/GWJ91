@@ -40,6 +40,7 @@ func _ready() -> void:
 		object.picked_up.connect(func (source: Character) -> void:
 			_on_objective_picked_up(index, source);
 		);
+	level_state.init_objectives(objectives.size());
 	current = self;
 
 func on_phase_started(phase: LevelState.Phase) -> void:
