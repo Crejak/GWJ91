@@ -1,6 +1,11 @@
 # Attribution
 ## Collaborators
 
+### VHS CRT Broadcast Shader
+Author : [banwarfarms](https://godotshaders.com/author/banwarfarms/)
+Source : [Godot Shaders : VHS CRT Broadcast](https://godotshaders.com/shader/vhs-crt-broadcast/)
+License : [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
 ### Godot Game Template
 ![Maaack Plugin Icon](/assets/plugin_logo/logo.png)  
 Author: [Marek Belski and contributors](https://github.com/Maaack/Godot-Game-Template/graphs/contributors)  
