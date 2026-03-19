@@ -17,14 +17,15 @@ enum Phase {
 	COMPLETED
 }
 
-@export var current_phase: Phase = Phase.UNLOADED:
+var current_phase: Phase = Phase.UNLOADED:
 	set = set_phase;
-@export var total_stolen_value: int = 0;
-@export var danger_level: float = 0.:
+var total_stolen_value: int = 0;
+var danger_level: float = 0.:
 	set(value):
 		if value >= 1. && danger_level < 1.:
 			SignalBus.character_caught.emit();
 		danger_level = clamp(value, 0., 1.);
+var objectives: Dictionary[int, bool] = {};
 
 var active_character: Character:
 	set(value):
@@ -36,6 +37,7 @@ func reset() -> void:
 	total_stolen_value = 0;
 	danger_level = 0.;
 	active_character = null;
+	objectives = {};
 
 func set_phase(new_phase: Phase) -> void:
 		if new_phase == current_phase:
@@ -44,3 +46,7 @@ func set_phase(new_phase: Phase) -> void:
 		SignalBus.phase_ended.emit(current_phase);
 		current_phase = new_phase;
 		SignalBus.phase_started.emit(new_phase);
+		
+func mark_objective_as_done(index: int) -> void:
+	objectives[index] = true;
+	print("Objective done : %s" % index);

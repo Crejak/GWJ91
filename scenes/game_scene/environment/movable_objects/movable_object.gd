@@ -60,3 +60,4 @@ func _on_pick_up_interactable_player_interacted(source: Character) -> void:
 		return;
 	source.pick_up(self);
 	get_parent().remove_child(self);
+	on_picked_up.emit(source);
