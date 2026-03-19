@@ -58,6 +58,8 @@ position = Vector2(418, 720)
 
 [node name="Character" parent="PlayableEnvironment/Environment/TestRoom/Props" parent_id_path=PackedInt32Array(2058501475, 71111055) index="8" unique_id=860493929 instance=ExtResource("1_50hnf")]
 position = Vector2(185, 521)
+min_speed = 15.0
+max_speed = 150.0
 
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
 position = Vector2(96, 523)
