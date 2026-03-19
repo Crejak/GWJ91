@@ -91,13 +91,16 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
 		can_move = true;
+		can_sleep = false;
 
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
 		can_move = false;
+		can_sleep = true;
 
 func _on_character_caught() -> void:
 	can_move = false;
+	can_sleep = true;
 
 func pick_up(object: MovableObject) -> void:
 	picked_up_objects.push_back(object);
