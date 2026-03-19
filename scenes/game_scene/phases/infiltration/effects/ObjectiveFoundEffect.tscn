@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cabp7qygfdjux"]
 
 [ext_resource type="FontFile" uid="uid://chfhrdtdihk2b" path="res://assets/fonts/callie_chalk/CallieChalkFont-Regular.otf" id="1_5of65"]
-[ext_resource type="Script" uid="uid://7n3ka08aesi2" path="res://scenes/game_scene/phases/infiltration/objective_found_effect/objective_found_effect.gd" id="1_gtc8l"]
-[ext_resource type="Script" uid="uid://tdlapscbyvv8" path="res://scenes/game_scene/phases/infiltration/objective_found_effect/strikethrough_line.gd" id="2_gtc8l"]
+[ext_resource type="Script" uid="uid://7n3ka08aesi2" path="res://scenes/game_scene/phases/infiltration/effects/objective_found_effect.gd" id="1_gtc8l"]
+[ext_resource type="Script" uid="uid://tdlapscbyvv8" path="res://scenes/game_scene/phases/infiltration/effects/strikethrough_line.gd" id="2_gtc8l"]
 
 [node name="ObjectiveFoundEffect" type="Label" unique_id=2085095584]
 offset_right = 1.0

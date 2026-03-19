@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dvm62ep2q40tt"]
 
 [ext_resource type="Script" uid="uid://cvv4rn1nnorph" path="res://scenes/game_scene/phases/infiltration/infiltration_phase_ui.gd" id="1_ii0v8"]
-[ext_resource type="PackedScene" uid="uid://cabp7qygfdjux" path="res://scenes/game_scene/phases/infiltration/objective_found_effect/ObjectiveFoundEffect.tscn" id="2_6nfhw"]
+[ext_resource type="PackedScene" uid="uid://cabp7qygfdjux" path="res://scenes/game_scene/phases/infiltration/effects/ObjectiveFoundEffect.tscn" id="2_6nfhw"]
 [ext_resource type="PackedScene" uid="uid://dx6xc08knusx0" path="res://scenes/game_scene/phases/infiltration/InfiltrationFailureUI.tscn" id="2_yrnet"]
-[ext_resource type="PackedScene" uid="uid://bpaar2l5gq1kk" path="res://scenes/game_scene/phases/infiltration/objective_found_effect/AllObjectivesFoundEffect.tscn" id="3_cbgwk"]
+[ext_resource type="PackedScene" uid="uid://bpaar2l5gq1kk" path="res://scenes/game_scene/phases/infiltration/effects/FloatingTextEffect.tscn" id="3_cbgwk"]
 
 [node name="InfiltrationPhaseUI" type="Control" unique_id=1199558180]
 layout_mode = 3
@@ -15,7 +15,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_ii0v8")
 objective_found_effect_scene = ExtResource("2_6nfhw")
-all_objectives_found_effect_scene = ExtResource("3_cbgwk")
+floating_text_effect = ExtResource("3_cbgwk")
 
 [node name="TopVBoxContainer" type="VBoxContainer" parent="." unique_id=651139523]
 layout_mode = 1
