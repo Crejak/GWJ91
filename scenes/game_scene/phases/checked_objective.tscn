@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://befdaw16ubj78"]
 
 [ext_resource type="Script" uid="uid://da1k1scxjvofo" path="res://scenes/game_scene/phases/checked_objective.gd" id="1_wfn4u"]
-[ext_resource type="FontFile" uid="uid://chfhrdtdihk2b" path="res://assets/fonts/callie_chalk/CallieChalkFont-Regular.otf" id="2_xgc3y"]
+[ext_resource type="FontFile" uid="uid://cueqeii2qfmj4" path="res://assets/fonts/wscallme/WSCallMe.ttf" id="2_wfn4u"]
 
 [node name="CheckedObjective" type="HBoxContainer" unique_id=197081399]
 script = ExtResource("1_wfn4u")
@@ -11,8 +11,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_xgc3y")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("2_wfn4u")
+theme_override_font_sizes/font_size = 36
 text = "[X]"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -21,6 +21,6 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_xgc3y")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("2_wfn4u")
+theme_override_font_sizes/font_size = 36
 text = "Present near the sofa"
