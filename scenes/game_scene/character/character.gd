@@ -6,7 +6,11 @@ signal object_dropped(source: Character, object: MovableObject);
 
 @export_group("Movement")
 
-@export var can_move: bool = false;
+@export var can_move: bool = false:
+	set(value):
+		can_move = value;
+		if can_move:
+			current = self;
 
 ## Minimum walking speed, in pixel per second
 @export var min_speed: float = 25.;
@@ -41,6 +45,9 @@ var last_frame_velocity: float = 0.;
 
 var picked_up_objects: Array[MovableObject] = [];
 var total_speed_loss: float = 0.;
+
+## Dirty but gets the work done. The instance is set when "can_move" is set to true.
+static var current: Character;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -91,10 +98,7 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
-		# EntryPoint is now responsible for managing the character initialization
-		#can_move = true;
 		can_sleep = false;
-		#visible = true;
 
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
