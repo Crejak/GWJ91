@@ -7,6 +7,7 @@
 size = Vector2(116, 72)
 
 [node name="TV" unique_id=1203108321 instance=ExtResource("1_we4go")]
+mass = 10.0
 can_move = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=1306474058]

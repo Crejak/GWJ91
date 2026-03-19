@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://oulb0ekwmt3w"]
+
+[ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_fgxtd"]
+[ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/plant.tscn" id="2_enkua"]
+[ext_resource type="PackedScene" uid="uid://1c0toj14pbg3" path="res://scenes/game_scene/environment/movable_objects/tv.tscn" id="3_nfdks"]
+[ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="4_rbc8g"]
+
+[node name="CharacterTestScene" type="Node2D" unique_id=1094349512]
+
+[node name="Character" parent="." unique_id=424702170 instance=ExtResource("1_fgxtd")]
+position = Vector2(225, 292)
+mass = 2.0
+can_move = true
+
+[node name="Plant" parent="." unique_id=1203108321 instance=ExtResource("2_enkua")]
+position = Vector2(464, 306)
+linear_damp = 8.0
+
+[node name="TV" parent="." unique_id=1468734341 instance=ExtResource("3_nfdks")]
+position = Vector2(411, 155)
+linear_damp = 8.0
+
+[node name="Sofa" parent="." unique_id=1566758539 instance=ExtResource("4_rbc8g")]
+position = Vector2(350, 483)
+linear_damp = 8.0
