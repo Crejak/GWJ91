@@ -1,4 +1,4 @@
-class_name AllObjectivesFoundEffect
+class_name FloatingTextEffect
 extends Label
 
 @export var floating_distance: Vector2 = Vector2(0, -100);

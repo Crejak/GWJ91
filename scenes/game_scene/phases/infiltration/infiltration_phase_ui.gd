@@ -1,7 +1,7 @@
 extends Control
 
 @export var objective_found_effect_scene: PackedScene;
-@export var all_objectives_found_effect_scene: PackedScene;
+@export var floating_text_effect: PackedScene;
 
 @onready var danger_bar: ProgressBar = %DangerBar;
 
@@ -33,9 +33,10 @@ func _on_objective_found(character: Character, index: int) -> void:
 	effect.start_effect();
 
 func _on_objective_list_cleared() -> void:
-	var effect: AllObjectivesFoundEffect = all_objectives_found_effect_scene.instantiate();
+	var effect: FloatingTextEffect = floating_text_effect.instantiate();
 	add_child(effect);
 	effect.global_position = Character.current.global_position;
+	effect.text = "All objectives found !"
 	effect.visible = false;
 	await get_tree().create_timer(1.5).timeout;
 	effect.visible = true;
