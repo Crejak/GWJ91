@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dd8dsna4pwrrc"]
+
+[ext_resource type="Texture2D" uid="uid://clgnjf0igfgsv" path="res://assets/ui/notepad.png" id="1_c8vpx"]
+[ext_resource type="Script" uid="uid://3lyd7fememfm" path="res://scenes/game_scene/phases/notepad/note_pad.gd" id="2_5cfyj"]
+[ext_resource type="FontFile" uid="uid://chfhrdtdihk2b" path="res://assets/fonts/callie_chalk/CallieChalkFont-Regular.otf" id="2_7vtfq"]
+[ext_resource type="PackedScene" uid="uid://befdaw16ubj78" path="res://scenes/game_scene/phases/checked_objective.tscn" id="3_0fkhj"]
+[ext_resource type="PackedScene" uid="uid://b8wkdcol8ae44" path="res://scenes/game_scene/phases/notepad/notepad_page.tscn" id="4_sv5wk"]
+[ext_resource type="Texture2D" uid="uid://cmldhvw4y2gky" path="res://assets/ui/change_page.png" id="7_7uqq4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7uqq4"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gnrxx"]
+size = Vector2(0, 0)
+
+[node name="NotePad" type="TextureRect" unique_id=1505004609]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.5
+offset_top = -421.5
+offset_right = 330.5
+offset_bottom = 421.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c8vpx")
+script = ExtResource("2_5cfyj")
+objective_entry_scene = ExtResource("3_0fkhj")
+page_scene = ExtResource("4_sv5wk")
+
+[node name="PageContainer" type="MarginContainer" parent="." unique_id=1185566891]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 84
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 65
+
+[node name="ObjectivePage" type="VBoxContainer" parent="PageContainer" unique_id=1522790040]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ObjectiveList" type="Label" parent="PageContainer/ObjectivePage" unique_id=790066658]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7vtfq")
+theme_override_font_sizes/font_size = 40
+text = "Objective List"
+horizontal_alignment = 1
+
+[node name="ObjectiveContainer" type="VBoxContainer" parent="PageContainer/ObjectivePage" unique_id=1295385733]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PageContainer" type="Control" parent="PageContainer" unique_id=2075691249]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ButtonPrevious" type="TextureButton" parent="." unique_id=1012180897]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 74.5
+offset_top = 684.5
+offset_right = 174.5
+offset_bottom = 784.5
+texture_normal = ExtResource("7_7uqq4")
+texture_disabled = SubResource("PlaceholderTexture2D_7uqq4")
+
+[node name="ButtonNext" type="TextureButton" parent="." unique_id=569268118]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 498.5
+offset_top = 690.5
+offset_right = 598.5
+offset_bottom = 790.5
+texture_normal = ExtResource("7_7uqq4")
+texture_disabled = SubResource("PlaceholderTexture2D_gnrxx")
+flip_h = true
+
+[connection signal="pressed" from="ButtonPrevious" to="." method="_on_button_previous_pressed"]
+[connection signal="pressed" from="ButtonNext" to="." method="_on_button_next_pressed"]

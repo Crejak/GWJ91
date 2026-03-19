@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
+[ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
 [ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
 
 [sub_resource type="Resource" id="Resource_armk4"]
@@ -44,6 +45,22 @@ script = ExtResource("2_armk4")
 name = "Present in the chamber"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent8")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_wfa5e"]
+script = ExtResource("14_1e6rb")
+title = "Robber advice #1"
+content = "A good robber is always prepared ! Make sure to study your target. Take note of the location, of their habits, and of course, of where the good stuff is.
+
+From Robber Magazine #75"
+metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
+
+[sub_resource type="Resource" id="Resource_7j52u"]
+script = ExtResource("14_1e6rb")
+title = "Robber advice #2"
+content = "To maximize stealth, you should intrude during the night, even if that makes you blind. Be careful, if you make to much noise, you'll get caught ! Be sure to not bump into furnitures !
+
+From Robber Magazine #102"
+metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
 
 [node name="Level1" type="Control" unique_id=1713301915 node_paths=PackedStringArray("starting_character")]
 layout_mode = 3
@@ -123,6 +140,7 @@ layout_mode = 1
 [node name="ObjectiveListUi" parent="." unique_id=1932395075 instance=ExtResource("14_sh55l")]
 visible = false
 layout_mode = 1
+pages = Array[ExtResource("14_1e6rb")]([SubResource("Resource_wfa5e"), SubResource("Resource_7j52u")])
 
 [node name="EntryPoint" parent="." unique_id=804974359 node_paths=PackedStringArray("character") instance=ExtResource("9_sh55l")]
 layout_mode = 0
