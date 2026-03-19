@@ -37,7 +37,7 @@ func _ready() -> void:
 	for index: int in range(objectives.size()):
 		var objective: Objective = objectives[index];
 		var object: MovableObject = get_node(objective.object_path);
-		object.on_picked_up.connect(func (source: Character) -> void:
+		object.picked_up.connect(func (source: Character) -> void:
 			_on_objective_picked_up(index, source);
 		);
 	current = self;
