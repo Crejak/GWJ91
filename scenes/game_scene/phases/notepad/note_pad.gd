@@ -20,6 +20,7 @@ var current_page_index: int = 0:
 
 func _ready() -> void:
 	SignalBus.objective_list_updated.connect(_on_objective_list_updated);
+	SignalBus.phase_started.connect(_on_phase_started);
 	_update_pages();
 
 func _update_pages() -> void:
@@ -57,6 +58,12 @@ func _on_objective_list_updated() -> void:
 		objective_container.add_child(entry);
 		entry.objective_text = objective_list.get(index).name;
 		entry.is_checked = cleared_objectives.get(index) == true;
+
+func _on_phase_started(phase: LevelState.Phase) -> void:
+	if phase == LevelState.Phase.PREPARATION:
+		# Focus the objective page
+		current_page_index = page_nodes.size() - 1;
+		previous_button.disabled = true;
 
 func _on_button_previous_pressed() -> void:
 	current_page_index = clampi(current_page_index - 1, 0, page_nodes.size() - 1);
