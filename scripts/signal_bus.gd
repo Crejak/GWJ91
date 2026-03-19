@@ -30,8 +30,7 @@ func _ready() -> void:
 			print("Noise Detection start: %s, at %s, intensity: %f" % [in_object.name, str(in_position), in_sound_intensity]))
 		detection.on_movable_object_noise_stop.connect(func(in_object: MovableObject) -> void:
 			print("Noise Detection stops: %s" % in_object.name))
-		detection.on_player_move.connect(func(_in_position: Vector2, in_sound_intensity: float) -> void:
-			print("Player Move Noise Detection: %f" % in_sound_intensity))
+
 
 class Detection:
 	extends RefCounted
@@ -39,8 +38,6 @@ class Detection:
 	signal on_movable_object_noise_start(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float)
 	@warning_ignore("unused_signal")
 	signal on_movable_object_noise_stop(in_object: MovableObject)
-	@warning_ignore("unused_signal")
-	signal on_player_move(in_position: Vector2, in_sound_intensity: float)
 
 
 static func clear_signal(in_signal: Signal) -> void:
