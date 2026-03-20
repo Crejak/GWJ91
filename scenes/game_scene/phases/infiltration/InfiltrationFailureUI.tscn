@@ -30,16 +30,3 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "You got caught !"
 horizontal_alignment = 1
-
-[node name="RetryLevelButton" type="Button" parent="VBoxContainer" unique_id=854910918]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Retry level"
-
-[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1464853084]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Back to main menu"
-
-[connection signal="pressed" from="VBoxContainer/RetryLevelButton" to="." method="_on_retry_level_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

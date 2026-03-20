@@ -35,6 +35,7 @@ var objectives_cleared: bool = false:
 		objectives_cleared = value;
 		if (objectives_cleared):
 			SignalBus.objective_list_cleared.emit();
+var level_won: bool = false;
 
 var active_character: Character:
 	set(value):
@@ -47,6 +48,7 @@ func reset() -> void:
 	danger_level = 0.;
 	active_character = null;
 	objectives = {};
+	level_won = false;
 
 func set_phase(new_phase: Phase) -> void:
 		if new_phase == current_phase:

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://eirbedvv5t76"]
+[gd_scene format=3 uid="uid://cvgtduqu4ki00"]
 
 [ext_resource type="Script" uid="uid://buxx32pivixo" path="res://scenes/end_level/level_lose_news_panel.gd" id="1_lmuru"]
 [ext_resource type="Texture2D" uid="uid://t6u3nvf0xqyd" path="res://scenes/end_level/images/newspaper.png" id="3_y3dlb"]
