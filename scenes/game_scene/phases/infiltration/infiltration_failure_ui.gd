@@ -9,5 +9,5 @@ func _ready() -> void:
 func _on_character_caught() -> void:
 	visible = true;
 	busted_effect.start_effect();
-	await get_tree().create_timer(3).timeout;
+	await get_tree().create_timer(2.5).timeout;
 	GameState.get_current_level_state().set_phase(LevelState.Phase.CONCLUSION);
