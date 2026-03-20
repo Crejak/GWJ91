@@ -31,7 +31,7 @@ news:
 	The well-known banker, Mrs Yellow, get robbed tonight. The theif didn't leave a trace ! Maybe we have a new professional in town.
 
 
-Mission 2: banquière vs ex-mari
+Mission 2: banquière vs ex-mari (gambler)
 FR:
 "Allô, l'appel est sécurisé j'espère... Bon...
 Je n'ai pas pour habitude d'avoir recours à ce genre de pratique... Mais là c'est trop !
@@ -47,3 +47,54 @@ He knows I have money and just won't accept that I manage it better than he does
 
 news:
 	Mr Red's house was burglarized last night ! The professional gambler declared: "I didn't hear a single piece of furniture move"
+
+
+Mission 3: gambler vs multiproprio
+FR:
+"Tu doit voir qui est Mr Blue, non ? C'est le gars qui détient les trois quart des bâtiments de la ville.
+
+J'ai eu le malheur de le croiser hier au casino... Il m'a dépouillé ce fils de chien !
+
+Tout le monde me bat au poker, mais je sais reconnaître quand la partie est déloyale. Il a triché c'est sûr !
+
+Si t'as du cran, va donc chez lui ce soir."
+
+EN:
+"You must know who Mr. Blue is, huh? He's the guy who owns most of the buildings in town.
+
+I had the misfortune of running into him yesterday at the casino... That son of a bitch cleaned me out!
+
+Everyone beats me at poker, but I can tell when the game's rigged. He definitely cheated!
+
+If you’ve got the guts, go see him tonight."
+
+
+news:
+	The appartment owner Mr Blue, also the owner of this newspaper, get his third home vandalized ! Burglars aren't afraid of anything these days !
+
+
+Mission 4: multiproprio vs locataire
+FR:
+"Il semblerai qu'on parle beaucoup de toi dans les journaux, pas vrai ?
+
+Je suis prêt à passer l'éponge pour hier soir... en échange d'un petit service.
+
+Je possède un appartement qui est actuellement occupé par un rat. Pas bon payeur en plus. Mr Brown.
+J'ai de meilleur plan pour cet appart et j'aimerai le récupérer.
+
+Va dérober son bail chez lui et ramène le moi."
+
+
+EN:
+"It seems like you're getting a lot of press lately, right?
+
+I'm willing to let what happened last night slide... in exchange for a small favor.
+
+I own an apartment that's currently occupied by a rat. A deadbeat. Mr. Brown.
+I have better plans for that apartment and I'd like to get it back.
+
+Go steal his lease and bring it back to me. Good luck.
+
+
+news:
+	

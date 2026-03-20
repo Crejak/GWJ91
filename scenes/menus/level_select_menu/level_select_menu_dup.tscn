@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ha50i3dg2ri" path="res://scenes/menus/level_select_menu/level_panel.tscn" id="5_8oyst"]
 [ext_resource type="Resource" uid="uid://0hyy8nu8fshu" path="res://scenes/menus/level_select_menu/resources/Level1.tres" id="6_rqjxd"]
 [ext_resource type="Resource" uid="uid://d1na8f3patjc1" path="res://scenes/menus/level_select_menu/resources/Level2.tres" id="7_0tw0e"]
+[ext_resource type="Resource" uid="uid://j2p8gvho7uby" path="res://scenes/menus/level_select_menu/resources/Level3.tres" id="8_cjcer"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="9_0tw0e"]
+[ext_resource type="Resource" uid="uid://b1m4w53a2y0ry" path="res://scenes/menus/level_select_menu/resources/Level4.tres" id="9_neqml"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4pi0"]
 atlas = ExtResource("4_k4pi0")
@@ -90,7 +92,7 @@ theme_override_constants/margin_bottom = 50
 [node name="LevelPanelContainer" type="HFlowContainer" parent="MarginContainer2" unique_id=943097619]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/h_separation = 100
+theme_override_constants/h_separation = 40
 
 [node name="LevelPanel1" parent="MarginContainer2/LevelPanelContainer" unique_id=1760663543 instance=ExtResource("5_8oyst")]
 visible = false
@@ -101,6 +103,16 @@ level_panel_res = ExtResource("6_rqjxd")
 visible = false
 layout_mode = 2
 level_panel_res = ExtResource("7_0tw0e")
+
+[node name="LevelPanel3" parent="MarginContainer2/LevelPanelContainer" unique_id=388387225 instance=ExtResource("5_8oyst")]
+visible = false
+layout_mode = 2
+level_panel_res = ExtResource("8_cjcer")
+
+[node name="LevelPanel4" parent="MarginContainer2/LevelPanelContainer" unique_id=893663699 instance=ExtResource("5_8oyst")]
+visible = false
+layout_mode = 2
+level_panel_res = ExtResource("9_neqml")
 
 [node name="SceneLister" type="Node" parent="." unique_id=649336979]
 script = ExtResource("3_8jd3o")
@@ -132,4 +144,6 @@ title_visible = false
 
 [connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel1" to="." method="_on_panel_container_clicked"]
 [connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel2" to="." method="_on_panel_container_clicked"]
+[connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel3" to="." method="_on_panel_container_clicked"]
+[connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel4" to="." method="_on_panel_container_clicked"]
 [connection signal="confirmed" from="ExitConfirmation" to="." method="_on_exit_confirmation_confirmed"]

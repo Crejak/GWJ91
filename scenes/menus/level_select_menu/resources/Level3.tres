@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelPanelRes" format=3 uid="uid://j2p8gvho7uby"]
+
+[ext_resource type="Resource" uid="uid://b5o7sq1qnl01" path="res://scenes/level_selection_screen/conversations/3-MrBlue.tres" id="1_fm7px"]
+[ext_resource type="Script" uid="uid://r7un4f8i7vjl" path="res://scenes/menus/level_select_menu/resources/level_panel_res.gd" id="2_7bjdd"]
+
+[resource]
+script = ExtResource("2_7bjdd")
+level_id = 2
+level_name = "Mr Blue's mansion"
+dialog_res = ExtResource("1_fm7px")
+metadata/_custom_type_script = "uid://r7un4f8i7vjl"

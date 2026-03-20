@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ConversationRes" format=3 uid="uid://b5o7sq1qnl01"]
+
+[ext_resource type="Script" uid="uid://dyj0dslk8ye7w" path="res://scenes/level_selection_screen/conversations/conversation_res.gd" id="1_0nmrt"]
+
+[resource]
+script = ExtResource("1_0nmrt")
+caller_name = "Mr. Blue"
+text_color = Color(0.35072476, 0.59827876, 1, 1)
+outline_color = Color(0, 0.22732732, 0.54856783, 1)
+dialogs = Array[String](["It seems like you're getting a lot of press lately, right?", "I'm willing to let what happened last night slide... in exchange for a small favor.", "I own an apartment that's currently occupied by a rat. A deadbeat. Mr. Brown. I have better plans for that apartment and I'd like to get it back.", "Go steal his lease and bring it back to me. Good luck."])
+metadata/_custom_type_script = "uid://dyj0dslk8ye7w"

@@ -16,6 +16,16 @@ script = ExtResource("2_rtcuw")
 text = "Mr Red's house was burglarized last night ! The professional gambler declared: \"I didn't hear a single piece of furniture move\""
 metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
 
+[sub_resource type="Resource" id="Resource_dpys1"]
+script = ExtResource("2_rtcuw")
+text = "The appartment owner Mr Blue, also the owner of this newspaper, get his third home vandalized ! Burglars aren't afraid of anything these days !"
+metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
+
+[sub_resource type="Resource" id="Resource_hia8x"]
+script = ExtResource("2_rtcuw")
+text = "An ordinary guy was robbed, he has no home now... and nobody cares"
+metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpys1"]
 bg_color = Color(1, 1, 1, 1)
 
@@ -111,7 +121,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iy6re")
-news_column = Array[ExtResource("2_rtcuw")]([SubResource("Resource_5ibog"), SubResource("Resource_rtcuw")])
+news_column = Array[ExtResource("2_rtcuw")]([SubResource("Resource_5ibog"), SubResource("Resource_rtcuw"), SubResource("Resource_dpys1"), SubResource("Resource_hia8x")])
 
 [node name="NewspaperBackground" type="Sprite2D" parent="." unique_id=683229185]
 visible = false
