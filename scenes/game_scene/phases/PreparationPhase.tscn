@@ -26,7 +26,7 @@ text = "Playing"
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "0.00"
+text = ">> 0:00 / 0:00"
 
 [node name="CRTFilter" parent="." unique_id=1312715555 instance=ExtResource("2_wxhly")]
 layout_mode = 1

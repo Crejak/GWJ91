@@ -24,9 +24,10 @@ theme_override_font_sizes/font_size = 60
 text = "Paused"
 
 [node name="TimerLabel" type="Label" parent="VBoxContainer" unique_id=1244356510]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "|| 0.00"
+text = "|| 0:00 / 0:00"
 
 [node name="CRTFilter" parent="." unique_id=1312715555 instance=ExtResource("2_h11nj")]
 layout_mode = 1

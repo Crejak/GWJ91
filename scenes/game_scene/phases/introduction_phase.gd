@@ -5,6 +5,7 @@ extends Control
 
 @onready var title_label: Label = %TitleLabel;
 @onready var intro_label: RichTextLabel = %IntroLabel;
+@onready var timer_label: Label = %TimerLabel;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(on_phase_started);
