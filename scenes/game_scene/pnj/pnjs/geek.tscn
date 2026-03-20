@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://sit441ithg7p"]
+
+[ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_mdm2h"]
+[ext_resource type="Texture2D" uid="uid://teo6wh4fcnj8" path="res://assets/art/characters/geek_walk.png" id="2_mdm2h"]
+
+[node name="Geek" unique_id=786583104 instance=ExtResource("1_mdm2h")]
+walk_texture = ExtResource("2_mdm2h")
+idle_texture = ExtResource("2_mdm2h")
+
+[node name="Visual" parent="RigidBody2D" parent_id_path=PackedInt32Array(997370158) index="0" unique_id=390448743]
+position = Vector2(0, -12.000002)
+
+[node name="Sprite2D" parent="RigidBody2D/Visual" index="0" unique_id=64234146]
+texture = ExtResource("2_mdm2h")
+
+[node name="StatusAnimations" parent="RigidBody2D/Visual" index="1" unique_id=1954057949]
+animation = &"chase"
+frame = 0
+frame_progress = 0.0
+
+[node name="DetectionProgressBar" parent="RigidBody2D/Visual" index="2" unique_id=1443591310]
+visible = false
+offset_top = 51.76471
+offset_bottom = 78.76471

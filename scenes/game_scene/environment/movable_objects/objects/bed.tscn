@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c1hovdgvwqdl4"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_50lpg"]
+[ext_resource type="Texture2D" uid="uid://bwn17ib558ic2" path="res://assets/art/props/bed.PNG" id="2_50lpg"]
+
+[node name="Bed" unique_id=1203108321 instance=ExtResource("1_50lpg")]
+mass = 100.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(90.00001, -89.00001)
+scale = Vector2(0.19332817, 0.19332817)
+texture = ExtResource("2_50lpg")
+region_enabled = true
+region_rect = Rect2(10, 36, 1028, 1199)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(89, -96.5)

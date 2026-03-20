@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://coequeusuck5b" path="res://assets/art/characters/player.png" id="1_n5u52"]
 [ext_resource type="Script" uid="uid://bauh26rm4nnmy" path="res://scenes/game_scene/pnj/pnj.gd" id="1_pnd87"]
 [ext_resource type="Texture2D" uid="uid://cr6ay0iyu1lq2" path="res://assets/art/animations/chase.png" id="3_2ke15"]
-[ext_resource type="Script" path="res://addons/finite_state_machine/scripts/state_machine.gd" id="3_joe27"]
+[ext_resource type="Script" uid="uid://dwqv65m8ieqgg" path="res://addons/finite_state_machine/scripts/state_machine.gd" id="3_joe27"]
 [ext_resource type="Texture2D" uid="uid://cvmvkys8fh7do" path="res://assets/art/animations/sleep.png" id="3_mbr25"]
 [ext_resource type="Script" uid="uid://bl73ob6dr63m7" path="res://scenes/game_scene/pnj/states/pnj_state.gd" id="4_3h3ax"]
 [ext_resource type="Texture2D" uid="uid://d1kesro0ht5q6" path="res://assets/art/animations/warning.png" id="5_3mqs1"]

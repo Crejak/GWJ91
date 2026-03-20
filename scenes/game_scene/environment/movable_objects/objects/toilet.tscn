@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bowmowy62uprw"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_xfs42"]
+[ext_resource type="Texture2D" uid="uid://110eq0wpy44m" path="res://assets/art/props/toilet.PNG" id="2_xfs42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj22m"]
+size = Vector2(62, 79)
+
+[node name="Toilet" unique_id=1203108321 instance=ExtResource("1_xfs42")]
+mass = 200.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(37, -63)
+scale = Vector2(0.14021493, 0.14021495)
+texture = ExtResource("2_xfs42")
+region_enabled = true
+region_rect = Rect2(0, 13, 771, 1101)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(32, -34.5)
+shape = SubResource("RectangleShape2D_oj22m")

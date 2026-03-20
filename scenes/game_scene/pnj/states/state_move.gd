@@ -4,6 +4,7 @@ class_name PNJ_State_Move
 @export var wait_square_distance: float = 700
 
 func _enter_state() -> void:
+	pnj.sprite.texture = pnj.walk_texture
 	pnj.body.position = Vector2.ZERO
 	pnj.body.sleeping = false
 	pnj.body.top_level = true
@@ -17,6 +18,7 @@ func _exit_state() -> void:
 	pnj.animation_player.stop()
 
 func _physics_process(delta: float) -> void:
+	pnj.sprite.flip_h = pnj.body.linear_velocity.x < 0
 	var is_arrived_at_destination: bool = false
 	var distance_to_path: float = pnj.body.global_position.distance_squared_to(pnj.global_position)
 	if distance_to_path < wait_square_distance:
