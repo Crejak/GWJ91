@@ -15,10 +15,12 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("draw"):
+		AudioBus.play_sfx("SCRIBBLE")
 		current_line = DRAWABLE_LINE_2D.instantiate()
 		add_child(current_line)
 	
 	elif event.is_action_released("draw"):
+		AudioBus.stop_sfx("SCRIBBLE")
 		current_line = null
 
 func _process(delta: float) -> void:

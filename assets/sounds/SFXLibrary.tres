@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SoundLibrary" format=3 uid="uid://bnwhaxoa1701t"]
+
+[ext_resource type="Script" uid="uid://b67yl2mlejqp" path="res://scripts/AudioBus/sound_res.gd" id="1_h5gpe"]
+[ext_resource type="AudioStream" uid="uid://dal0h8i5bc55p" path="res://scenes/level_selection_screen/sounds/liecio-ring-phone-190265.wav" id="2_ds6y5"]
+[ext_resource type="AudioStream" uid="uid://db2owvbb5k5ly" path="res://assets/sounds/whiteboard_scribble.wav" id="3_dcj1v"]
+[ext_resource type="AudioStream" uid="uid://j5io1jr6bmku" path="res://assets/sounds/move_furniture/move_furniture1.wav" id="4_3r1of"]
+[ext_resource type="Script" uid="uid://d2y0k5tchu4bs" path="res://scripts/AudioBus/sound_library.gd" id="4_xwdmx"]
+[ext_resource type="AudioStream" uid="uid://dtryvc84myxpv" path="res://assets/sounds/move_furniture/move_furniture2.wav" id="5_2ckrw"]
+[ext_resource type="AudioStream" uid="uid://c0mhujy11qnq5" path="res://assets/sounds/move_furniture/move_furniture3.wav" id="6_mkqxl"]
+[ext_resource type="AudioStream" uid="uid://cbaq2y0d8p03u" path="res://assets/sounds/move_furniture/move_furniture4.wav" id="7_wc2xi"]
+[ext_resource type="AudioStream" uid="uid://bj4cj42r71uqh" path="res://assets/sounds/move_furniture/move_chair1.wav" id="8_wc2xi"]
+[ext_resource type="AudioStream" uid="uid://bvnifpomt8uqn" path="res://assets/sounds/move_furniture/move_chair2.wav" id="9_yawkk"]
+[ext_resource type="AudioStream" uid="uid://b5qjd7kpqjmb0" path="res://assets/sounds/move_furniture/move_chair3.wav" id="10_opp44"]
+
+[sub_resource type="Resource" id="Resource_wqnyc"]
+script = ExtResource("1_h5gpe")
+name = "PHONE_RING"
+stream = ExtResource("2_ds6y5")
+metadata/_custom_type_script = "uid://b67yl2mlejqp"
+
+[sub_resource type="Resource" id="Resource_3r1of"]
+script = ExtResource("1_h5gpe")
+name = "SCRIBBLE"
+stream = ExtResource("3_dcj1v")
+metadata/_custom_type_script = "uid://b67yl2mlejqp"
+
+[sub_resource type="Resource" id="Resource_yawkk"]
+script = ExtResource("1_h5gpe")
+name = "MOVE_FURNITURE"
+variants = Array[AudioStream]([ExtResource("4_3r1of"), ExtResource("5_2ckrw"), ExtResource("6_mkqxl"), ExtResource("7_wc2xi"), ExtResource("8_wc2xi"), ExtResource("9_yawkk"), ExtResource("10_opp44")])
+metadata/_custom_type_script = "uid://b67yl2mlejqp"
+
+[resource]
+script = ExtResource("4_xwdmx")
+bus = "SFX"
+library = Array[ExtResource("1_h5gpe")]([SubResource("Resource_wqnyc"), SubResource("Resource_3r1of"), SubResource("Resource_yawkk")])
+metadata/_custom_type_script = "uid://d2y0k5tchu4bs"

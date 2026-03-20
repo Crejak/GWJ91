@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ymkku7sx2xnp"]
 
 [ext_resource type="Script" uid="uid://kg0ec6ai0dkb" path="res://scripts/AudioBus/audio_bus.gd" id="1_olime"]
-[ext_resource type="Resource" uid="uid://bnwhaxoa1701t" path="res://scripts/AudioBus/SFXLibrary.tres" id="2_v4ubk"]
-[ext_resource type="Resource" uid="uid://bocrd8fhnbxu1" path="res://scripts/AudioBus/MusicLibrary.tres" id="3_8n2wd"]
+[ext_resource type="Resource" uid="uid://bnwhaxoa1701t" path="res://assets/sounds/SFXLibrary.tres" id="2_v4ubk"]
+[ext_resource type="Resource" uid="uid://bocrd8fhnbxu1" path="res://assets/sounds/MusicLibrary.tres" id="3_8n2wd"]
 
 [node name="AudioBus" type="Node" unique_id=1665525322]
 script = ExtResource("1_olime")
