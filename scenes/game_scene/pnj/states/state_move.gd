@@ -18,7 +18,7 @@ func _exit_state() -> void:
 	pnj.animation_player.stop()
 
 func _physics_process(delta: float) -> void:
-	pnj.sprite.flip_h = pnj.body.linear_velocity.x < 0
+	pnj.sprite.flip_h = pnj.body.linear_velocity.x > 0
 	var is_arrived_at_destination: bool = false
 	var distance_to_path: float = pnj.body.global_position.distance_squared_to(pnj.global_position)
 	if distance_to_path < wait_square_distance:

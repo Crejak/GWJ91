@@ -32,12 +32,39 @@
 [ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/objects/tv_table.tscn" id="31_50tyd"]
 [ext_resource type="PackedScene" uid="uid://cqsq6mikt6iw7" path="res://scenes/game_scene/pnj/pnjs/dad.tscn" id="31_51dik"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="33_51dik"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="35_ax41o"]
 
 [sub_resource type="Curve2D" id="Curve2D_slkys"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 66, 53, 57.4, 38.7, -57.4, -38.7, 23, -154, 20.699997, -63.3, -20.699997, 63.3, -439, -153, 1, -175, -1, 175, -446, 153, -67.100006, -5.4000015, 67.100006, 5.4000015, -410, 461, -13.400002, 40.399998, 13.400002, -40.399998, -27, 463, 0, 0, 0, 0, -16, 309)
 }
 point_count = 7
+
+[sub_resource type="Resource" id="Resource_r13ha"]
+script = ExtResource("35_ax41o")
+duration = 10.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_qcgpc"]
+script = ExtResource("35_ax41o")
+path_progress_destination = 704.85
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_xu74q"]
+script = ExtResource("35_ax41o")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_r571m"]
+script = ExtResource("35_ax41o")
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_dolxl"]
+script = ExtResource("35_ax41o")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Curve2D" id="Curve2D_o6mwe"]
 _data = {
@@ -294,8 +321,10 @@ blueprint_sprite = NodePath("../blueprint")
 position = Vector2(1491, 362)
 curve = SubResource("Curve2D_slkys")
 
-[node name="Dad" parent="Path2D" unique_id=786583104 instance=ExtResource("31_51dik")]
+[node name="Dad" parent="Path2D" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("31_51dik")]
 position = Vector2(66, 53)
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("35_ax41o")]([SubResource("Resource_r13ha"), SubResource("Resource_qcgpc"), SubResource("Resource_xu74q"), SubResource("Resource_r571m"), SubResource("Resource_dolxl")])
 
 [node name="ChasePath" type="Path2D" parent="." unique_id=1261673405]
 modulate = Color(1, 0, 1, 1)

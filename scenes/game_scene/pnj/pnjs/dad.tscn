@@ -8,7 +8,10 @@
 walk_texture = ExtResource("2_v08wr")
 idle_texture = ExtResource("3_5mnbm")
 
-[node name="Visual" parent="RigidBody2D" parent_id_path=PackedInt32Array(997370158) index="0" unique_id=390448743]
+[node name="RigidBody2D" parent="." index="0" unique_id=997370158]
+can_sleep = false
+
+[node name="Visual" parent="RigidBody2D" index="0" unique_id=390448743]
 position = Vector2(-12.000002, -19.000002)
 
 [node name="Sprite2D" parent="RigidBody2D/Visual" index="0" unique_id=64234146]

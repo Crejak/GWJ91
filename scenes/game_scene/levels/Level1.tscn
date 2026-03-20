@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://m6sddgn1b7dx" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_tv.tscn" id="5_75gx0"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="8_omu1n"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 [ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
@@ -45,6 +46,32 @@ script = ExtResource("2_armk4")
 name = "Present in the chamber"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent8")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_r13ha"]
+script = ExtResource("8_omu1n")
+duration = 10.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_qcgpc"]
+script = ExtResource("8_omu1n")
+path_progress_destination = 704.85
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_xu74q"]
+script = ExtResource("8_omu1n")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_r571m"]
+script = ExtResource("8_omu1n")
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_dolxl"]
+script = ExtResource("8_omu1n")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1e6rb"]
 size = Vector2(668, 377)
@@ -113,6 +140,9 @@ position = Vector2(418, 720)
 position = Vector2(185, 521)
 min_speed = 15.0
 max_speed = 150.0
+
+[node name="Dad" parent="PlayableEnvironment/Environment/TestRoom/Path2D" parent_id_path=PackedInt32Array(2058501475, 137920947) index="0" unique_id=786583104]
+timeline = Array[ExtResource("8_omu1n")]([SubResource("Resource_r13ha"), SubResource("Resource_qcgpc"), SubResource("Resource_xu74q"), SubResource("Resource_r571m"), SubResource("Resource_dolxl")])
 
 [node name="CollisionShape2D" parent="PlayableEnvironment/Environment/TestRoom/Rooms/Room" parent_id_path=PackedInt32Array(2058501475, 727033528) index="0" unique_id=473306914]
 position = Vector2(18, 4.5)
