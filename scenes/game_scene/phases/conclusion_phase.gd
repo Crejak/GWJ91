@@ -1,6 +1,5 @@
 extends Control
 
-@onready var score_label: Label = %ScoreLabel;
 @onready var level_win_newspaper: NewspaperPanel = %LevelWinNewsPaper;
 @onready var level_lose_newspaper: LevelLoseNewspaperPanel = %LevelLoseNewsPaper;
 
@@ -13,7 +12,6 @@ func _ready() -> void:
 
 func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.CONCLUSION:
-		score_label.text = "Congratulations ! You stole %s $" % GameState.get_current_level_state().total_stolen_value;
 		visible = true;
 		if GameState.get_current_level_state().level_won:
 			level_win_newspaper.appear();

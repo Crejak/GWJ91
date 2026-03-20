@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dv3o2r7wtfv7u" path="res://scenes/game_scene/phases/conclusion_phase.gd" id="1_pwwbl"]
 [ext_resource type="PackedScene" uid="uid://dd4rovtnhuj2x" path="res://scenes/end_level/newspaper_panel.tscn" id="2_qn5sy"]
-[ext_resource type="PackedScene" path="res://scenes/end_level/level_lose_news_panel.tscn" id="3_qlsqk"]
+[ext_resource type="PackedScene" uid="uid://cvgtduqu4ki00" path="res://scenes/end_level/level_lose_news_panel.tscn" id="3_qlsqk"]
 
 [node name="ConclusionPhase" type="Control" unique_id=1435576337]
 layout_mode = 3
@@ -12,24 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pwwbl")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=643558139]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -335.0
-offset_top = -3.0
-offset_right = 335.0
-offset_bottom = 80.0
-grow_horizontal = 2
-
-[node name="ScoreLabel" type="Label" parent="VBoxContainer" unique_id=1169712334]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Total stolen value : %s $"
-horizontal_alignment = 1
 
 [node name="LevelWinNewsPaper" parent="." unique_id=1394745093 instance=ExtResource("2_qn5sy")]
 unique_name_in_owner = true
