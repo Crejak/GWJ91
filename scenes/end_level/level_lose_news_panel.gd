@@ -9,19 +9,14 @@ signal continue_pressed
 signal main_menu_pressed
 signal restart_pressed
 
-@export var news_column :Array[NewsColumn] = []
-
 
 func _ready() -> void:
-	_fill_news_column(Level.current.level_id-1)
 	animation_player.play("news_appearing", -1, 1.5)
 
 
-func _fill_news_column(level_id :int) -> void:
-	if level_id >= news_column.size():
-		return
-	news_column_label.text = news_column[level_id].text
+func _on_btn_restart_pressed() -> void:
+	restart_pressed.emit()
+	
 
-
-func _on_btn_continue_pressed() -> void:
+func _on_exit_button_pressed() -> void:
 	continue_pressed.emit()
