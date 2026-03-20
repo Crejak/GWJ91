@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dfoj67snbxe2f"]
+
+[ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_836xg"]
+[ext_resource type="Texture2D" uid="uid://0a1ebhhlarj8" path="res://assets/art/characters/terryfying_teckel_walk.png" id="2_img6q"]
+[ext_resource type="Texture2D" uid="uid://cidow0anfc0rp" path="res://assets/art/characters/terrifying_teckel_sleep.png" id="3_35qc6"]
+
+[node name="Dog" unique_id=786583104 instance=ExtResource("1_836xg")]
+walk_texture = ExtResource("2_img6q")
+idle_texture = ExtResource("3_35qc6")
+
+[node name="Visual" parent="RigidBody2D" parent_id_path=PackedInt32Array(997370158) index="0" unique_id=390448743]
+position = Vector2(-9.999998, 52.999992)
+
+[node name="Sprite2D" parent="RigidBody2D/Visual" index="0" unique_id=64234146]
+texture = ExtResource("2_img6q")
+
+[node name="StatusAnimations" parent="RigidBody2D/Visual" index="1" unique_id=1954057949]
+animation = &"sleep"
+frame = 0
+frame_progress = 0.0
+
+[node name="DetectionProgressBar" parent="RigidBody2D/Visual" index="2" unique_id=1443591310]
+visible = false

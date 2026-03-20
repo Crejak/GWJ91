@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://0isui5xqbhbp"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_acxaa"]
+[ext_resource type="Texture2D" uid="uid://itrvqgjt607f" path="res://assets/art/props/computer_table.PNG" id="2_acxaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj22m"]
+size = Vector2(137, 83)
+
+[node name="Computer_Table" unique_id=1203108321 instance=ExtResource("1_acxaa")]
+mass = 30.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(71, -44)
+scale = Vector2(0.18548033, 0.18548033)
+texture = ExtResource("2_acxaa")
+region_enabled = true
+region_rect = Rect2(9, 168, 803, 632)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(70.5, -50.5)
+shape = SubResource("RectangleShape2D_oj22m")

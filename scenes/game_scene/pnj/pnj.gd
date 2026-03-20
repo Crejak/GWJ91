@@ -38,6 +38,8 @@ var is_waiting_for_step_to_finish: bool
 @onready var status_animations: AnimatedSprite2D = %StatusAnimations
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var sprite: Sprite2D = %Sprite2D
+@export var walk_texture: Texture2D
+@export var idle_texture: Texture2D
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_game_phase_changed)

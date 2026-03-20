@@ -2,6 +2,7 @@ extends PNJ_State
 class_name PNJ_State_Chase
 
 func _enter_state() -> void:
+	pnj.sprite.texture = pnj.walk_texture
 	pnj.status_animations.play("chase")
 	pnj.clear()
 	pnj.reparent(pnj.chase_path)
@@ -15,6 +16,7 @@ func _enter_state() -> void:
 	pnj.animation_player.play("move")
 
 func _physics_process(delta: float) -> void:
+	pnj.sprite.flip_h = pnj.body.linear_velocity.x > 0
 	var distance_to_path: float = pnj.body.global_position.distance_squared_to(pnj.global_position)
 	pnj.progress += delta * pnj.max_speed
 	var velocity := get_velocity_from_distance(distance_to_path)

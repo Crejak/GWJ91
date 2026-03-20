@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ybsf7i3w3qt"
-path="res://.godot/imported/c7a873af-1426-431d-a27c-6294a720fe1d.jpg.PNG-c94edc79374e587ee76e96fc0610cb7b.ctex"
+uid="uid://cqxs1gg0yt60j"
+path="res://.godot/imported/mrs_yellow.png-5289ca70f94ce4cb27478fc5baf0dd76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/c7a873af-1426-431d-a27c-6294a720fe1d.jpg.PNG"
-dest_files=["res://.godot/imported/c7a873af-1426-431d-a27c-6294a720fe1d.jpg.PNG-c94edc79374e587ee76e96fc0610cb7b.ctex"]
+source_file="res://assets/art/blueprints/mrs_yellow.png"
+dest_files=["res://.godot/imported/mrs_yellow.png-5289ca70f94ce4cb27478fc5baf0dd76.ctex"]
 
 [params]
 

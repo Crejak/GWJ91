@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b8j0obq7f3tgn"]
+
+[ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_wq6qo"]
+[ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="2_jhwjh"]
+[ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="7_p21cq"]
+[ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="8_2ihup"]
+[ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="8_q85gk"]
+[ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="9_h8375"]
+[ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="10_0in52"]
+[ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="11_qt8ff"]
+
+[node name="Level" type="Node" unique_id=442240808]
+script = ExtResource("1_wq6qo")
+
+[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=771673376]
+script = ExtResource("2_jhwjh")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=566703648]
+
+[node name="IntroductionPhase" parent="UI" unique_id=2114512006 instance=ExtResource("8_2ihup")]
+visible = false
+title = "Level 1 - Introduction"
+introduction_text = "This is a really cool story.
+Please read it to understand all the lore. I promise it's really cool."
+
+[node name="PreparationPhase" parent="UI" unique_id=1630391834 instance=ExtResource("9_h8375")]
+visible = false
+preparation_time = 35.0
+
+[node name="ConclusionPhase" parent="UI" unique_id=1435576337 instance=ExtResource("10_0in52")]
+visible = false
+title = "Level 1 - Conclusion"
+conclusion_text = "Wow ! You beat the first level !!
+This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"
+
+[node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("11_qt8ff")]
+visible = false
+
+[node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("7_p21cq")]
+visible = false
+
+[node name="EntryPoint" parent="UI" unique_id=1056506662 instance=ExtResource("8_q85gk")]
+offset_left = 193.0
+offset_top = 527.0
+offset_right = 193.0
+offset_bottom = 527.0

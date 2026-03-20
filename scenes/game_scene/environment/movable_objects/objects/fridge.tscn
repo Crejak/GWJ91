@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dn11gy1m085yy"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_wv2r4"]
+[ext_resource type="Texture2D" uid="uid://c86cs7678jhi2" path="res://assets/art/props/fridge.PNG" id="2_wv2r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj22m"]
+size = Vector2(69.75, 86.75)
+
+[node name="Fridge" unique_id=1203108321 instance=ExtResource("1_wv2r4")]
+mass = 30.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(39.682526, -51.394768)
+scale = Vector2(0.1642968, 0.17042968)
+texture = ExtResource("2_wv2r4")
+region_enabled = true
+region_rect = Rect2(30, 29, 576, 676)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(38.125, -43.625)
+shape = SubResource("RectangleShape2D_oj22m")

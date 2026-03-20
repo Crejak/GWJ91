@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_7yctp"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_50hnf"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
-[ext_resource type="Script" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
+[ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
 [ext_resource type="PackedScene" uid="uid://ba21f72lm23w" path="res://scenes/test_room/test_room.tscn" id="3_75gx0"]
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="4_75gx0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://m6sddgn1b7dx" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_tv.tscn" id="5_75gx0"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="8_omu1n"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 [ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
@@ -45,6 +46,35 @@ script = ExtResource("2_armk4")
 name = "Present in the chamber"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent8")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_r13ha"]
+script = ExtResource("8_omu1n")
+duration = 10.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_qcgpc"]
+script = ExtResource("8_omu1n")
+path_progress_destination = 704.85
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_xu74q"]
+script = ExtResource("8_omu1n")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_r571m"]
+script = ExtResource("8_omu1n")
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_dolxl"]
+script = ExtResource("8_omu1n")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e6rb"]
+size = Vector2(668, 377)
 
 [sub_resource type="Resource" id="Resource_wfa5e"]
 script = ExtResource("14_1e6rb")
@@ -111,48 +141,52 @@ position = Vector2(185, 521)
 min_speed = 15.0
 max_speed = 150.0
 
+[node name="Dad" parent="PlayableEnvironment/Environment/TestRoom/Path2D" parent_id_path=PackedInt32Array(2058501475, 137920947) index="0" unique_id=786583104]
+timeline = Array[ExtResource("8_omu1n")]([SubResource("Resource_r13ha"), SubResource("Resource_qcgpc"), SubResource("Resource_xu74q"), SubResource("Resource_r571m"), SubResource("Resource_dolxl")])
+
+[node name="CollisionShape2D" parent="PlayableEnvironment/Environment/TestRoom/Rooms/Room" parent_id_path=PackedInt32Array(2058501475, 727033528) index="0" unique_id=473306914]
+position = Vector2(18, 4.5)
+shape = SubResource("RectangleShape2D_1e6rb")
+
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
 position = Vector2(127, 526)
 
-[node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("2_r2bnq")]
+[node name="UI" type="CanvasLayer" parent="." unique_id=712500312]
+
+[node name="IntroductionPhase" parent="UI" unique_id=2114512006 instance=ExtResource("2_r2bnq")]
 visible = false
-layout_mode = 1
 title = "Level 1 - Introduction"
 introduction_text = "This is a really cool story.
 Please read it to understand all the lore. I promise it's really cool."
 
-[node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_7plab")]
+[node name="PreparationPhase" parent="UI" unique_id=1630391834 instance=ExtResource("2_7plab")]
 visible = false
-layout_mode = 1
 preparation_time = 35.0
 
-[node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("4_jwlce")]
+[node name="ConclusionPhase" parent="UI" unique_id=1435576337 instance=ExtResource("4_jwlce")]
 visible = false
-layout_mode = 1
 title = "Level 1 - Conclusion"
 conclusion_text = "Wow ! You beat the first level !!
 This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"
 
-[node name="InfiltrationPhaseUI" parent="." unique_id=1199558180 instance=ExtResource("12_75gx0")]
+[node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("12_75gx0")]
 visible = false
-layout_mode = 1
 
-[node name="ObjectiveListUi" parent="." unique_id=1932395075 instance=ExtResource("14_sh55l")]
+[node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("14_sh55l")]
 visible = false
-layout_mode = 1
 pages = Array[ExtResource("14_1e6rb")]([SubResource("Resource_wfa5e"), SubResource("Resource_7j52u")])
 
-[node name="EntryPoint" parent="." unique_id=804974359 node_paths=PackedStringArray("character") instance=ExtResource("9_sh55l")]
-layout_mode = 0
+[node name="EntryPoint" parent="UI" unique_id=804974359 node_paths=PackedStringArray("character") instance=ExtResource("9_sh55l")]
 offset_left = 193.0
 offset_top = 527.0
 offset_right = 193.0
 offset_bottom = 527.0
-character = NodePath("../PlayableEnvironment/Environment/TestRoom/Props/Character")
+character = NodePath("../../PlayableEnvironment/Environment/TestRoom/Props/Character")
 
 [connection signal="object_dropped" from="PlayableEnvironment/Environment/TestRoom/Props/Character" to="PlayableEnvironment" method="_on_character_object_dropped"]
 
 [editable path="PlayableEnvironment/Environment/TestRoom"]
+[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room"]
 [editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room2"]
 [editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room3"]
 [editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room4"]

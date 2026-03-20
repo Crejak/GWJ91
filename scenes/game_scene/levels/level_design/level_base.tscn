@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cccj6psuw0ie7"]
+
+[ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="1_guxgb"]
+[ext_resource type="Material" uid="uid://dtidqqbx5o0du" path="res://scenes/interactions/on_hit_shader_material.tres" id="2_xkg73"]
+[ext_resource type="Texture2D" uid="uid://cqxs1gg0yt60j" path="res://assets/art/blueprints/mrs_yellow.png" id="3_guxgb"]
+[ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="4_d5bw1"]
+
+[sub_resource type="Curve2D" id="Curve2D_4iwq4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1638, 478, 0, 0, 0, 0, 2074, 694, 0, 0, 0, 0, 2884, 675, 0, 0, 0, 0, 2931, 1130, 0, 0, 0, 0, 3393, 1058, 0, 0, 0, 0, 3402, 619, 0, 0, 0, 0, 2234, 741, 0, 0, 0, 0, 2247, 1002, 0, 0, 0, 0, 2332, 1507, 0, 0, 0, 0, 2300, 992, 0, 0, 0, 0, 1666, 1039, 0, 0, 0, 0, 1566, 1802, 0, 0, 0, 0, 1221, 1818, 0, 0, 0, 0, 1591, 1843, 0, 0, 0, 0, 1616, 1243, 0, 0, 0, 0, 1174, 1243, 0, 0, 0, 0, 1164, 861, 0, 0, 0, 0, 609, 879, 0, 0, 0, 0, 593, 1382, 0, 0, 0, 0, 581, 883, 0, 0, 0, 0, 916, 873, 0, 0, 0, 0, 913, 647, 0, 0, 0, 0, 929, 898, 0, 0, 0, 0, 1657, 886, 0, 0, 0, 0, 1657, 594, 0, 0, 0, 0, 1635, 249, 0, 0, 0, 0, 1026, 249, 0, 0, 0, 0, 1591, 258, 0, 0, 0, 0, 1638, 478)
+}
+point_count = 29
+
+[node name="Level" type="Node2D" unique_id=274229064]
+
+[node name="LightSystem" type="Node" parent="." unique_id=1509984193 node_paths=PackedStringArray("back_ground_color", "blueprint_sprite")]
+script = ExtResource("1_guxgb")
+back_ground_color = NodePath("")
+color_preparation = Color(0.69411767, 0.6901961, 0.68235296, 1)
+blueprint_sprite = NodePath("")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=832066561]
+z_index = -3
+offset_left = -83.0
+offset_top = -88.0
+offset_right = 6665.0
+offset_bottom = 3775.0
+color = Color(0.5689727, 0.56897277, 0.5689727, 1)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1149287691]
+
+[node name="Blueprint" type="Sprite2D" parent="Walls" unique_id=313779419]
+material = ExtResource("2_xkg73")
+position = Vector2(-59.000015, -18)
+scale = Vector2(2.0824072, 2.0824072)
+texture = ExtResource("3_guxgb")
+centered = false
+
+[node name="Collisions" type="Node2D" parent="Walls" unique_id=1705467228]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Collisions" unique_id=1416766385]
+
+[node name="Rooms" type="Node2D" parent="Walls" unique_id=1847597720]
+position = Vector2(895, 586)
+
+[node name="Room" parent="Walls/Rooms" unique_id=727033528 instance=ExtResource("4_d5bw1")]
+position = Vector2(481, 536)
+
+[node name="YSort" type="Node2D" parent="." unique_id=1613740640]
+y_sort_enabled = true
+
+[node name="Deco" type="Node2D" parent="YSort" unique_id=637398994]
+visible = false
+y_sort_enabled = true
+
+[node name="Props" type="Node2D" parent="YSort" unique_id=815073726]
+y_sort_enabled = true
+
+[node name="Characters" type="Node2D" parent="YSort" unique_id=1174942420]
+y_sort_enabled = true
+
+[node name="ChasePath" type="Path2D" parent="YSort/Characters" unique_id=341057510]
+y_sort_enabled = true
+curve = SubResource("Curve2D_4iwq4")
+
+[node name="Loot" type="Node2D" parent="YSort" unique_id=1827791998]
+y_sort_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1772549326]
+position = Vector2(1941, 1107)
+zoom = Vector2(0.5, 0.5)
+
+[editable path="Walls/Rooms/Room"]
