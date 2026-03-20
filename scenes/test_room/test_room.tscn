@@ -22,58 +22,22 @@
 [ext_resource type="Texture2D" uid="uid://ck2cq2m1mxgd2" path="res://assets/art/props/tv.PNG" id="20_slkys"]
 [ext_resource type="Texture2D" uid="uid://dm5it114a5ruh" path="res://assets/art/props/windows.PNG" id="21_3x2ig"]
 [ext_resource type="Texture2D" uid="uid://d4b06k0jfksd" path="res://assets/art/props/chair.PNG" id="22_drlj2"]
-[ext_resource type="Texture2D" uid="uid://ybsf7i3w3qt" path="res://assets/art/props/c7a873af-1426-431d-a27c-6294a720fe1d.jpg.PNG" id="23_1bvhb"]
+[ext_resource type="Texture2D" uid="uid://ybsf7i3w3qt" path="res://assets/art/props/diner_table.PNG" id="23_1bvhb"]
 [ext_resource type="Texture2D" uid="uid://ccipxgx5b4nd" path="res://assets/art/props/shower.PNG" id="24_sdr2y"]
 [ext_resource type="Texture2D" uid="uid://bgvg8wqutr5tt" path="res://assets/art/props/tapish.PNG" id="25_0uwjo"]
 [ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="29_imeoc"]
-[ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/plant.tscn" id="29_jtacr"]
-[ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/sofa.tscn" id="30_50tyd"]
-[ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/table.tscn" id="30_jtacr"]
-[ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/tv_table.tscn" id="31_50tyd"]
+[ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/objects/plant.tscn" id="29_jtacr"]
+[ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/objects/sofa.tscn" id="30_50tyd"]
+[ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/objects/table.tscn" id="30_jtacr"]
+[ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/objects/tv_table.tscn" id="31_50tyd"]
+[ext_resource type="PackedScene" uid="uid://cqsq6mikt6iw7" path="res://scenes/game_scene/pnj/pnjs/dad.tscn" id="31_51dik"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="33_51dik"]
-[ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="34_o6mwe"]
-[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="35_ax41o"]
 
 [sub_resource type="Curve2D" id="Curve2D_slkys"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 66, 53, 57.4, 38.7, -57.4, -38.7, 23, -154, 20.699997, -63.3, -20.699997, 63.3, -439, -153, 1, -175, -1, 175, -446, 153, -67.100006, -5.4000015, 67.100006, 5.4000015, -410, 461, -13.400002, 40.399998, 13.400002, -40.399998, -27, 463, 0, 0, 0, 0, -16, 309)
 }
 point_count = 7
-
-[sub_resource type="Resource" id="Resource_1eopy"]
-script = ExtResource("35_ax41o")
-duration = 5.0
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_s5m44"]
-script = ExtResource("35_ax41o")
-duration = 3.0
-pnj_state = 2
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_4jykf"]
-script = ExtResource("35_ax41o")
-duration = 10.0
-path_progress_destination = 771.81
-pnj_state = 1
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_j67lv"]
-script = ExtResource("35_ax41o")
-duration = 5.0
-path_progress_destination = 771.81
-pnj_state = 2
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_6sgi5"]
-script = ExtResource("35_ax41o")
-duration = 10.0
-pnj_state = 1
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_tnu40"]
-script = ExtResource("35_ax41o")
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Curve2D" id="Curve2D_o6mwe"]
 _data = {
@@ -330,11 +294,8 @@ blueprint_sprite = NodePath("../blueprint")
 position = Vector2(1491, 362)
 curve = SubResource("Curve2D_slkys")
 
-[node name="PNJ2" parent="Path2D" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("34_o6mwe")]
+[node name="Dad" parent="Path2D" unique_id=786583104 instance=ExtResource("31_51dik")]
 position = Vector2(66, 53)
-chase_threshold = 1.0
-chase_path = NodePath("../../ChasePath")
-timeline = Array[ExtResource("35_ax41o")]([SubResource("Resource_1eopy"), SubResource("Resource_s5m44"), SubResource("Resource_4jykf"), SubResource("Resource_j67lv"), SubResource("Resource_6sgi5"), SubResource("Resource_tnu40")])
 
 [node name="ChasePath" type="Path2D" parent="." unique_id=1261673405]
 modulate = Color(1, 0, 1, 1)

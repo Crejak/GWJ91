@@ -3,6 +3,7 @@ extends Area2D
 var light_on: bool = false
 @onready var mask: Sprite2D = %Sprite2D
 @export var color_light: Color = Color.GRAY
+@export var allways_light: bool = false
 
 var pnjs: Array[PNJ] = []
 
@@ -27,9 +28,10 @@ func _on_body_entered(in_body: Node2D) -> void:
 	elif in_body is MovableObject:
 		var object: MovableObject = in_body
 		object.on_light_changed.emit(true)
-	elif in_body is Character and light_on:
+	elif not allways_light and in_body is Character and light_on:
 		SignalBus.character_caught.emit()
-
+	elif allways_light and in_body is Character and not pnjs.is_empty():
+		SignalBus.character_caught.emit()
 
 func _on_body_exited(in_body: Node2D) -> void:
 	if in_body.is_in_group("PNJ"):
@@ -39,6 +41,7 @@ func _on_body_exited(in_body: Node2D) -> void:
 
 func display_room() -> void:
 	if not visible: return
+	if allways_light: return
 	if light_on: return
 	light_on = true
 	var t: Tween = create_tween()
@@ -72,6 +75,7 @@ func _on_pnj_change_state(in_state: PNJ.State) -> void:
 func try_hide_room() -> void:
 	if not visible: return
 	if not light_on: return
+	if allways_light: return
 	if pnjs.any(func(in_pnj: PNJ) -> bool: return in_pnj.state_machine.current_state != in_pnj.states[PNJ.State.SLEEP]):
 		return
 	light_on = false
