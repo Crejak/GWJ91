@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dx6xc08knusx0"]
 
 [ext_resource type="Script" uid="uid://qu6f54y72q1r" path="res://scenes/game_scene/phases/infiltration/infiltration_failure_ui.gd" id="1_cmfmt"]
+[ext_resource type="PackedScene" uid="uid://ensniw4vv7yc" path="res://scenes/game_scene/phases/infiltration/effects/BustedEffect.tscn" id="2_5hwi7"]
 
 [node name="InfiltrationFailureUi" type="Control" unique_id=1299373946]
 layout_mode = 3
@@ -11,22 +12,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cmfmt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1301413900]
+[node name="BustedEffect" parent="." unique_id=2032631475 instance=ExtResource("2_5hwi7")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -124.0
-offset_top = -45.5
-offset_right = 124.0
-offset_bottom = 45.5
+offset_left = -116.0
+offset_top = -41.5
+offset_right = 116.0
+offset_bottom = 41.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="FailureLabel" type="Label" parent="VBoxContainer" unique_id=1028392382]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "You got caught !"
-horizontal_alignment = 1
