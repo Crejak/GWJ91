@@ -28,7 +28,7 @@ That'll let me pay back my landlord, and you can pay yourself with what you find
 I promise you won't be disappointed.
 
 news:
-	The well-known banker, Mrs Yellow, get robbed tonight. The theif didn't leave a trace ! Maybe we have a new professionnal in the city.
+	The well-known banker, Mrs Yellow, get robbed tonight. The theif didn't leave a trace ! Maybe we have a new professional in town.
 
 
 Mission 2: banquière vs ex-mari
@@ -46,4 +46,4 @@ He knows I have money and just won't accept that I manage it better than he does
 
 
 news:
-	
+	Mr Red's house was burglarized last night ! The professional gambler declared: "I didn't hear a single piece of furniture move"

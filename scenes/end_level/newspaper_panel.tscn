@@ -8,11 +8,12 @@
 
 [sub_resource type="Resource" id="Resource_5ibog"]
 script = ExtResource("2_rtcuw")
-text = "The well-known banker, Mrs Yellow, get robbed tonight. The theif didn't leave a trace ! Maybe we have a new professionnal in the city."
+text = "The well-known banker, Mrs Yellow, get robbed tonight. The theif didn't leave a trace ! Maybe we have a new professional in town."
 metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
 
 [sub_resource type="Resource" id="Resource_rtcuw"]
 script = ExtResource("2_rtcuw")
+text = "Mr Red's house was burglarized last night ! The professional gambler declared: \"I didn't hear a single piece of furniture move\""
 metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpys1"]
@@ -151,9 +152,9 @@ theme_override_constants/margin_top = -50
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0.14590812, 0.12247852, 1)
 theme_override_fonts/normal_font = ExtResource("4_lxwud")
-theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "Another burglary in town !"
+text = "For totally legal burglary activities"
 fit_content = true
 horizontal_alignment = 1
 
