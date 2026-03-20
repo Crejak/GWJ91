@@ -5,6 +5,7 @@ extends Control
 
 @onready var title_label: Label = %TitleLabel;
 @onready var intro_label: RichTextLabel = %IntroLabel;
+@onready var timer_label: Label = %TimerLabel;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(on_phase_started);
@@ -21,5 +22,5 @@ func on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INTRODUCTION:
 		visible = false;
 
-func _on_vcr_button_pressed() -> void:
+func _on_vcr_controls_play_button_pressed() -> void:
 	GameState.get_current_level_state().set_phase(LevelState.Phase.PREPARATION);

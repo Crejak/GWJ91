@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dt1bhqumvyrq1"]
+
+[ext_resource type="Script" uid="uid://bgmtcay53ow8n" path="res://scenes/game_scene/phases/vcr/vcr_controls.gd" id="1_8bmtc"]
+[ext_resource type="Texture2D" uid="uid://ba5syy5dj0ni6" path="res://assets/ui/button_play.png" id="1_cxgbl"]
+[ext_resource type="Texture2D" uid="uid://bumo3mgbwqfu2" path="res://assets/ui/button_play_pressed.png" id="2_8bmtc"]
+[ext_resource type="Script" uid="uid://csi70j3egmpw6" path="res://scenes/game_scene/phases/vcr/vcr_button.gd" id="4_gqhyv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqhyv"]
+atlas = ExtResource("1_cxgbl")
+region = Rect2(0, 4, 151, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtff5"]
+atlas = ExtResource("2_8bmtc")
+region = Rect2(0, 4, 151, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxgbl"]
+atlas = ExtResource("1_cxgbl")
+region = Rect2(176, 0, 151, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bmtc"]
+atlas = ExtResource("2_8bmtc")
+region = Rect2(176, 0, 151, 106)
+
+[node name="VCRControls" type="VBoxContainer" unique_id=164276372]
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 2
+script = ExtResource("1_8bmtc")
+
+[node name="HelperLabel" type="Label" parent="." unique_id=1454971748]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=691856077]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="PlayButton" type="TextureButton" parent="HBoxContainer" unique_id=382731930]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_gqhyv")
+texture_disabled = SubResource("AtlasTexture_xtff5")
+script = ExtResource("4_gqhyv")
+hover_text = "Play recording"
+
+[node name="SkipButton" type="TextureButton" parent="HBoxContainer" unique_id=2073406290]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_cxgbl")
+texture_disabled = SubResource("AtlasTexture_8bmtc")
+script = ExtResource("4_gqhyv")
+hover_text = "Skip to infiltration"
+
+[connection signal="mouse_entered" from="HBoxContainer/PlayButton" to="HBoxContainer/PlayButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/PlayButton" to="HBoxContainer/PlayButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/SkipButton" to="HBoxContainer/SkipButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/SkipButton" to="HBoxContainer/SkipButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/SkipButton" to="." method="_on_skip_button_pressed"]
