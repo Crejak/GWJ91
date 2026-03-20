@@ -34,6 +34,7 @@ func _retreive_level_paths() -> void:
 	$SceneLister._refresh_files()
 	for file :String in $SceneLister.files:
 		level_paths.append(file)
+	#level_paths.sort_custom(func(a, b): return a > b)
 
 
 func _update_level_panels() -> void:

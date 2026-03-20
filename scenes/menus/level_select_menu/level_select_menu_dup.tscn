@@ -104,7 +104,7 @@ level_panel_res = ExtResource("7_0tw0e")
 
 [node name="SceneLister" type="Node" parent="." unique_id=649336979]
 script = ExtResource("3_8jd3o")
-files = Array[String](["res://scenes/game_scene/levels/Level1.tscn", "res://scenes/game_scene/levels/Level2.tscn"])
+files = Array[String](["res://scenes/game_scene/levels/Level1.tscn", "res://scenes/game_scene/levels/level_0test.tscn", "res://scenes/game_scene/levels/Level2.tscn"])
 directory = "res://scenes/game_scene/levels"
 
 [node name="PhoneSceneNode" type="Control" parent="." unique_id=1100901421]

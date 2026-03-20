@@ -23,27 +23,27 @@ name = "Present near the sofa"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent5")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
-[sub_resource type="Resource" id="Resource_sh55l"]
+[sub_resource type="Resource" id="Resource_omu1n"]
 script = ExtResource("2_armk4")
 name = "Smart TV"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickableTV")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
-[sub_resource type="Resource" id="Resource_1e6rb"]
+[sub_resource type="Resource" id="Resource_ffvqw"]
 script = ExtResource("2_armk4")
 name = "Present in the middle room"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent6")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
-[sub_resource type="Resource" id="Resource_omu1n"]
+[sub_resource type="Resource" id="Resource_arpy7"]
 script = ExtResource("2_armk4")
 name = "Present in the south room"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent7")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
-[sub_resource type="Resource" id="Resource_ffvqw"]
+[sub_resource type="Resource" id="Resource_7q4ba"]
 script = ExtResource("2_armk4")
-name = "Present in the chamber"
+name = "Present in the chambers"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent8")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
@@ -102,7 +102,7 @@ grow_vertical = 2
 script = ExtResource("1_7yctp")
 level_id = 1
 starting_character = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Character")
-objectives = Array[ExtResource("2_armk4")]([SubResource("Resource_armk4"), SubResource("Resource_sh55l"), SubResource("Resource_1e6rb"), SubResource("Resource_omu1n"), SubResource("Resource_ffvqw")])
+objectives = Array[ExtResource("2_armk4")]([SubResource("Resource_armk4"), SubResource("Resource_omu1n"), SubResource("Resource_ffvqw"), SubResource("Resource_arpy7"), SubResource("Resource_7q4ba")])
 
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367 node_paths=PackedStringArray("prop_container_node")]
 script = ExtResource("4_pv3ef")
@@ -161,13 +161,10 @@ Please read it to understand all the lore. I promise it's really cool."
 
 [node name="PreparationPhase" parent="UI" unique_id=1630391834 instance=ExtResource("2_7plab")]
 visible = false
-preparation_time = 35.0
+preparation_time = 40.0
 
 [node name="ConclusionPhase" parent="UI" unique_id=1435576337 instance=ExtResource("4_jwlce")]
 visible = false
-title = "Level 1 - Conclusion"
-conclusion_text = "Wow ! You beat the first level !!
-This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"
 
 [node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("12_75gx0")]
 visible = false

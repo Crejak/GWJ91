@@ -49,7 +49,8 @@ func on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.COMPLETED:
 		AudioBus.stop_music()
 		GlobalState.current.story_progression.set_story_progression(level_id)
-		level_won.emit();
+		SceneLoader.load_scene(AppConfig.level_select_scene_path);
+		#level_won.emit();
 		
 func _on_objective_picked_up(index: int, source: Character) -> void:
 	SignalBus.objective_found.emit(source, index);

@@ -1,20 +1,9 @@
-[gd_scene format=3 uid="uid://dd4rovtnhuj2x"]
+[gd_scene format=3 uid="uid://cvgtduqu4ki00"]
 
-[ext_resource type="Texture2D" uid="uid://t6u3nvf0xqyd" path="res://scenes/end_level/images/newspaper.png" id="1_aogcy"]
-[ext_resource type="Script" uid="uid://vufnvroqxhtq" path="res://scenes/end_level/newspaper_panel.gd" id="1_iy6re"]
-[ext_resource type="Script" uid="uid://c1tcyl2jmxix8" path="res://scenes/end_level/resources/news_column.gd" id="2_rtcuw"]
-[ext_resource type="FontFile" uid="uid://qx35gjnccfpc" path="res://assets/fonts/newspaper/Newspaper.ttf" id="3_lpswp"]
-[ext_resource type="FontFile" uid="uid://bqcna7on6yptw" path="res://assets/fonts/old_newspaper_font/Old Newspaper Font.ttf" id="4_lxwud"]
-
-[sub_resource type="Resource" id="Resource_5ibog"]
-script = ExtResource("2_rtcuw")
-text = "The well-known banker, Mrs Yellow, get robbed tonight. The theif didn't leave a trace ! Maybe we have a new professional in town."
-metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
-
-[sub_resource type="Resource" id="Resource_rtcuw"]
-script = ExtResource("2_rtcuw")
-text = "Mr Red's house was burglarized last night ! The professional gambler declared: \"I didn't hear a single piece of furniture move\""
-metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
+[ext_resource type="Script" uid="uid://buxx32pivixo" path="res://scenes/end_level/level_lose_news_panel.gd" id="1_lmuru"]
+[ext_resource type="Texture2D" uid="uid://t6u3nvf0xqyd" path="res://scenes/end_level/images/newspaper.png" id="3_y3dlb"]
+[ext_resource type="FontFile" uid="uid://qx35gjnccfpc" path="res://assets/fonts/newspaper/Newspaper.ttf" id="4_hv0im"]
+[ext_resource type="FontFile" uid="uid://bqcna7on6yptw" path="res://assets/fonts/old_newspaper_font/Old Newspaper Font.ttf" id="5_tffr0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpys1"]
 bg_color = Color(1, 1, 1, 1)
@@ -110,13 +99,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iy6re")
-news_column = Array[ExtResource("2_rtcuw")]([SubResource("Resource_5ibog"), SubResource("Resource_rtcuw")])
+script = ExtResource("1_lmuru")
 
 [node name="NewspaperBackground" type="Sprite2D" parent="." unique_id=683229185]
 visible = false
 position = Vector2(749.99994, 540)
-texture = ExtResource("1_aogcy")
+texture = ExtResource("3_y3dlb")
 
 [node name="MarginContainer" type="MarginContainer" parent="NewspaperBackground" unique_id=1155347284]
 anchors_preset = 15
@@ -138,9 +126,9 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="NewspaperBackground/MarginContainer/VBoxContainer" unique_id=1081726984]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.21176471, 0.21176471, 0.21176471, 1)
-theme_override_fonts/normal_font = ExtResource("3_lpswp")
+theme_override_fonts/normal_font = ExtResource("4_hv0im")
 theme_override_font_sizes/normal_font_size = 303
-text = "Roberry mag"
+text = "Criminal mag"
 fit_content = true
 horizontal_alignment = 1
 
@@ -151,10 +139,10 @@ theme_override_constants/margin_top = -50
 [node name="RichTextLabel2" type="RichTextLabel" parent="NewspaperBackground/MarginContainer/VBoxContainer/MarginContainer" unique_id=1680552322]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0.14590812, 0.12247852, 1)
-theme_override_fonts/normal_font = ExtResource("4_lxwud")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_fonts/normal_font = ExtResource("5_tffr0")
+theme_override_font_sizes/normal_font_size = 120
 bbcode_enabled = true
-text = "For totally legal burglary activities"
+text = "Burgler caught !"
 fit_content = true
 horizontal_alignment = 1
 
@@ -169,8 +157,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dpys1")
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0.14911404, 0.14911404, 0.14911404, 1)
-theme_override_fonts/normal_font = ExtResource("4_lxwud")
+theme_override_fonts/normal_font = ExtResource("5_tffr0")
 theme_override_font_sizes/normal_font_size = 70
+text = "Rob Roberts, a new would-be thief, get caught tonight !
+Good people can now sleep like babies"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=670816663]
 unique_name_in_owner = true
@@ -186,11 +176,21 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_right = 60
 
-[node name="BtnContinue" type="Button" parent="MarginContainer" unique_id=1042376992]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1969290390]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnRestart" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1042376992]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 50
-text = "Continue"
+text = "Restart"
 icon_alignment = 1
 
-[connection signal="pressed" from="MarginContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1946448813]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnRestart" to="." method="_on_btn_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

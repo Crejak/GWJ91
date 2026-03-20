@@ -28,6 +28,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		return;
 	var level_state := GameState.get_current_level_state();
 	level_state.total_stolen_value = character.get_total_picked_up_value();
+	level_state.level_won = true;
 	level_state.set_phase(LevelState.Phase.CONCLUSION);
 	
 func _show_missing_objective_effect() -> void:
