@@ -32,3 +32,7 @@ func on_phase_ended(phase: LevelState.Phase) -> void:
 
 func _on_timer_timeout() -> void:
 	GameState.get_current_level_state().set_phase(LevelState.Phase.INFILTRATION);
+
+func _on_vcr_controls_skip_button_pressed() -> void:
+	timer.stop();
+	GameState.get_current_level_state().set_phase(LevelState.Phase.INFILTRATION);

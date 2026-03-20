@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://168160qmxoou" path="res://scenes/game_scene/phases/introduction_phase.gd" id="1_daejk"]
 [ext_resource type="PackedScene" uid="uid://bml8lwkd63b7g" path="res://scenes/game_scene/phases/crt_filter.tscn" id="2_h11nj"]
-[ext_resource type="Texture2D" uid="uid://bl8gr02qog4we" path="res://assets/ui/vcr.png" id="3_b4tvh"]
+[ext_resource type="PackedScene" uid="uid://dt1bhqumvyrq1" path="res://scenes/game_scene/phases/vcr/VCRControls.tscn" id="3_h11nj"]
 
 [node name="IntroductionPhase" type="Control" unique_id=2114512006]
 layout_mode = 3
@@ -68,12 +68,19 @@ theme_override_font_sizes/mono_font_size = 24
 text = "Sample introduction text"
 fit_content = true
 
-[node name="VCRButton" type="TextureButton" parent="." unique_id=1377187503]
-layout_mode = 0
-offset_left = 716.0
-offset_top = 905.0
-offset_right = 1109.0
-offset_bottom = 1071.0
-texture_normal = ExtResource("3_b4tvh")
+[node name="VcrControls" parent="." unique_id=1196550887 instance=ExtResource("3_h11nj")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -155.0
+offset_right = 176.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+skip_disabled = true
 
-[connection signal="pressed" from="VCRButton" to="." method="_on_vcr_button_pressed"]
+[connection signal="play_button_pressed" from="VcrControls" to="." method="_on_vcr_controls_play_button_pressed"]
