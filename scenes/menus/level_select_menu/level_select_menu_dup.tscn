@@ -132,3 +132,4 @@ title_visible = false
 
 [connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel1" to="." method="_on_panel_container_clicked"]
 [connection signal="clicked" from="MarginContainer2/LevelPanelContainer/LevelPanel2" to="." method="_on_panel_container_clicked"]
+[connection signal="confirmed" from="ExitConfirmation" to="." method="_on_exit_confirmation_confirmed"]

@@ -1,33 +1,7 @@
 [gd_scene format=3 uid="uid://gv1he4q57gpp"]
 
 [ext_resource type="Script" uid="uid://dsum6xmh2fxwt" path="res://scenes/game_scene/phases/preparation_phase.gd" id="1_8e7co"]
-[ext_resource type="Shader" uid="uid://c65nb30njhqsr" path="res://scenes/game_scene/phases/crt_filter.gdshader" id="2_wxhly"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxwhb"]
-shader = ExtResource("2_wxhly")
-shader_parameter/pixel_size = 2.0
-shader_parameter/lod_blur = 0.7
-shader_parameter/chroma_offset_px = 0.8
-shader_parameter/saturation = 0.78
-shader_parameter/contrast = 0.9
-shader_parameter/shadow_lift = 0.06
-shader_parameter/scanline_strength = 0.04
-shader_parameter/vignette_strength = 0.1
-shader_parameter/noise_strength = 0.025
-shader_parameter/noise_speed = 18.0
-shader_parameter/base_jitter_px = 0.08
-shader_parameter/base_jitter_speed = 12.0
-shader_parameter/glitchiness = 0.18
-shader_parameter/glitch_rate = 6.0
-shader_parameter/glitch_shift_px = 1.8
-shader_parameter/glitch_window_min = 0.03
-shader_parameter/glitch_window_max = 0.1
-shader_parameter/blue_band_start_y = 0.45
-shader_parameter/blue_band_speed = 0.06
-shader_parameter/blue_band_width = 0.035
-shader_parameter/blue_band_strength = 0.1
-shader_parameter/blue_band_glitch = 0.25
-shader_parameter/blue_band_distort_px = 1.2
+[ext_resource type="PackedScene" uid="uid://bml8lwkd63b7g" path="res://scenes/game_scene/phases/crt_filter.tscn" id="2_wxhly"]
 
 [node name="PreparationPhase" type="Control" unique_id=1630391834]
 layout_mode = 3
@@ -54,15 +28,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "0.00"
 
-[node name="CRTFilter" type="ColorRect" parent="." unique_id=841910558]
-material = SubResource("ShaderMaterial_jxwhb")
+[node name="CRTFilter" parent="." unique_id=1312715555 instance=ExtResource("2_wxhly")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=292092678]
 unique_name_in_owner = true

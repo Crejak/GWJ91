@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
+[ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
 [ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
 
 [sub_resource type="Resource" id="Resource_armk4"]
@@ -45,7 +46,32 @@ name = "Present in the chamber"
 object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent8")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
-[node name="Level1" type="Node" unique_id=677962005 node_paths=PackedStringArray("starting_character")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e6rb"]
+size = Vector2(668, 377)
+
+[sub_resource type="Resource" id="Resource_wfa5e"]
+script = ExtResource("14_1e6rb")
+title = "Robber advice #1"
+content = "A good robber is always prepared ! Make sure to study your target. Take note of the location, of their habits, and of course, of where the good stuff is.
+
+From Robber Magazine #75"
+metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
+
+[sub_resource type="Resource" id="Resource_7j52u"]
+script = ExtResource("14_1e6rb")
+title = "Robber advice #2"
+content = "To maximize stealth, you should intrude during the night, even if that makes you blind. Be careful, if you make to much noise, you'll get caught ! Be sure to not bump into furnitures !
+
+From Robber Magazine #102"
+metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
+
+[node name="Level1" type="Control" unique_id=1713301915 node_paths=PackedStringArray("starting_character")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7yctp")
 level_id = 1
 starting_character = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Character")
@@ -88,6 +114,10 @@ position = Vector2(185, 521)
 min_speed = 15.0
 max_speed = 150.0
 
+[node name="CollisionShape2D" parent="PlayableEnvironment/Environment/TestRoom/Rooms/Room" parent_id_path=PackedInt32Array(2058501475, 727033528) index="0" unique_id=473306914]
+position = Vector2(18, 4.5)
+shape = SubResource("RectangleShape2D_1e6rb")
+
 [node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
 position = Vector2(127, 526)
 
@@ -114,6 +144,7 @@ visible = false
 
 [node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("14_sh55l")]
 visible = false
+pages = Array[ExtResource("14_1e6rb")]([SubResource("Resource_wfa5e"), SubResource("Resource_7j52u")])
 
 [node name="EntryPoint" parent="UI" unique_id=804974359 node_paths=PackedStringArray("character") instance=ExtResource("9_sh55l")]
 offset_left = 193.0
@@ -125,6 +156,7 @@ character = NodePath("../../PlayableEnvironment/Environment/TestRoom/Props/Chara
 [connection signal="object_dropped" from="PlayableEnvironment/Environment/TestRoom/Props/Character" to="PlayableEnvironment" method="_on_character_object_dropped"]
 
 [editable path="PlayableEnvironment/Environment/TestRoom"]
+[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room"]
 [editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room2"]
 [editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room3"]
 [editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room4"]
