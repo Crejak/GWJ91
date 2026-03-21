@@ -1,6 +1,7 @@
 extends Control
 
-@export var character: Character;
+@onready var level: Level = $"../.."
+@onready var character: Character = level.starting_character
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);

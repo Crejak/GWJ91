@@ -26,23 +26,32 @@
 [ext_resource type="Texture2D" uid="uid://ccipxgx5b4nd" path="res://assets/art/props/shower.PNG" id="24_m6q6k"]
 [ext_resource type="Texture2D" uid="uid://bgvg8wqutr5tt" path="res://assets/art/props/tapish.PNG" id="25_5km4f"]
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="26_hj47c"]
-[ext_resource type="PackedScene" uid="uid://m6sddgn1b7dx" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_tv.tscn" id="27_m8tbv"]
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/objects/table.tscn" id="28_tp5x5"]
 [ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/objects/plant.tscn" id="29_fh2rd"]
 [ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/objects/sofa.tscn" id="30_sen3p"]
 [ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/objects/tv_table.tscn" id="31_ov8k0"]
+[ext_resource type="PackedScene" uid="uid://c1hovdgvwqdl4" path="res://scenes/game_scene/environment/movable_objects/objects/bed.tscn" id="32_3uyum"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="32_w03m8"]
 [ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="33_b27oa"]
-[ext_resource type="PackedScene" uid="uid://cqsq6mikt6iw7" path="res://scenes/game_scene/pnj/pnjs/dad.tscn" id="34_jmxgh"]
+[ext_resource type="PackedScene" uid="uid://c0c8aew7kbuwa" path="res://scenes/game_scene/environment/movable_objects/objects/bed_table.tscn" id="33_gtju4"]
+[ext_resource type="PackedScene" uid="uid://dn11gy1m085yy" path="res://scenes/game_scene/environment/movable_objects/objects/fridge.tscn" id="34_yp58s"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="35_13th3"]
+[ext_resource type="PackedScene" uid="uid://cw8wrc1y3rt08" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_sink.tscn" id="35_j5n74"]
+[ext_resource type="PackedScene" uid="uid://btqi7bxm7od85" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_table.tscn" id="36_jtogj"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="36_wubag"]
+[ext_resource type="PackedScene" uid="uid://lkifrpwii4pk" path="res://scenes/game_scene/environment/movable_objects/objects/shower.tscn" id="37_jtogj"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="37_ms7vj"]
+[ext_resource type="PackedScene" uid="uid://dl3bhq45kmgkk" path="res://scenes/game_scene/environment/movable_objects/objects/sink.tscn" id="38_x2gux"]
+[ext_resource type="PackedScene" uid="uid://bowmowy62uprw" path="res://scenes/game_scene/environment/movable_objects/objects/toilet.tscn" id="39_ixf6c"]
+[ext_resource type="PackedScene" uid="uid://ckadm23leoi2l" path="res://scenes/game_scene/environment/movable_objects/objects/christmas_tree.tscn" id="40_brrr0"]
+[ext_resource type="PackedScene" uid="uid://c7abt76osnp8e" path="res://scenes/game_scene/pnj/pnjs/mrs_yellow.tscn" id="42_tnmn2"]
+[ext_resource type="PackedScene" uid="uid://mxd2xxqbwe6y" path="res://scenes/game_scene/environment/movable_objects/objects/lamp.tscn" id="42_x2gux"]
 
 [sub_resource type="Curve2D" id="Curve2D_slkys"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 66, 53, 57.4, 38.7, -57.4, -38.7, 23, -154, 20.699997, -63.3, -20.699997, 63.3, -439, -153, 1, -175, -1, 175, -446, 153, -67.100006, -5.4000015, 67.100006, 5.4000015, -410, 461, -13.400002, 40.399998, 13.400002, -40.399998, -27, 463, 0, 0, 0, 0, -16, 309)
+"points": PackedVector2Array(0, 0, 0, 0, 130, -72, 57.4, 38.7, -57.4, -38.7, -59, -87, 57.890076, 0.33636093, -57.890076, -0.33636093, -192, -177, 50.678047, -54.72817, -50.678047, 54.72817, -374, -118, 0, 0, 0, 0, -571, -105, 0, 0, 0, 0, -597, -164)
 }
-point_count = 7
+point_count = 6
 
 [sub_resource type="Resource" id="Resource_r13ha"]
 script = ExtResource("35_13th3")
@@ -51,7 +60,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_qcgpc"]
 script = ExtResource("35_13th3")
-path_progress_destination = 704.85
+path_progress_destination = 824.87
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -72,9 +81,9 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Curve2D" id="Curve2D_o6mwe"]
 _data = {
-"points": PackedVector2Array(4.1985655, 69.043076, -4.1985655, -69.043076, 1457, 227, 39.73896, -52.778305, -39.73896, 52.778305, 1057, 230, 54.02015, -57.745678, -54.02015, 57.745678, 1036, 489, 39.11804, -36.634354, -39.11804, 36.634354, 693, 487, 36.01343, -21.111322, -36.01343, 21.111322, 668, 602, 42.843567, 27.941456, -42.843567, -27.941456, 292, 589, 0, 0, 0, 0, 281, 484, -54.64107, -21.111322, 54.64107, 21.111322, 291, 602, -34.77159, 32.287907, 34.77159, -32.287907, 674, 606, -32.908825, 39.11804, 32.908825, -39.11804, 701, 495, -52.778305, -50.915543, 52.778305, 50.915543, 1031, 507, -64.57581, -65.19673, 64.57581, 65.19673, 1063, 811, -41.601723, 76.99423, 41.601723, -76.99423, 1458, 801, 0, 0, 0, 0, 1457, 227)
+"points": PackedVector2Array(27.341988, 148.06941, -27.341988, -148.06941, 1416, 326, 35.606728, -9.803101, -35.606728, 9.803101, 1040, 239, 7.7935143, -114.57475, -7.7935143, 114.57475, 1036, 489, 39.11804, -36.634354, -39.11804, 36.634354, 724, 642, 54.632904, 160.81047, -54.632904, -160.81047, 309, 561, 0, 0, 0, 0, 297, 245, -89.69045, -87.06789, 89.69045, 87.06789, 335, 612, -32.908825, 39.11804, 32.908825, -39.11804, 724, 641, -52.778305, -50.915543, 52.778305, 50.915543, 1043, 627, -64.57581, -65.19673, 64.57581, 65.19673, 1102, 869, -14.506977, 254.8035, 14.506977, -254.8035, 1615, 688, 0, 0, 0, 0, 1416, 327)
 }
-point_count = 14
+point_count = 12
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r13ha"]
 size = Vector2(578, 365)
@@ -109,7 +118,7 @@ texture = ExtResource("2_5cd8t")
 centered = false
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1785199996]
-visible = false
+position = Vector2(315, 327)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=648709452]
 
@@ -293,87 +302,122 @@ position = Vector2(1041, 191.99994)
 scale = Vector2(0.14397906, 0.14397906)
 texture = ExtResource("25_5km4f")
 
-[node name="Props" type="Node2D" parent="." unique_id=1286940041]
-y_sort_enabled = true
-position = Vector2(314, 328)
-
-[node name="Loot" type="Node2D" parent="Props" unique_id=759546519]
-y_sort_enabled = true
-position = Vector2(226, -24)
-
-[node name="PickablePresent5" parent="Props/Loot" unique_id=1203108321 instance=ExtResource("26_hj47c")]
-position = Vector2(48, 423)
-
-[node name="PickablePresent6" parent="Props/Loot" unique_id=1577084302 instance=ExtResource("26_hj47c")]
-position = Vector2(624, 682)
-
-[node name="PickablePresent8" parent="Props/Loot" unique_id=1107931385 instance=ExtResource("26_hj47c")]
-position = Vector2(1373, 179)
-
-[node name="PickablePresent7" parent="Props/Loot" unique_id=165151667 instance=ExtResource("26_hj47c")]
-position = Vector2(624, 949)
-
-[node name="PickableTV" parent="Props/Loot" unique_id=2004095971 instance=ExtResource("27_m8tbv")]
-position = Vector2(182, 776)
-flip_v = true
-
-[node name="Table" parent="Props" unique_id=98976642 instance=ExtResource("28_tp5x5")]
-y_sort_enabled = true
-position = Vector2(404, 520)
-mass = 3.0
-
-[node name="Plant" parent="Props" unique_id=1424733342 instance=ExtResource("29_fh2rd")]
-position = Vector2(169, 404)
-mass = 2.0
-
-[node name="Plant2" parent="Props" unique_id=601508091 instance=ExtResource("29_fh2rd")]
-position = Vector2(861, 400)
-
-[node name="Plant3" parent="Props" unique_id=975252080 instance=ExtResource("29_fh2rd")]
-position = Vector2(768, 735)
-
-[node name="Plant4" parent="Props" unique_id=1456453316 instance=ExtResource("29_fh2rd")]
-position = Vector2(1386, 131)
-
-[node name="Sofa" parent="Props" unique_id=1431149498 instance=ExtResource("30_sen3p")]
-y_sort_enabled = true
-position = Vector2(367, 413)
-
-[node name="TV_Table" parent="Props" unique_id=1948180127 instance=ExtResource("31_ov8k0")]
-position = Vector2(418, 720)
-mass = 10.0
-flip_v = true
-
-[node name="Character" parent="Props" unique_id=424702170 instance=ExtResource("32_w03m8")]
-position = Vector2(185, 521)
-min_speed = 15.0
-max_speed = 150.0
-
 [node name="light_system" type="Node" parent="." unique_id=917056343 node_paths=PackedStringArray("back_ground_color", "blueprint_sprite")]
 script = ExtResource("33_b27oa")
 back_ground_color = NodePath("../ColorRect")
 color_preparation = Color(0.69411767, 0.6901961, 0.68235296, 1)
 blueprint_sprite = NodePath("../blueprint")
 
-[node name="Path2D" type="Path2D" parent="." unique_id=646266743]
-position = Vector2(1805, 690)
+[node name="YSort" type="Node2D" parent="." unique_id=1608236165]
+y_sort_enabled = true
+
+[node name="Loot" type="Node2D" parent="YSort" unique_id=759546519]
+y_sort_enabled = true
+position = Vector2(540, 304)
+
+[node name="painting_kitchen" parent="YSort/Loot" unique_id=1203108321 instance=ExtResource("26_hj47c")]
+position = Vector2(1093, 788)
+
+[node name="painting_room" parent="YSort/Loot" unique_id=1577084302 instance=ExtResource("26_hj47c")]
+position = Vector2(1416, 669)
+
+[node name="painting_bathroom" parent="YSort/Loot" unique_id=1107931385 instance=ExtResource("26_hj47c")]
+position = Vector2(783, 179)
+
+[node name="painting_livingroom" parent="YSort/Loot" unique_id=165151667 instance=ExtResource("26_hj47c")]
+position = Vector2(421, 504)
+
+[node name="Props" type="Node2D" parent="YSort" unique_id=1286940041]
+y_sort_enabled = true
+position = Vector2(314, 328)
+
+[node name="Table" parent="YSort/Props" unique_id=98976642 instance=ExtResource("28_tp5x5")]
+y_sort_enabled = true
+position = Vector2(401, 616)
+mass = 3.0
+
+[node name="Plant" parent="YSort/Props" unique_id=1424733342 instance=ExtResource("29_fh2rd")]
+position = Vector2(221, 779)
+mass = 2.0
+
+[node name="Plant2" parent="YSort/Props" unique_id=601508091 instance=ExtResource("29_fh2rd")]
+position = Vector2(834, 479)
+
+[node name="Plant3" parent="YSort/Props" unique_id=975252080 instance=ExtResource("29_fh2rd")]
+position = Vector2(741, 783)
+
+[node name="Plant4" parent="YSort/Props" unique_id=1456453316 instance=ExtResource("29_fh2rd")]
+position = Vector2(1271, 165)
+
+[node name="Sofa" parent="YSort/Props" unique_id=1431149498 instance=ExtResource("30_sen3p")]
+y_sort_enabled = true
+position = Vector2(369, 516)
+
+[node name="TV_Table" parent="YSort/Props" unique_id=1948180127 instance=ExtResource("31_ov8k0")]
+position = Vector2(405, 786)
+mass = 10.0
+flip_v = true
+
+[node name="Bed" parent="YSort/Props" unique_id=1787568152 instance=ExtResource("32_3uyum")]
+position = Vector2(1511, 297)
+
+[node name="BedTable" parent="YSort/Props" unique_id=1971970702 instance=ExtResource("33_gtju4")]
+position = Vector2(1444, 163)
+
+[node name="Fridge" parent="YSort/Props" unique_id=1406412769 instance=ExtResource("34_yp58s")]
+position = Vector2(913, 769)
+rotation = -1.5605315
+
+[node name="Kitchen" parent="YSort/Props" unique_id=978465427 instance=ExtResource("35_j5n74")]
+position = Vector2(817, 981)
+
+[node name="Kitchen_Table" parent="YSort/Props" unique_id=387425683 instance=ExtResource("36_jtogj")]
+position = Vector2(1162, 795)
+
+[node name="Shower" parent="YSort/Props" unique_id=2018259432 instance=ExtResource("37_jtogj")]
+position = Vector2(839, 227)
+
+[node name="Sink" parent="YSort/Props" unique_id=1308354838 instance=ExtResource("38_x2gux")]
+position = Vector2(1129, 174)
+
+[node name="Toilet" parent="YSort/Props" unique_id=1463694166 instance=ExtResource("39_ixf6c")]
+position = Vector2(261, 262)
+
+[node name="ChristMassTree" parent="YSort/Props" unique_id=1934858976 instance=ExtResource("40_brrr0")]
+position = Vector2(1168, 494)
+
+[node name="Characters" type="Node2D" parent="YSort" unique_id=301125476]
+y_sort_enabled = true
+
+[node name="Character" parent="YSort/Characters" unique_id=424702170 instance=ExtResource("32_w03m8")]
+position = Vector2(531, 908)
+min_speed = 15.0
+max_speed = 250.0
+max_silent_speed = 1000.0
+
+[node name="Path2D" type="Path2D" parent="YSort/Characters" unique_id=646266743]
+y_sort_enabled = true
+position = Vector2(1785, 745)
 curve = SubResource("Curve2D_slkys")
 
-[node name="Dad" parent="Path2D" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("34_jmxgh")]
-position = Vector2(66, 53)
+[node name="MrsYellow" parent="YSort/Characters/Path2D" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("42_tnmn2")]
+position = Vector2(-597, -164)
+progress = 824.8705
 chase_path = NodePath("../../ChasePath")
 timeline = Array[ExtResource("35_13th3")]([SubResource("Resource_r13ha"), SubResource("Resource_qcgpc"), SubResource("Resource_xu74q"), SubResource("Resource_r571m"), SubResource("Resource_dolxl")])
 
-[node name="ChasePath" type="Path2D" parent="." unique_id=85812913]
+[node name="ChasePath" type="Path2D" parent="YSort/Characters" unique_id=85812913]
 modulate = Color(1, 0, 1, 1)
+y_sort_enabled = true
 position = Vector2(321, 336)
 curve = SubResource("Curve2D_o6mwe")
 
 [node name="Rooms" type="Node2D" parent="." unique_id=140754912]
+visible = false
 position = Vector2(314, 328)
 
 [node name="Room" parent="Rooms" unique_id=727033528 instance=ExtResource("36_wubag")]
-position = Vector2(481, 536)
+position = Vector2(478, 536)
 
 [node name="CollisionShape2D" parent="Rooms/Room" index="0" unique_id=473306914]
 position = Vector2(20, 67.5)
@@ -443,6 +487,9 @@ position = Vector2(495, 910)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1320770298]
 position = Vector2(1284, 856)
+
+[node name="Lamp" parent="." unique_id=613712462 instance=ExtResource("42_x2gux")]
+position = Vector2(1909, 1304)
 
 [editable path="Rooms/Room"]
 [editable path="Rooms/Room6"]

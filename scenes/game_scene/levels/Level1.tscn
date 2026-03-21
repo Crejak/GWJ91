@@ -12,34 +12,28 @@
 [ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
 [ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
 
+[sub_resource type="Resource" id="Resource_ktfe1"]
+script = ExtResource("2_armk4")
+name = "Painting in the living room"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/painting_livingroom")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_75gx0"]
+script = ExtResource("2_armk4")
+name = "Painting in the kitchen"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/painting_kitchen")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
 [sub_resource type="Resource" id="Resource_armk4"]
 script = ExtResource("2_armk4")
-name = "Present near the sofa"
-object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickablePresent5")
+name = "Painting in the sleeping room"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/painting_room")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
-[sub_resource type="Resource" id="Resource_omu1n"]
+[sub_resource type="Resource" id="Resource_sh55l"]
 script = ExtResource("2_armk4")
-name = "Smart TV"
-object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickableTV")
-metadata/_custom_type_script = "uid://c5k5adpjo4151"
-
-[sub_resource type="Resource" id="Resource_ffvqw"]
-script = ExtResource("2_armk4")
-name = "Present in the middle room"
-object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickablePresent6")
-metadata/_custom_type_script = "uid://c5k5adpjo4151"
-
-[sub_resource type="Resource" id="Resource_arpy7"]
-script = ExtResource("2_armk4")
-name = "Present in the south room"
-object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickablePresent7")
-metadata/_custom_type_script = "uid://c5k5adpjo4151"
-
-[sub_resource type="Resource" id="Resource_7q4ba"]
-script = ExtResource("2_armk4")
-name = "Present in the chambers"
-object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickablePresent8")
+name = "Painting in the bath room"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/painting_bathroom")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="Resource" id="Resource_wfa5e"]
@@ -61,15 +55,21 @@ metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
 [node name="Level1" type="Node" unique_id=1017530407 node_paths=PackedStringArray("starting_character")]
 script = ExtResource("1_7yctp")
 level_id = 1
-starting_character = NodePath("")
-objectives = Array[ExtResource("2_armk4")]([SubResource("Resource_armk4"), SubResource("Resource_omu1n"), SubResource("Resource_ffvqw"), SubResource("Resource_arpy7"), SubResource("Resource_7q4ba")])
+starting_character = NodePath("PlayableEnvironment/Level/YSort/Characters/Character")
+objectives = Array[ExtResource("2_armk4")]([SubResource("Resource_ktfe1"), SubResource("Resource_75gx0"), SubResource("Resource_armk4"), SubResource("Resource_sh55l")])
 
-[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367 node_paths=PackedStringArray("prop_container_node")]
+[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367]
 script = ExtResource("4_pv3ef")
-prop_container_node = NodePath("")
 
 [node name="Level" parent="PlayableEnvironment" unique_id=1878490932 instance=ExtResource("4_ktfe1")]
 position = Vector2(13, 5)
+
+[node name="MrsYellow" parent="PlayableEnvironment/Level/YSort/Characters/Path2D" parent_id_path=PackedInt32Array(1878490932, 646266743) index="0" unique_id=786583104]
+position = Vector2(130, -72)
+progress = 0.0
+
+[node name="Rooms" parent="PlayableEnvironment/Level" index="6" unique_id=140754912]
+visible = true
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=712500312]
 
@@ -88,14 +88,22 @@ visible = false
 
 [node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("12_75gx0")]
 visible = false
+infiltration_phase_time = 80.0
 
 [node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("14_sh55l")]
 visible = false
 pages = Array[ExtResource("14_1e6rb")]([SubResource("Resource_wfa5e"), SubResource("Resource_7j52u")])
 
-[node name="EntryPoint" parent="UI" unique_id=804974359 node_paths=PackedStringArray("character") instance=ExtResource("9_sh55l")]
+[node name="EntryPoint" parent="UI" unique_id=804974359 instance=ExtResource("9_sh55l")]
 offset_left = 260.0
 offset_top = 587.0
 offset_right = 260.0
 offset_bottom = 587.0
-character = NodePath("")
+
+[editable path="PlayableEnvironment/Level"]
+[editable path="PlayableEnvironment/Level/Rooms/Room"]
+[editable path="PlayableEnvironment/Level/Rooms/Room6"]
+[editable path="PlayableEnvironment/Level/Rooms/Room2"]
+[editable path="PlayableEnvironment/Level/Rooms/Room3"]
+[editable path="PlayableEnvironment/Level/Rooms/Room4"]
+[editable path="PlayableEnvironment/Level/Rooms/Room5"]
