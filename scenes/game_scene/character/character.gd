@@ -153,6 +153,7 @@ func _on_inventory_changed() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	hit_light_zone.light_up();
+	AudioBus.play_sfx("HIT_WALL")
 	if body is PhysicsBody2D:
 		if (body as PhysicsBody2D).get_collision_layer_value(3):
 			var wall := body as StaticBody2D;

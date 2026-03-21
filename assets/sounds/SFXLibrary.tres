@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://b17b5u0de3erx" path="res://assets/sounds/light_switch/light-switch-click-on3.wav" id="13_1wilr"]
 [ext_resource type="AudioStream" uid="uid://cqyflgodx7v47" path="res://assets/sounds/light_switch/light-switch-click-on.wav" id="14_rkk81"]
 [ext_resource type="AudioStream" uid="uid://elentujxbxes" path="res://assets/sounds/Unedited/allanzkie-film-camera-lens-on-272596.mp3" id="15_1wilr"]
+[ext_resource type="AudioStream" uid="uid://r0pwrw5kug07" path="res://assets/sounds/hit_wall.wav" id="15_rkk81"]
 [ext_resource type="AudioStream" uid="uid://514son4x0tc1" path="res://assets/sounds/pick_item.wav" id="16_rkk81"]
 
 [sub_resource type="Resource" id="Resource_wqnyc"]
@@ -58,8 +59,14 @@ name = "PICK_ITEM"
 stream = ExtResource("16_rkk81")
 metadata/_custom_type_script = "uid://b67yl2mlejqp"
 
+[sub_resource type="Resource" id="Resource_4jxyw"]
+script = ExtResource("1_h5gpe")
+name = "HIT_WALL"
+stream = ExtResource("15_rkk81")
+metadata/_custom_type_script = "uid://b67yl2mlejqp"
+
 [resource]
 script = ExtResource("4_xwdmx")
 bus = "SFX"
-library = Array[ExtResource("1_h5gpe")]([SubResource("Resource_wqnyc"), SubResource("Resource_3r1of"), SubResource("Resource_yawkk"), SubResource("Resource_opp44"), SubResource("Resource_c1u60"), SubResource("Resource_rkk81"), SubResource("Resource_b24d3")])
+library = Array[ExtResource("1_h5gpe")]([SubResource("Resource_wqnyc"), SubResource("Resource_3r1of"), SubResource("Resource_yawkk"), SubResource("Resource_opp44"), SubResource("Resource_c1u60"), SubResource("Resource_rkk81"), SubResource("Resource_b24d3"), SubResource("Resource_4jxyw")])
 metadata/_custom_type_script = "uid://d2y0k5tchu4bs"
