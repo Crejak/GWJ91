@@ -4,6 +4,7 @@ class_name EventBus
 signal phase_ended(phase: LevelState.Phase);
 signal phase_started(phase: LevelState.Phase);
 signal character_caught;
+signal infiltration_timed_out;
 signal active_character_changed(character: Character);
 signal objective_found(character: Character, index: int);
 signal objective_list_updated;
@@ -22,6 +23,9 @@ func _ready() -> void:
 		);
 		character_caught.connect(func () -> void:
 			print("Character caught");
+		);
+		infiltration_timed_out.connect(func () -> void:
+			print("Infiltration timed out");
 		);
 		active_character_changed.connect(func (character: Character) -> void:
 			print("Active character changed : %s" % character);

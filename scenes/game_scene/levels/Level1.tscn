@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_7yctp"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_50hnf"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
-[ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
+[ext_resource type="Script" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
 [ext_resource type="PackedScene" uid="uid://ba21f72lm23w" path="res://scenes/test_room/test_room.tscn" id="3_75gx0"]
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="4_75gx0"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
-[ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
+[ext_resource type="Script" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://m6sddgn1b7dx" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_tv.tscn" id="5_75gx0"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="8_omu1n"]
@@ -168,6 +168,7 @@ visible = false
 
 [node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("12_75gx0")]
 visible = false
+infiltration_phase_time = 80.0
 
 [node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("14_sh55l")]
 visible = false
