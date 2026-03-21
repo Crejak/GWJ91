@@ -22,6 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://d0x4h7rmkq1ev" path="res://scenes/game_scene/environment/movable_objects/objects/diner_table.tscn" id="19_lhm52"]
 [ext_resource type="PackedScene" uid="uid://dn11gy1m085yy" path="res://scenes/game_scene/environment/movable_objects/objects/fridge.tscn" id="20_bbp4a"]
 [ext_resource type="PackedScene" uid="uid://mxd2xxqbwe6y" path="res://scenes/game_scene/environment/movable_objects/objects/lamp.tscn" id="21_6osdg"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/stove.tscn" id="21_fc5qq"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="22_67lip"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/shoes_furniture.tscn" id="23_o08ws"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="24_wr2dr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gakxn"]
 size = Vector2(676, 517)
@@ -201,7 +205,7 @@ position = Vector2(1489, 211)
 rotation = 1.5707964
 
 [node name="Kitchen_Table" parent="YSort/Props" unique_id=1476173575 instance=ExtResource("11_tq52w")]
-position = Vector2(1736, 300)
+position = Vector2(1761, 516)
 
 [node name="LivingRoomTable" parent="YSort/Props" unique_id=1204922638 instance=ExtResource("10_81tug")]
 position = Vector2(1069, 579)
@@ -251,10 +255,6 @@ rotation = -1.5707964
 [node name="TV_Table3" parent="YSort/Props" unique_id=2040575230 instance=ExtResource("13_lhm52")]
 position = Vector2(1359, 1115)
 
-[node name="TV_Table4" parent="YSort/Props" unique_id=2094662652 instance=ExtResource("13_lhm52")]
-position = Vector2(1009, 1088)
-rotation = 4.712389
-
 [node name="TV_Table5" parent="YSort/Props" unique_id=646732425 instance=ExtResource("13_lhm52")]
 position = Vector2(1207, 450)
 rotation = 1.5707964
@@ -269,6 +269,26 @@ position = Vector2(2019, 1184)
 
 [node name="Lamp2" parent="YSort/Props" unique_id=1596087055 instance=ExtResource("21_6osdg")]
 position = Vector2(1123, 1201)
+
+[node name="Stove" parent="YSort/Props" unique_id=718157655 instance=ExtResource("21_fc5qq")]
+position = Vector2(1708, 288)
+
+[node name="Furniture" parent="YSort/Props" unique_id=439151026 instance=ExtResource("22_67lip")]
+position = Vector2(1543, 855)
+
+[node name="Furniture3" parent="YSort/Props" unique_id=1189666486 instance=ExtResource("22_67lip")]
+position = Vector2(1629, 856)
+
+[node name="ShoesFurniture" parent="YSort/Props" unique_id=2053364356 instance=ExtResource("23_o08ws")]
+position = Vector2(928, 1136)
+rotation = 1.5707964
+flip_v = true
+
+[node name="Furniture2" parent="YSort/Props" unique_id=1346399028 instance=ExtResource("22_67lip")]
+position = Vector2(925, 909)
+
+[node name="Guitare" parent="YSort/Props" unique_id=186278364 instance=ExtResource("24_wr2dr")]
+position = Vector2(1539, 893)
 
 [node name="Characters" type="Node2D" parent="YSort" unique_id=1174942420]
 y_sort_enabled = true
