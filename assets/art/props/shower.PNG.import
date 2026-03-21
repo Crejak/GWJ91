@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccipxgx5b4nd"
-path="res://.godot/imported/shower.PNG-48add3d82011a24bead592aeaaddac94.ctex"
+path="res://.godot/imported/shower.png-3e7ff57b740f3c75d6500d81d1964a14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/shower.PNG"
-dest_files=["res://.godot/imported/shower.PNG-48add3d82011a24bead592aeaaddac94.ctex"]
+source_file="res://assets/art/props/shower.png"
+dest_files=["res://.godot/imported/shower.png-3e7ff57b740f3c75d6500d81d1964a14.ctex"]
 
 [params]
 
