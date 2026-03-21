@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_67g1p"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="1_76vmh"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_0lrvg"]
+[ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_h5dmj"]
 [ext_resource type="PackedScene" uid="uid://debtjw0d8klqo" path="res://scenes/game_scene/levels/level_design/ld_level_2.tscn" id="3_h5dmj"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="3_tcbo6"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_h5dmj"]
@@ -10,11 +11,39 @@
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="8_tcbo6"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="11_67g1p"]
 
-[node name="Level" type="Node" unique_id=442240808]
-script = ExtResource("1_67g1p")
+[sub_resource type="Resource" id="Resource_67g1p"]
+script = ExtResource("2_h5dmj")
+name = "... in the Office"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/office")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
-[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=771673376]
+[sub_resource type="Resource" id="Resource_5o11u"]
+script = ExtResource("2_h5dmj")
+name = "... in the Bathroom"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/bathroom")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_3n6yu"]
+script = ExtResource("2_h5dmj")
+name = "... in the Livingroom"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/livingroom")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_18vbk"]
+script = ExtResource("2_h5dmj")
+name = "... in the ex-husband room"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/sleepingroom")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[node name="Level" type="Node" unique_id=442240808 node_paths=PackedStringArray("starting_character")]
+script = ExtResource("1_67g1p")
+level_id = 2
+starting_character = NodePath("PlayableEnvironment/Level/YSort/Characters/Character")
+objectives = Array[ExtResource("2_h5dmj")]([SubResource("Resource_67g1p"), SubResource("Resource_5o11u"), SubResource("Resource_3n6yu"), SubResource("Resource_18vbk")])
+
+[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=771673376 node_paths=PackedStringArray("prop_container_node")]
 script = ExtResource("4_h5dmj")
+prop_container_node = NodePath("Level/YSort/Props")
 
 [node name="Level" parent="PlayableEnvironment" unique_id=274229064 instance=ExtResource("3_h5dmj")]
 
@@ -44,3 +73,15 @@ offset_left = 193.0
 offset_top = 527.0
 offset_right = 193.0
 offset_bottom = 527.0
+
+[editable path="PlayableEnvironment/Level"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room2"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room3"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room4"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room5"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room6"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room7"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room8"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room9"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room10"]
