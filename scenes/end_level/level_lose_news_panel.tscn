@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://cvgtduqu4ki00"]
+
+[ext_resource type="Script" uid="uid://buxx32pivixo" path="res://scenes/end_level/level_lose_news_panel.gd" id="1_lmuru"]
+[ext_resource type="Texture2D" uid="uid://t6u3nvf0xqyd" path="res://scenes/end_level/images/newspaper.png" id="3_y3dlb"]
+[ext_resource type="FontFile" uid="uid://qx35gjnccfpc" path="res://assets/fonts/newspaper/Newspaper.ttf" id="4_hv0im"]
+[ext_resource type="FontFile" uid="uid://bqcna7on6yptw" path="res://assets/fonts/old_newspaper_font/Old Newspaper Font.ttf" id="5_tffr0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpys1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_iy6re"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewspaperBackground:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewspaperBackground:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewspaperBackground:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lpswp"]
+resource_name = "news_appearing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NewspaperBackground:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586, 12.566370614359172, 18.84955592153876]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NewspaperBackground:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NewspaperBackground:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lxwud"]
+_data = {
+&"RESET": SubResource("Animation_iy6re"),
+&"news_appearing": SubResource("Animation_lpswp")
+}
+
+[node name="NewspaperPanel" type="Control" unique_id=1394745093]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lmuru")
+
+[node name="NewspaperBackground" type="Sprite2D" parent="." unique_id=683229185]
+visible = false
+position = Vector2(749.99994, 540)
+texture = ExtResource("3_y3dlb")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewspaperBackground" unique_id=1155347284]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -832.0
+offset_top = -710.0
+offset_right = -832.0
+offset_bottom = -710.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewspaperBackground/MarginContainer" unique_id=2091052858]
+clip_contents = true
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NewspaperBackground/MarginContainer/VBoxContainer" unique_id=1081726984]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.21176471, 0.21176471, 0.21176471, 1)
+theme_override_fonts/normal_font = ExtResource("4_hv0im")
+theme_override_font_sizes/normal_font_size = 303
+text = "Criminal mag"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewspaperBackground/MarginContainer/VBoxContainer" unique_id=2101908094]
+layout_mode = 2
+theme_override_constants/margin_top = -50
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NewspaperBackground/MarginContainer/VBoxContainer/MarginContainer" unique_id=1680552322]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0.14590812, 0.12247852, 1)
+theme_override_fonts/normal_font = ExtResource("5_tffr0")
+theme_override_font_sizes/normal_font_size = 120
+bbcode_enabled = true
+text = "Burgler caught !"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="NewspaperBackground" unique_id=1556000227]
+offset_left = 162.1023
+offset_top = -130.67206
+offset_right = 755.3911
+offset_bottom = 646.9828
+theme_override_styles/panel = SubResource("StyleBoxFlat_dpys1")
+
+[node name="NewsColumnLabel" type="RichTextLabel" parent="NewspaperBackground/PanelContainer" unique_id=1481185886]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.14911404, 0.14911404, 0.14911404, 1)
+theme_override_fonts/normal_font = ExtResource("5_tffr0")
+theme_override_font_sizes/normal_font_size = 70
+text = "Rob Roberts, a new would-be thief, get caught tonight !
+Good people can now sleep like babies"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=670816663]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_lxwud")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=568483796]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1969290390]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnRestart" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1042376992]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Restart"
+icon_alignment = 1
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1946448813]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnRestart" to="." method="_on_btn_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

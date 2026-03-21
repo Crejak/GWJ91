@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://mxd2xxqbwe6y"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_mfq5x"]
+[ext_resource type="Texture2D" uid="uid://c11t25865hy1x" path="res://assets/art/props/lampe2.PNG" id="2_mfq5x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymov5"]
+radius = 27.166155
+
+[node name="Lamp" unique_id=1203108321 instance=ExtResource("1_mfq5x")]
+mass = 2.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(61, -62)
+scale = Vector2(0.16369838, 0.16369838)
+texture = ExtResource("2_mfq5x")
+region_enabled = true
+region_rect = Rect2(1, 1, 797, 1035)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(34, -24)
+shape = SubResource("CircleShape2D_ymov5")

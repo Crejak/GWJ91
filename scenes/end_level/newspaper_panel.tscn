@@ -2,6 +2,32 @@
 
 [ext_resource type="Texture2D" uid="uid://t6u3nvf0xqyd" path="res://scenes/end_level/images/newspaper.png" id="1_aogcy"]
 [ext_resource type="Script" uid="uid://vufnvroqxhtq" path="res://scenes/end_level/newspaper_panel.gd" id="1_iy6re"]
+[ext_resource type="Script" uid="uid://c1tcyl2jmxix8" path="res://scenes/end_level/resources/news_column.gd" id="2_rtcuw"]
+[ext_resource type="FontFile" uid="uid://qx35gjnccfpc" path="res://assets/fonts/newspaper/Newspaper.ttf" id="3_lpswp"]
+[ext_resource type="FontFile" uid="uid://bqcna7on6yptw" path="res://assets/fonts/old_newspaper_font/Old Newspaper Font.ttf" id="4_lxwud"]
+
+[sub_resource type="Resource" id="Resource_5ibog"]
+script = ExtResource("2_rtcuw")
+text = "The well-known banker, Mrs Yellow, get robbed tonight. The theif didn't leave a trace ! Maybe we have a new professional in town."
+metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
+
+[sub_resource type="Resource" id="Resource_rtcuw"]
+script = ExtResource("2_rtcuw")
+text = "Mr Red's house was burglarized last night ! The professional gambler declared: \"I didn't hear a single piece of furniture move\""
+metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
+
+[sub_resource type="Resource" id="Resource_dpys1"]
+script = ExtResource("2_rtcuw")
+text = "The appartment owner Mr Blue, also the owner of this newspaper, get his third home vandalized ! Burglars aren't afraid of anything these days !"
+metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
+
+[sub_resource type="Resource" id="Resource_hia8x"]
+script = ExtResource("2_rtcuw")
+text = "An ordinary guy was robbed, he has no home now... and nobody cares"
+metadata/_custom_type_script = "uid://c1tcyl2jmxix8"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpys1"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_iy6re"]
 length = 0.001
@@ -66,7 +92,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(2, 2)]
+"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -95,21 +121,86 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iy6re")
+news_column = Array[ExtResource("2_rtcuw")]([SubResource("Resource_5ibog"), SubResource("Resource_rtcuw"), SubResource("Resource_dpys1"), SubResource("Resource_hia8x")])
 
 [node name="NewspaperBackground" type="Sprite2D" parent="." unique_id=683229185]
 visible = false
-position = Vector2(795, 427)
+position = Vector2(749.99994, 540)
 texture = ExtResource("1_aogcy")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NewspaperBackground" unique_id=1094901502]
-offset_left = -154.5
-offset_top = -23.499992
-offset_right = -50.19232
-offset_bottom = 22.500008
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Completion time : 10.0s"
+[node name="MarginContainer" type="MarginContainer" parent="NewspaperBackground" unique_id=1155347284]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -832.0
+offset_top = -710.0
+offset_right = -832.0
+offset_bottom = -710.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewspaperBackground/MarginContainer" unique_id=2091052858]
+clip_contents = true
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NewspaperBackground/MarginContainer/VBoxContainer" unique_id=1081726984]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.21176471, 0.21176471, 0.21176471, 1)
+theme_override_fonts/normal_font = ExtResource("3_lpswp")
+theme_override_font_sizes/normal_font_size = 303
+text = "Roberry mag"
 fit_content = true
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewspaperBackground/MarginContainer/VBoxContainer" unique_id=2101908094]
+layout_mode = 2
+theme_override_constants/margin_top = -50
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NewspaperBackground/MarginContainer/VBoxContainer/MarginContainer" unique_id=1680552322]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0.14590812, 0.12247852, 1)
+theme_override_fonts/normal_font = ExtResource("4_lxwud")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "For totally legal burglary activities"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="NewspaperBackground" unique_id=1556000227]
+offset_left = 162.1023
+offset_top = -130.67206
+offset_right = 755.3911
+offset_bottom = 646.9828
+theme_override_styles/panel = SubResource("StyleBoxFlat_dpys1")
+
+[node name="NewsColumnLabel" type="RichTextLabel" parent="NewspaperBackground/PanelContainer" unique_id=1481185886]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.14911404, 0.14911404, 0.14911404, 1)
+theme_override_fonts/normal_font = ExtResource("4_lxwud")
+theme_override_font_sizes/normal_font_size = 70
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=670816663]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_lxwud")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=568483796]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 60
+
+[node name="BtnContinue" type="Button" parent="MarginContainer" unique_id=1042376992]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = "Continue"
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/BtnContinue" to="." method="_on_btn_continue_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cw8wrc1y3rt08"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_yv5ln"]
+[ext_resource type="Texture2D" uid="uid://vcjm8q3k23jm" path="res://assets/art/props/kitchen_sink.PNG" id="2_yv5ln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj22m"]
+size = Vector2(115, 216)
+
+[node name="Kitchen" unique_id=1203108321 instance=ExtResource("1_yv5ln")]
+mass = 200.0
+can_move = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(64, -92)
+rotation = -1.5667853
+scale = Vector2(0.2172537, 0.21725373)
+texture = ExtResource("2_yv5ln")
+region_enabled = true
+region_rect = Rect2(14, 11, 1147, 654)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(57.5, -96)
+shape = SubResource("RectangleShape2D_oj22m")

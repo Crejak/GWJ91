@@ -1,4 +1,4 @@
-extends Control
+extends MainMenu
 
 ## Loads a simple ItemList node within a margin container. SceneLister updates
 ## the available scenes in the directory provided. Activating a level will update
@@ -7,6 +7,8 @@ extends Control
 
 signal level_selected
 
+@onready var level_panel_container = %LevelPanelContainer
+@onready var phone_scene_node = %PhoneSceneNode
 @onready var level_buttons_container: ItemList = %LevelButtonsContainer
 @onready var scene_lister: SceneLister = $SceneLister
 var level_paths : Array[String]
@@ -15,8 +17,31 @@ var level_paths : Array[String]
 
 
 func _ready() -> void:
-	add_levels_to_container()
+	#add_levels_to_container()
+	_retreive_level_paths()
+	_update_level_panels()
 	_load_story_event()
+	AudioBus.play_music("TITLE_SCREEN")
+
+
+func load_game_scene() -> void:
+	GameState.start_game()
+	super.load_game_scene()
+
+
+func _retreive_level_paths() -> void:
+	level_paths.clear()
+	$SceneLister._refresh_files()
+	for file :String in $SceneLister.files:
+		level_paths.append(file)
+	#level_paths.sort_custom(func(a, b): return a > b)
+
+
+func _update_level_panels() -> void:
+	var currentStoryProgression :StoryProgressionStats = GlobalState.current.story_progression
+	for panel :LevelPanel in level_panel_container.get_children():
+		panel.visible = (currentStoryProgression.last_story_event >= panel.level_panel_res.level_id)
+
 
 
 func _load_story_event() -> void:
@@ -24,8 +49,9 @@ func _load_story_event() -> void:
 	if currentStoryProgression.has_story_progressed():
 		currentStoryProgression.event_catch_up()
 		GlobalState.save()
-		var phone = phone_scene.instantiate()
-		add_child(phone)
+		var phone :PhoneDialogs = phone_scene.instantiate()
+		phone.dialog_terminated.connect(_update_level_panels)
+		phone_scene_node.add_child(phone)
 		phone.start_dialog(currentStoryProgression.story_progression)
 
 	
@@ -44,11 +70,9 @@ func add_levels_to_container() -> void:
 		level_paths.append(file_path)
 
 
-func _on_level_buttons_container_item_activated(index: int) -> void:
-	GameState.set_checkpoint_level_path(level_paths[index])
-	level_selected.emit()
+func _on_panel_container_clicked(level_id: int) -> void:
+	GameState.set_checkpoint_level_path(level_paths[level_id])
+	load_game_scene()
 
-
-func _on_button_pressed() -> void:
-	GameState.set_checkpoint_level_path(level_paths[0])
-	level_selected.emit()
+func _on_exit_confirmation_confirmed():
+	super._on_exit_confirmation_confirmed()

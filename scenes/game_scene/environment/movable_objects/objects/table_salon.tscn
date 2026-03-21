@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://drn5tbsw4f360"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_qn4se"]
+[ext_resource type="Texture2D" uid="uid://r4ovjwiauuwu" path="res://assets/art/props/table_salon.PNG" id="2_qn4se"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ii5hy"]
+points = PackedVector2Array(-45, -15.5, -6, -33.5, 41, -25.5, 47, 1.5, 4, 14.5, 3, 29.5, -5, 29.5, -4, 15.5, -35, 4.5)
+
+[node name="LivingRoomTable" unique_id=1203108321 instance=ExtResource("1_qn4se")]
+mass = 7.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(52, -25)
+scale = Vector2(0.16369838, 0.16369838)
+texture = ExtResource("2_qn4se")
+region_rect = Rect2(0, 0, 705, 728)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(50, -30.5)
+shape = SubResource("ConvexPolygonShape2D_ii5hy")

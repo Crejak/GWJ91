@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bks63kgpn85bn"]
+
+[ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_uauh1"]
+[ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="2_5xfde"]
+[ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_yatoe"]
+[ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="3_t1cvj"]
+[ext_resource type="PackedScene" uid="uid://bdsqyn3o5n3wl" path="res://scenes/game_scene/levels/level_design/ld_mrs_yellow.tscn" id="4_bej4l"]
+[ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="4_yatoe"]
+[ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="5_1i2go"]
+[ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="5_bej4l"]
+[ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="6_1i2go"]
+[ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="7_6ekos"]
+[ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="8_dlj1a"]
+
+[sub_resource type="Resource" id="Resource_6ekos"]
+script = ExtResource("2_yatoe")
+name = "Present in the son's room"
+object_path = NodePath("PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot/PickablePresent")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_dlj1a"]
+script = ExtResource("2_yatoe")
+name = "Present in the Parent's room"
+object_path = NodePath("PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot/PickablePresent2")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_cquup"]
+script = ExtResource("2_yatoe")
+name = "Present in the Living Room"
+object_path = NodePath("PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot/PickablePresent3")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="Resource" id="Resource_lvub2"]
+script = ExtResource("2_yatoe")
+name = "Present in the Bibliotheque"
+object_path = NodePath("PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot/PickablePresent4")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[node name="Level" type="Node" unique_id=1156998486 node_paths=PackedStringArray("starting_character")]
+script = ExtResource("1_uauh1")
+level_id = 2
+starting_character = NodePath("PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Character")
+objectives = Array[ExtResource("2_yatoe")]([SubResource("Resource_6ekos"), SubResource("Resource_dlj1a"), SubResource("Resource_cquup"), SubResource("Resource_lvub2")])
+
+[node name="PlayableEnvironment" type="Node2D" parent="." unique_id=771673376 node_paths=PackedStringArray("prop_container_node")]
+script = ExtResource("2_5xfde")
+prop_container_node = NodePath("LD_Mrs_Yellow/YSort/Props")
+
+[node name="LD_Mrs_Yellow" parent="PlayableEnvironment" unique_id=274229064 instance=ExtResource("4_bej4l")]
+
+[node name="LightSystem" parent="PlayableEnvironment/LD_Mrs_Yellow" index="0" unique_id=1509984193]
+color_infiltration = Color(0, 0, 0, 1)
+
+[node name="Blueprint" parent="PlayableEnvironment/LD_Mrs_Yellow/Walls" parent_id_path=PackedInt32Array(274229064, 1149287691) index="0" unique_id=313779419]
+modulate = Color(0, 0, 0, 1)
+
+[node name="Collisions" parent="PlayableEnvironment/LD_Mrs_Yellow/Walls" parent_id_path=PackedInt32Array(274229064, 1149287691) index="1" unique_id=1705467228]
+visible = false
+
+[node name="PickablePresent" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot" parent_id_path=PackedInt32Array(274229064, 1827791998) index="0" unique_id=1203108321 instance=ExtResource("5_1i2go")]
+position = Vector2(679, 1256)
+
+[node name="PickablePresent2" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot" parent_id_path=PackedInt32Array(274229064, 1827791998) index="1" unique_id=1397793491 instance=ExtResource("5_1i2go")]
+position = Vector2(3101, 1247)
+
+[node name="PickablePresent3" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot" parent_id_path=PackedInt32Array(274229064, 1827791998) index="2" unique_id=260160194 instance=ExtResource("5_1i2go")]
+position = Vector2(3144, 278)
+
+[node name="PickablePresent4" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot" parent_id_path=PackedInt32Array(274229064, 1827791998) index="3" unique_id=1228448253 instance=ExtResource("5_1i2go")]
+position = Vector2(1434, 1093)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1180788039]
+
+[node name="IntroductionPhase" parent="UI" unique_id=2114512006 instance=ExtResource("3_t1cvj")]
+visible = false
+title = "Level 1 - Introduction"
+introduction_text = "This is a really cool story.
+Please read it to understand all the lore. I promise it's really cool."
+
+[node name="PreparationPhase" parent="UI" unique_id=1630391834 instance=ExtResource("4_yatoe")]
+visible = false
+preparation_time = 35.0
+
+[node name="ConclusionPhase" parent="UI" unique_id=1435576337 instance=ExtResource("5_bej4l")]
+visible = false
+title = "Level 1 - Conclusion"
+conclusion_text = "Wow ! You beat the first level !!
+This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"
+
+[node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("6_1i2go")]
+visible = false
+
+[node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("7_6ekos")]
+visible = false
+
+[node name="EntryPoint" parent="UI" unique_id=1056506662 node_paths=PackedStringArray("character") instance=ExtResource("8_dlj1a")]
+offset_left = 193.0
+offset_top = 527.0
+offset_right = 193.0
+offset_bottom = 527.0
+character = NodePath("../../PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Character")
+
+[editable path="PlayableEnvironment/LD_Mrs_Yellow"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room2"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room3"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room8"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room9"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room10"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room11"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room12"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room4"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room5"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room6"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room7"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room13"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Doors/DoorMovableInteractableObject"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Doors/DoorMovableInteractableObject2"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/ExtractionPoint"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/ExtractionPoint2"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/YSort/Props/Sink"]
+[editable path="PlayableEnvironment/LD_Mrs_Yellow/YSort/Props/Bed"]

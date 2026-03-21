@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_cyufw")
 caller_name = "Mr. Red"
-text_color = Color(0.8418833, 0.016896877, 0, 1)
-outline_color = Color(0.4792521, 0.063197844, 0, 1)
-dialogs = Array[String](["Hey, you starting a new business aren't you ? Kind of... unusual one.", "Listen, my banker just turned me down for a loan. I'm behind on my rent, it's urgent !", "I was thinking you could pay her a little visit and sort out my loan… right at her place ! I’m sure her house's walls are covered in overpriced art !", "That'll let me pay back my landlord, and you can pay yourself with what you find there. I promise you won't be disappointed."])
+text_color = Color(1, 0.27438992, 0.20951831, 1)
+outline_color = Color(0.5995165, 0.08947269, 1.4439226e-07, 1)
+dialogs = Array[String](["You must know who Mr. Blue is, huh? He's the guy who owns most of the buildings in town.", "I had the misfortune of running into him yesterday at the casino... That son of a bitch cleaned me out!", "Everyone beats me at poker, but I can tell when the game's rigged. He definitely cheated!", "If you’ve got the guts, go see him tonight."])
 metadata/_custom_type_script = "uid://dyj0dslk8ye7w"

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ensniw4vv7yc"]
+
+[ext_resource type="FontFile" uid="uid://bs2i5ahmapuhm" path="res://assets/fonts/paperland/Paperland.ttf" id="1_opfca"]
+[ext_resource type="Script" uid="uid://dvhlllvwk8l35" path="res://scenes/game_scene/phases/infiltration/effects/busted_effect.gd" id="2_qkmw0"]
+
+[node name="BustedEffect" type="Label" unique_id=2032631475]
+offset_right = 70.0
+offset_bottom = 23.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("1_opfca")
+theme_override_font_sizes/font_size = 60
+text = "BUSTED !"
+script = ExtResource("2_qkmw0")

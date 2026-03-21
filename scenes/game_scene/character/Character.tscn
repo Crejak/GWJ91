@@ -15,11 +15,10 @@ height = 110.0
 [node name="Character" type="RigidBody2D" unique_id=424702170 node_paths=PackedStringArray("debug_label")]
 collision_layer = 2
 collision_mask = 15
-mass = 75.0
+mass = 2.0
 lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 5
-linear_damp = 1.0
 script = ExtResource("1_pi01j")
 debug_label = NodePath("DebugLabel")
 
@@ -36,11 +35,12 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_n57ve")
 
 [node name="DebugLabel" type="Label" parent="." unique_id=1590354430]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -57.5
-offset_right = 57.5
+offset_left = -84.25
+offset_right = 84.25
 offset_bottom = 75.0
 grow_horizontal = 2
 text = "Speed

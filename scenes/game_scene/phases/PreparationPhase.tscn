@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://gv1he4q57gpp"]
 
 [ext_resource type="Script" uid="uid://dsum6xmh2fxwt" path="res://scenes/game_scene/phases/preparation_phase.gd" id="1_8e7co"]
+[ext_resource type="PackedScene" uid="uid://bml8lwkd63b7g" path="res://scenes/game_scene/phases/crt_filter.tscn" id="2_wxhly"]
+[ext_resource type="PackedScene" uid="uid://dt1bhqumvyrq1" path="res://scenes/game_scene/phases/vcr/VCRControls.tscn" id="3_jxwhb"]
 
 [node name="PreparationPhase" type="Control" unique_id=1630391834]
 layout_mode = 3
@@ -13,30 +15,42 @@ script = ExtResource("1_8e7co")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1902487165]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -223.0
-offset_right = 223.0
-offset_bottom = 69.0
-grow_horizontal = 2
+offset_right = 535.0
+offset_bottom = 121.0
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=121776580]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "Preparation phase"
-horizontal_alignment = 1
+text = "Playing"
 
 [node name="TimerLabel" type="Label" parent="VBoxContainer" unique_id=1190628990]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Time remaining : 0.00"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 40
+text = ">> 0:00 / 0:00"
+
+[node name="CRTFilter" parent="." unique_id=1312715555 instance=ExtResource("2_wxhly")]
+layout_mode = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=292092678]
 unique_name_in_owner = true
 wait_time = 8.0
 one_shot = true
 
+[node name="VCRControls" parent="." unique_id=164276372 instance=ExtResource("3_jxwhb")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -155.0
+offset_right = 176.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+play_disabled = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="skip_button_pressed" from="VCRControls" to="." method="_on_vcr_controls_skip_button_pressed"]

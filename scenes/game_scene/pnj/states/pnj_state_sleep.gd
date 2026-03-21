@@ -3,6 +3,7 @@ class_name PNJ_State_Sleep
 
 func _enter_state() -> void:
 	super._enter_state()
+	pnj.sprite.texture = pnj.idle_texture
 	pnj.status_animations.play("sleep")
 
 

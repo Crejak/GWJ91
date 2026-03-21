@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b4yqrr2f0upe1"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_5bvth"]
+[ext_resource type="Texture2D" uid="uid://pmtvxb3vg5vr" path="res://assets/art/props/armchair.PNG" id="2_xqv0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvth"]
+size = Vector2(110, 94)
+
+[node name="Armchair" unique_id=1203108321 instance=ExtResource("1_5bvth")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(65.99997, -40.000004)
+scale = Vector2(0.16875754, 0.16875754)
+texture = ExtResource("2_xqv0d")
+region_enabled = true
+region_rect = Rect2(9, 12, 829, 849)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(61, -50)
+shape = SubResource("RectangleShape2D_5bvth")

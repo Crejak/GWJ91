@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://1c0toj14pbg3"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_we4go"]
+[ext_resource type="Texture2D" uid="uid://ck2cq2m1mxgd2" path="res://assets/art/props/tv.PNG" id="2_we4go"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ndh"]
+size = Vector2(116, 72)
+
+[node name="TV" unique_id=1203108321 instance=ExtResource("1_we4go")]
+mass = 10.0
+can_move = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(82, -38)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_we4go")
+region_enabled = true
+region_rect = Rect2(49, 1, 817, 417)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(77, -38)
+shape = SubResource("RectangleShape2D_r8ndh")

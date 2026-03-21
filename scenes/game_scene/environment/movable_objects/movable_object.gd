@@ -6,6 +6,8 @@ class_name MovableObject
 signal on_start_pushing()
 @warning_ignore("unused_signal")
 signal on_finished_pushing()
+signal on_light_changed(in_is_light_on: bool)
+signal picked_up;
 
 @export var flip_h: bool = false:
 	set(value):
@@ -49,6 +51,8 @@ func _ready() -> void:
 func _on_body_entered(in_body: Node2D) -> void:
 	if in_body is Character:
 		SignalBus.detection.on_movable_object_noise_start.emit(global_position, self, mass * (in_body as Character).linear_velocity.length_squared())
+	if can_move and !pickable:
+		AudioBus.play_sfx("MOVE_FURNITURE")
 
 func _on_body_exited(in_body: Node2D) -> void:
 	if in_body is Character:
@@ -59,3 +63,4 @@ func _on_pick_up_interactable_player_interacted(source: Character) -> void:
 		return;
 	source.pick_up(self);
 	get_parent().remove_child(self);
+	picked_up.emit(source);

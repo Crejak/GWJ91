@@ -12,7 +12,8 @@
 [ext_resource type="Script" uid="uid://cfcdhu8umxuco" path="res://scenes/level_selection_screen/PhoneSM/ringing_state.gd" id="5_732jb"]
 [ext_resource type="Resource" uid="uid://dj1804guv6rel" path="res://scenes/level_selection_screen/conversations/2-MrRed.tres" id="5_s63uo"]
 [ext_resource type="Script" uid="uid://dwbf6wtnqcy06" path="res://scenes/level_selection_screen/PhoneSM/calling_state.gd" id="6_8x6ky"]
-[ext_resource type="Script" uid="uid://dgpbmwvsv3pwx" path="res://scenes/level_selection_screen/PhoneSM/appearing_state.gd" id="9_voh3o"]
+[ext_resource type="Resource" uid="uid://b5o7sq1qnl01" path="res://scenes/level_selection_screen/conversations/3-MrBlue.tres" id="6_s63uo"]
+[ext_resource type="Script" path="res://scenes/level_selection_screen/PhoneSM/appearing_state.gd" id="9_voh3o"]
 [ext_resource type="Script" uid="uid://u8catqd2sctb" path="res://scenes/level_selection_screen/PhoneSM/disappearing_state.gd" id="12_avkif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x6ky"]
@@ -167,7 +168,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pxw76")
-dialogs = Array[ExtResource("2_416um")]([ExtResource("3_hvy2e"), ExtResource("4_um2gg"), ExtResource("5_s63uo")])
+dialogs = Array[ExtResource("2_416um")]([ExtResource("3_hvy2e"), ExtResource("4_um2gg"), ExtResource("5_s63uo"), ExtResource("6_s63uo")])
 
 [node name="Background" type="PanelContainer" parent="." unique_id=1585940864]
 unique_name_in_owner = true
@@ -235,7 +236,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_top = 100
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
 
 [node name="PhoneScreenInfos" type="VBoxContainer" parent="PhoneContainer/TextureRect/MarginContainer" unique_id=2106217853]
 unique_name_in_owner = true
@@ -246,7 +249,7 @@ mouse_filter = 2
 [node name="CallingText" type="RichTextLabel" parent="PhoneContainer/TextureRect/MarginContainer/PhoneScreenInfos" unique_id=2042286386]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/default_color = Color(0.20152658, 0.20152658, 0.20152658, 1)
+theme_override_colors/default_color = Color(0.8627451, 0.8745098, 0.8745098, 1)
 theme_override_colors/selection_color = Color(0.101960786, 0.101960786, 1, 0)
 theme_override_colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
 theme_override_constants/outline_size = 6

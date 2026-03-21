@@ -6,7 +6,11 @@ signal object_dropped(source: Character, object: MovableObject);
 
 @export_group("Movement")
 
-@export var can_move: bool = false;
+@export var can_move: bool = false:
+	set(value):
+		can_move = value;
+		if can_move:
+			current = self;
 
 ## Minimum walking speed, in pixel per second
 @export var min_speed: float = 25.;
@@ -26,7 +30,15 @@ signal object_dropped(source: Character, object: MovableObject);
 @export var speed_damp: float = 0.15;
 @export var speed_floor_ratio: float = 0.333;
 
+@export_group("Movement/Detection")
+@export var max_silent_speed: float = 26
+
+@export var base_noise_value: float = 5
+
 var speed_loss_factor: float = 1.;
+
+var last_position: Vector2 = Vector2.ZERO;
+var last_frame_velocity: float = 0.;
 
 @export_group("Debug")
 @export var debug_label: Label;
@@ -34,26 +46,34 @@ var speed_loss_factor: float = 1.;
 var picked_up_objects: Array[MovableObject] = [];
 var total_speed_loss: float = 0.;
 
+## Dirty but gets the work done. The instance is set when "can_move" is set to true.
+static var current: Character;
+
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
+	visible = false;
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if linear_velocity.length() > max_silent_speed:
+		SignalBus.detection.on_player_move.emit(global_position, (base_noise_value + get_total_picked_up_mass()) * linear_velocity.length_squared() * delta)
+
 	if OS.is_debug_build():
 		debug_label.text = "Speed : %.1f px/s\nMass : %.1f kg\nValue : %s $" % \
-			[linear_velocity.length(), get_total_picked_up_mass(), get_total_picked_up_value()];
+			[last_frame_velocity, get_total_picked_up_mass(), get_total_picked_up_value()];
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	if OS.is_debug_build():
+		last_frame_velocity = last_position.distance_to(position) / delta;
+		last_position = position;
+
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if !can_move:
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
 	var velocity := get_velocity_from_distance_to_cursor(distance);
-	if get_colliding_bodies().is_empty():
-		print("Empty colliding bodies");
-		linear_velocity = velocity
-		return;
-	apply_force(velocity * mass)
+	state.linear_velocity = velocity;
 	
 func get_mouse_distance_in_viewport_space() -> float:
 	var viewport_mouse_position := get_viewport().get_mouse_position();
@@ -78,14 +98,17 @@ func get_velocity_from_distance_to_cursor(distance: float) -> Vector2:
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
-		can_move = true;
+		can_sleep = false;
 
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
 		can_move = false;
+		can_sleep = true;
+		visible = false;
 
 func _on_character_caught() -> void:
 	can_move = false;
+	can_sleep = true;
 
 func pick_up(object: MovableObject) -> void:
 	picked_up_objects.push_back(object);

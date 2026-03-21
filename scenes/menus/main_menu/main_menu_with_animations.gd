@@ -62,19 +62,27 @@ func _show_continue_if_set() -> void:
 
 func _ready() -> void:
 	super._ready()
-	_show_level_select_if_set()
+	#_show_level_select_if_set()
 	_show_continue_if_set()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
 
 func _on_continue_game_button_pressed() -> void:
-	GameState.continue_game()
-	load_game_scene()
+	_on_level_select_button_pressed()
+	#GameState.continue_game()
+	#load_game_scene()
 
 func _on_level_select_button_pressed() -> void:
-	var level_select_scene := _open_sub_menu(level_select_packed_scene)
-	if level_select_scene.has_signal("level_selected"):
-		level_select_scene.connect("level_selected", load_game_scene)
+	SceneLoader.load_scene(AppConfig.level_select_scene_path)
+	_close_sub_menu()
+	#var level_select_scene := _open_sub_menu(level_select_packed_scene)
+	#if level_select_scene.has_signal("level_selected"):
+	#	level_select_scene.connect("level_selected", load_game_scene)
 
 func _on_new_game_confirmation_confirmed() -> void:
 	GlobalState.reset()
 	load_game_scene()
+
+
+func _on_start_game_button_pressed() -> void:
+	GlobalState.reset()
+	_on_level_select_button_pressed()

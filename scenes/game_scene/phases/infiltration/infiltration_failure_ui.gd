@@ -1,14 +1,13 @@
 extends Control
 
+@onready var busted_effect: BustedEffect = %BustedEffect;
+
 func _ready() -> void:
 	SignalBus.character_caught.connect(_on_character_caught);
 	visible = false;
 
 func _on_character_caught() -> void:
 	visible = true;
-
-func _on_retry_level_button_pressed() -> void:
-	SceneLoader.reload_current_scene();
-
-func _on_main_menu_button_pressed() -> void:
-	SceneLoader.load_scene(AppConfig.main_menu_scene_path)
+	busted_effect.start_effect();
+	await get_tree().create_timer(2.5).timeout;
+	GameState.get_current_level_state().set_phase(LevelState.Phase.CONCLUSION);

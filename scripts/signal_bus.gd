@@ -1,14 +1,14 @@
 extends Node
 class_name EventBus
 
-@warning_ignore("unused_signal")
 signal phase_ended(phase: LevelState.Phase);
-@warning_ignore("unused_signal")
 signal phase_started(phase: LevelState.Phase);
-@warning_ignore("unused_signal")
 signal character_caught;
-@warning_ignore("unused_signal")
 signal active_character_changed(character: Character);
+signal objective_found(character: Character, index: int);
+signal objective_list_updated;
+signal objective_list_cleared;
+signal character_entered;
 
 @onready var detection: Detection = Detection.new() 
 
@@ -26,11 +26,24 @@ func _ready() -> void:
 		active_character_changed.connect(func (character: Character) -> void:
 			print("Active character changed : %s" % character);
 		);
+		objective_found.connect(func (character: Character, index: int) -> void:
+			print("Objective found : %s by %s" % [index, character]);
+		);
+		objective_list_updated.connect(func () -> void:
+			print("Objective list updated");
+		);
+		objective_list_cleared.connect(func () -> void:
+			print("Objective list cleared");
+		);
+		character_entered.connect(func () -> void:
+			print("Character entered");
+		);
 		detection.on_movable_object_noise_start.connect(func(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float) -> void:
 			print("Noise Detection start: %s, at %s, intensity: %f" % [in_object.name, str(in_position), in_sound_intensity]))
 		detection.on_movable_object_noise_stop.connect(func(in_object: MovableObject) -> void:
 			print("Noise Detection stops: %s" % in_object.name))
-
+		detection.on_player_move.connect(func(_in_position: Vector2, in_sound_intensity: float) -> void:
+			print("Player Move Noise Detection: %f" % in_sound_intensity))
 
 class Detection:
 	extends RefCounted
@@ -38,6 +51,8 @@ class Detection:
 	signal on_movable_object_noise_start(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float)
 	@warning_ignore("unused_signal")
 	signal on_movable_object_noise_stop(in_object: MovableObject)
+	@warning_ignore("unused_signal")
+	signal on_player_move(in_position: Vector2, in_sound_intensity: float)
 
 
 static func clear_signal(in_signal: Signal) -> void:

@@ -37,7 +37,7 @@ lock_rotation = true
 continuous_cd = 2
 contact_monitor = true
 max_contacts_reported = 5
-linear_damp = 8.0
+linear_damp = 50.0
 script = ExtResource("1_endn7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1306474058]

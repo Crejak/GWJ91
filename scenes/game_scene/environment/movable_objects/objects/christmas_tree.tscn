@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ckadm23leoi2l"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_ebsfl"]
+[ext_resource type="Texture2D" uid="uid://cessvuln7jjyu" path="res://assets/art/props/christmas_tree.PNG" id="2_ebsfl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b04p5"]
+radius = 16.0
+
+[node name="ChristMassTree" unique_id=1203108321 instance=ExtResource("1_ebsfl")]
+mass = 10.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(19, -60.000004)
+scale = Vector2(0.18548033, 0.18548033)
+texture = ExtResource("2_ebsfl")
+region_enabled = true
+region_rect = Rect2(48, 0, 635, 682)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(17, -9)
+shape = SubResource("CircleShape2D_b04p5")

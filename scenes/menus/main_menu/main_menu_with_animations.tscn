@@ -6,6 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://ddpembp36spu0" path="res://scenes/menus/level_select_menu/level_select_menu_dup.tscn" id="3_ixa71"]
 [ext_resource type="PackedScene" uid="uid://dnaejbfe1nvn1" path="res://scenes/windows/main_menu_credits_window.tscn" id="4_vsp5b"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="5_6xh1d"]
+[ext_resource type="Texture2D" uid="uid://bs6ljnia3m8pe" path="res://scenes/menus/level_select_menu/images/radial_fade.png" id="6_2k5l7"]
+[ext_resource type="Texture2D" uid="uid://bcngba27pskn4" path="res://scenes/menus/level_select_menu/images/corkboard_background.png" id="6_vsp5b"]
+[ext_resource type="Texture2D" uid="uid://dtgkdb2k4wuyb" path="res://scenes/level_selection_screen/images/cardboard.png" id="7_dhrx6"]
+[ext_resource type="FontFile" uid="uid://cibc5lu34wly3" path="res://assets/fonts/paperkind/Paperkind.ttf" id="8_xkrf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xh1d"]
+atlas = ExtResource("6_vsp5b")
+region = Rect2(0, 0, 2448, 2448)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhrx6"]
+bg_color = Color(0.44313726, 0.44313726, 0.44313726, 0.2509804)
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -322,21 +333,90 @@ confirm_new_game = true
 options_packed_scene = ExtResource("3_2k5l7")
 credits_packed_scene = ExtResource("4_vsp5b")
 
-[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1505298015]
+[node name="MarginContainer" type="MarginContainer" parent="." index="0" unique_id=824353885]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -420.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" index="0" unique_id=621448113]
+texture_filter = 2
+texture_repeat = 2
+clip_contents = true
+custom_minimum_size = Vector2(1224, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_6xh1d")
+expand_mode = 4
+stretch_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/TextureRect" index="0" unique_id=840395962]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dhrx6")
+
+[node name="MarginContainer3" type="MarginContainer" parent="." index="1" unique_id=265735566]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 300.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3" index="0" unique_id=1651707945]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("7_dhrx6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer3" index="1" unique_id=781479177]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("8_xkrf4")
+theme_override_font_sizes/normal_font_size = 110
+text = "GWJ #91"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." index="2" unique_id=1707443041]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" index="0" unique_id=1207369500]
+layout_mode = 2
+texture = ExtResource("6_2k5l7")
+
+[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=1505298015]
 libraries/ = SubResource("AnimationLibrary_2kqig")
 
-[node name="MenuAnimationTree" type="AnimationTree" parent="." index="2" unique_id=1255363252]
+[node name="MenuAnimationTree" type="AnimationTree" parent="." index="5" unique_id=1255363252]
 tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
-[node name="TitleContainer" parent="MenuContainer/TitleMargin" parent_id_path=PackedInt32Array(2112060331) index="0" unique_id=556427956]
+[node name="TitleMargin" parent="MenuContainer" parent_id_path=PackedInt32Array(396616752) index="0" unique_id=2112060331]
+visible = false
+
+[node name="TitleContainer" parent="MenuContainer/TitleMargin" index="0" unique_id=556427956]
 modulate = Color(1, 1, 1, 0)
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0" unique_id=359406872]
 text = "GWJ91"
 
-[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" parent_id_path=PackedInt32Array(1510335937) index="0" unique_id=930520368]
+[node name="SubTitleMargin" parent="MenuContainer" parent_id_path=PackedInt32Array(396616752) index="1" unique_id=1510335937]
+visible = false
+
+[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0" unique_id=930520368]
 modulate = Color(1, 1, 1, 0)
 
 [node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(210553886) index="0" unique_id=116448484]
@@ -345,21 +425,30 @@ modulate = Color(1, 1, 1, 0)
 [node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=2017477786]
 lock = true
 
-[node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1" unique_id=1061502845]
+[node name="NewGameButton" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="0" unique_id=2044537792]
+visible = false
+
+[node name="StartGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1" unique_id=683429731]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Game"
+
+[node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="2" unique_id=1061502845]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Continue"
 
-[node name="LevelSelectButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="2" unique_id=1608098344]
+[node name="LevelSelectButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="3" unique_id=1608098344]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Level Select"
 
 [node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1732528471) index="0" unique_id=1603969262]
 modulate = Color(1, 1, 1, 0)
 
-[node name="NewGameConfirmation" parent="." index="7" unique_id=291913255 instance=ExtResource("5_6xh1d")]
+[node name="NewGameConfirmation" parent="." index="10" unique_id=291913255 instance=ExtResource("5_6xh1d")]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(420, 200)
@@ -373,7 +462,7 @@ text = "Are you sure you want to start a new game?
 All progress in the current game will be lost."
 title = "New Game"
 
-[node name="MouseFilter" type="Control" parent="." index="8" unique_id=1554668260]
+[node name="MouseFilter" type="Control" parent="." index="11" unique_id=1554668260]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -383,6 +472,7 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="confirmed" from="NewGameConfirmation" to="." method="_on_new_game_confirmation_confirmed"]

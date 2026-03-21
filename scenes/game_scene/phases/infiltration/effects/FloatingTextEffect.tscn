@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bpaar2l5gq1kk"]
+
+[ext_resource type="FontFile" uid="uid://chfhrdtdihk2b" path="res://assets/fonts/callie_chalk/CallieChalkFont-Regular.otf" id="1_pd5fx"]
+[ext_resource type="Script" uid="uid://kgmvw46jjm0w" path="res://scenes/game_scene/phases/infiltration/effects/floating_text_effect.gd" id="2_iiebq"]
+
+[node name="FloatingTextEffect" type="Label" unique_id=1383161951]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("1_pd5fx")
+theme_override_font_sizes/font_size = 24
+text = "All objectives found !"
+script = ExtResource("2_iiebq")

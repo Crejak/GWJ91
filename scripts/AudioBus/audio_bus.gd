@@ -117,6 +117,9 @@ func play_music(musicName :String, fadeOut :bool = true, fadeIn :bool = true):
 	
 	if audio_player.playing and fadeOut:
 		await fade_out_sound(audio_player)
+
+	if sound == null:
+		return
 	
 	audio_player.stream = sound.stream
 	audio_player.play()
@@ -125,6 +128,16 @@ func play_music(musicName :String, fadeOut :bool = true, fadeIn :bool = true):
 		await fade_in_sound(audio_player)
 	else:
 		audio_player.volume_db = 0
+
+
+func stop_music(fadeOut :bool = true):
+
+	var audio_player = _get_audio_stream_player(music_library.bus)
+
+	if audio_player.playing and fadeOut:
+		await fade_out_sound(audio_player)
+
+	audio_player.stop()
 
 
 func fade_out_sound(audio_player :AudioStreamPlayer, duration :float = 1.5):

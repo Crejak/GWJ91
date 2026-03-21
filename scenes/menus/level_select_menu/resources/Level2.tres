@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelPanelRes" format=3 uid="uid://d1na8f3patjc1"]
+
+[ext_resource type="Resource" uid="uid://dj1804guv6rel" path="res://scenes/level_selection_screen/conversations/2-MrRed.tres" id="1_rodto"]
+[ext_resource type="Script" uid="uid://r7un4f8i7vjl" path="res://scenes/menus/level_select_menu/resources/level_panel_res.gd" id="1_y8qkf"]
+
+[resource]
+script = ExtResource("1_y8qkf")
+level_id = 1
+level_name = "Mr Red's house"
+dialog_res = ExtResource("1_rodto")
+metadata/_custom_type_script = "uid://r7un4f8i7vjl"

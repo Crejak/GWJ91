@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c0c8aew7kbuwa"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_0sd2o"]
+[ext_resource type="Texture2D" uid="uid://c7mpwhm75bijy" path="res://assets/art/props/bed_table.PNG" id="2_0sd2o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nmeu"]
+size = Vector2(46.5, 48)
+
+[node name="BedTable" unique_id=1203108321 instance=ExtResource("1_0sd2o")]
+mass = 12.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(24, -25.000002)
+scale = Vector2(0.12214176, 0.12214176)
+texture = ExtResource("2_0sd2o")
+region_enabled = true
+region_rect = Rect2(0, 0, 471, 614)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(22.75, -26)
+shape = SubResource("RectangleShape2D_0nmeu")

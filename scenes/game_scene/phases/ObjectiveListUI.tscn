@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c6qr8ihac2xwq"]
+
+[ext_resource type="Script" uid="uid://cjpsxxh82qo4o" path="res://scenes/game_scene/phases/objective_list_ui.gd" id="1_luxbu"]
+[ext_resource type="PackedScene" uid="uid://dd8dsna4pwrrc" path="res://scenes/game_scene/phases/notepad/note_pad.tscn" id="2_gcyn8"]
+
+[node name="ObjectiveListUi" type="Control" unique_id=1932395075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_luxbu")
+
+[node name="NotePad" parent="." unique_id=1505004609 instance=ExtResource("2_gcyn8")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_top = -490.04498
+offset_bottom = 352.95502
+
+[node name="PreparationPosition" type="Control" parent="." unique_id=371097150]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 13.0
+offset_top = 728.0
+offset_right = 674.0
+offset_bottom = 1571.0
+scale = Vector2(0.4, 0.4)

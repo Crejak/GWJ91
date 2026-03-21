@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SoundLibrary" format=3 uid="uid://bocrd8fhnbxu1"]
+
+[ext_resource type="Script" uid="uid://b67yl2mlejqp" path="res://scripts/AudioBus/sound_res.gd" id="1_gjcnp"]
+[ext_resource type="AudioStream" uid="uid://31o368iqocan" path="res://assets/sounds/music/Vibing Over Venus.mp3" id="2_c1ilm"]
+[ext_resource type="Script" uid="uid://d2y0k5tchu4bs" path="res://scripts/AudioBus/sound_library.gd" id="2_uvkfa"]
+[ext_resource type="AudioStream" uid="uid://bbvfky4bdqnts" path="res://assets/sounds/music/Hard Boiled.mp3" id="3_c1ilm"]
+
+[sub_resource type="Resource" id="Resource_ngqtk"]
+script = ExtResource("1_gjcnp")
+name = "TITLE_SCREEN"
+stream = ExtResource("2_c1ilm")
+metadata/_custom_type_script = "uid://b67yl2mlejqp"
+
+[sub_resource type="Resource" id="Resource_arxib"]
+script = ExtResource("1_gjcnp")
+name = "LEVEL_INFILTRATION"
+stream = ExtResource("3_c1ilm")
+metadata/_custom_type_script = "uid://b67yl2mlejqp"
+
+[resource]
+script = ExtResource("2_uvkfa")
+bus = "Music"
+library = Array[ExtResource("1_gjcnp")]([SubResource("Resource_ngqtk"), SubResource("Resource_arxib")])
+metadata/_custom_type_script = "uid://d2y0k5tchu4bs"

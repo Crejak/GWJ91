@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c71mnr718nhnk"]
+
+[ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_3lyjp"]
+[ext_resource type="Texture2D" uid="uid://bpjqejrryvq5a" path="res://assets/art/characters/guard.png" id="2_hwmku"]
+
+[node name="Guard" unique_id=786583104 instance=ExtResource("1_3lyjp")]
+walk_texture = ExtResource("2_hwmku")
+idle_texture = ExtResource("2_hwmku")
+
+[node name="Visual" parent="RigidBody2D" parent_id_path=PackedInt32Array(997370158) index="0" unique_id=390448743]
+position = Vector2(0, -24.000004)
+
+[node name="Sprite2D" parent="RigidBody2D/Visual" index="0" unique_id=64234146]
+texture = ExtResource("2_hwmku")
+
+[node name="DetectionProgressBar" parent="RigidBody2D/Visual" index="2" unique_id=1443591310]
+offset_top = 56.470596
+offset_bottom = 83.4706

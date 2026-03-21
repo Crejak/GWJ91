@@ -17,14 +17,25 @@ enum Phase {
 	COMPLETED
 }
 
-@export var current_phase: Phase = Phase.UNLOADED:
+var current_phase: Phase = Phase.UNLOADED:
 	set = set_phase;
-@export var total_stolen_value: int = 0;
-@export var danger_level: float = 0.:
+var total_stolen_value: int = 0;
+var danger_level: float = 0.:
 	set(value):
 		if value >= 1. && danger_level < 1.:
 			SignalBus.character_caught.emit();
 		danger_level = clamp(value, 0., 1.);
+var objectives: Dictionary[int, bool] = {}:
+	set(value):
+		objectives = value;
+		SignalBus.objective_list_updated.emit();
+		check_objectives_cleared();
+var objectives_cleared: bool = false:
+	set(value):
+		objectives_cleared = value;
+		if (objectives_cleared):
+			SignalBus.objective_list_cleared.emit();
+var level_won: bool = false;
 
 var active_character: Character:
 	set(value):
@@ -36,6 +47,8 @@ func reset() -> void:
 	total_stolen_value = 0;
 	danger_level = 0.;
 	active_character = null;
+	objectives = {};
+	level_won = false;
 
 func set_phase(new_phase: Phase) -> void:
 		if new_phase == current_phase:
@@ -44,3 +57,24 @@ func set_phase(new_phase: Phase) -> void:
 		SignalBus.phase_ended.emit(current_phase);
 		current_phase = new_phase;
 		SignalBus.phase_started.emit(new_phase);
+		
+func init_objectives(objective_count: int) -> void:
+	var objective_dict: Dictionary[int, bool] = {};
+	for index: int in range(objective_count):
+		objective_dict[index] = false;
+	objectives = objective_dict;
+	
+func mark_objective_as_done(index: int) -> void:
+	objectives[index] = true;
+	check_objectives_cleared();
+	SignalBus.objective_list_updated.emit();
+
+func check_objectives_cleared() -> void:
+	if objectives.size() == 0:
+		objectives_cleared = false;
+		return;
+	for objective_done: bool in objectives.values():
+		if !objective_done:
+			objectives_cleared = false;
+			return;
+	objectives_cleared = true;

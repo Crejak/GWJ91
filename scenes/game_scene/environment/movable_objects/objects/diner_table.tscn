@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d0x4h7rmkq1ev"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_3s1ks"]
+[ext_resource type="Texture2D" uid="uid://ybsf7i3w3qt" path="res://assets/art/props/diner_table.PNG" id="2_3s1ks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj22m"]
+size = Vector2(199.5, 97.5)
+
+[node name="Diner_Table" unique_id=1203108321 instance=ExtResource("1_3s1ks")]
+mass = 50.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(102, -46)
+scale = Vector2(0.15151025, 0.15151025)
+texture = ExtResource("2_3s1ks")
+region_enabled = true
+region_rect = Rect2(0, 284, 1440, 856)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(102.25, -49.25)
+shape = SubResource("RectangleShape2D_oj22m")
