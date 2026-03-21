@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dky8gjio1yook"]
 
 [ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_6qkvo"]
-[ext_resource type="Texture2D" uid="uid://485qcg58anf4" path="res://assets/art/characters/dad_walk.png" id="2_xd6pv"]
-[ext_resource type="Texture2D" uid="uid://767gp74di1ta" path="res://assets/art/characters/dad_sleep.png" id="3_lsnwc"]
+[ext_resource type="Texture2D" uid="uid://cqcawlqws25h4" path="res://assets/art/characters/girl_walk.png" id="2_n2nlq"]
+[ext_resource type="Texture2D" uid="uid://bxvtbr4gryw2r" path="res://assets/art/characters/girl_sleep.png" id="3_2ja8u"]
 
-[node name="Dad" unique_id=786583104 instance=ExtResource("1_6qkvo")]
-walk_texture = ExtResource("2_xd6pv")
-idle_texture = ExtResource("3_lsnwc")
+[node name="Girl" unique_id=786583104 instance=ExtResource("1_6qkvo")]
+walk_texture = ExtResource("2_n2nlq")
+idle_texture = ExtResource("3_2ja8u")
 
 [node name="RigidBody2D" parent="." index="0" unique_id=997370158]
 can_sleep = false
@@ -15,8 +15,12 @@ can_sleep = false
 position = Vector2(-12.000002, -19.000002)
 
 [node name="Sprite2D" parent="RigidBody2D/Visual" index="0" unique_id=64234146]
-texture = ExtResource("2_xd6pv")
+texture = ExtResource("2_n2nlq")
+
+[node name="StatusAnimations" parent="RigidBody2D/Visual" index="1" unique_id=1954057949]
+position = Vector2(5.8823557, -121.17646)
 
 [node name="DetectionProgressBar" parent="RigidBody2D/Visual" index="2" unique_id=1443591310]
+visible = false
 offset_top = 69.41177
 offset_bottom = 96.41177

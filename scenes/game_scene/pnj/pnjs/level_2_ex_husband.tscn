@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://lau0g0i8c6ls"]
 
 [ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_lcymw"]
-[ext_resource type="Texture2D" uid="uid://485qcg58anf4" path="res://assets/art/characters/dad_walk.png" id="2_4ugqv"]
-[ext_resource type="Texture2D" uid="uid://767gp74di1ta" path="res://assets/art/characters/dad_sleep.png" id="3_q8sop"]
+[ext_resource type="Texture2D" uid="uid://bs4tkg1uwxnn5" path="res://assets/art/characters/ex_sleep.png" id="2_v81yq"]
 
-[node name="Dad" unique_id=786583104 instance=ExtResource("1_lcymw")]
-walk_texture = ExtResource("2_4ugqv")
-idle_texture = ExtResource("3_q8sop")
+[node name="ExHusband" unique_id=786583104 instance=ExtResource("1_lcymw")]
+walk_texture = ExtResource("2_v81yq")
+idle_texture = ExtResource("2_v81yq")
 
 [node name="RigidBody2D" parent="." index="0" unique_id=997370158]
 can_sleep = false
@@ -15,7 +14,7 @@ can_sleep = false
 position = Vector2(-12.000002, -19.000002)
 
 [node name="Sprite2D" parent="RigidBody2D/Visual" index="0" unique_id=64234146]
-texture = ExtResource("2_4ugqv")
+texture = ExtResource("2_v81yq")
 
 [node name="DetectionProgressBar" parent="RigidBody2D/Visual" index="2" unique_id=1443591310]
 offset_top = 69.41177
