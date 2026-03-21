@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4x27t0e4wa5a"
-path="res://.godot/imported/Masque de sélection.PNG-8a9404e498e10702d7d9e6a36c9a4a49.ctex"
+uid="uid://btxhoymfhlcwc"
+path="res://.godot/imported/paniere_teckel.png-e5f9c6ee022f61609a516b899b1bd4f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/Masque de sélection.PNG"
-dest_files=["res://.godot/imported/Masque de sélection.PNG-8a9404e498e10702d7d9e6a36c9a4a49.ctex"]
+source_file="res://assets/art/props/paniere_teckel.png"
+dest_files=["res://.godot/imported/paniere_teckel.png-e5f9c6ee022f61609a516b899b1bd4f1.ctex"]
 
 [params]
 

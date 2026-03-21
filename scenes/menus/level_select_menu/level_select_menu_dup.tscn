@@ -27,6 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i5r1y")
+level_paths = Array[String](["res://scenes/game_scene/levels/Level1.tscn", "res://scenes/game_scene/levels/Level2.tscn", "res://scenes/game_scene/levels/Level3.tscn", "res://scenes/game_scene/levels/Level4.tscn"])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1236598372]
 layout_mode = 1
