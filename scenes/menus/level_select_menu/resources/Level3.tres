@@ -2,10 +2,12 @@
 
 [ext_resource type="Resource" uid="uid://b5o7sq1qnl01" path="res://scenes/level_selection_screen/conversations/3-MrBlue.tres" id="1_fm7px"]
 [ext_resource type="Script" uid="uid://r7un4f8i7vjl" path="res://scenes/menus/level_select_menu/resources/level_panel_res.gd" id="2_7bjdd"]
+[ext_resource type="Texture2D" uid="uid://cqxs1gg0yt60j" path="res://assets/art/blueprints/level3.png" id="2_pqa22"]
 
 [resource]
 script = ExtResource("2_7bjdd")
 level_id = 2
 level_name = "Mr Blue's mansion"
+image = ExtResource("2_pqa22")
 dialog_res = ExtResource("1_fm7px")
 metadata/_custom_type_script = "uid://r7un4f8i7vjl"
