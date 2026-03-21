@@ -57,6 +57,7 @@ PNJ=""
 
 [gui]
 
+theme/custom="uid://dngna66rnox7h"
 common/drop_mouse_on_gui_input_disabled=true
 
 [input]

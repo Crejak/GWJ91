@@ -1,0 +1,51 @@
+[gd_resource type="Theme" format=3 uid="uid://dngna66rnox7h"]
+
+[ext_resource type="Texture2D" uid="uid://b1fcwas7xeoep" path="res://assets/ui/button.png" id="1_x2ak3"]
+[ext_resource type="FontFile" uid="uid://bqcna7on6yptw" path="res://assets/fonts/old_newspaper_font/Old Newspaper Font.ttf" id="1_yjg5f"]
+[ext_resource type="Texture2D" uid="uid://cjyebqd4n0ojr" path="res://assets/ui/button_pressed.png" id="2_i4ejt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wthw"]
+texture = ExtResource("1_x2ak3")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.44755095, 0.44755095, 0.44755095, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yjg5f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dagba"]
+texture = ExtResource("1_x2ak3")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4ejt"]
+texture = ExtResource("1_x2ak3")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0.86036915, 0.8603692, 0.8603692, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjg5f"]
+texture = ExtResource("2_i4ejt")
+texture_margin_left = 20.0
+texture_margin_top = 30.0
+texture_margin_right = 20.0
+texture_margin_bottom = 30.0
+
+[resource]
+Button/colors/font_color = Color(0.047557496, 0.047557727, 0.04755757, 1)
+Button/colors/font_hover_color = Color(0.054573663, 0.054573804, 0.05457399, 1)
+Button/colors/font_hover_pressed_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 0)
+Button/colors/font_pressed_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_yjg5f")
+Button/styles/disabled = SubResource("StyleBoxTexture_0wthw")
+Button/styles/focus = SubResource("StyleBoxEmpty_yjg5f")
+Button/styles/hover = SubResource("StyleBoxTexture_dagba")
+Button/styles/normal = SubResource("StyleBoxTexture_i4ejt")
+Button/styles/pressed = SubResource("StyleBoxTexture_yjg5f")

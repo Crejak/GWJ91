@@ -23,12 +23,12 @@ signal game_exited
 
 var sub_menu : Control
 
-@export var menu_container = %MenuContainer
-@export var menu_buttons_box_container = %MenuButtonsBoxContainer
-@export var new_game_button = %NewGameButton
-@export var options_button = %OptionsButton
-@export var credits_button = %CreditsButton
-@export var exit_button = %ExitButton
+@onready var menu_container = %MenuContainer
+@onready var menu_buttons_box_container = %MenuButtonsBoxContainer
+@onready var new_game_button = %NewGameButton
+@onready var options_button = %OptionsButton
+@onready var credits_button = %CreditsButton
+@onready var exit_button = %ExitButton
 @onready var exit_confirmation = %ExitConfirmation
 
 func get_game_scene_path() -> String:
