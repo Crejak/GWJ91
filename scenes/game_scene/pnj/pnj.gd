@@ -76,6 +76,7 @@ func _display() -> void:
 func reset() -> void:
 	progress = 0.0
 	body.global_position = global_position
+	body.linear_velocity = Vector2.ZERO
 	state_changed.emit(State.SLEEP)
 	state_machine.set_current_state(states[State.SLEEP])
 	if not timer:
@@ -91,7 +92,6 @@ func clear() -> void:
 	EventBus.clear_signal(timer.timeout)
 	EventBus.clear_signal(step_done)
 	timeline_index = -1
-
 
 func start_game_timer() -> void:
 	reset()
