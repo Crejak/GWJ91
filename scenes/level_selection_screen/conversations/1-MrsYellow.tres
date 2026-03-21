@@ -7,5 +7,5 @@ script = ExtResource("1_ief3l")
 caller_name = "Mrs. Yellow"
 text_color = Color(0.9999998, 0.8647518, 0.1032423, 1)
 outline_color = Color(0.42200962, 0.32727712, 0, 1)
-dialogs = Array[String](["Hey, you starting a new business aren't you ? Kind of... unusual one.", "Listen, my banker just turned me down for a loan. I'm behind on my rent, it's urgent !", "I was thinking you could pay her a little visit and sort out my loan… right at her place ! I’m sure her house's walls are covered in overpriced art !", "That'll let me pay back my landlord, and you can pay yourself with what you find there. I promise you won't be disappointed."])
+dialogs = Array[String](["Hello, I hope this is a secure call... Well...", "I'm not usually one to resort to this kind of thing... But this is too much!", "My ex-husband won't give me my things back.", "He knows I have money and just won't accept that I manage it better than he does."])
 metadata/_custom_type_script = "uid://dyj0dslk8ye7w"
