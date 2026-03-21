@@ -42,8 +42,11 @@ var is_waiting_for_step_to_finish: bool
 @export var idle_texture: Texture2D
 
 @export_group("Detection")
-@export var object_noise_factor: float = 0.2
-@export var wall_noise_factor: float = 0.2
+@export var object_initial_noise_factor: float = 0.006
+@export var wall_initial_noise_factor: float = 0.1
+@export var object_continuous_noise_factor: float = 0.05
+@export var wall_continuous_noise_factor: float = 0.01
+
 
 @export_group("Sound")
 @onready var audio_player :AudioStreamPlayer2D = %AudioStreamPlayer2D
@@ -145,15 +148,15 @@ var object_making_noise: Dictionary[MovableObject, float]
 var wall_making_noise: Dictionary[StaticBody2D, float]
 
 func _on_movable_object_noise_start(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float) -> void:
-	object_making_noise[in_object] = in_sound_intensity / body.global_position.distance_squared_to(in_position)
-	add_detection(object_making_noise[in_object] * object_noise_factor)
+	object_making_noise[in_object] = in_sound_intensity / body.global_position.distance_to(in_position)
+	add_detection(object_making_noise[in_object] * object_initial_noise_factor)
 
 func _on_movable_object_noise_stop(in_object: MovableObject) -> void:
 	object_making_noise.erase(in_object)
 
 func _on_wall_noise_start(in_position: Vector2, in_wall: StaticBody2D, in_sound_intensity: float) -> void:
-	wall_making_noise[in_wall] = in_sound_intensity / body.global_position.distance_squared_to(in_position)
-	add_detection(wall_making_noise[in_wall] * wall_noise_factor)
+	wall_making_noise[in_wall] = in_sound_intensity / body.global_position.distance_to(in_position)
+	add_detection(wall_making_noise[in_wall] * wall_initial_noise_factor)
 	
 func _on_wall_noise_stop(in_wall: StaticBody2D) -> void:
 	wall_making_noise.erase(in_wall)
@@ -163,9 +166,9 @@ func _on_player_move_detection(in_position: Vector2, in_sound_intensity: float) 
 
 func _increase_detection(in_delta: float) -> void:
 	for obj: MovableObject in object_making_noise:
-		add_detection(object_making_noise[obj] * in_delta)
+		add_detection(object_making_noise[obj] * in_delta * object_continuous_noise_factor)
 	for wall: StaticBody2D in wall_making_noise:
-		add_detection(wall_making_noise[wall] * in_delta)
+		add_detection(wall_making_noise[wall] * in_delta * wall_continuous_noise_factor)
 
 var warning_index: int = 0
 func add_detection(in_value: float) -> void:

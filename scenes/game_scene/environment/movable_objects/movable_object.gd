@@ -50,7 +50,7 @@ func _ready() -> void:
 
 func _on_body_entered(in_body: Node2D) -> void:
 	if in_body is Character:
-		SignalBus.detection.on_movable_object_noise_start.emit(global_position, self, mass * (in_body as Character).linear_velocity.length_squared())
+		SignalBus.detection.on_movable_object_noise_start.emit(global_position, self, mass * (in_body as Character).linear_velocity.length())
 	if can_move and !pickable:
 		_play_move_sfx()
 

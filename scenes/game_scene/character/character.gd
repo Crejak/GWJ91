@@ -157,8 +157,7 @@ func _on_body_entered(body: Node) -> void:
 	if body is PhysicsBody2D:
 		if (body as PhysicsBody2D).get_collision_layer_value(3):
 			var wall := body as StaticBody2D;
-			SignalBus.detection.on_wall_noise_start.emit(global_position, wall, wall_mass * linear_velocity.length_squared());
-
+			SignalBus.detection.on_wall_noise_start.emit(global_position, wall, wall_mass * linear_velocity.length());
 
 func _on_body_exited(body: Node) -> void:
 	if body is PhysicsBody2D:

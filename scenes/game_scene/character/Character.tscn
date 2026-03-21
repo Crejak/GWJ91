@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhhfhx3n5d4nr" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
 [ext_resource type="Texture2D" uid="uid://coequeusuck5b" path="res://assets/art/characters/player.png" id="2_n57ve"]
-[ext_resource type="Script" path="res://scenes/game_scene/character/hit_light_zone.gd" id="3_4d22m"]
+[ext_resource type="Script" uid="uid://cbyah72uhyptv" path="res://scenes/game_scene/character/hit_light_zone.gd" id="3_4d22m"]
 [ext_resource type="Script" path="res://scenes/game_scene/character/reveal_area.gd" id="4_4d22m"]
 
 [sub_resource type="Gradient" id="Gradient_n57ve"]
@@ -33,6 +33,7 @@ lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_pi01j")
+wall_mass = 5.0
 debug_label = NodePath("DebugLabel")
 
 [node name="Visual" type="Node2D" parent="." unique_id=1015642632]
