@@ -74,9 +74,9 @@ texture_disabled = SubResource("PlaceholderTexture2D_7uqq4")
 [node name="ButtonNext" type="TextureButton" parent="." unique_id=569268118]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 498.5
+offset_left = 471.5
 offset_top = 690.5
-offset_right = 598.5
+offset_right = 571.5
 offset_bottom = 790.5
 texture_normal = ExtResource("7_7uqq4")
 texture_disabled = SubResource("PlaceholderTexture2D_gnrxx")
