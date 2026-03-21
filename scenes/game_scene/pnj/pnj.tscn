@@ -648,5 +648,5 @@ unique_name_in_owner = true
 stream = ExtResource("6_p2w68")
 autoplay = true
 stream_paused = true
-max_distance = 1500.0
+max_distance = 1200.0
 bus = &"SFX"

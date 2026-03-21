@@ -5,6 +5,7 @@ func _enter_state() -> void:
 	super._enter_state()
 	pnj.sprite.texture = pnj.idle_texture
 	pnj.status_animations.play("sleep")
+	pnj.audio_player.stream_paused = true
 
 
 func _exit_state() -> void:
