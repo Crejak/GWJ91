@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://ybsf7i3w3qt" path="res://assets/art/props/diner_table.PNG" id="23_1bvhb"]
 [ext_resource type="Texture2D" uid="uid://ccipxgx5b4nd" path="res://assets/art/props/shower.PNG" id="24_sdr2y"]
 [ext_resource type="Texture2D" uid="uid://bgvg8wqutr5tt" path="res://assets/art/props/tapish.PNG" id="25_0uwjo"]
-[ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="29_imeoc"]
+[ext_resource type="Script" path="res://scenes/test_room/light_system.gd" id="29_imeoc"]
 [ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/objects/plant.tscn" id="29_jtacr"]
 [ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/objects/sofa.tscn" id="30_50tyd"]
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/objects/table.tscn" id="30_jtacr"]
@@ -100,6 +100,8 @@ centered = false
 [node name="Collisions" type="Node2D" parent="." unique_id=2008365336]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=1486430070]
+collision_layer = 4
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D" unique_id=207135049]
 position = Vector2(1005, 342)
