@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_7yctp"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
-[ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
+[ext_resource type="Script" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="PackedScene" uid="uid://t08dk1rxi2kr" path="res://scenes/game_scene/levels/level_design/ld_level_1.tscn" id="4_ktfe1"]
-[ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
+[ext_resource type="Script" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 [ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
@@ -47,7 +47,7 @@ metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
 [sub_resource type="Resource" id="Resource_7j52u"]
 script = ExtResource("14_1e6rb")
 title = "Robber advice #2"
-content = "To maximize stealth, you should intrude during the night, even if that makes you blind. Be careful, if you make to much noise, you'll get caught ! Be sure to not bump into furnitures !
+content = "To maximize stealth, you should intrude during the night, even if that makes you blind. Be careful, if you make too much noise, you'll get caught ! Be sure to not bump into furnitures !
 
 From Robber Magazine #102"
 metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
@@ -101,6 +101,10 @@ offset_right = 260.0
 offset_bottom = 587.0
 
 [editable path="PlayableEnvironment/Level"]
+[editable path="PlayableEnvironment/Level/YSort/Loot/painting_kitchen"]
+[editable path="PlayableEnvironment/Level/YSort/Loot/painting_room"]
+[editable path="PlayableEnvironment/Level/YSort/Loot/painting_bathroom"]
+[editable path="PlayableEnvironment/Level/YSort/Loot/painting_livingroom"]
 [editable path="PlayableEnvironment/Level/Rooms/Room"]
 [editable path="PlayableEnvironment/Level/Rooms/Room6"]
 [editable path="PlayableEnvironment/Level/Rooms/Room2"]
