@@ -479,6 +479,8 @@ curve = SubResource("Curve2D_w23nl")
 
 [node name="Character" parent="YSort/Characters" unique_id=424702170 instance=ExtResource("5_lm55j")]
 position = Vector2(2067, 1532)
+min_speed = 15.0
+max_speed = 250.0
 
 [node name="girl" type="Path2D" parent="YSort/Characters" unique_id=371436523]
 y_sort_enabled = true
