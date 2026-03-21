@@ -34,14 +34,14 @@ func _on_character_entered() -> void:
 func _on_objective_found(character: Character, index: int) -> void:
 	var effect: ObjectiveFoundEffect = objective_found_effect_scene.instantiate();
 	add_child(effect);
-	effect.global_position = character.global_position;
+	effect.global_position = character.get_global_transform_with_canvas().origin;
 	effect.text = Level.current.objectives[index].name;
 	effect.start_effect();
 
 func _on_objective_list_cleared() -> void:
 	var effect: FloatingTextEffect = floating_text_effect.instantiate();
 	add_child(effect);
-	effect.global_position = Character.current.global_position;
+	effect.global_position = Character.current.get_global_transform_with_canvas().origin;
 	effect.text = "All objectives found !"
 	effect.visible = false;
 	await get_tree().create_timer(1.5).timeout;
