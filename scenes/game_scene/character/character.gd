@@ -37,6 +37,8 @@ signal object_dropped(source: Character, object: MovableObject);
 ## into a wall makes the same noise intensity of walking into a movable object of 10 kg.
 @export var wall_mass: float = 1;
 
+@onready var hit_light_zone: HitLightZone = %HitLightZone;
+
 var speed_loss_factor: float = 1.;
 
 var last_position: Vector2 = Vector2.ZERO;
@@ -56,7 +58,8 @@ func _ready() -> void:
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
 	SignalBus.infiltration_timed_out.connect(_on_infiltration_timed_out);
-	visible = false;
+	if get_tree().current_scene != self:
+		visible = false;
 
 func _process(delta: float) -> void:
 	if linear_velocity.length() > max_silent_speed:
@@ -149,6 +152,7 @@ func _on_inventory_changed() -> void:
 		(1 - speed_floor_ratio) / (1 + speed_damp * get_total_picked_up_mass());
 
 func _on_body_entered(body: Node) -> void:
+	hit_light_zone.light_up();
 	if body is PhysicsBody2D:
 		if (body as PhysicsBody2D).get_collision_layer_value(3):
 			var wall := body as StaticBody2D;
