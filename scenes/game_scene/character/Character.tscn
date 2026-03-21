@@ -79,3 +79,6 @@ debug_color = Color(0.72156864, 0, 0.75686276, 0.12156863)
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="inventory_changed" from="." to="." method="_on_inventory_changed"]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=344111750]
+current = true

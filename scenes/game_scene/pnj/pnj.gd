@@ -45,6 +45,9 @@ var is_waiting_for_step_to_finish: bool
 @export var object_noise_factor: float = 0.2
 @export var wall_noise_factor: float = 0.2
 
+@export_group("Sound")
+@onready var audio_player :AudioStreamPlayer2D = %AudioStreamPlayer2D
+
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_game_phase_changed)
 	SignalBus.detection.on_movable_object_noise_start.connect(_on_movable_object_noise_start)
