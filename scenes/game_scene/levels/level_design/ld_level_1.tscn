@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/objects/tv_table.tscn" id="31_ov8k0"]
 [ext_resource type="PackedScene" uid="uid://c1hovdgvwqdl4" path="res://scenes/game_scene/environment/movable_objects/objects/bed.tscn" id="32_3uyum"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="32_w03m8"]
-[ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="33_b27oa"]
+[ext_resource type="Script" path="res://scenes/test_room/light_system.gd" id="33_b27oa"]
 [ext_resource type="PackedScene" uid="uid://c0c8aew7kbuwa" path="res://scenes/game_scene/environment/movable_objects/objects/bed_table.tscn" id="33_gtju4"]
 [ext_resource type="PackedScene" uid="uid://dn11gy1m085yy" path="res://scenes/game_scene/environment/movable_objects/objects/fridge.tscn" id="34_yp58s"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="35_13th3"]
@@ -47,7 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://dl3bhq45kmgkk" path="res://scenes/game_scene/environment/movable_objects/objects/sink.tscn" id="38_x2gux"]
 [ext_resource type="PackedScene" uid="uid://bowmowy62uprw" path="res://scenes/game_scene/environment/movable_objects/objects/toilet.tscn" id="39_ixf6c"]
 [ext_resource type="PackedScene" uid="uid://ckadm23leoi2l" path="res://scenes/game_scene/environment/movable_objects/objects/christmas_tree.tscn" id="40_brrr0"]
-[ext_resource type="PackedScene" uid="uid://c7abt76osnp8e" path="res://scenes/game_scene/pnj/pnjs/level_1_mrs_yellow.tscn" id="42_tnmn2"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/pnj/pnjs/level_1_mrs_yellow.tscn" id="42_tnmn2"]
 [ext_resource type="PackedScene" uid="uid://mxd2xxqbwe6y" path="res://scenes/game_scene/environment/movable_objects/objects/lamp.tscn" id="42_x2gux"]
 
 [sub_resource type="Curve2D" id="Curve2D_slkys"]
@@ -124,6 +124,7 @@ centered = false
 position = Vector2(315, 327)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=648709452]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D" unique_id=402889897]
 position = Vector2(1005, 342)
