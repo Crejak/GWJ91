@@ -61,9 +61,9 @@ func _ready() -> void:
 	if get_tree().current_scene != self:
 		visible = false;
 
-func _process(delta: float) -> void:
-	if linear_velocity.length() > max_silent_speed:
-		SignalBus.detection.on_player_move.emit(global_position, (base_noise_value + get_total_picked_up_mass()) * linear_velocity.length_squared() * delta)
+func _process(_delta: float) -> void:
+	# if linear_velocity.length() > max_silent_speed:
+	# 	SignalBus.detection.on_player_move.emit(global_position, (base_noise_value + get_total_picked_up_mass()) * linear_velocity.length_squared() * delta)
 
 	if OS.is_debug_build():
 		debug_label.text = "Speed : %.1f px/s\nMass : %.1f kg\nValue : %s $" % \

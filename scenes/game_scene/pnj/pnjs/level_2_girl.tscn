@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dky8gjio1yook"]
 
 [ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_6qkvo"]
-[ext_resource type="Texture2D" uid="uid://cqcawlqws25h4" path="res://assets/art/characters/girl_walk.png" id="2_n2nlq"]
-[ext_resource type="Texture2D" uid="uid://bxvtbr4gryw2r" path="res://assets/art/characters/girl_sleep.png" id="3_2ja8u"]
+[ext_resource type="Texture2D" uid="uid://bkutr62ybqnhg" path="res://assets/art/characters/girl_walk.png" id="2_n2nlq"]
+[ext_resource type="Texture2D" uid="uid://cr31ixsw75sy0" path="res://assets/art/characters/girl_sleep.png" id="3_2ja8u"]
 
 [node name="Girl" unique_id=786583104 instance=ExtResource("1_6qkvo")]
 walk_texture = ExtResource("2_n2nlq")
@@ -24,3 +24,6 @@ position = Vector2(5.8823557, -121.17646)
 visible = false
 offset_top = 69.41177
 offset_bottom = 96.41177
+
+[node name="AudioStreamPlayer2D" parent="." index="2" unique_id=1860260487]
+stream_paused = false

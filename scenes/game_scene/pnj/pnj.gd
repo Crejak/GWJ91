@@ -66,7 +66,8 @@ func _on_game_phase_changed(in_phase: LevelState.Phase) -> void:
 			_display()
 		LevelState.Phase.INFILTRATION:
 			start_game_timer()
-			_hide()
+			if timeline[0].pnj_state == State.SLEEP:
+				_hide()
 		LevelState.Phase.CONCLUSION:
 			reset()
 
@@ -104,6 +105,9 @@ func clear() -> void:
 
 func start_game_timer() -> void:
 	reset()
+	await get_tree().process_frame
+	reset()
+	await get_tree().process_frame
 
 	if timeline.is_empty(): return
 	timer.timeout.connect(next_timeline_step, CONNECT_ONE_SHOT)
