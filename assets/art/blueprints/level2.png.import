@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqxs1gg0yt60j"
-path="res://.godot/imported/mrs_yellow.png-5289ca70f94ce4cb27478fc5baf0dd76.ctex"
+uid="uid://b3a6j2oex7gfk"
+path="res://.godot/imported/level2.png-e71c6b6560748a82236549d22fce373a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/blueprints/mrs_yellow.png"
-dest_files=["res://.godot/imported/mrs_yellow.png-5289ca70f94ce4cb27478fc5baf0dd76.ctex"]
+source_file="res://assets/art/blueprints/level2.png"
+dest_files=["res://.godot/imported/level2.png-e71c6b6560748a82236549d22fce373a.ctex"]
 
 [params]
 

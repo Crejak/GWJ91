@@ -1,17 +1,12 @@
 [gd_scene format=3 uid="uid://deb4sc71p5ym6"]
 
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_7yctp"]
-[ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="1_50hnf"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
 [ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
-[ext_resource type="PackedScene" uid="uid://ba21f72lm23w" path="res://scenes/test_room/test_room.tscn" id="3_75gx0"]
-[ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="4_75gx0"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
+[ext_resource type="PackedScene" uid="uid://t08dk1rxi2kr" path="res://scenes/game_scene/levels/level_design/ld_level_1.tscn" id="4_ktfe1"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
-[ext_resource type="PackedScene" uid="uid://m6sddgn1b7dx" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_tv.tscn" id="5_75gx0"]
-[ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="7_2ky05"]
-[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="8_omu1n"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 [ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
@@ -20,61 +15,32 @@
 [sub_resource type="Resource" id="Resource_armk4"]
 script = ExtResource("2_armk4")
 name = "Present near the sofa"
-object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent5")
+object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickablePresent5")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="Resource" id="Resource_omu1n"]
 script = ExtResource("2_armk4")
 name = "Smart TV"
-object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickableTV")
+object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickableTV")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="Resource" id="Resource_ffvqw"]
 script = ExtResource("2_armk4")
 name = "Present in the middle room"
-object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent6")
+object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickablePresent6")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="Resource" id="Resource_arpy7"]
 script = ExtResource("2_armk4")
 name = "Present in the south room"
-object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent7")
+object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickablePresent7")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="Resource" id="Resource_7q4ba"]
 script = ExtResource("2_armk4")
 name = "Present in the chambers"
-object_path = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Loot/PickablePresent8")
+object_path = NodePath("PlayableEnvironment/Level/Props/Loot/PickablePresent8")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
-
-[sub_resource type="Resource" id="Resource_r13ha"]
-script = ExtResource("8_omu1n")
-duration = 10.0
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_qcgpc"]
-script = ExtResource("8_omu1n")
-path_progress_destination = 704.85
-pnj_state = 1
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_xu74q"]
-script = ExtResource("8_omu1n")
-duration = 15.0
-pnj_state = 2
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_r571m"]
-script = ExtResource("8_omu1n")
-pnj_state = 1
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_dolxl"]
-script = ExtResource("8_omu1n")
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e6rb"]
-size = Vector2(668, 377)
 
 [sub_resource type="Resource" id="Resource_wfa5e"]
 script = ExtResource("14_1e6rb")
@@ -92,64 +58,18 @@ content = "To maximize stealth, you should intrude during the night, even if tha
 From Robber Magazine #102"
 metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
 
-[node name="Level1" type="Control" unique_id=1713301915 node_paths=PackedStringArray("starting_character")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Level1" type="Node" unique_id=1017530407 node_paths=PackedStringArray("starting_character")]
 script = ExtResource("1_7yctp")
 level_id = 1
-starting_character = NodePath("PlayableEnvironment/Environment/TestRoom/Props/Character")
+starting_character = NodePath("")
 objectives = Array[ExtResource("2_armk4")]([SubResource("Resource_armk4"), SubResource("Resource_omu1n"), SubResource("Resource_ffvqw"), SubResource("Resource_arpy7"), SubResource("Resource_7q4ba")])
 
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=605835367 node_paths=PackedStringArray("prop_container_node")]
 script = ExtResource("4_pv3ef")
-prop_container_node = NodePath("Environment/TestRoom/Props/Loot")
+prop_container_node = NodePath("")
 
-[node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=1685777892]
-
-[node name="TestRoom" parent="PlayableEnvironment/Environment" unique_id=2058501475 instance=ExtResource("3_75gx0")]
+[node name="Level" parent="PlayableEnvironment" unique_id=1878490932 instance=ExtResource("4_ktfe1")]
 position = Vector2(13, 5)
-
-[node name="Loot" type="Node2D" parent="PlayableEnvironment/Environment/TestRoom/Props" parent_id_path=PackedInt32Array(2058501475, 71111055) index="0" unique_id=140330078]
-y_sort_enabled = true
-position = Vector2(226, -24)
-
-[node name="PickablePresent5" parent="PlayableEnvironment/Environment/TestRoom/Props/Loot" unique_id=1203108321 instance=ExtResource("4_75gx0")]
-position = Vector2(48, 423)
-
-[node name="PickablePresent6" parent="PlayableEnvironment/Environment/TestRoom/Props/Loot" unique_id=392611083 instance=ExtResource("4_75gx0")]
-position = Vector2(624, 682)
-
-[node name="PickablePresent8" parent="PlayableEnvironment/Environment/TestRoom/Props/Loot" unique_id=1918870347 instance=ExtResource("4_75gx0")]
-position = Vector2(1373, 179)
-
-[node name="PickablePresent7" parent="PlayableEnvironment/Environment/TestRoom/Props/Loot" unique_id=1046206277 instance=ExtResource("4_75gx0")]
-position = Vector2(624, 949)
-
-[node name="PickableTV" parent="PlayableEnvironment/Environment/TestRoom/Props/Loot" unique_id=1736718707 instance=ExtResource("5_75gx0")]
-position = Vector2(182, 776)
-flip_v = true
-
-[node name="TV_Table" parent="PlayableEnvironment/Environment/TestRoom/Props" parent_id_path=PackedInt32Array(2058501475, 71111055) index="7" unique_id=1923517405]
-position = Vector2(418, 720)
-
-[node name="Character" parent="PlayableEnvironment/Environment/TestRoom/Props" parent_id_path=PackedInt32Array(2058501475, 71111055) index="8" unique_id=860493929 instance=ExtResource("1_50hnf")]
-position = Vector2(185, 521)
-min_speed = 15.0
-max_speed = 150.0
-
-[node name="Dad" parent="PlayableEnvironment/Environment/TestRoom/Path2D" parent_id_path=PackedInt32Array(2058501475, 137920947) index="0" unique_id=786583104]
-timeline = Array[ExtResource("8_omu1n")]([SubResource("Resource_r13ha"), SubResource("Resource_qcgpc"), SubResource("Resource_xu74q"), SubResource("Resource_r571m"), SubResource("Resource_dolxl")])
-
-[node name="CollisionShape2D" parent="PlayableEnvironment/Environment/TestRoom/Rooms/Room" parent_id_path=PackedInt32Array(2058501475, 727033528) index="0" unique_id=473306914]
-position = Vector2(18, 4.5)
-shape = SubResource("RectangleShape2D_1e6rb")
-
-[node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("7_2ky05")]
-position = Vector2(127, 526)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=712500312]
 
@@ -174,17 +94,8 @@ visible = false
 pages = Array[ExtResource("14_1e6rb")]([SubResource("Resource_wfa5e"), SubResource("Resource_7j52u")])
 
 [node name="EntryPoint" parent="UI" unique_id=804974359 node_paths=PackedStringArray("character") instance=ExtResource("9_sh55l")]
-offset_left = 193.0
-offset_top = 527.0
-offset_right = 193.0
-offset_bottom = 527.0
-character = NodePath("../../PlayableEnvironment/Environment/TestRoom/Props/Character")
-
-[connection signal="object_dropped" from="PlayableEnvironment/Environment/TestRoom/Props/Character" to="PlayableEnvironment" method="_on_character_object_dropped"]
-
-[editable path="PlayableEnvironment/Environment/TestRoom"]
-[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room"]
-[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room2"]
-[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room3"]
-[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room4"]
-[editable path="PlayableEnvironment/Environment/TestRoom/Rooms/Room5"]
+offset_left = 260.0
+offset_top = 587.0
+offset_right = 260.0
+offset_bottom = 587.0
+character = NodePath("")
