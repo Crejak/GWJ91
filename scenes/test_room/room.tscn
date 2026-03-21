@@ -22,7 +22,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=473306914]
 position = Vector2(19, 6)
 shape = SubResource("RectangleShape2D_2c5gh")
-debug_color = Color(1, 1, 1, 0.41960785)
+debug_color = Color(1, 1, 1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=71484989]
 unique_name_in_owner = true

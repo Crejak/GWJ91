@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="2_5xfde"]
 [ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_yatoe"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="3_t1cvj"]
-[ext_resource type="PackedScene" uid="uid://bdsqyn3o5n3wl" path="res://scenes/game_scene/levels/level_design/ld_mrs_yellow.tscn" id="4_bej4l"]
+[ext_resource type="PackedScene" uid="uid://bdsqyn3o5n3wl" path="res://scenes/game_scene/levels/level_design/ld_level_3.tscn" id="4_bej4l"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="4_yatoe"]
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="5_1i2go"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="5_bej4l"]
@@ -36,6 +36,9 @@ name = "Present in the Bibliotheque"
 object_path = NodePath("PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot/PickablePresent4")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yatoe"]
+size = Vector2(692, 580)
+
 [node name="Level" type="Node" unique_id=1156998486 node_paths=PackedStringArray("starting_character")]
 script = ExtResource("1_uauh1")
 level_id = 2
@@ -56,6 +59,10 @@ modulate = Color(0, 0, 0, 1)
 
 [node name="Collisions" parent="PlayableEnvironment/LD_Mrs_Yellow/Walls" parent_id_path=PackedInt32Array(274229064, 1149287691) index="1" unique_id=1705467228]
 visible = false
+
+[node name="CollisionShape2D" parent="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room" parent_id_path=PackedInt32Array(274229064, 727033528) index="0" unique_id=473306914]
+position = Vector2(33, 109)
+shape = SubResource("RectangleShape2D_yatoe")
 
 [node name="PickablePresent" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot" parent_id_path=PackedInt32Array(274229064, 1827791998) index="0" unique_id=1203108321 instance=ExtResource("5_1i2go")]
 position = Vector2(679, 1256)
@@ -83,9 +90,6 @@ preparation_time = 35.0
 
 [node name="ConclusionPhase" parent="UI" unique_id=1435576337 instance=ExtResource("5_bej4l")]
 visible = false
-title = "Level 1 - Conclusion"
-conclusion_text = "Wow ! You beat the first level !!
-This is the conclusion of the story for this level. Please read it carefully it is really important to understand the game please !!"
 
 [node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("6_1i2go")]
 visible = false
