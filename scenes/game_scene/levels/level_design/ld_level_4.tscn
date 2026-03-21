@@ -27,6 +27,9 @@
 [ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/shoes_furniture.tscn" id="23_o08ws"]
 [ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="24_wr2dr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc5qq"]
+size = Vector2(222.1212, 42.424133)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gakxn"]
 size = Vector2(676, 517)
 
@@ -40,7 +43,7 @@ size = Vector2(1071, 922)
 size = Vector2(438, 311)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_gdug5"]
-points = PackedVector2Array(809, 6, 812, 584, -487, 587, -488, 353, -5, 354, 0, 0)
+points = PackedVector2Array(809, 0, 809, 584, -487, 584, -487, 353, 0, 353, 0, 0)
 
 [sub_resource type="Gradient" id="Gradient_51dik"]
 offsets = PackedFloat32Array(1)
@@ -90,6 +93,15 @@ centered = false
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls/Collisions" unique_id=1416766385]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" unique_id=666927227]
+polygon = PackedVector2Array(609.0909, 230.30301, 609.0909, 1913.6362, 1516.6665, 1915.1514, 1516.6665, 1839.3938, 1409.0908, 1839.3938, 1409.0908, 1296.9696, 1513.6362, 1296.9696, 1513.6362, 1260.606, 1328.7877, 1260.606, 1328.7877, 1296.9696, 1378.7877, 1296.9696, 1378.7877, 1839.3938, 680.303, 1839.3938, 681.8181, 1296.9696, 1160.606, 1296.9696, 1160.606, 1259.0908, 683.33325, 1259.0908, 683.33325, 307.57574, 1789.3938, 307.57574, 1789.3938, 392.4242, 1810.606, 393.93936, 1810.606, 307.57574, 3156.0603, 307.57574, 3156.0603, 975.7575, 2671.212, 975.7575, 2671.212, 989.39386, 3156.0603, 989.39386, 3156.0603, 1198.4847, 3075.7573, 1198.4847, 3075.7573, 1222.7272, 3154.5452, 1222.7272, 3156.0603, 1839.3938, 1827.2726, 1839.3938, 1827.2726, 1581.818, 2310.606, 1581.818, 2312.121, 1222.7272, 2907.5754, 1222.7272, 2907.5754, 1198.4847, 2275.7573, 1198.4847, 2275.7573, 1224.2423, 2289.3938, 1224.2423, 2289.3938, 1562.1211, 1825.7574, 1562.1211, 1825.7574, 1354.5453, 1930.3029, 1354.5453, 1930.3029, 1225.7574, 2107.5757, 1225.7574, 2109.0908, 1198.4847, 1930.3029, 1198.4847, 1930.3029, 1162.1211, 1721.2119, 1162.1211, 1721.2119, 1260.606, 1680.3029, 1260.606, 1680.3029, 1295.4545, 1721.2119, 1295.4545, 1721.2119, 1354.5453, 1803.0302, 1354.5453, 1803.0302, 1839.3938, 1684.8484, 1839.3938, 1684.8484, 1913.6362, 3231.8179, 1913.6362, 3231.8179, 230.30301)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" unique_id=1839661532]
+polygon = PackedVector2Array(1810.606, 560.606, 1790.9089, 560.606, 1790.9089, 989.39386, 2503.03, 989.39386, 2503.03, 975.7575, 1810.606, 975.7575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Collisions/StaticBody2D" unique_id=1186777888]
+position = Vector2(1595.4545, 1948.4847)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_fc5qq")
 
 [node name="Rooms" type="Node2D" parent="Walls" unique_id=1847597720]
 position = Vector2(895, 586)
@@ -305,8 +317,8 @@ position = Vector2(1061, 1140)
 y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1772549326]
-position = Vector2(1935, 1067)
-zoom = Vector2(0.57, 0.57)
+position = Vector2(1278, 708)
+zoom = Vector2(0.9, 0.9)
 
 [node name="ExtractionPoint" parent="." unique_id=1663210596 instance=ExtResource("5_y1v0b")]
 position = Vector2(1058, 1391)
