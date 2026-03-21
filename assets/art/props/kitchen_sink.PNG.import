@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vcjm8q3k23jm"
-path="res://.godot/imported/kitchen_sink.png-9d76f7d5998704903c35c46c6f81943a.ctex"
+path="res://.godot/imported/kitchen_sink.PNG-6cef2551bb2fb32b2e03b52f7a838869.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/kitchen_sink.png"
-dest_files=["res://.godot/imported/kitchen_sink.png-9d76f7d5998704903c35c46c6f81943a.ctex"]
+source_file="res://assets/art/props/kitchen_sink.PNG"
+dest_files=["res://.godot/imported/kitchen_sink.PNG-6cef2551bb2fb32b2e03b52f7a838869.ctex"]
 
 [params]
 
