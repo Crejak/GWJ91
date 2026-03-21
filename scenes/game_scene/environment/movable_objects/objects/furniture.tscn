@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bt54nvfg4rsq1"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_bg0wk"]
+[ext_resource type="Texture2D" uid="uid://cw0rd76iv0j6m" path="res://assets/art/props/furniture_1.png" id="2_bg0wk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q28vf"]
+size = Vector2(63, 40)
+
+[node name="Furniture" unique_id=1203108321 instance=ExtResource("1_bg0wk")]
+mass = 5.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(39.40915, -29.233334)
+scale = Vector2(0.13526833, 0.10273811)
+texture = ExtResource("2_bg0wk")
+region_enabled = true
+region_rect = Rect2(0, 50, 580, 560)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(40.5, -32)
+shape = SubResource("RectangleShape2D_q28vf")
