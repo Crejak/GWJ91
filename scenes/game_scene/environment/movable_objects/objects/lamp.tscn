@@ -10,11 +10,11 @@ radius = 27.166155
 mass = 2.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1306474058]
-position = Vector2(61, -62)
+position = Vector2(34, -69)
 scale = Vector2(0.16369838, 0.16369838)
 texture = ExtResource("2_mfq5x")
 region_enabled = true
-region_rect = Rect2(1, 1, 797, 1035)
+region_rect = Rect2(444, 99, 467, 825)
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
 position = Vector2(34, -24)

@@ -14,7 +14,7 @@ position = Vector2(23, -45)
 scale = Vector2(0.16414694, 0.16414694)
 texture = ExtResource("2_xbe24")
 region_enabled = true
-region_rect = Rect2(0, -2, 456, 594)
+region_rect = Rect2(232, 75, 621, 628)
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
 position = Vector2(22, -21)

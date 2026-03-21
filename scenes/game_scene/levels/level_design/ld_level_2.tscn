@@ -5,7 +5,27 @@
 [ext_resource type="Texture2D" uid="uid://b3a6j2oex7gfk" path="res://assets/art/blueprints/level2.png" id="3_3v8cr"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="4_3cp22"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="5_lm55j"]
+[ext_resource type="PackedScene" uid="uid://bowmowy62uprw" path="res://scenes/game_scene/environment/movable_objects/objects/toilet.tscn" id="5_w23nl"]
+[ext_resource type="PackedScene" uid="uid://lkifrpwii4pk" path="res://scenes/game_scene/environment/movable_objects/objects/shower.tscn" id="6_15stn"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="6_sw10h"]
+[ext_resource type="PackedScene" uid="uid://c1hovdgvwqdl4" path="res://scenes/game_scene/environment/movable_objects/objects/bed.tscn" id="7_fmw3s"]
+[ext_resource type="PackedScene" uid="uid://c0c8aew7kbuwa" path="res://scenes/game_scene/environment/movable_objects/objects/bed_table.tscn" id="8_8v3sk"]
+[ext_resource type="PackedScene" uid="uid://0isui5xqbhbp" path="res://scenes/game_scene/environment/movable_objects/objects/computer_table.tscn" id="9_2wrp7"]
+[ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/objects/sofa.tscn" id="10_gyh0o"]
+[ext_resource type="PackedScene" uid="uid://1c0toj14pbg3" path="res://scenes/game_scene/environment/movable_objects/objects/tv.tscn" id="11_rquv5"]
+[ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/objects/plant.tscn" id="12_o2j0y"]
+[ext_resource type="PackedScene" uid="uid://btqi7bxm7od85" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_table.tscn" id="13_5kjoe"]
+[ext_resource type="PackedScene" uid="uid://drn5tbsw4f360" path="res://scenes/game_scene/environment/movable_objects/objects/table_salon.tscn" id="14_wd4d6"]
+[ext_resource type="PackedScene" uid="uid://dn11gy1m085yy" path="res://scenes/game_scene/environment/movable_objects/objects/fridge.tscn" id="15_hdldl"]
+[ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/objects/tv_table.tscn" id="16_my3gm"]
+[ext_resource type="PackedScene" uid="uid://b4yqrr2f0upe1" path="res://scenes/game_scene/environment/movable_objects/objects/armchair.tscn" id="17_e4ngl"]
+[ext_resource type="PackedScene" uid="uid://mxd2xxqbwe6y" path="res://scenes/game_scene/environment/movable_objects/objects/lamp.tscn" id="18_vgith"]
+[ext_resource type="PackedScene" uid="uid://cw8wrc1y3rt08" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_sink.tscn" id="19_hvbwg"]
+[ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/objects/table.tscn" id="20_00uv5"]
+[ext_resource type="PackedScene" uid="uid://dky8gjio1yook" path="res://scenes/game_scene/pnj/pnjs/level_2_girl.tscn" id="22_hdldl"]
+[ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="22_vg68f"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="23_e4ngl"]
+[ext_resource type="PackedScene" uid="uid://lau0g0i8c6ls" path="res://scenes/game_scene/pnj/pnjs/level_2_ex_husband.tscn" id="23_my3gm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuvu1"]
 size = Vector2(764, 637)
@@ -37,17 +57,116 @@ size = Vector2(1282, 1144)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w23nl"]
 size = Vector2(637, 1146)
 
-[sub_resource type="Curve2D" id="Curve2D_lm55j"]
+[sub_resource type="Curve2D" id="Curve2D_w23nl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1522, 1018, 0, 0, 0, 0, 1498, 1428, 0, 0, 0, 0, 2741, 1405, 0, 0, 0, 0, 2748, 1054, 0, 0, 0, 0, 3563, 1062, 0, 0, 0, 0, 3568, 798, 0, 0, 0, 0, 4785, 792, 0, 0, 0, 0, 4800, 2079, 0, 0, 0, 0, 3830, 2076, 0, 0, 0, 0, 3778, 1410, 0, 0, 0, 0, 2569, 1399, 0, 0, 0, 0, 2580, 2149, 0, 0, 0, 0, 2598, 1412, 0, 0, 0, 0, 1760, 1420, 0, 0, 0, 0, 1745, 1626, 0, 0, 0, 0, 1737, 1833, 0, 0, 0, 0, 2012, 1871, 0, 0, 0, 0, 1996, 2390, 0, 0, 0, 0, 1994, 1958, 0, 0, 0, 0, 1751, 1449, 0, 0, 0, 0, 1517, 1402, 0, 0, 0, 0, 1522, 1018)
+"points": PackedVector2Array(0, 0, 0, 0, 2326, 1987, 0, 0, 0, 0, 2499, 2000, 0, 0, 0, 0, 2481, 1604, 0, 0, 0, 0, 2332, 1604, 0, 0, 0, 0, 2349, 1250, 0, 0, 0, 0, 2157, 1250, 0, 0, 0, 0, 2170, 1002, 0, 0, 0, 0, 2486, 1000, 0, 0, 0, 0, 2165, 1152, 0, 0, 0, 0, 2156, 1269, 0, 0, 0, 0, 2924, 1263, 0, 0, 0, 0, 2922, 1470, 0, 0, 0, 0, 2774, 1623, 0, 0, 0, 0, 2900, 1757, 0, 0, 0, 0, 3029, 1638, 0, 0, 0, 0, 2901, 1469, 0, 0, 0, 0, 2943, 1264, 0, 0, 0, 0, 3008, 1261, 0, 0, 0, 0, 3037, 1042, 0, 0, 0, 0, 3602, 1061, 0, 0, 0, 0, 3628, 1264, 0, 0, 0, 0, 3803, 1269, 0, 0, 0, 0, 3797, 1477, 0, 0, 0, 0, 3647, 1718, 0, 0, 0, 0, 3592, 1925, 0, 0, 0, 0, 3766, 1971, 0, 0, 0, 0, 3908, 1815, 0, 0, 0, 0, 4016, 1714, 0, 0, 0, 0, 4418, 1718, 0, 0, 0, 0, 4439, 1467, 0, 0, 0, 0, 4438, 1256, 0, 0, 0, 0, 4438, 1087, 0, 0, 0, 0, 3703, 837, 0, 0, 0, 0, 3402, 857, 0, 0, 0, 0, 3009, 1179, 0, 0, 0, 0, 3008, 1274, 0, 0, 0, 0, 2339, 1284, 0, 0, 0, 0, 2515, 1822, 0, 0, 0, 0, 2492, 2012, 0, 0, 0, 0, 2326, 1987)
 }
-point_count = 22
+point_count = 40
+
+[sub_resource type="Curve2D" id="Curve2D_e4ngl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2805, 1018, 0, 0, 0, 0, 2246, 1051, 0, 0, 0, 0, 2194, 1155, 0, 0, 0, 0, 2173, 1235, 0, 0, 0, 0, 2302, 1295, 0, 0, 0, 0, 2566, 1262, 0, 0, 0, 0, 2803, 1264, 0, 0, 0, 0, 2927, 1283, 0, 0, 0, 0, 2921, 1337, 0, 0, 0, 0, 2916, 1409, 0, 0, 0, 0, 2911, 1501, 0, 0, 0, 0, 2840, 1721, 0, 0, 0, 0, 2816, 1876, 0, 0, 0, 0, 2826, 2031, 0, 0, 0, 0, 2768, 2092, 0, 0, 0, 0, 2763, 1989, 0, 0, 0, 0, 2764, 1900, 0, 0, 0, 0, 2779, 1767, 0, 0, 0, 0, 2829, 1644, 0, 0, 0, 0, 2879, 1573, 0, 0, 0, 0, 2940, 1507, 0, 0, 0, 0, 2943, 1414, 0, 0, 0, 0, 2924, 1351, 0, 0, 0, 0, 2893, 1303, 0, 0, 0, 0, 2848, 1259, 0, 0, 0, 0, 2764, 1246, 0, 0, 0, 0, 2653, 1250, 0, 0, 0, 0, 2516, 1251, 0, 0, 0, 0, 2413, 1262, 0, 0, 0, 0, 2370, 1275, 0, 0, 0, 0, 2344, 1316, 0, 0, 0, 0, 2342, 1388, 0, 0, 0, 0, 2347, 1498, 0, 0, 0, 0, 2379, 1586, 0, 0, 0, 0, 2437, 1663, 0, 0, 0, 0, 2491, 1726, 0, 0, 0, 0, 2508, 1800, 0, 0, 0, 0, 2507, 1892, 0, 0, 0, 0, 2441, 1923, 0, 0, 0, 0, 2378, 1961, 0, 0, 0, 0, 2309, 2011, 0, 0, 0, 0, 2239, 2027, 0, 0, 0, 0, 2162, 2011, 0, 0, 0, 0, 2180, 1992, 0, 0, 0, 0, 2252, 1995, 0, 0, 0, 0, 2346, 1971, 0, 0, 0, 0, 2439, 1924, 0, 0, 0, 0, 2486, 1878, 0, 0, 0, 0, 2503, 1818, 0, 0, 0, 0, 2494, 1742, 0, 0, 0, 0, 2468, 1646, 0, 0, 0, 0, 2439, 1570, 0, 0, 0, 0, 2408, 1488, 0, 0, 0, 0, 2378, 1427, 0, 0, 0, 0, 2355, 1345, 0, 0, 0, 0, 2330, 1288, 0, 0, 0, 0, 2272, 1250, 0, 0, 0, 0, 2199, 1225, 0, 0, 0, 0, 2156, 1188, 0, 0, 0, 0, 2178, 1132, 0, 0, 0, 0, 2241, 1047, 0, 0, 0, 0, 2429, 1021, 0, 0, 0, 0, 2547, 1037, 0, 0, 0, 0, 2645, 1058, 0, 0, 0, 0, 2748, 1051, 0, 0, 0, 0, 2801, 1043, 0, 0, 0, 0, 2814, 1040)
+}
+point_count = 67
+
+[sub_resource type="Resource" id="Resource_vgith"]
+script = ExtResource("23_e4ngl")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_hvbwg"]
+script = ExtResource("23_e4ngl")
+path_progress_destination = 2378.05
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_00uv5"]
+script = ExtResource("23_e4ngl")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_vg68f"]
+script = ExtResource("23_e4ngl")
+path_progress_destination = 4827.03
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_2u8oe"]
+script = ExtResource("23_e4ngl")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_my3gm"]
+script = ExtResource("23_e4ngl")
+path_progress_destination = 6762.1
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_e4ngl"]
+script = ExtResource("23_e4ngl")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Curve2D" id="Curve2D_hdldl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3611, 1637, 0, 0, 0, 0, 3788, 1582, 0, 0, 0, 0, 4003, 1624, 0, 0, 0, 0, 4013, 1690, 0, 0, 0, 0, 4058, 1766, 0, 0, 0, 0, 4210, 1740, 0, 0, 0, 0, 4309, 1725, 0, 0, 0, 0, 4396, 1727, 0, 0, 0, 0, 4428, 1603, 0, 0, 0, 0, 4451, 1500, 0, 0, 0, 0, 4440, 1410, 0, 0, 0, 0, 4437, 1314, 0, 0, 0, 0, 4437, 1247, 0, 0, 0, 0, 4431, 1143, 0, 0, 0, 0, 4336, 1113, 0, 0, 0, 0, 4192, 1061, 0, 0, 0, 0, 4053, 1008, 0, 0, 0, 0, 3913, 949, 0, 0, 0, 0, 3739, 883, 0, 0, 0, 0, 3687, 851, 0, 0, 0, 0, 3588, 864, 0, 0, 0, 0, 3455, 881, 0, 0, 0, 0, 3295, 903, 0, 0, 0, 0, 3215, 921, 0, 0, 0, 0, 3120, 940, 0, 0, 0, 0, 3078, 909, 0, 0, 0, 0, 3281, 923, 0, 0, 0, 0, 3436, 912, 0, 0, 0, 0, 3520, 891, 0, 0, 0, 0, 3588, 852, 0, 0, 0, 0, 3661, 813, 0, 0, 0, 0, 3822, 825, 0, 0, 0, 0, 3997, 909, 0, 0, 0, 0, 4106, 939, 0, 0, 0, 0, 4224, 994, 0, 0, 0, 0, 4284, 1016, 0, 0, 0, 0, 4351, 1034, 0, 0, 0, 0, 4425, 1037)
+}
+point_count = 38
+
+[sub_resource type="Resource" id="Resource_wlexm"]
+script = ExtResource("23_e4ngl")
+duration = 10.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_8h2sk"]
+script = ExtResource("23_e4ngl")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_yb1mr"]
+script = ExtResource("23_e4ngl")
+path_progress_destination = 982.75
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_71v1a"]
+script = ExtResource("23_e4ngl")
+duration = 5.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_j564s"]
+script = ExtResource("23_e4ngl")
+path_progress_destination = 2939.0
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_e0lav"]
+script = ExtResource("23_e4ngl")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_5ajbe"]
+script = ExtResource("23_e4ngl")
+path_progress_destination = 4332.18
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_ekbkn"]
+script = ExtResource("23_e4ngl")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [node name="Level" type="Node2D" unique_id=274229064]
 
-[node name="LightSystem" type="Node" parent="." unique_id=1509984193]
+[node name="LightSystem" type="Node" parent="." unique_id=1509984193 node_paths=PackedStringArray("back_ground_color", "blueprint_sprite")]
 script = ExtResource("1_p12eh")
+back_ground_color = NodePath("../ColorRect")
 color_preparation = Color(0.69411767, 0.6901961, 0.68235296, 1)
+blueprint_sprite = NodePath("../Walls/Blueprint")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=832066561]
 z_index = -3
@@ -58,7 +177,8 @@ offset_bottom = 3775.0
 color = Color(0.5686275, 0.5686275, 0.5686275, 1)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1149287691]
-position = Vector2(1284, 617)
+position = Vector2(2003, 704)
+scale = Vector2(0.7, 0.7)
 
 [node name="Blueprint" type="Sprite2D" parent="Walls" unique_id=313779419]
 modulate = Color(0, 0, 0, 1)
@@ -69,9 +189,10 @@ texture = ExtResource("3_3v8cr")
 centered = false
 
 [node name="Collisions" type="Node2D" parent="Walls" unique_id=1705467228]
-visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls/Collisions" unique_id=1416766385]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" unique_id=5695547]
 polygon = PackedVector2Array(51, 41, 52, 1111, 111, 1110, 111, 914, 413, 914, 413, 888, 111, 887, 111, 707, 138, 707, 139, 675, 116, 675, 116, 103, 1303, 102, 1304, 674, 306, 675, 305, 707, 1366, 707, 1365, 674, 1335, 675, 1333, 109, 2414, 109, 2415, 124, 2450, 124, 2451, 107, 3621, 107, 3620, 674, 3568, 675, 3568, 707, 3796, 707, 3795, 886, 3570, 888, 3572, 918, 3787, 917, 3786, 2088, 3124, 2089, 3125, 1623, 3099, 1623, 3101, 2095, 1787, 2094, 1788, 919, 2392, 917, 2393, 888, 1393, 887, 1392, 916, 1764, 916, 1760, 2095, 925, 2097, 924, 914, 1229, 914, 1230, 885, 582, 889, 582, 916, 900, 915, 898, 1580, 819, 1581, 820, 1607, 892, 1608, 892, 2100, 114, 2101, 115, 1610, 654, 1609, 652, 1581, 112, 1580, 113, 1276, 51, 1275, 51, 2140, 3835, 2144, 3835, 639, 3684, 640, 3682, 41)
@@ -209,26 +330,139 @@ y_sort_enabled = true
 [node name="Props" type="Node2D" parent="YSort" unique_id=815073726]
 y_sort_enabled = true
 
+[node name="Toilet" parent="YSort/Props" unique_id=1203108321 instance=ExtResource("5_w23nl")]
+position = Vector2(2101, 1954)
+
+[node name="Shower" parent="YSort/Props" unique_id=886443119 instance=ExtResource("6_15stn")]
+position = Vector2(3108, 1811)
+
+[node name="Bed" parent="YSort/Props" unique_id=1087483128 instance=ExtResource("7_fmw3s")]
+position = Vector2(4346, 983)
+
+[node name="Bed2" parent="YSort/Props" unique_id=1657018202 instance=ExtResource("7_fmw3s")]
+position = Vector2(2723, 974)
+
+[node name="BedTable" parent="YSort/Props" unique_id=1643971875 instance=ExtResource("8_8v3sk")]
+position = Vector2(4269, 832)
+
+[node name="BedTable2" parent="YSort/Props" unique_id=389603354 instance=ExtResource("8_8v3sk")]
+position = Vector2(2644, 830)
+
+[node name="Computer_Table" parent="YSort/Props" unique_id=1838841220 instance=ExtResource("9_2wrp7")]
+position = Vector2(3003, 869)
+
+[node name="Sofa" parent="YSort/Props" unique_id=323390694 instance=ExtResource("10_gyh0o")]
+position = Vector2(3499, 1632.9999)
+rotation = -0.40106922
+
+[node name="Sofa2" parent="YSort/Props" unique_id=217637920 instance=ExtResource("10_gyh0o")]
+position = Vector2(3449.0002, 1869.0002)
+rotation = -1.3714879
+
+[node name="TV" parent="YSort/Props" unique_id=1301251604 instance=ExtResource("11_rquv5")]
+position = Vector2(3739.0002, 1697.0002)
+rotation = 2.2225099
+
+[node name="Plant" parent="YSort/Props" unique_id=1680454906 instance=ExtResource("12_o2j0y")]
+position = Vector2(3298, 2136)
+
+[node name="Kitchen_Table" parent="YSort/Props" unique_id=50392197 instance=ExtResource("13_5kjoe")]
+position = Vector2(4214, 1599)
+
+[node name="LivingRoomTable" parent="YSort/Props" unique_id=1777190801 instance=ExtResource("14_wd4d6")]
+position = Vector2(3514, 2043)
+
+[node name="Plant2" parent="YSort/Props" unique_id=1500120858 instance=ExtResource("12_o2j0y")]
+position = Vector2(4220, 1429)
+
+[node name="Fridge" parent="YSort/Props" unique_id=538269332 instance=ExtResource("15_hdldl")]
+position = Vector2(4643, 1723)
+rotation = -1.5750496
+flip_v = true
+
+[node name="TV_Table" parent="YSort/Props" unique_id=140483500 instance=ExtResource("16_my3gm")]
+position = Vector2(3997, 1428)
+
+[node name="TV_Table2" parent="YSort/Props" unique_id=898770785 instance=ExtResource("16_my3gm")]
+position = Vector2(3268, 1431)
+
+[node name="TV_Table3" parent="YSort/Props" unique_id=1029880748 instance=ExtResource("16_my3gm")]
+position = Vector2(2738, 2159)
+rotation = -1.606354
+
+[node name="Armchair" parent="YSort/Props" unique_id=1067344209 instance=ExtResource("17_e4ngl")]
+position = Vector2(2234, 953.99994)
+rotation = -0.5487554
+
+[node name="Lamp" parent="YSort/Props" unique_id=1954075957 instance=ExtResource("18_vgith")]
+position = Vector2(3195, 865)
+
+[node name="Armchair2" parent="YSort/Props" unique_id=1233190670 instance=ExtResource("17_e4ngl")]
+position = Vector2(3682, 1034)
+rotation = -1.63946
+flip_v = true
+
+[node name="Kitchen" parent="YSort/Props" unique_id=528183046 instance=ExtResource("19_hvbwg")]
+position = Vector2(4205, 2049)
+
+[node name="Table" parent="YSort/Props" unique_id=1152592878 instance=ExtResource("20_00uv5")]
+position = Vector2(2659, 1444)
+
+[node name="Plant3" parent="YSort/Props" unique_id=198856765 instance=ExtResource("12_o2j0y")]
+position = Vector2(3742, 1158)
+
 [node name="Characters" type="Node2D" parent="YSort" unique_id=1174942420]
 y_sort_enabled = true
 
 [node name="ChasePath" type="Path2D" parent="YSort/Characters" unique_id=341057510]
 modulate = Color(0, 0, 0, 1)
 y_sort_enabled = true
-curve = SubResource("Curve2D_lm55j")
+curve = SubResource("Curve2D_w23nl")
 
 [node name="Character" parent="YSort/Characters" unique_id=424702170 instance=ExtResource("5_lm55j")]
-position = Vector2(1407, 1815)
+position = Vector2(2067, 1532)
+
+[node name="girl" type="Path2D" parent="YSort/Characters" unique_id=371436523]
+y_sort_enabled = true
+curve = SubResource("Curve2D_e4ngl")
+
+[node name="Girl" parent="YSort/Characters/girl" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("22_hdldl")]
+position = Vector2(2814, 1040)
+progress = 6762.096
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("23_e4ngl")]([SubResource("Resource_vgith"), SubResource("Resource_hvbwg"), SubResource("Resource_00uv5"), SubResource("Resource_vg68f"), SubResource("Resource_2u8oe"), SubResource("Resource_my3gm"), SubResource("Resource_e4ngl")])
+
+[node name="ex_husband" type="Path2D" parent="YSort/Characters" unique_id=425087822]
+y_sort_enabled = true
+curve = SubResource("Curve2D_hdldl")
+
+[node name="Ex_Husband" parent="YSort/Characters/ex_husband" unique_id=893035030 node_paths=PackedStringArray("chase_path") instance=ExtResource("23_my3gm")]
+position = Vector2(4425, 1037)
+progress = 4332.1816
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("23_e4ngl")]([SubResource("Resource_wlexm"), SubResource("Resource_8h2sk"), SubResource("Resource_yb1mr"), SubResource("Resource_71v1a"), SubResource("Resource_j564s"), SubResource("Resource_e0lav"), SubResource("Resource_5ajbe"), SubResource("Resource_ekbkn")])
 
 [node name="Loot" type="Node2D" parent="YSort" unique_id=1827791998]
 y_sort_enabled = true
 
+[node name="bathroom" parent="YSort/Loot" unique_id=1029814026 instance=ExtResource("22_vg68f")]
+position = Vector2(2660, 1541)
+
+[node name="sleepingroom" parent="YSort/Loot" unique_id=732385189 instance=ExtResource("22_vg68f")]
+position = Vector2(4458, 1121)
+
+[node name="livingroom" parent="YSort/Loot" unique_id=976257733 instance=ExtResource("22_vg68f")]
+position = Vector2(3395, 2142)
+
+[node name="office" parent="YSort/Loot" unique_id=196321196 instance=ExtResource("22_vg68f")]
+position = Vector2(2936, 931)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1772549326]
-position = Vector2(3317, 1682)
-zoom = Vector2(0.435, 0.435)
+position = Vector2(3352, 1475)
+zoom = Vector2(0.64, 0.64)
 
 [node name="ExtractionPoint" parent="." unique_id=1663210596 instance=ExtResource("6_sw10h")]
-position = Vector2(1356, 1805)
+position = Vector2(2063, 1534)
 
 [editable path="Walls/Rooms/Room"]
 [editable path="Walls/Rooms/Room2"]
