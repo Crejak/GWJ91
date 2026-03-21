@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_mdm2h"]
 [ext_resource type="Texture2D" uid="uid://teo6wh4fcnj8" path="res://assets/art/characters/geek_walk.png" id="2_mdm2h"]
+[ext_resource type="Texture2D" uid="uid://brlvhr4md0jjt" path="res://assets/art/characters/geek_sit.png" id="3_sfhpy"]
 
 [node name="Geek" unique_id=786583104 instance=ExtResource("1_mdm2h")]
 walk_texture = ExtResource("2_mdm2h")
-idle_texture = ExtResource("2_mdm2h")
+idle_texture = ExtResource("3_sfhpy")
 
 [node name="Visual" parent="RigidBody2D" parent_id_path=PackedInt32Array(997370158) index="0" unique_id=390448743]
 position = Vector2(0, -12.000002)

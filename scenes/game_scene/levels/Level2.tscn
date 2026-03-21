@@ -9,7 +9,10 @@
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_h5dmj"]
 [ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="7_0lrvg"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="8_tcbo6"]
+[ext_resource type="PackedScene" uid="uid://mxd2xxqbwe6y" path="res://scenes/game_scene/environment/movable_objects/objects/lamp.tscn" id="11_3n6yu"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="11_67g1p"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/bathtub.tscn" id="12_18vbk"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="13_p0206"]
 
 [sub_resource type="Resource" id="Resource_67g1p"]
 script = ExtResource("2_h5dmj")
@@ -73,6 +76,26 @@ offset_left = 193.0
 offset_top = 527.0
 offset_right = 193.0
 offset_bottom = 527.0
+
+[node name="Lamp" parent="." unique_id=1203108321 instance=ExtResource("11_3n6yu")]
+position = Vector2(2551, 2150)
+
+[node name="Bathtub" parent="." unique_id=304874133 instance=ExtResource("12_18vbk")]
+position = Vector2(2996, 2174)
+
+[node name="Furniture" parent="." unique_id=1191932593 instance=ExtResource("13_p0206")]
+position = Vector2(3235.0002, 1620.0001)
+rotation = -1.57676
+flip_v = true
+
+[node name="Furniture2" parent="." unique_id=455708181 instance=ExtResource("13_p0206")]
+position = Vector2(3023, 1402)
+
+[node name="Furniture3" parent="." unique_id=1385749891 instance=ExtResource("13_p0206")]
+position = Vector2(3091, 1401)
+
+[node name="Furniture4" parent="." unique_id=1990078539 instance=ExtResource("13_p0206")]
+position = Vector2(3159, 1400)
 
 [editable path="PlayableEnvironment/Level"]
 [editable path="PlayableEnvironment/Level/Walls/Rooms/Room"]

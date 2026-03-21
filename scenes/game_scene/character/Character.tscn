@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhhfhx3n5d4nr" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
 [ext_resource type="Texture2D" uid="uid://coequeusuck5b" path="res://assets/art/characters/player.png" id="2_n57ve"]
-[ext_resource type="Script" uid="uid://cbyah72uhyptv" path="res://scenes/game_scene/character/hit_light_zone.gd" id="3_4d22m"]
+[ext_resource type="Script" path="res://scenes/game_scene/character/hit_light_zone.gd" id="3_4d22m"]
 [ext_resource type="Script" path="res://scenes/game_scene/character/reveal_area.gd" id="4_4d22m"]
 
 [sub_resource type="Gradient" id="Gradient_n57ve"]
@@ -18,12 +18,12 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8504274, 0.8504274)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n57ve"]
-radius = 17.0
-height = 74.0
+radius = 20.0
+height = 40.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4d22m"]
-radius = 34.0
-height = 110.0
+radius = 41.0
+height = 102.0
 
 [node name="Character" type="RigidBody2D" unique_id=424702170 node_paths=PackedStringArray("debug_label")]
 collision_layer = 2
@@ -36,6 +36,7 @@ script = ExtResource("1_pi01j")
 debug_label = NodePath("DebugLabel")
 
 [node name="Visual" type="Node2D" parent="." unique_id=1015642632]
+position = Vector2(-7, -3)
 
 [node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=1383117335]
 position = Vector2(2, -71.5)
@@ -76,9 +77,9 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_4d22m")
 debug_color = Color(0.72156864, 0, 0.75686276, 0.12156863)
 
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=344111750]
+current = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="inventory_changed" from="." to="." method="_on_inventory_changed"]
-
-[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=344111750]
-current = true
