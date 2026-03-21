@@ -140,7 +140,6 @@ position = Vector2(418, 720)
 position = Vector2(185, 521)
 min_speed = 15.0
 max_speed = 150.0
-max_silent_speed = 999.0
 
 [node name="Dad" parent="PlayableEnvironment/Environment/TestRoom/Path2D" parent_id_path=PackedInt32Array(2058501475, 137920947) index="0" unique_id=786583104]
 timeline = Array[ExtResource("8_omu1n")]([SubResource("Resource_r13ha"), SubResource("Resource_qcgpc"), SubResource("Resource_xu74q"), SubResource("Resource_r571m"), SubResource("Resource_dolxl")])

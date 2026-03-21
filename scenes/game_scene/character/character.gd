@@ -31,11 +31,11 @@ signal object_dropped(source: Character, object: MovableObject);
 @export var speed_floor_ratio: float = 0.333;
 
 @export_group("Movement/Detection")
-@export var max_silent_speed: float = 26
+@export var max_silent_speed: float = 200
 @export var base_noise_value: float = 5
 ## Intensity of wall hit sound. For example, a wall mass of 10 kg means that walking
 ## into a wall makes the same noise intensity of walking into a movable object of 10 kg.
-@export var wall_mass: float = 10;
+@export var wall_mass: float = 1;
 
 var speed_loss_factor: float = 1.;
 

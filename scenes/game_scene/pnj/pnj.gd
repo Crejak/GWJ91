@@ -41,6 +41,10 @@ var is_waiting_for_step_to_finish: bool
 @export var walk_texture: Texture2D
 @export var idle_texture: Texture2D
 
+@export_group("Detection")
+@export var object_noise_factor: float = 0.2
+@export var wall_noise_factor: float = 0.2
+
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_game_phase_changed)
 	SignalBus.detection.on_movable_object_noise_start.connect(_on_movable_object_noise_start)
@@ -137,14 +141,14 @@ var wall_making_noise: Dictionary[StaticBody2D, float]
 
 func _on_movable_object_noise_start(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float) -> void:
 	object_making_noise[in_object] = in_sound_intensity / body.global_position.distance_squared_to(in_position)
-	add_detection(object_making_noise[in_object] * 0.2)
+	add_detection(object_making_noise[in_object] * object_noise_factor)
 
 func _on_movable_object_noise_stop(in_object: MovableObject) -> void:
 	object_making_noise.erase(in_object)
 
 func _on_wall_noise_start(in_position: Vector2, in_wall: StaticBody2D, in_sound_intensity: float) -> void:
 	wall_making_noise[in_wall] = in_sound_intensity / body.global_position.distance_squared_to(in_position)
-	add_detection(wall_making_noise[in_wall] * 0.2)
+	add_detection(wall_making_noise[in_wall] * wall_noise_factor)
 	
 func _on_wall_noise_stop(in_wall: StaticBody2D) -> void:
 	wall_making_noise.erase(in_wall)
