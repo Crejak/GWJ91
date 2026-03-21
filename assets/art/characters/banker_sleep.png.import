@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dommie5id0s37"
-path="res://.godot/imported/dinner_table.png-e4d8e5c3b75ce4496834befee5c563ff.ctex"
+uid="uid://bia5qjf2ap1af"
+path="res://.godot/imported/banker_sleep.png-28aa23fb676e0ae98d19f1610ec4c5b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/dinner_table.png"
-dest_files=["res://.godot/imported/dinner_table.png-e4d8e5c3b75ce4496834befee5c563ff.ctex"]
+source_file="res://assets/art/characters/banker_sleep.png"
+dest_files=["res://.godot/imported/banker_sleep.png-28aa23fb676e0ae98d19f1610ec4c5b5.ctex"]
 
 [params]
 

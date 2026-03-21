@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ndh"]
 size = Vector2(105, 112)
 
-[node name="TV" unique_id=1203108321 instance=ExtResource("1_3o3fd")]
+[node name="Shower" unique_id=1203108321 instance=ExtResource("1_3o3fd")]
 mass = 200.0
 can_move = false
 
