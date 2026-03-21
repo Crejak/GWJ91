@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d7c5nor2fr6f"]
+
+[ext_resource type="Texture2D" uid="uid://b7k106ngily2u" path="res://assets/art/banniere_itch.png" id="1_fmllt"]
+[ext_resource type="FontFile" uid="uid://bj260b2gjpnwp" path="res://assets/fonts/paperkind/Paperkind.otf" id="2_r858v"]
+
+[node name="Marketing" type="Node2D" unique_id=241762920]
+
+[node name="BanniereItch" type="Sprite2D" parent="." unique_id=452431616]
+position = Vector2(919, 506)
+texture = ExtResource("1_fmllt")
+
+[node name="Label" type="Label" parent="." unique_id=1793028691]
+modulate = Color(0.21176471, 0.21176471, 0.21176471, 1)
+offset_left = 606.0
+offset_top = 267.0
+offset_right = 1229.0
+offset_bottom = 379.0
+theme_override_constants/line_spacing = -9
+theme_override_fonts/font = ExtResource("2_r858v")
+theme_override_font_sizes/font_size = 54
+text = "Rob Roberts 
+the ROBBER"
+horizontal_alignment = 1
+vertical_alignment = 1

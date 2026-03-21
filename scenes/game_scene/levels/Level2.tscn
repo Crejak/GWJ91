@@ -47,6 +47,12 @@ prop_container_node = NodePath("Level/YSort/Props")
 
 [node name="Level" parent="PlayableEnvironment" unique_id=274229064 instance=ExtResource("3_h5dmj")]
 
+[node name="Girl" parent="PlayableEnvironment/Level/YSort/Characters/girl" parent_id_path=PackedInt32Array(274229064, 371436523) index="0" unique_id=786583104]
+max_speed = 100.0
+
+[node name="Ex_Husband" parent="PlayableEnvironment/Level/YSort/Characters/ex_husband" parent_id_path=PackedInt32Array(274229064, 425087822) index="0" unique_id=893035030]
+max_speed = 100.0
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=566703648]
 
 [node name="IntroductionPhase" parent="UI" unique_id=2114512006 instance=ExtResource("1_76vmh")]

@@ -64,6 +64,21 @@ visible = false
 position = Vector2(33, 109)
 shape = SubResource("RectangleShape2D_yatoe")
 
+[node name="Dad" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Dad_Path" parent_id_path=PackedInt32Array(274229064, 891349558) index="0" unique_id=786583104]
+max_speed = 100.0
+
+[node name="Geek" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Geek_Path" parent_id_path=PackedInt32Array(274229064, 1584143438) index="0" unique_id=1397355178]
+max_speed = 100.0
+
+[node name="Dog" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Dog_Path" parent_id_path=PackedInt32Array(274229064, 1671234144) index="0" unique_id=605722148]
+max_speed = 100.0
+
+[node name="Wife_Path" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters" parent_id_path=PackedInt32Array(274229064, 1174942420) index="4" unique_id=79069387]
+visible = false
+
+[node name="Wife" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Wife_Path" index="0" unique_id=339559444]
+max_speed = 100.0
+
 [node name="PickablePresent" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot" parent_id_path=PackedInt32Array(274229064, 1827791998) index="0" unique_id=1203108321 instance=ExtResource("5_1i2go")]
 position = Vector2(679, 1256)
 
@@ -86,23 +101,23 @@ Please read it to understand all the lore. I promise it's really cool."
 
 [node name="PreparationPhase" parent="UI" unique_id=1630391834 instance=ExtResource("4_yatoe")]
 visible = false
-preparation_time = 35.0
+preparation_time = 60.0
 
 [node name="ConclusionPhase" parent="UI" unique_id=1435576337 instance=ExtResource("5_bej4l")]
 visible = false
 
 [node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("6_1i2go")]
 visible = false
+infiltration_phase_time = 130.0
 
 [node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("7_6ekos")]
 visible = false
 
-[node name="EntryPoint" parent="UI" unique_id=1056506662 node_paths=PackedStringArray("character") instance=ExtResource("8_dlj1a")]
-offset_left = 193.0
-offset_top = 527.0
-offset_right = 193.0
-offset_bottom = 527.0
-character = NodePath("../../PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Character")
+[node name="EntryPoint" parent="UI" unique_id=1056506662 instance=ExtResource("8_dlj1a")]
+offset_left = 1673.0
+offset_top = 1933.0
+offset_right = 1673.0
+offset_bottom = 1933.0
 
 [editable path="PlayableEnvironment/LD_Mrs_Yellow"]
 [editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room"]
@@ -118,8 +133,6 @@ character = NodePath("../../PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/C
 [editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room6"]
 [editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room7"]
 [editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room13"]
-[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Doors/DoorMovableInteractableObject"]
-[editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/Doors/DoorMovableInteractableObject2"]
 [editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/ExtractionPoint"]
 [editable path="PlayableEnvironment/LD_Mrs_Yellow/Walls/ExtractionPoint2"]
 [editable path="PlayableEnvironment/LD_Mrs_Yellow/YSort/Props/Sink"]

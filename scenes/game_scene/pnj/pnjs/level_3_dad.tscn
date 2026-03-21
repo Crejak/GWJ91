@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cqsq6mikt6iw7"]
+[gd_scene format=3 uid="uid://cdsljjqeqxfbi"]
 
 [ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_iptjv"]
 [ext_resource type="Texture2D" uid="uid://485qcg58anf4" path="res://assets/art/characters/dad_walk.png" id="2_v08wr"]
@@ -9,6 +9,7 @@ walk_texture = ExtResource("2_v08wr")
 idle_texture = ExtResource("3_5mnbm")
 
 [node name="RigidBody2D" parent="." index="0" unique_id=997370158]
+collision_mask = 13
 can_sleep = false
 
 [node name="Visual" parent="RigidBody2D" index="0" unique_id=390448743]

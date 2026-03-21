@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://bdsqyn3o5n3wl"]
 
 [ext_resource type="PackedScene" uid="uid://cccj6psuw0ie7" path="res://scenes/game_scene/levels/level_design/level_base.tscn" id="1_wqo8v"]
-[ext_resource type="PackedScene" uid="uid://dhu6ro1ty2trc" path="res://scenes/game_scene/environment/movable_objects/door_movable_interactable_object.tscn" id="2_3ymgv"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="2_761ew"]
-[ext_resource type="PackedScene" uid="uid://cqsq6mikt6iw7" path="res://scenes/game_scene/pnj/pnjs/level_3_dad.tscn" id="2_ibswy"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/pnj/pnjs/level_3_dad.tscn" id="2_ibswy"]
 [ext_resource type="PackedScene" uid="uid://sit441ithg7p" path="res://scenes/game_scene/pnj/pnjs/level_3_geek.tscn" id="3_k0tv0"]
 [ext_resource type="Texture2D" uid="uid://b4o33mn3ktsc3" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/couloir.PNG" id="3_xgbm2"]
 [ext_resource type="Texture2D" uid="uid://djjowptriu5tv" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_parents.PNG" id="4_n8m35"]
-[ext_resource type="PackedScene" uid="uid://dfoj67snbxe2f" path="res://scenes/game_scene/pnj/pnjs/level_3_teckel.tscn" id="4_v6dri"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/pnj/pnjs/level_3_teckel.tscn" id="4_v6dri"]
 [ext_resource type="Texture2D" uid="uid://dj4w570vn4sce" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_geek.PNG" id="5_xtf2d"]
 [ext_resource type="Texture2D" uid="uid://y0q8f3775l2s" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/sdb.PNG" id="6_56raw"]
 [ext_resource type="PackedScene" uid="uid://b4yqrr2f0upe1" path="res://scenes/game_scene/environment/movable_objects/objects/armchair.tscn" id="6_iit3q"]
@@ -29,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://cw8wrc1y3rt08" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_sink.tscn" id="17_rpa6g"]
 [ext_resource type="PackedScene" uid="uid://d0x4h7rmkq1ev" path="res://scenes/game_scene/environment/movable_objects/objects/diner_table.tscn" id="18_8v5l6"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="20_02gqg"]
-[ext_resource type="PackedScene" uid="uid://cqr24ncfv4dhp" path="res://scenes/game_scene/pnj/pnjs/level_3_wife.tscn" id="30_q75u2"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/pnj/pnjs/level_3_wife.tscn" id="30_q75u2"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="31_05cdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5t5y"]
@@ -80,9 +79,9 @@ size = Vector2(122, 197)
 
 [sub_resource type="Curve2D" id="Curve2D_x87di"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 92, 229, 0, 0, 0, 0, -136, -1038, 0, 0, 0, 0, -786, -977, 0, 0, 0, 0, -751, -312, 0, 0, 0, 0, -735, 263, 0, 0, 0, 0, -368, 258)
+"points": PackedVector2Array(0, 0, 0, 0, 92, 229, 0, 0, 0, 0, -144, -1099, 0, 0, 0, 0, -805, -1071, 0, 0, 0, 0, -809, -780, 0, 0, 0, 0, -737, -747, 0, 0, 0, 0, -727, -247, 0, 0, 0, 0, -564, -221, 0, 0, 0, 0, -530, 261, 0, 0, 0, 0, -429, 266)
 }
-point_count = 6
+point_count = 9
 
 [sub_resource type="Resource" id="Resource_dengy"]
 script = ExtResource("20_02gqg")
@@ -91,7 +90,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_5413j"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 3548.39
+path_progress_destination = 3630.11
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -113,9 +112,9 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Curve2D" id="Curve2D_uy12d"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 622, 1342, 0, 0, 0, 0, 593, 888, 0, 0, 0, 0, 1650, 869, 0, 0, 0, 0, 1662, 456, 0, 0, 0, 0, 1332, 481, 0, 0, 0, 0, 1310, 252, 0, 0, 0, 0, 1133, 237, 0, 0, 0, 0, 1322, 252, 0, 0, 0, 0, 1699, 865, 0, 0, 0, 0, 578, 912, 0, 0, 0, 0, 595, 1366, 0, 0, 0, 0, 558, 881, 0, 0, 0, 0, 1136, 902, 0, 0, 0, 0, 1160, 1091, 0, 0, 0, 0, 1430, 1107, 0, 0, 0, 0, 1428, 1247, 0, 0, 0, 0, 1618, 1253, 0, 0, 0, 0, 1598, 1680, 0, 0, 0, 0, 1203, 1835, 0, 0, 0, 0, 1107, 1777, 0, 0, 0, 0, 1228, 1841, 0, 0, 0, 0, 1605, 1740, 0, 0, 0, 0, 1598, 1279, 0, 0, 0, 0, 1077, 916, 0, 0, 0, 0, 560, 923, 0, 0, 0, 0, 687, 1975, 0, 0, 0, 0, 888, 1978)
+"points": PackedVector2Array(0, 0, 0, 0, 644, 1352, 0, 0, 0, 0, 619, 933, 0, 0, 0, 0, 1124, 937, 0, 0, 0, 0, 1131, 1039, 0, 0, 0, 0, 1428, 1249, 0, 0, 0, 0, 1620, 1252, 0, 0, 0, 0, 1700, 1041, 0, 0, 0, 0, 1897, 1027, 0, 0, 0, 0, 1868, 742, 0, 0, 0, 0, 1320, 266, 0, 0, 0, 0, 1133, 237, 0, 0, 0, 0, 1322, 252, 0, 0, 0, 0, 1660, 682, 0, 0, 0, 0, 1655, 898, 0, 0, 0, 0, 578, 912, 0, 0, 0, 0, 595, 1366, 0, 0, 0, 0, 558, 881, 0, 0, 0, 0, 1136, 902, 0, 0, 0, 0, 1160, 1091, 0, 0, 0, 0, 1428, 1247, 0, 0, 0, 0, 1618, 1253, 0, 0, 0, 0, 1598, 1680, 0, 0, 0, 0, 1203, 1835, 0, 0, 0, 0, 1107, 1777, 0, 0, 0, 0, 1228, 1841, 0, 0, 0, 0, 1605, 1740, 0, 0, 0, 0, 1617, 1252, 0, 0, 0, 0, 1429, 1246, 0, 0, 0, 0, 1143, 1071, 0, 0, 0, 0, 1120, 917, 0, 0, 0, 0, 560, 923, 0, 0, 0, 0, 687, 1975, 0, 0, 0, 0, 888, 1978)
 }
-point_count = 27
+point_count = 33
 
 [sub_resource type="Resource" id="Resource_agi6l"]
 script = ExtResource("20_02gqg")
@@ -125,7 +124,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_gsa50"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 2663.9
+path_progress_destination = 3196.65
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -137,7 +136,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_m2va6"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 5150.3
+path_progress_destination = 5721.4
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -149,7 +148,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_e736n"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 7988.5
+path_progress_destination = 8453.15
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -161,7 +160,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_5imyk"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 11333.165
+path_progress_destination = 11926.07
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -210,7 +209,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_se6ho"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 10000.0
+path_progress_destination = 9658.25
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -220,9 +219,9 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Curve2D" id="Curve2D_siwb2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1365, 481, 0, 0, 0, 0, 1429, 259, 0, 0, 0, 0, 1457, 416, 0, 0, 0, 0, 1691, 465, 0, 0, 0, 0, 1442, 570, 0, 0, 0, 0, 1296, 240, 0, 0, 0, 0, 1122, 238, 0, 0, 0, 0, 1381, 236, 0, 0, 0, 0, 1666, 882, 0, 0, 0, 0, 915, 887, 0, 0, 0, 0, 913, 630, 0, 0, 0, 0, 520, 706, 0, 0, 0, 0, 922, 718, 0, 0, 0, 0, 926, 898, 0, 0, 0, 0, 1649, 895, 0, 0, 0, 0, 1659, 690, 0, 0, 0, 0, 2012, 699, 0, 0, 0, 0, 2345, 713, 0, 0, 0, 0, 2548, 393, 0, 0, 0, 0, 2682, 819, 0, 0, 0, 0, 2900, 829, 0, 0, 0, 0, 2909, 2003)
+"points": PackedVector2Array(0, 0, 0, 0, 1086, 292, 0, 0, 0, 0, 1381, 236, 0, 0, 0, 0, 1666, 882, 0, 0, 0, 0, 915, 887, 0, 0, 0, 0, 913, 630, 0, 0, 0, 0, 520, 706, 0, 0, 0, 0, 922, 718, 0, 0, 0, 0, 926, 898, 0, 0, 0, 0, 1649, 895, 0, 0, 0, 0, 1659, 690, 0, 0, 0, 0, 2012, 699, 0, 0, 0, 0, 2345, 713, 0, 0, 0, 0, 2548, 393, 0, 0, 0, 0, 2682, 819, 0, 0, 0, 0, 2900, 829, 0, 0, 0, 0, 2909, 2003)
 }
-point_count = 22
+point_count = 16
 
 [sub_resource type="Resource" id="Resource_3ymgv"]
 script = ExtResource("20_02gqg")
@@ -232,7 +231,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_761ew"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 1419.9
+path_progress_destination = 2418.45
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -249,7 +248,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_7geqi"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 3860.22
+path_progress_destination = 4943.2
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -261,18 +260,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_n8m35"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 6338.93
-pnj_state = 1
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_xtf2d"]
-script = ExtResource("20_02gqg")
-duration = 15.0
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_56raw"]
-script = ExtResource("20_02gqg")
-path_progress_destination = 8222.77
+path_progress_destination = 6829.33
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -290,16 +278,20 @@ blueprint_sprite = NodePath("../Walls/Blueprint")
 [node name="ColorRect" parent="." index="1" unique_id=832066561]
 color = Color(0.5686275, 0.5686275, 0.5686275, 1)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" parent_id_path=PackedInt32Array(1416766385) index="0" unique_id=899178595]
+[node name="StaticBody2D" parent="Walls/Collisions" parent_id_path=PackedInt32Array(1705467228) index="0" unique_id=1416766385]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" index="0" unique_id=899178595]
 polygon = PackedVector2Array(302, 64, 301, 2156, 1781, 2155, 1784, 2021, 1713, 2021, 1711, 2081, 1314, 2083, 1312, 1889, 1293, 1889, 1295, 2084, 1041, 2085, 1042, 1631, 1295, 1631, 1295, 1763, 1312, 1763, 1312, 1630, 1544, 1628, 1544, 1311, 1522, 1311, 1524, 1607, 799, 1607, 799, 987, 1075, 988, 1075, 968, 659, 969, 659, 992, 774, 991, 774, 1631, 1024, 1630, 1024, 2085, 370, 2085, 370, 991, 508, 991, 509, 969, 367, 970, 366, 807, 865, 809, 866, 788, 365, 789, 370, 214, 860, 216, 860, 535, 1060, 537, 1058, 785, 972, 785, 971, 811, 1579, 811, 1579, 783, 1081, 783, 1082, 537, 1258, 537, 1259, 299, 1236, 299, 1237, 519, 886, 517, 882, 123, 1238, 125, 1239, 199, 1261, 198, 1262, 123, 2065, 122, 2062, 633, 2099, 633, 2101, 114, 3234, 119, 3234, 545, 3296, 545, 3296, 435, 3492, 436, 3493, 1258, 3296, 1258, 3295, 1156, 3233, 1158, 3238, 2099, 2785, 2097, 2782, 1301, 2386, 1297, 2385, 902, 2829, 887, 2828, 857, 2301, 877, 2305, 903, 2359, 902, 2363, 1331, 2758, 1330, 2760, 2095, 2239, 2095, 2231, 1084, 1776, 1096, 1715, 1608, 1681, 1608, 1679, 1631, 1713, 1632, 1712, 1841, 1784, 1842, 1782, 2158, 2175, 2151, 3567, 2143, 3573, 57)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" parent_id_path=PackedInt32Array(1416766385) index="1" unique_id=1009915255]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" index="1" unique_id=1009915255]
 polygon = PackedVector2Array(1200, 966, 1200, 989, 1523, 988, 1523, 1168, 1544, 1167, 1544, 989, 1780, 982, 1781, 778, 1753, 778, 1755, 958)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" parent_id_path=PackedInt32Array(1416766385) index="2" unique_id=750247045]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" index="2" unique_id=750247045]
 polygon = PackedVector2Array(1972, 874, 2063, 874, 2061, 760, 2095, 760, 2095, 873, 2159, 875, 2159, 902, 1969, 910)
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" parent_id_path=PackedInt32Array(1416766385) index="3" unique_id=1348708925]
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" index="3" unique_id=1348708925]
 polygon = PackedVector2Array(2993, 857, 2994, 886, 3235, 882, 3235, 967, 3297, 968, 3296, 736, 3231, 736, 3232, 853)
 
 [node name="Room" parent="Walls/Rooms" parent_id_path=PackedInt32Array(1847597720) index="0" unique_id=727033528]
@@ -456,36 +448,13 @@ position = Vector2(-38, 33)
 scale = Vector2(2.08, 2.08)
 texture = ExtResource("7_n8m35")
 
-[node name="Doors" type="Node2D" parent="Walls" parent_id_path=PackedInt32Array(1149287691) index="3" unique_id=2000592868]
-
-[node name="DoorMovableInteractableObject" parent="Walls/Doors" index="0" unique_id=2049277762 instance=ExtResource("2_3ymgv")]
-position = Vector2(2197, 912)
-
-[node name="DoorBlockingPoints" parent="Walls/Doors/DoorMovableInteractableObject" index="3" unique_id=614576422]
-position = Vector2(11, -2)
-
-[node name="CollisionShape2D" parent="Walls/Doors/DoorMovableInteractableObject/DoorBlockingPoints" index="0" unique_id=238904713]
-position = Vector2(139, 38)
-
-[node name="CollisionShape2D2" parent="Walls/Doors/DoorMovableInteractableObject/DoorBlockingPoints" index="1" unique_id=1871299008]
-position = Vector2(184, -49)
-
-[node name="DoorMovableInteractableObject2" parent="Walls/Doors" index="1" unique_id=1146415272 instance=ExtResource("2_3ymgv")]
-position = Vector2(2879, 894)
-
-[node name="CollisionShape2D" parent="Walls/Doors/DoorMovableInteractableObject2/DoorBlockingPoints" parent_id_path=PackedInt32Array(1146415272, 614576422) index="0" unique_id=238904713]
-position = Vector2(186, 0)
-
-[node name="CollisionShape2D2" parent="Walls/Doors/DoorMovableInteractableObject2/DoorBlockingPoints" parent_id_path=PackedInt32Array(1146415272, 614576422) index="1" unique_id=1871299008]
-position = Vector2(184, -49)
-
-[node name="ExtractionPoint" parent="Walls" parent_id_path=PackedInt32Array(1149287691) index="4" unique_id=1663210596 instance=ExtResource("9_56raw")]
+[node name="ExtractionPoint" parent="Walls" parent_id_path=PackedInt32Array(1149287691) index="3" unique_id=1663210596 instance=ExtResource("9_56raw")]
 position = Vector2(1760, 1936)
 
 [node name="Sprite2D" parent="Walls/ExtractionPoint/Visuals" parent_id_path=PackedInt32Array(1663210596, 2123251920) index="0" unique_id=1216855650]
 flip_h = true
 
-[node name="ExtractionPoint2" parent="Walls" parent_id_path=PackedInt32Array(1149287691) index="5" unique_id=1960225825 instance=ExtResource("9_56raw")]
+[node name="ExtractionPoint2" parent="Walls" parent_id_path=PackedInt32Array(1149287691) index="4" unique_id=1960225825 instance=ExtResource("9_56raw")]
 position = Vector2(3453, 1206)
 
 [node name="Sprite2D" parent="Walls/ExtractionPoint2/Visuals" parent_id_path=PackedInt32Array(1960225825, 2123251920) index="0" unique_id=1216855650]
@@ -620,7 +589,7 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_uy12d")
 
 [node name="Geek" parent="YSort/Characters/Geek_Path" index="0" unique_id=1397355178 node_paths=PackedStringArray("chase_path") instance=ExtResource("3_k0tv0")]
-position = Vector2(622, 1342)
+position = Vector2(644, 1352)
 chase_path = NodePath("../../ChasePath")
 timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_agi6l"), SubResource("Resource_gsa50"), SubResource("Resource_pgckm"), SubResource("Resource_m2va6"), SubResource("Resource_bk4qf"), SubResource("Resource_e736n"), SubResource("Resource_r6uh3"), SubResource("Resource_5imyk"), SubResource("Resource_8gb7v")])
 
@@ -635,12 +604,13 @@ chase_path = NodePath("../../ChasePath")
 timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_w4uva"), SubResource("Resource_2hj6u"), SubResource("Resource_hmn4b"), SubResource("Resource_2k5h8"), SubResource("Resource_ohvuj"), SubResource("Resource_mcqk0"), SubResource("Resource_se6ho"), SubResource("Resource_pm6ld")])
 
 [node name="Wife_Path" type="Path2D" parent="YSort/Characters" parent_id_path=PackedInt32Array(1174942420) index="4" unique_id=79069387]
+y_sort_enabled = true
 curve = SubResource("Curve2D_siwb2")
 
 [node name="Wife" parent="YSort/Characters/Wife_Path" index="0" unique_id=339559444 node_paths=PackedStringArray("chase_path") instance=ExtResource("30_q75u2")]
-position = Vector2(1365, 481)
+position = Vector2(1086, 292)
 chase_path = NodePath("../../ChasePath")
-timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_3ymgv"), SubResource("Resource_761ew"), SubResource("Resource_t5t5y"), SubResource("Resource_4kl0u"), SubResource("Resource_7geqi"), SubResource("Resource_xgbm2"), SubResource("Resource_n8m35"), SubResource("Resource_xtf2d"), SubResource("Resource_56raw"), SubResource("Resource_05cdo")])
+timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_3ymgv"), SubResource("Resource_761ew"), SubResource("Resource_t5t5y"), SubResource("Resource_4kl0u"), SubResource("Resource_7geqi"), SubResource("Resource_xgbm2"), SubResource("Resource_n8m35"), SubResource("Resource_05cdo")])
 
 [node name="Character" parent="YSort/Characters" parent_id_path=PackedInt32Array(1174942420) index="5" unique_id=424702170 instance=ExtResource("31_05cdo")]
 position = Vector2(1681, 1936)
@@ -661,8 +631,6 @@ position = Vector2(1899, 1107)
 [editable path="Walls/Rooms/Room6"]
 [editable path="Walls/Rooms/Room7"]
 [editable path="Walls/Rooms/Room13"]
-[editable path="Walls/Doors/DoorMovableInteractableObject"]
-[editable path="Walls/Doors/DoorMovableInteractableObject2"]
 [editable path="Walls/ExtractionPoint"]
 [editable path="Walls/ExtractionPoint2"]
 [editable path="YSort/Props/Sink"]
