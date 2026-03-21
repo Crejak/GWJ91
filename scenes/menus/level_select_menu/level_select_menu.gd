@@ -11,14 +11,14 @@ signal level_selected
 @onready var phone_scene_node = %PhoneSceneNode
 @onready var level_buttons_container: ItemList = %LevelButtonsContainer
 @onready var scene_lister: SceneLister = $SceneLister
-var level_paths : Array[String]
+@export var level_paths : Array[String]
 
 @onready var phone_scene :PackedScene = load("res://scenes/level_selection_screen/phone_scene.tscn")
 
 
 func _ready() -> void:
 	#add_levels_to_container()
-	_retreive_level_paths()
+	#_retreive_level_paths()
 	_update_level_panels()
 	_load_story_event()
 	AudioBus.play_music("TITLE_SCREEN")
