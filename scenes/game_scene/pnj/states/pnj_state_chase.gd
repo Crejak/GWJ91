@@ -14,6 +14,11 @@ func _enter_state() -> void:
 	pnj.body.top_level = true
 	pnj.body.global_position = pos
 	pnj.animation_player.play("move")
+	pnj.audio_player.stream_paused = false
+
+func _exit_state() -> void:
+	pnj.audio_player.stream_paused = true
+
 
 func _physics_process(delta: float) -> void:
 	pnj.sprite.flip_h = pnj.body.linear_velocity.x > 0

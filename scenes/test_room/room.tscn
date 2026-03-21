@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sew38c8nl2du"]
 
-[ext_resource type="Script" uid="uid://0d46wlnn0lar" path="res://scenes/test_room/room.gd" id="1_7q54m"]
+[ext_resource type="Script" path="res://scenes/test_room/room.gd" id="1_7q54m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2c5gh"]
 size = Vector2(670, 386)
@@ -26,7 +26,7 @@ debug_color = Color(1, 1, 1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=71484989]
 unique_name_in_owner = true
-z_index = -1
+z_index = -2
 position = Vector2(17.999998, 5.499999)
 scale = Vector2(2.695313, 407.00003)
 texture = SubResource("GradientTexture1D_2c5gh")

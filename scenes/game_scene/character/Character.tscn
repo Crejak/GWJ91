@@ -2,7 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dhhfhx3n5d4nr" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
 [ext_resource type="Texture2D" uid="uid://coequeusuck5b" path="res://assets/art/characters/player.png" id="2_n57ve"]
+[ext_resource type="Script" uid="uid://cbyah72uhyptv" path="res://scenes/game_scene/character/hit_light_zone.gd" id="3_4d22m"]
 [ext_resource type="Script" path="res://scenes/game_scene/character/reveal_area.gd" id="4_4d22m"]
+
+[sub_resource type="Gradient" id="Gradient_n57ve"]
+offsets = PackedFloat32Array(0, 0.5528169, 1)
+colors = PackedColorArray(0.5686275, 0.5686275, 0.5686275, 1, 0.5686275, 0.5686275, 0.5686275, 1, 0.5686275, 0.5686275, 0.5686275, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4d22m"]
+gradient = SubResource("Gradient_n57ve")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8504274, 0.8504274)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n57ve"]
 radius = 17.0
@@ -29,6 +42,12 @@ position = Vector2(2, -71.5)
 scale = Vector2(0.155, 0.15524034)
 texture = ExtResource("2_n57ve")
 flip_h = true
+
+[node name="HitLightZone" type="Sprite2D" parent="Visual" unique_id=1471890070]
+unique_name_in_owner = true
+z_index = -1
+texture = SubResource("GradientTexture2D_4d22m")
+script = ExtResource("3_4d22m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1172182283]
 rotation = 1.5707964
@@ -57,4 +76,9 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_4d22m")
 debug_color = Color(0.72156864, 0, 0.75686276, 0.12156863)
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="inventory_changed" from="." to="." method="_on_inventory_changed"]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=344111750]
+current = true

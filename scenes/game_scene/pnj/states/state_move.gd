@@ -10,12 +10,14 @@ func _enter_state() -> void:
 	pnj.body.top_level = true
 	pnj.body.global_position = pnj.global_position
 	pnj.animation_player.play("move")
+	pnj.audio_player.stream_paused = false
 
 func _exit_state() -> void:
 	pnj.body.global_position = pnj.global_position
 	pnj.body.top_level = false
 	pnj.body.position = Vector2.ZERO
 	pnj.animation_player.stop()
+	pnj.audio_player.stream_paused = true
 
 func _physics_process(delta: float) -> void:
 	pnj.sprite.flip_h = pnj.body.linear_velocity.x > 0

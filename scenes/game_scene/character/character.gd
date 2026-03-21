@@ -31,9 +31,13 @@ signal object_dropped(source: Character, object: MovableObject);
 @export var speed_floor_ratio: float = 0.333;
 
 @export_group("Movement/Detection")
-@export var max_silent_speed: float = 26
-
+@export var max_silent_speed: float = 200
 @export var base_noise_value: float = 5
+## Intensity of wall hit sound. For example, a wall mass of 10 kg means that walking
+## into a wall makes the same noise intensity of walking into a movable object of 10 kg.
+@export var wall_mass: float = 1;
+
+@onready var hit_light_zone: HitLightZone = %HitLightZone;
 
 var speed_loss_factor: float = 1.;
 
@@ -54,7 +58,8 @@ func _ready() -> void:
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
 	SignalBus.infiltration_timed_out.connect(_on_infiltration_timed_out);
-	visible = false;
+	if get_tree().current_scene != self:
+		visible = false;
 
 func _process(delta: float) -> void:
 	if linear_velocity.length() > max_silent_speed:
@@ -145,3 +150,17 @@ func drop_object(index: int) -> void:
 func _on_inventory_changed() -> void:
 	speed_loss_factor = speed_floor_ratio + \
 		(1 - speed_floor_ratio) / (1 + speed_damp * get_total_picked_up_mass());
+
+func _on_body_entered(body: Node) -> void:
+	hit_light_zone.light_up();
+	if body is PhysicsBody2D:
+		if (body as PhysicsBody2D).get_collision_layer_value(3):
+			var wall := body as StaticBody2D;
+			SignalBus.detection.on_wall_noise_start.emit(global_position, wall, wall_mass * linear_velocity.length_squared());
+
+
+func _on_body_exited(body: Node) -> void:
+	if body is PhysicsBody2D:
+		if (body as PhysicsBody2D).get_collision_layer_value(3):
+			var wall := body as StaticBody2D;
+			SignalBus.detection.on_wall_noise_stop.emit(wall);

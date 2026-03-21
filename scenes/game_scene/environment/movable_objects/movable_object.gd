@@ -64,6 +64,7 @@ func _on_pick_up_interactable_player_interacted(source: Character) -> void:
 	source.pick_up(self);
 	get_parent().remove_child(self);
 	picked_up.emit(source);
+	SignalBus.detection.on_movable_object_noise_stop.emit(self)
 	AudioBus.play_sfx("PICK_ITEM")
 
 
