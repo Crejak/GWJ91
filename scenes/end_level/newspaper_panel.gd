@@ -16,6 +16,7 @@ func appear() -> void:
 	visible = true;
 	_fill_news_column(Level.current.level_id-1)
 	animation_player.play("news_appearing", -1, 1.5)
+	AudioBus.play_sfx("VICTORY_TRUMPET")
 
 
 func _fill_news_column(level_id :int) -> void:

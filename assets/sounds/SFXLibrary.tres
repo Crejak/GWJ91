@@ -15,7 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://cqyflgodx7v47" path="res://assets/sounds/light_switch/light-switch-click-on.wav" id="14_rkk81"]
 [ext_resource type="AudioStream" uid="uid://elentujxbxes" path="res://assets/sounds/Unedited/allanzkie-film-camera-lens-on-272596.mp3" id="15_1wilr"]
 [ext_resource type="AudioStream" uid="uid://r0pwrw5kug07" path="res://assets/sounds/hit_wall.wav" id="15_rkk81"]
+[ext_resource type="AudioStream" uid="uid://boo0klmdxhots" path="res://assets/sounds/Unedited/fail-trumpet.mp3" id="16_c1u60"]
 [ext_resource type="AudioStream" uid="uid://514son4x0tc1" path="res://assets/sounds/pick_item.wav" id="16_rkk81"]
+[ext_resource type="AudioStream" uid="uid://dlkaai1qld4a3" path="res://assets/sounds/trumpet-blast.wav" id="17_c1u60"]
 
 [sub_resource type="Resource" id="Resource_wqnyc"]
 script = ExtResource("1_h5gpe")
@@ -65,8 +67,20 @@ name = "HIT_WALL"
 stream = ExtResource("15_rkk81")
 metadata/_custom_type_script = "uid://b67yl2mlejqp"
 
+[sub_resource type="Resource" id="Resource_t6q8l"]
+script = ExtResource("1_h5gpe")
+name = "BUSTED"
+stream = ExtResource("16_c1u60")
+metadata/_custom_type_script = "uid://b67yl2mlejqp"
+
+[sub_resource type="Resource" id="Resource_a6wqe"]
+script = ExtResource("1_h5gpe")
+name = "VICTORY_TRUMPET"
+stream = ExtResource("17_c1u60")
+metadata/_custom_type_script = "uid://b67yl2mlejqp"
+
 [resource]
 script = ExtResource("4_xwdmx")
 bus = "SFX"
-library = Array[ExtResource("1_h5gpe")]([SubResource("Resource_wqnyc"), SubResource("Resource_3r1of"), SubResource("Resource_yawkk"), SubResource("Resource_opp44"), SubResource("Resource_c1u60"), SubResource("Resource_rkk81"), SubResource("Resource_b24d3"), SubResource("Resource_4jxyw")])
+library = Array[ExtResource("1_h5gpe")]([SubResource("Resource_wqnyc"), SubResource("Resource_3r1of"), SubResource("Resource_yawkk"), SubResource("Resource_opp44"), SubResource("Resource_c1u60"), SubResource("Resource_rkk81"), SubResource("Resource_b24d3"), SubResource("Resource_4jxyw"), SubResource("Resource_t6q8l"), SubResource("Resource_a6wqe")])
 metadata/_custom_type_script = "uid://d2y0k5tchu4bs"

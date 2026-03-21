@@ -11,11 +11,13 @@ func _ready() -> void:
 func _on_character_caught() -> void:
 	visible = true;
 	busted_effect.start_effect();
+	AudioBus.play_sfx("BUSTED")
 	await get_tree().create_timer(2.5).timeout;
 	GameState.get_current_level_state().set_phase(LevelState.Phase.CONCLUSION);
 
 func _on_infiltration_timed_out() -> void:
 	visible = true;
 	time_out_effect.start_effect();
+	AudioBus.play_sfx("BUSTED")
 	await get_tree().create_timer(2.5).timeout;
 	GameState.get_current_level_state().set_phase(LevelState.Phase.CONCLUSION);
