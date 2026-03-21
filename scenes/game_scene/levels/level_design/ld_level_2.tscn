@@ -32,7 +32,9 @@
 [ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="24_71v1a"]
 [ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="25_j564s"]
 [ext_resource type="PackedScene" uid="uid://dl3bhq45kmgkk" path="res://scenes/game_scene/environment/movable_objects/objects/sink.tscn" id="26_e0lav"]
-[ext_resource type="PackedScene" uid="uid://bif67lxknedq8" path="res://scenes/game_scene/environment/movable_objects/objects/chair.tscn" id="32_5ajbe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlexm"]
+size = Vector2(161.42847, 345.71436)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuvu1"]
 size = Vector2(764, 637)
@@ -79,7 +81,8 @@ point_count = 67
 [sub_resource type="Resource" id="Resource_vgith"]
 script = ExtResource("23_e4ngl")
 duration = 15.0
-pnj_state = 2
+path_progress_destination = 19.55
+pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_hvbwg"]
@@ -214,9 +217,11 @@ polygon = PackedVector2Array(2414, 289, 2414, 675, 2390, 676, 2389, 708, 3401, 7
 polygon = PackedVector2Array(2721, 888, 2722, 915, 3103, 917, 3103, 1292, 3126, 1292, 3124, 917, 3402, 916, 3400, 888)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Collisions/StaticBody2D" unique_id=920327027]
+position = Vector2(-36.42871, 1162.857)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_wlexm")
 
 [node name="Rooms" type="Node2D" parent="Walls" unique_id=1847597720]
-z_index = -2
 position = Vector2(895, 586)
 
 [node name="Room" parent="Walls/Rooms" unique_id=727033528 instance=ExtResource("4_3cp22")]
@@ -333,6 +338,7 @@ scale = Vector2(2.7226567, 1214)
 y_sort_enabled = true
 
 [node name="Deco" type="Node2D" parent="YSort" unique_id=637398994]
+visible = false
 y_sort_enabled = true
 
 [node name="CartonDemenagement1" type="Sprite2D" parent="YSort/Deco" unique_id=358363695]
@@ -346,8 +352,8 @@ scale = Vector2(0.11994609, 0.11994609)
 texture = ExtResource("5_wlexm")
 
 [node name="CartonDemenagement2" type="Sprite2D" parent="YSort/Deco" unique_id=566463254]
-position = Vector2(4148.9995, 2101)
-rotation = 1.5928956
+position = Vector2(4139, 2148.0002)
+rotation = 2.3559465
 scale = Vector2(0.23315364, 0.23315364)
 texture = ExtResource("6_8h2sk")
 
@@ -487,8 +493,7 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_e4ngl")
 
 [node name="Girl" parent="YSort/Characters/girl" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("22_hdldl")]
-position = Vector2(2814, 1040)
-progress = 6762.096
+position = Vector2(2805, 1018)
 chase_path = NodePath("../../ChasePath")
 timeline = Array[ExtResource("23_e4ngl")]([SubResource("Resource_vgith"), SubResource("Resource_hvbwg"), SubResource("Resource_00uv5"), SubResource("Resource_vg68f"), SubResource("Resource_2u8oe"), SubResource("Resource_my3gm"), SubResource("Resource_e4ngl")])
 
@@ -497,8 +502,7 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_hdldl")
 
 [node name="Ex_Husband" parent="YSort/Characters/ex_husband" unique_id=893035030 node_paths=PackedStringArray("chase_path") instance=ExtResource("23_my3gm")]
-position = Vector2(4425, 1037)
-progress = 4332.1816
+position = Vector2(3611, 1637)
 chase_path = NodePath("../../ChasePath")
 timeline = Array[ExtResource("23_e4ngl")]([SubResource("Resource_wlexm"), SubResource("Resource_8h2sk"), SubResource("Resource_yb1mr"), SubResource("Resource_71v1a"), SubResource("Resource_j564s"), SubResource("Resource_e0lav"), SubResource("Resource_5ajbe"), SubResource("Resource_ekbkn")])
 
@@ -516,22 +520,6 @@ position = Vector2(3395, 2142)
 
 [node name="office" parent="YSort/Loot" unique_id=196321196 instance=ExtResource("22_vg68f")]
 position = Vector2(2936, 931)
-
-[node name="Armchair" parent="YSort" unique_id=1349827491 instance=ExtResource("32_5ajbe")]
-position = Vector2(4227, 1505)
-
-[node name="Armchair2" parent="YSort" unique_id=414213382 instance=ExtResource("32_5ajbe")]
-position = Vector2(4408, 1575.9998)
-rotation = -1.8535075
-flip_v = true
-
-[node name="Armchair3" parent="YSort" unique_id=433042299 instance=ExtResource("32_5ajbe")]
-position = Vector2(3227, 1174)
-rotation = -0.046483874
-flip_v = true
-
-[node name="Lamp" parent="YSort" unique_id=927685509 instance=ExtResource("18_vgith")]
-position = Vector2(3822, 1157)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1772549326]
 position = Vector2(3352, 1475)
