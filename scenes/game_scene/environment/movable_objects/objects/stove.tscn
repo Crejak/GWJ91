@@ -7,7 +7,7 @@
 size = Vector2(105, 56)
 
 [node name="Stove" unique_id=1203108321 instance=ExtResource("1_j16b0")]
-mass = 5.0
+mass = 50.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1306474058]
 position = Vector2(60.8736, -42.964283)

@@ -7,7 +7,7 @@
 size = Vector2(69.75, 86.75)
 
 [node name="Fridge" unique_id=1203108321 instance=ExtResource("1_wv2r4")]
-mass = 30.0
+mass = 40.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1306474058]
 position = Vector2(39.682526, -51.394768)

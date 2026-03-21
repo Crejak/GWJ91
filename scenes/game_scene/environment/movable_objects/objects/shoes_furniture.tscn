@@ -7,7 +7,7 @@
 size = Vector2(48, 31)
 
 [node name="ShoesFurniture" unique_id=1203108321 instance=ExtResource("1_qev4j")]
-mass = 5.0
+mass = 10.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1306474058]
 position = Vector2(27.999996, -22.999998)
