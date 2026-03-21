@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ev2n7q6did2v"
-path="res://.godot/imported/sink.png-e3c427cf1aac8de435fea141613570ad.ctex"
+uid="uid://cjyebqd4n0ojr"
+path="res://.godot/imported/button_pressed.png-27151f192e8b65dcdd8e3141b112a622.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/sink.png"
-dest_files=["res://.godot/imported/sink.png-e3c427cf1aac8de435fea141613570ad.ctex"]
+source_file="res://assets/ui/button_pressed.png"
+dest_files=["res://.godot/imported/button_pressed.png-27151f192e8b65dcdd8e3141b112a622.ctex"]
 
 [params]
 

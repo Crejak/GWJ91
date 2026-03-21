@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mnagecl04tr6"
-path="res://.godot/imported/square_table.PNG-8aa3a214effbf44583ed150a4f8fc1fd.ctex"
+path="res://.godot/imported/square_table.png-0e9954488880a48f6b490424c8a34b5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/square_table.PNG"
-dest_files=["res://.godot/imported/square_table.PNG-8aa3a214effbf44583ed150a4f8fc1fd.ctex"]
+source_file="res://assets/art/props/square_table.png"
+dest_files=["res://.godot/imported/square_table.png-0e9954488880a48f6b490424c8a34b5f.ctex"]
 
 [params]
 

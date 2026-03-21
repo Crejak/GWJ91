@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ev2n7q6did2v"
-path="res://.godot/imported/sink.png-e3c427cf1aac8de435fea141613570ad.ctex"
+uid="uid://d2pka630vra2f"
+path="res://.godot/imported/MrBrown_sleep.png-ff38a1e8c39c6dc3b18e1409381913a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/sink.png"
-dest_files=["res://.godot/imported/sink.png-e3c427cf1aac8de435fea141613570ad.ctex"]
+source_file="res://assets/art/characters/MrBrown_sleep.png"
+dest_files=["res://.godot/imported/MrBrown_sleep.png-ff38a1e8c39c6dc3b18e1409381913a4.ctex"]
 
 [params]
 

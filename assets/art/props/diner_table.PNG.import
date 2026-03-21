@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ybsf7i3w3qt"
-path="res://.godot/imported/diner_table.PNG-214fe2b0573297dce6d78bc01d487a30.ctex"
+path="res://.godot/imported/diner_table.png-5eaeb9a82e4f2a05ae56fce9306c8005.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/diner_table.PNG"
-dest_files=["res://.godot/imported/diner_table.PNG-214fe2b0573297dce6d78bc01d487a30.ctex"]
+source_file="res://assets/art/props/diner_table.png"
+dest_files=["res://.godot/imported/diner_table.png-5eaeb9a82e4f2a05ae56fce9306c8005.ctex"]
 
 [params]
 

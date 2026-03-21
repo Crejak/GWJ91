@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://831n8hxmh0yc"
-path="res://.godot/imported/tapis.PNG-c998e6dd6ce501a118042ab676113049.ctex"
+path="res://.godot/imported/tapis.png-c946912a0283d626845dfdf67dd2d890.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/props/tapis.PNG"
-dest_files=["res://.godot/imported/tapis.PNG-c998e6dd6ce501a118042ab676113049.ctex"]
+source_file="res://assets/art/props/tapis.png"
+dest_files=["res://.godot/imported/tapis.png-c946912a0283d626845dfdf67dd2d890.ctex"]
 
 [params]
 
