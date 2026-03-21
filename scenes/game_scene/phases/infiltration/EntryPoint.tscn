@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djp1efqdx0jxb"]
 
 [ext_resource type="Script" uid="uid://cf8hcyxxlj1l0" path="res://scenes/game_scene/phases/infiltration/entry_point.gd" id="1_u3web"]
+[ext_resource type="FontFile" uid="uid://chfhrdtdihk2b" path="res://assets/fonts/callie_chalk/CallieChalkFont-Regular.otf" id="2_flhct"]
 [ext_resource type="Texture2D" uid="uid://jq6hwos7o2fv" path="res://assets/ui/entrypoint.png" id="2_hpssm"]
 
 [node name="EntryPoint" type="Control" unique_id=1056506662]
@@ -10,18 +11,23 @@ script = ExtResource("1_u3web")
 
 [node name="Label" type="Label" parent="." unique_id=739788738]
 layout_mode = 0
-offset_left = -59.0
-offset_top = -45.0
-offset_right = 66.0
-offset_bottom = -22.0
-text = "Start infiltration"
+offset_left = -190.0
+offset_top = -171.0
+offset_right = 211.0
+offset_bottom = -52.0
+theme_override_fonts/font = ExtResource("2_flhct")
+theme_override_font_sizes/font_size = 32
+text = "Click HERE
+to start infiltration"
+horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=619046498]
 layout_mode = 0
-offset_left = -17.0
-offset_top = -15.0
-offset_right = 14.458336
-offset_bottom = 15.0
+offset_left = -57.0
+offset_top = -52.0
+offset_right = -25.541664
+offset_bottom = -22.0
+scale = Vector2(3.3, 3.3)
 texture_normal = ExtResource("2_hpssm")
 ignore_texture_size = true
 stretch_mode = 0
