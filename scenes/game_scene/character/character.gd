@@ -53,6 +53,7 @@ func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
 	SignalBus.character_caught.connect(_on_character_caught);
+	SignalBus.infiltration_timed_out.connect(_on_infiltration_timed_out);
 	visible = false;
 
 func _process(delta: float) -> void:
@@ -70,6 +71,7 @@ func _physics_process(delta: float) -> void:
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if !can_move:
+		state.linear_velocity = Vector2.ZERO;
 		return;
 	var distance := get_mouse_distance_in_viewport_space();
 	var velocity := get_velocity_from_distance_to_cursor(distance);
@@ -107,6 +109,12 @@ func _on_phase_ended(phase: LevelState.Phase) -> void:
 		visible = false;
 
 func _on_character_caught() -> void:
+	_stop_movement();
+
+func _on_infiltration_timed_out() -> void:
+	_stop_movement();
+
+func _stop_movement() -> void:
 	can_move = false;
 	can_sleep = true;
 

@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://r7un4f8i7vjl" path="res://scenes/menus/level_select_menu/resources/level_panel_res.gd" id="1_xeplx"]
 [ext_resource type="Resource" uid="uid://c0sqpwmon2k7r" path="res://scenes/level_selection_screen/conversations/1-MrsYellow.tres" id="1_xhmla"]
+[ext_resource type="Texture2D" uid="uid://cqxs1gg0yt60j" path="res://assets/art/blueprints/mrs_yellow.png" id="2_ke562"]
 
 [resource]
 script = ExtResource("1_xeplx")
 level_name = "Mrs Yellow's appartment"
+image = ExtResource("2_ke562")
 dialog_res = ExtResource("1_xhmla")
 metadata/_custom_type_script = "uid://r7un4f8i7vjl"
