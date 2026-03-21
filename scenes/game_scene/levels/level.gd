@@ -44,6 +44,8 @@ func _ready() -> void:
 	level_state.init_objectives(objectives.size());
 
 func on_phase_started(phase: LevelState.Phase) -> void:
+	if phase == LevelState.Phase.PREPARATION:
+		AudioBus.play_sfx("CAMERA_ON")
 	if phase == LevelState.Phase.INFILTRATION:
 		AudioBus.play_music("LEVEL_INFILTRATION")
 	if phase == LevelState.Phase.COMPLETED:

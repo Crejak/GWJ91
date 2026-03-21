@@ -3,6 +3,7 @@ class_name LevelPanel
 
 
 @onready var level_name_label = %LevelName
+@onready var level_image :TextureRect = %LevelImage
 
 @export var level_panel_res :LevelPanelRes = LevelPanelRes.new()
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 
 func init(level_res :LevelPanelRes) -> void:
 	level_panel_res = level_res
+	level_image.texture = level_res.image
 	level_name_label.text = "[wave amp=10 freq=1]" + level_panel_res.level_name
 	level_name_label.add_theme_color_override("default_color", level_panel_res.dialog_res.text_color)
 	level_name_label.add_theme_color_override("font_outline_color", level_panel_res.dialog_res.outline_color)

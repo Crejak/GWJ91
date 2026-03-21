@@ -13,4 +13,5 @@ func _on_phase_started(phase: LevelState.Phase) -> void:
 func _on_texture_button_pressed() -> void:
 	character.can_move = true;
 	character.visible = true;
+	SignalBus.character_entered.emit();
 	queue_free();

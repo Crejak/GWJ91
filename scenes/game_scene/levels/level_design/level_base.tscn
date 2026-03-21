@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="1_guxgb"]
 [ext_resource type="Material" uid="uid://dtidqqbx5o0du" path="res://scenes/interactions/on_hit_shader_material.tres" id="2_xkg73"]
-[ext_resource type="Texture2D" uid="uid://cqxs1gg0yt60j" path="res://assets/art/blueprints/mrs_yellow.png" id="3_guxgb"]
+[ext_resource type="Texture2D" uid="uid://cqxs1gg0yt60j" path="res://assets/art/blueprints/level3.png" id="3_guxgb"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="4_d5bw1"]
 
 [sub_resource type="Curve2D" id="Curve2D_4iwq4"]

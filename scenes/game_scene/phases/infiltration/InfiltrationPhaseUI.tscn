@@ -47,5 +47,11 @@ visible = false
 layout_mode = 2
 max_value = 1.0
 
+[node name="InfiltrationTimer" type="Timer" parent="." unique_id=331426947]
+unique_name_in_owner = true
+one_shot = true
+
 [node name="InfiltrationFailureUi" parent="." unique_id=1299373946 instance=ExtResource("2_yrnet")]
 layout_mode = 1
+
+[connection signal="timeout" from="InfiltrationTimer" to="." method="_on_infiltration_timer_timeout"]

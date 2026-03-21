@@ -16,6 +16,8 @@ signal skip_button_pressed;
 
 func _on_play_button_pressed() -> void:
 	play_button_pressed.emit();
+	AudioBus.play_sfx("PLAY_MAGNETO")
 
 func _on_skip_button_pressed() -> void:
 	skip_button_pressed.emit();
+	AudioBus.play_sfx("PLAY_MAGNETO")
