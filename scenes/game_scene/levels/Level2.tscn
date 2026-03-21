@@ -3,82 +3,44 @@
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_67g1p"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="1_76vmh"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_0lrvg"]
+[ext_resource type="PackedScene" uid="uid://debtjw0d8klqo" path="res://scenes/game_scene/levels/level_design/ld_level_2.tscn" id="3_h5dmj"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="3_tcbo6"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_h5dmj"]
-[ext_resource type="PackedScene" uid="uid://du5ta6j1ncwqb" path="res://scenes/game_scene/environment/Painting.tscn" id="5_67g1p"]
-[ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="6_5o11u"]
-[ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="7_3n6yu"]
-[ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/objects/sofa.tscn" id="8_h5dmj"]
-[ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/objects/table.tscn" id="9_67g1p"]
+[ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="7_0lrvg"]
+[ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="8_tcbo6"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="11_67g1p"]
 
-[node name="Level2" type="Control" unique_id=53077869 node_paths=PackedStringArray("starting_character")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Level" type="Node" unique_id=442240808]
 script = ExtResource("1_67g1p")
-starting_character = NodePath("PlayableEnvironment/Character")
 
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=771673376]
 script = ExtResource("4_h5dmj")
 
-[node name="Environment" type="Node2D" parent="PlayableEnvironment" unique_id=711789747]
+[node name="Level" parent="PlayableEnvironment" unique_id=274229064 instance=ExtResource("3_h5dmj")]
 
-[node name="Painting" parent="PlayableEnvironment/Environment" unique_id=734972761 instance=ExtResource("5_67g1p")]
-position = Vector2(632, 467)
+[node name="UI" type="CanvasLayer" parent="." unique_id=566703648]
 
-[node name="ExtractionPoint" parent="PlayableEnvironment/Environment" unique_id=1663210596 instance=ExtResource("6_5o11u")]
-position = Vector2(167, 343)
-
-[node name="Table2" parent="PlayableEnvironment/Environment" unique_id=1203108321 instance=ExtResource("9_67g1p")]
-position = Vector2(407, 366)
-
-[node name="Sofa" parent="PlayableEnvironment/Environment" unique_id=35824097 instance=ExtResource("8_h5dmj")]
-position = Vector2(480, 258)
-rotation = -0.5578765
-
-[node name="Sofa4" parent="PlayableEnvironment/Environment" unique_id=108030816 instance=ExtResource("8_h5dmj")]
-position = Vector2(656, 95)
-rotation = 0.58013743
-
-[node name="Sofa6" parent="PlayableEnvironment/Environment" unique_id=419413635 instance=ExtResource("8_h5dmj")]
-position = Vector2(868, 207.99998)
-rotation = 0.8797637
-
-[node name="Sofa2" parent="PlayableEnvironment/Environment" unique_id=1357680226 instance=ExtResource("8_h5dmj")]
-position = Vector2(443, 413.99997)
-rotation = 1.2665405
-
-[node name="Sofa3" parent="PlayableEnvironment/Environment" unique_id=1136738099 instance=ExtResource("8_h5dmj")]
-position = Vector2(607, 621)
-
-[node name="Sofa5" parent="PlayableEnvironment/Environment" unique_id=1843580582 instance=ExtResource("8_h5dmj")]
-position = Vector2(885, 588)
-rotation = -0.6924503
-
-[node name="Character" parent="PlayableEnvironment" unique_id=860493929 instance=ExtResource("7_3n6yu")]
-position = Vector2(296, 352)
-
-[node name="IntroductionPhase" parent="." unique_id=2114512006 instance=ExtResource("1_76vmh")]
+[node name="IntroductionPhase" parent="UI" unique_id=2114512006 instance=ExtResource("1_76vmh")]
 visible = false
-layout_mode = 1
-title = "Level 2 - Introduction"
-introduction_text = "This is the story for the second level.
-It starts to get interesting !!!"
+title = "Level 1 - Introduction"
+introduction_text = "This is a really cool story.
+Please read it to understand all the lore. I promise it's really cool."
 
-[node name="PreparationPhase" parent="." unique_id=1630391834 instance=ExtResource("2_0lrvg")]
+[node name="PreparationPhase" parent="UI" unique_id=1630391834 instance=ExtResource("2_0lrvg")]
 visible = false
-layout_mode = 1
+preparation_time = 35.0
 
-[node name="ConclusionPhase" parent="." unique_id=1435576337 instance=ExtResource("3_tcbo6")]
+[node name="ConclusionPhase" parent="UI" unique_id=1435576337 instance=ExtResource("3_tcbo6")]
 visible = false
-layout_mode = 1
-title = "Level 2 - Conclusion"
-conclusion_text = "It's the end of the second level :o
-Who knows where the story will go from there ???"
 
-[node name="InfiltrationPhaseUI" parent="." unique_id=1199558180 instance=ExtResource("11_67g1p")]
-layout_mode = 1
+[node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("11_67g1p")]
+visible = false
+
+[node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("7_0lrvg")]
+visible = false
+
+[node name="EntryPoint" parent="UI" unique_id=1056506662 instance=ExtResource("8_tcbo6")]
+offset_left = 193.0
+offset_top = 527.0
+offset_right = 193.0
+offset_bottom = 527.0

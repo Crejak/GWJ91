@@ -52,7 +52,7 @@ func _on_body_entered(in_body: Node2D) -> void:
 	if in_body is Character:
 		SignalBus.detection.on_movable_object_noise_start.emit(global_position, self, mass * (in_body as Character).linear_velocity.length_squared())
 	if can_move and !pickable:
-		AudioBus.play_sfx("MOVE_FURNITURE")
+		_play_move_sfx()
 
 func _on_body_exited(in_body: Node2D) -> void:
 	if in_body is Character:
@@ -64,3 +64,9 @@ func _on_pick_up_interactable_player_interacted(source: Character) -> void:
 	source.pick_up(self);
 	get_parent().remove_child(self);
 	picked_up.emit(source);
+	AudioBus.play_sfx("PICK_ITEM")
+
+
+func _play_move_sfx() -> void:
+	if Level.current.level_state.current_phase == LevelState.Phase.INFILTRATION:
+		AudioBus.play_sfx("MOVE_FURNITURE")

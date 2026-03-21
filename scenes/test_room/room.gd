@@ -24,6 +24,7 @@ func _on_phase_changed(in_phase: LevelState.Phase) -> void:
 func _on_body_entered(in_body: Node2D) -> void:
 	if in_body.is_in_group("PNJ"):
 		add_pnj(in_body.get_parent() as PNJ)
+		_play_light_switch_sfx()
 		display_room()
 	elif in_body is MovableObject:
 		var object: MovableObject = in_body
@@ -86,3 +87,8 @@ func try_hide_room() -> void:
 			(obj as MovableObject).on_light_changed.emit(false)
 		if obj.is_in_group("PNJ"):
 			(obj.get_parent() as PNJ)._hide()
+
+
+func _play_light_switch_sfx() -> void:
+	if Level.current.level_state.current_phase == LevelState.Phase.INFILTRATION:
+		AudioBus.play_sfx("LIGHT_SWITCH")

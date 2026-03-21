@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://bhpo861bqxu3d"]
+
+[ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="1_gakxn"]
+[ext_resource type="Material" uid="uid://dtidqqbx5o0du" path="res://scenes/interactions/on_hit_shader_material.tres" id="2_02vq3"]
+[ext_resource type="Texture2D" uid="uid://sdbo761twmui" path="res://assets/art/blueprints/level4.png" id="3_02vq3"]
+[ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="4_s058u"]
+[ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="5_s058u"]
+[ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="5_y1v0b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gakxn"]
+size = Vector2(676, 517)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02vq3"]
+size = Vector2(366, 517)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1v0b"]
+size = Vector2(1071, 922)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s058u"]
+size = Vector2(438, 311)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_gdug5"]
+points = PackedVector2Array(809, 6, 812, 584, -487, 587, -488, 353, -5, 354, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_51dik"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.5686275, 0.5686275, 0.5686275, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2c5gh"]
+gradient = SubResource("Gradient_51dik")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mel7"]
+size = Vector2(1309, 631)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdug5"]
+size = Vector2(1316, 182)
+
+[sub_resource type="Curve2D" id="Curve2D_7mel7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1601.4689, 1560.4233, 0, 0, 0, 0, 1591, 1530, 0, 0, 0, 0, 1587, 1174, 0, 0, 0, 0, 1251, 1181, 0, 0, 0, 0, 1231, 1454, 0, 0, 0, 0, 990, 1610, 0, 0, 0, 0, 1307, 1206, 0, 0, 0, 0, 1270, 763, 0, 0, 0, 0, 1467, 506, 0, 0, 0, 0, 2349, 462, 0, 0, 0, 0, 2627, 1070, 0, 0, 0, 0, 2974, 1080, 0, 0, 0, 0, 3013, 1412, 0, 0, 0, 0, 2990, 1080, 0, 0, 0, 0, 2161, 1080, 0, 0, 0, 0, 2152, 1390, 0, 0, 0, 0, 2191, 1084, 0, 0, 0, 0, 1594, 1080, 0, 0, 0, 0, 1601.4689, 1560.4233)
+}
+point_count = 19
+
+[node name="Level" type="Node2D" unique_id=274229064]
+
+[node name="LightSystem" type="Node" parent="." unique_id=1509984193]
+script = ExtResource("1_gakxn")
+color_preparation = Color(0.69411767, 0.6901961, 0.68235296, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=832066561]
+z_index = -3
+offset_left = -83.0
+offset_top = -88.0
+offset_right = 6665.0
+offset_bottom = 3775.0
+color = Color(0.5686275, 0.5686275, 0.5686275, 1)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1149287691]
+
+[node name="Blueprint" type="Sprite2D" parent="Walls" unique_id=313779419]
+material = ExtResource("2_02vq3")
+position = Vector2(-59.000015, -18)
+scale = Vector2(2.0824072, 2.0824072)
+texture = ExtResource("3_02vq3")
+centered = false
+
+[node name="Collisions" type="Node2D" parent="Walls" unique_id=1705467228]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls/Collisions" unique_id=1416766385]
+
+[node name="Rooms" type="Node2D" parent="Walls" unique_id=1847597720]
+position = Vector2(895, 586)
+
+[node name="Room" parent="Walls/Rooms" unique_id=727033528 instance=ExtResource("4_s058u")]
+position = Vector2(344, 810)
+
+[node name="CollisionShape2D" parent="Walls/Rooms/Room" index="0" unique_id=473306914]
+position = Vector2(-209, 171.5)
+shape = SubResource("RectangleShape2D_gakxn")
+
+[node name="Sprite2D" parent="Walls/Rooms/Room" index="1" unique_id=71484989]
+position = Vector2(-216.50006, 178.50008)
+scale = Vector2(2.9257815, 593)
+
+[node name="Room2" parent="Walls/Rooms" unique_id=1010374994 instance=ExtResource("4_s058u")]
+position = Vector2(767, 810)
+
+[node name="CollisionShape2D" parent="Walls/Rooms/Room2" index="0" unique_id=473306914]
+position = Vector2(-54, 171.5)
+shape = SubResource("RectangleShape2D_02vq3")
+
+[node name="Sprite2D" parent="Walls/Rooms/Room2" index="1" unique_id=71484989]
+position = Vector2(-216.50006, 178.50008)
+scale = Vector2(2.9257815, 593)
+
+[node name="Room3" parent="Walls/Rooms" unique_id=590701091 instance=ExtResource("4_s058u")]
+position = Vector2(748, -180)
+
+[node name="CollisionShape2D" parent="Walls/Rooms/Room3" index="0" unique_id=473306914]
+position = Vector2(-406.5, 374)
+shape = SubResource("RectangleShape2D_y1v0b")
+
+[node name="Sprite2D" parent="Walls/Rooms/Room3" index="1" unique_id=71484989]
+position = Vector2(-414.00006, 377.5)
+scale = Vector2(4.46875, 990.9999)
+
+[node name="Room4" parent="Walls/Rooms" unique_id=1251304997 instance=ExtResource("4_s058u")]
+position = Vector2(1240, 765)
+
+[node name="CollisionShape2D" parent="Walls/Rooms/Room4" index="0" unique_id=473306914]
+position = Vector2(-76, 43.5)
+shape = SubResource("RectangleShape2D_s058u")
+
+[node name="Sprite2D" parent="Walls/Rooms/Room4" index="1" unique_id=71484989]
+position = Vector2(-74.999985, 42.000053)
+scale = Vector2(1.8828121, 358.00006)
+
+[node name="Room5" parent="Walls/Rooms" unique_id=1371571114 instance=ExtResource("4_s058u")]
+position = Vector2(1897, 796)
+
+[node name="CollisionShape2D" parent="Walls/Rooms/Room5" index="0" unique_id=473306914]
+position = Vector2(-464, -142)
+shape = SubResource("ConvexPolygonShape2D_gdug5")
+
+[node name="Sprite2D" parent="Walls/Rooms/Room5" index="1" unique_id=71484989]
+position = Vector2(-56.999916, 154.50002)
+scale = Vector2(3.4062505, 641.0001)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Walls/Rooms/Room5/Sprite2D" index="0" unique_id=968571380]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(-194.05505, 0.27379093)
+scale = Vector2(0.58256865, 0.45241806)
+texture = SubResource("GradientTexture1D_2c5gh")
+
+[node name="Room6" parent="Walls/Rooms" unique_id=1770754764 instance=ExtResource("4_s058u")]
+position = Vector2(1738, -25)
+
+[node name="CollisionShape2D" parent="Walls/Rooms/Room6" index="0" unique_id=473306914]
+position = Vector2(-152.5, 80.5)
+shape = SubResource("RectangleShape2D_7mel7")
+
+[node name="Sprite2D" parent="Walls/Rooms/Room6" index="1" unique_id=71484989]
+position = Vector2(-143.5001, 75.50002)
+scale = Vector2(5.3867188, 692.99994)
+
+[node name="Room7" parent="Walls/Rooms" unique_id=445135752 instance=ExtResource("4_s058u")]
+position = Vector2(1738, 513)
+
+[node name="CollisionShape2D" parent="Walls/Rooms/Room7" index="0" unique_id=473306914]
+position = Vector2(-149, -2)
+shape = SubResource("RectangleShape2D_gdug5")
+
+[node name="Sprite2D" parent="Walls/Rooms/Room7" index="1" unique_id=71484989]
+position = Vector2(-143.5001, -1.4999542)
+scale = Vector2(5.3867188, 234.99997)
+
+[node name="YSort" type="Node2D" parent="." unique_id=1613740640]
+y_sort_enabled = true
+
+[node name="Deco" type="Node2D" parent="YSort" unique_id=637398994]
+visible = false
+y_sort_enabled = true
+
+[node name="Props" type="Node2D" parent="YSort" unique_id=815073726]
+y_sort_enabled = true
+
+[node name="Characters" type="Node2D" parent="YSort" unique_id=1174942420]
+y_sort_enabled = true
+
+[node name="ChasePath" type="Path2D" parent="YSort/Characters" unique_id=341057510]
+self_modulate = Color(0, 0, 0, 1)
+y_sort_enabled = true
+curve = SubResource("Curve2D_7mel7")
+
+[node name="Character" parent="YSort/Characters" unique_id=424702170 instance=ExtResource("5_s058u")]
+position = Vector2(1603, 1865)
+
+[node name="Loot" type="Node2D" parent="YSort" unique_id=1827791998]
+y_sort_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1772549326]
+position = Vector2(1935, 1067)
+zoom = Vector2(0.57, 0.57)
+
+[node name="ExtractionPoint" parent="." unique_id=1663210596 instance=ExtResource("5_y1v0b")]
+position = Vector2(1600, 1883)
+
+[node name="Sprite2D" parent="ExtractionPoint/Visuals" parent_id_path=PackedInt32Array(1663210596, 2123251920) index="0" unique_id=1216855650]
+rotation = -1.5656166
+flip_v = true
+
+[editable path="Walls/Rooms/Room"]
+[editable path="Walls/Rooms/Room2"]
+[editable path="Walls/Rooms/Room3"]
+[editable path="Walls/Rooms/Room4"]
+[editable path="Walls/Rooms/Room5"]
+[editable path="Walls/Rooms/Room6"]
+[editable path="Walls/Rooms/Room7"]
+[editable path="ExtractionPoint"]
