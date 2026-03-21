@@ -21,9 +21,38 @@ offset_bottom = 352.95502
 
 [node name="PreparationPosition" type="Control" parent="." unique_id=371097150]
 unique_name_in_owner = true
-anchors_preset = 0
-offset_left = 13.0
-offset_top = 728.0
-offset_right = 674.0
-offset_bottom = 1571.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.999998
+offset_top = -197.00006
+offset_right = 687.0
+offset_bottom = 646.0
+grow_vertical = 0
 scale = Vector2(0.4, 0.4)
+
+[node name="ZoomedPosition" type="Control" parent="." unique_id=1650600954]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -885.0
+offset_right = 698.0
+offset_bottom = -42.0
+grow_vertical = 0
+
+[node name="ZoomButton" type="Button" parent="." unique_id=1549160730]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -203.0
+offset_right = 304.0
+grow_vertical = 0
+
+[connection signal="mouse_entered" from="ZoomButton" to="." method="_on_zoom_button_mouse_entered"]
+[connection signal="mouse_exited" from="ZoomButton" to="." method="_on_zoom_button_mouse_exited"]
