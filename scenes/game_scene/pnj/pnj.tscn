@@ -566,6 +566,7 @@ loop = false
 script = ExtResource("1_pnd87")
 chase_threshold = 2.0
 path_following_speed = 150.0
+max_speed = 80.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=997370158 groups=["PNJ"]]
 unique_name_in_owner = true
@@ -647,6 +648,5 @@ metadata/_custom_type_script = "uid://cy5cvsq5uplwa"
 unique_name_in_owner = true
 stream = ExtResource("6_p2w68")
 autoplay = true
-stream_paused = true
 max_distance = 1200.0
 bus = &"SFX"

@@ -50,6 +50,7 @@ var is_waiting_for_step_to_finish: bool
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_game_phase_changed)
+	SignalBus.phase_ended.connect(func(_in_phase: LevelState.Phase) -> void: reset())
 	SignalBus.detection.on_movable_object_noise_start.connect(_on_movable_object_noise_start)
 	SignalBus.detection.on_movable_object_noise_stop.connect(_on_movable_object_noise_stop)
 	SignalBus.detection.on_wall_noise_start.connect(_on_wall_noise_start)
@@ -84,11 +85,12 @@ func _display() -> void:
 
 #region --- Timeline ---
 func reset() -> void:
+	state_machine.set_current_state(null)
+	clear()
+	body.top_level = false
 	progress = 0.0
-	body.global_position = global_position
+	body.position = Vector2.ZERO
 	body.linear_velocity = Vector2.ZERO
-	state_changed.emit(State.SLEEP)
-	state_machine.set_current_state(states[State.SLEEP])
 	if not timer:
 		timer = Timer.new()
 		timer.autostart = false
@@ -96,19 +98,14 @@ func reset() -> void:
 		add_child(timer)
 	detection_progress_bar.value = 0
 	detection_progress_bar.max_value = chase_threshold
-	clear()
 
 func clear() -> void:
-	EventBus.clear_signal(timer.timeout)
+	if timer:
+		EventBus.clear_signal(timer.timeout)
 	EventBus.clear_signal(step_done)
 	timeline_index = -1
 
 func start_game_timer() -> void:
-	reset()
-	await get_tree().process_frame
-	reset()
-	await get_tree().process_frame
-
 	if timeline.is_empty(): return
 	timer.timeout.connect(next_timeline_step, CONNECT_ONE_SHOT)
 	@warning_ignore("unsafe_call_argument")
