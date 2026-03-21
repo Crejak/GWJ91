@@ -27,6 +27,9 @@
 [ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/shoes_furniture.tscn" id="23_o08ws"]
 [ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="24_wr2dr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc5qq"]
+size = Vector2(222.1212, 42.424133)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gakxn"]
 size = Vector2(676, 517)
 
@@ -94,6 +97,11 @@ polygon = PackedVector2Array(609.0909, 230.30301, 609.0909, 1913.6362, 1516.6665
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" unique_id=1839661532]
 polygon = PackedVector2Array(1810.606, 560.606, 1790.9089, 560.606, 1790.9089, 989.39386, 2503.03, 989.39386, 2503.03, 975.7575, 1810.606, 975.7575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Collisions/StaticBody2D" unique_id=1186777888]
+position = Vector2(1595.4545, 1948.4847)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_fc5qq")
 
 [node name="Rooms" type="Node2D" parent="Walls" unique_id=1847597720]
 position = Vector2(895, 586)
@@ -309,8 +317,8 @@ position = Vector2(1061, 1140)
 y_sort_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1772549326]
-position = Vector2(1935, 1067)
-zoom = Vector2(0.57, 0.57)
+position = Vector2(1278, 708)
+zoom = Vector2(0.9, 0.9)
 
 [node name="ExtractionPoint" parent="." unique_id=1663210596 instance=ExtResource("5_y1v0b")]
 position = Vector2(1058, 1391)
