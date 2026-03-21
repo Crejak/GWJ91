@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://c7abt76osnp8e"]
 
 [ext_resource type="PackedScene" uid="uid://dnnagekga7uv8" path="res://scenes/game_scene/pnj/pnj.tscn" id="1_qvv5g"]
-[ext_resource type="Texture2D" uid="uid://485qcg58anf4" path="res://assets/art/characters/dad_walk.png" id="2_5vkbj"]
-[ext_resource type="Texture2D" uid="uid://767gp74di1ta" path="res://assets/art/characters/dad_sleep.png" id="3_5t1d8"]
+[ext_resource type="Texture2D" uid="uid://ba5nhjlhseyqk" path="res://assets/art/characters/banker_walk.png" id="2_73jfu"]
+[ext_resource type="Texture2D" uid="uid://bia5qjf2ap1af" path="res://assets/art/characters/banker_sleep.png" id="3_13ftd"]
 
-[node name="Dad" unique_id=786583104 instance=ExtResource("1_qvv5g")]
-walk_texture = ExtResource("2_5vkbj")
-idle_texture = ExtResource("3_5t1d8")
+[node name="Banker" unique_id=786583104 instance=ExtResource("1_qvv5g")]
+walk_texture = ExtResource("2_73jfu")
+idle_texture = ExtResource("3_13ftd")
 
 [node name="Visual" parent="RigidBody2D" parent_id_path=PackedInt32Array(997370158) index="0" unique_id=390448743]
-position = Vector2(-12.000002, -19.000002)
+position = Vector2(1.0000029, -9.999997)
 
 [node name="Sprite2D" parent="RigidBody2D/Visual" index="0" unique_id=64234146]
-texture = ExtResource("2_5vkbj")
+texture = ExtResource("2_73jfu")
+
+[node name="StatusAnimations" parent="RigidBody2D/Visual" index="1" unique_id=1954057949]
+position = Vector2(2.3529387, -183.5294)
 
 [node name="DetectionProgressBar" parent="RigidBody2D/Visual" index="2" unique_id=1443591310]
 offset_top = 69.41177

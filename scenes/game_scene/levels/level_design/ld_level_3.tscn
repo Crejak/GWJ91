@@ -3,12 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cccj6psuw0ie7" path="res://scenes/game_scene/levels/level_design/level_base.tscn" id="1_wqo8v"]
 [ext_resource type="PackedScene" uid="uid://dhu6ro1ty2trc" path="res://scenes/game_scene/environment/movable_objects/door_movable_interactable_object.tscn" id="2_3ymgv"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="2_761ew"]
-[ext_resource type="PackedScene" uid="uid://cqsq6mikt6iw7" path="res://scenes/game_scene/pnj/pnjs/dad.tscn" id="2_ibswy"]
-[ext_resource type="PackedScene" uid="uid://sit441ithg7p" path="res://scenes/game_scene/pnj/pnjs/geek.tscn" id="3_k0tv0"]
+[ext_resource type="PackedScene" uid="uid://cqsq6mikt6iw7" path="res://scenes/game_scene/pnj/pnjs/level_3_dad.tscn" id="2_ibswy"]
+[ext_resource type="PackedScene" uid="uid://sit441ithg7p" path="res://scenes/game_scene/pnj/pnjs/level_3_geek.tscn" id="3_k0tv0"]
 [ext_resource type="Texture2D" uid="uid://b4o33mn3ktsc3" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/couloir.PNG" id="3_xgbm2"]
 [ext_resource type="Texture2D" uid="uid://djjowptriu5tv" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_parents.PNG" id="4_n8m35"]
-[ext_resource type="PackedScene" uid="uid://dfoj67snbxe2f" path="res://scenes/game_scene/pnj/pnjs/teckel.tscn" id="4_v6dri"]
-[ext_resource type="PackedScene" uid="uid://c7abt76osnp8e" path="res://scenes/game_scene/pnj/pnjs/level_1_mrs_yellow.tscn" id="5_jl6w0"]
+[ext_resource type="PackedScene" uid="uid://dfoj67snbxe2f" path="res://scenes/game_scene/pnj/pnjs/level_3_teckel.tscn" id="4_v6dri"]
 [ext_resource type="Texture2D" uid="uid://dj4w570vn4sce" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_geek.PNG" id="5_xtf2d"]
 [ext_resource type="Texture2D" uid="uid://y0q8f3775l2s" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/sdb.PNG" id="6_56raw"]
 [ext_resource type="PackedScene" uid="uid://b4yqrr2f0upe1" path="res://scenes/game_scene/environment/movable_objects/objects/armchair.tscn" id="6_iit3q"]
@@ -30,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cw8wrc1y3rt08" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_sink.tscn" id="17_rpa6g"]
 [ext_resource type="PackedScene" uid="uid://d0x4h7rmkq1ev" path="res://scenes/game_scene/environment/movable_objects/objects/diner_table.tscn" id="18_8v5l6"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="20_02gqg"]
+[ext_resource type="PackedScene" uid="uid://cqr24ncfv4dhp" path="res://scenes/game_scene/pnj/pnjs/level_3_wife.tscn" id="30_q75u2"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="31_05cdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5t5y"]
@@ -634,10 +634,10 @@ loop = true
 chase_path = NodePath("../../ChasePath")
 timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_w4uva"), SubResource("Resource_2hj6u"), SubResource("Resource_hmn4b"), SubResource("Resource_2k5h8"), SubResource("Resource_ohvuj"), SubResource("Resource_mcqk0"), SubResource("Resource_se6ho"), SubResource("Resource_pm6ld")])
 
-[node name="MrsYellow" type="Path2D" parent="YSort/Characters" parent_id_path=PackedInt32Array(1174942420) index="4" unique_id=79069387]
+[node name="Wife_Path" type="Path2D" parent="YSort/Characters" parent_id_path=PackedInt32Array(1174942420) index="4" unique_id=79069387]
 curve = SubResource("Curve2D_siwb2")
 
-[node name="MrsYellow" parent="YSort/Characters/MrsYellow" index="0" unique_id=896614301 node_paths=PackedStringArray("chase_path") instance=ExtResource("5_jl6w0")]
+[node name="Wife" parent="YSort/Characters/Wife_Path" index="0" unique_id=339559444 node_paths=PackedStringArray("chase_path") instance=ExtResource("30_q75u2")]
 position = Vector2(1365, 481)
 chase_path = NodePath("../../ChasePath")
 timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_3ymgv"), SubResource("Resource_761ew"), SubResource("Resource_t5t5y"), SubResource("Resource_4kl0u"), SubResource("Resource_7geqi"), SubResource("Resource_xgbm2"), SubResource("Resource_n8m35"), SubResource("Resource_xtf2d"), SubResource("Resource_56raw"), SubResource("Resource_05cdo")])
