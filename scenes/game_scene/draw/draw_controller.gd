@@ -14,6 +14,8 @@ func _ready() -> void:
 	SignalBus.phase_ended.connect(_on_phase_ended);
 
 func _input(event: InputEvent) -> void:
+	if !Level.current:
+		return;
 	if !(Level.current.level_state.current_phase == LevelState.Phase.PREPARATION):
 		return
 	if Input.is_action_just_pressed("draw"):

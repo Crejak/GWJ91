@@ -66,6 +66,7 @@ func _on_game_phase_changed(in_phase: LevelState.Phase) -> void:
 			start_game_timer()
 			_display()
 		LevelState.Phase.INFILTRATION:
+			await SignalBus.character_entered
 			start_game_timer()
 			if timeline[0].pnj_state == State.SLEEP:
 				_hide()
