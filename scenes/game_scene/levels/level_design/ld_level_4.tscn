@@ -1,11 +1,27 @@
 [gd_scene format=3 uid="uid://bhpo861bqxu3d"]
 
-[ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="1_gakxn"]
+[ext_resource type="Script" path="res://scenes/test_room/light_system.gd" id="1_gakxn"]
 [ext_resource type="Material" uid="uid://dtidqqbx5o0du" path="res://scenes/interactions/on_hit_shader_material.tres" id="2_02vq3"]
 [ext_resource type="Texture2D" uid="uid://sdbo761twmui" path="res://assets/art/blueprints/level4.png" id="3_02vq3"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="4_s058u"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="5_s058u"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="5_y1v0b"]
+[ext_resource type="PackedScene" uid="uid://bowmowy62uprw" path="res://scenes/game_scene/environment/movable_objects/objects/toilet.tscn" id="7_7mel7"]
+[ext_resource type="PackedScene" uid="uid://lkifrpwii4pk" path="res://scenes/game_scene/environment/movable_objects/objects/shower.tscn" id="8_u360g"]
+[ext_resource type="PackedScene" uid="uid://dl3bhq45kmgkk" path="res://scenes/game_scene/environment/movable_objects/objects/sink.tscn" id="9_ykytq"]
+[ext_resource type="PackedScene" uid="uid://drn5tbsw4f360" path="res://scenes/game_scene/environment/movable_objects/objects/table_salon.tscn" id="10_81tug"]
+[ext_resource type="PackedScene" uid="uid://cw8wrc1y3rt08" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_sink.tscn" id="10_hre06"]
+[ext_resource type="PackedScene" uid="uid://btqi7bxm7od85" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_table.tscn" id="11_tq52w"]
+[ext_resource type="PackedScene" uid="uid://b4yqrr2f0upe1" path="res://scenes/game_scene/environment/movable_objects/objects/armchair.tscn" id="12_bj7is"]
+[ext_resource type="PackedScene" uid="uid://c1hovdgvwqdl4" path="res://scenes/game_scene/environment/movable_objects/objects/bed.tscn" id="12_k5aea"]
+[ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/objects/tv_table.tscn" id="13_lhm52"]
+[ext_resource type="PackedScene" uid="uid://1c0toj14pbg3" path="res://scenes/game_scene/environment/movable_objects/objects/tv.tscn" id="14_bbp4a"]
+[ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/objects/sofa.tscn" id="15_6osdg"]
+[ext_resource type="PackedScene" uid="uid://c0c8aew7kbuwa" path="res://scenes/game_scene/environment/movable_objects/objects/bed_table.tscn" id="16_bj7is"]
+[ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/objects/plant.tscn" id="17_wed56"]
+[ext_resource type="PackedScene" uid="uid://d0x4h7rmkq1ev" path="res://scenes/game_scene/environment/movable_objects/objects/diner_table.tscn" id="19_lhm52"]
+[ext_resource type="PackedScene" uid="uid://dn11gy1m085yy" path="res://scenes/game_scene/environment/movable_objects/objects/fridge.tscn" id="20_bbp4a"]
+[ext_resource type="PackedScene" uid="uid://mxd2xxqbwe6y" path="res://scenes/game_scene/environment/movable_objects/objects/lamp.tscn" id="21_6osdg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gakxn"]
 size = Vector2(676, 517)
@@ -37,9 +53,9 @@ size = Vector2(1316, 182)
 
 [sub_resource type="Curve2D" id="Curve2D_7mel7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1601.4689, 1560.4233, 0, 0, 0, 0, 1591, 1530, 0, 0, 0, 0, 1587, 1174, 0, 0, 0, 0, 1251, 1181, 0, 0, 0, 0, 1231, 1454, 0, 0, 0, 0, 990, 1610, 0, 0, 0, 0, 1307, 1206, 0, 0, 0, 0, 1270, 763, 0, 0, 0, 0, 1467, 506, 0, 0, 0, 0, 2349, 462, 0, 0, 0, 0, 2627, 1070, 0, 0, 0, 0, 2974, 1080, 0, 0, 0, 0, 3013, 1412, 0, 0, 0, 0, 2990, 1080, 0, 0, 0, 0, 2161, 1080, 0, 0, 0, 0, 2152, 1390, 0, 0, 0, 0, 2191, 1084, 0, 0, 0, 0, 1594, 1080, 0, 0, 0, 0, 1601.4689, 1560.4233)
+"points": PackedVector2Array(0, 0, 0, 0, 1434, 906, 0, 0, 0, 0, 1440, 722, 0, 0, 0, 0, 1060, 727, 0, 0, 0, 0, 1042, 1078, 0, 0, 0, 0, 1045, 724, 0, 0, 0, 0, 841, 736, 0, 0, 0, 0, 782, 953, 0, 0, 0, 0, 823, 736, 0, 0, 0, 0, 999, 691, 0, 0, 0, 0, 1011, 486, 0, 0, 0, 0, 1106, 326, 0, 0, 0, 0, 1310, 336, 0, 0, 0, 0, 1704, 487, 0, 0, 0, 0, 1698, 715, 0, 0, 0, 0, 1996, 719, 0, 0, 0, 0, 1988, 893, 0, 0, 0, 0, 1705, 893, 0, 0, 0, 0, 1982, 920, 0, 0, 0, 0, 1985, 723, 0, 0, 0, 0, 1454, 718, 0, 0, 0, 0, 1434, 905)
 }
-point_count = 19
+point_count = 21
 
 [node name="Level" type="Node2D" unique_id=274229064]
 
@@ -49,13 +65,14 @@ color_preparation = Color(0.69411767, 0.6901961, 0.68235296, 1)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=832066561]
 z_index = -3
-offset_left = -83.0
-offset_top = -88.0
-offset_right = 6665.0
-offset_bottom = 3775.0
+offset_left = -217.0
+offset_top = 20.0
+offset_right = 6531.0
+offset_bottom = 3883.0
 color = Color(0.5686275, 0.5686275, 0.5686275, 1)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1149287691]
+scale = Vector2(0.66, 0.66)
 
 [node name="Blueprint" type="Sprite2D" parent="Walls" unique_id=313779419]
 material = ExtResource("2_02vq3")
@@ -67,6 +84,8 @@ centered = false
 [node name="Collisions" type="Node2D" parent="Walls" unique_id=1705467228]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls/Collisions" unique_id=1416766385]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Collisions/StaticBody2D" unique_id=666927227]
 
 [node name="Rooms" type="Node2D" parent="Walls" unique_id=1847597720]
 position = Vector2(895, 586)
@@ -165,6 +184,92 @@ y_sort_enabled = true
 [node name="Props" type="Node2D" parent="YSort" unique_id=815073726]
 y_sort_enabled = true
 
+[node name="Toilet" parent="YSort/Props" unique_id=1203108321 instance=ExtResource("7_7mel7")]
+position = Vector2(1346, 994)
+rotation = 4.712389
+
+[node name="Shower" parent="YSort/Props" unique_id=44090811 instance=ExtResource("8_u360g")]
+position = Vector2(625, 1029)
+rotation = 3.1415927
+
+[node name="Sink" parent="YSort/Props" unique_id=3608219 instance=ExtResource("9_ykytq")]
+position = Vector2(850, 1061)
+rotation = 3.1415927
+
+[node name="Kitchen" parent="YSort/Props" unique_id=769103154 instance=ExtResource("10_hre06")]
+position = Vector2(1489, 211)
+rotation = 1.5707964
+
+[node name="Kitchen_Table" parent="YSort/Props" unique_id=1476173575 instance=ExtResource("11_tq52w")]
+position = Vector2(1736, 300)
+
+[node name="LivingRoomTable" parent="YSort/Props" unique_id=1204922638 instance=ExtResource("10_81tug")]
+position = Vector2(1069, 579)
+
+[node name="Bed" parent="YSort/Props" unique_id=893324872 instance=ExtResource("12_k5aea")]
+position = Vector2(1843, 1009)
+rotation = -3.1415925
+
+[node name="Armchair" parent="YSort/Props" unique_id=555611662 instance=ExtResource("12_bj7is")]
+position = Vector2(710, 543)
+rotation = 0.9889385
+
+[node name="TV_Table" parent="YSort/Props" unique_id=1809622112 instance=ExtResource("13_lhm52")]
+position = Vector2(465, 727)
+rotation = 0.40887314
+flip_v = true
+
+[node name="TV" parent="YSort/Props" unique_id=840669571 instance=ExtResource("14_bbp4a")]
+position = Vector2(447, 768)
+rotation = 0.40887314
+flip_v = true
+
+[node name="Sofa" parent="YSort/Props" unique_id=580165183 instance=ExtResource("15_6osdg")]
+position = Vector2(483, 521)
+
+[node name="BedTable" parent="YSort/Props" unique_id=491838161 instance=ExtResource("16_bj7is")]
+position = Vector2(1579, 1191)
+flip_v = true
+
+[node name="BedTable2" parent="YSort/Props" unique_id=1614875274 instance=ExtResource("16_bj7is")]
+position = Vector2(1884, 1194)
+flip_v = true
+
+[node name="Plant" parent="YSort/Props" unique_id=1017045055 instance=ExtResource("17_wed56")]
+position = Vector2(488, 275)
+
+[node name="Diner_Table" parent="YSort/Props" unique_id=690997914 instance=ExtResource("19_lhm52")]
+position = Vector2(798, 384)
+
+[node name="Fridge" parent="YSort/Props" unique_id=1419734983 instance=ExtResource("20_bbp4a")]
+position = Vector2(1371, 302)
+
+[node name="TV_Table2" parent="YSort/Props" unique_id=145556678 instance=ExtResource("13_lhm52")]
+position = Vector2(1288, 1210)
+rotation = -1.5707964
+
+[node name="TV_Table3" parent="YSort/Props" unique_id=2040575230 instance=ExtResource("13_lhm52")]
+position = Vector2(1359, 1115)
+
+[node name="TV_Table4" parent="YSort/Props" unique_id=2094662652 instance=ExtResource("13_lhm52")]
+position = Vector2(1009, 1088)
+rotation = 4.712389
+
+[node name="TV_Table5" parent="YSort/Props" unique_id=646732425 instance=ExtResource("13_lhm52")]
+position = Vector2(1207, 450)
+rotation = 1.5707964
+flip_v = true
+
+[node name="TV_Table6" parent="YSort/Props" unique_id=328937617 instance=ExtResource("13_lhm52")]
+position = Vector2(2004, 320)
+rotation = 1.5707964
+
+[node name="Lamp" parent="YSort/Props" unique_id=173458865 instance=ExtResource("21_6osdg")]
+position = Vector2(2019, 1184)
+
+[node name="Lamp2" parent="YSort/Props" unique_id=1596087055 instance=ExtResource("21_6osdg")]
+position = Vector2(1123, 1201)
+
 [node name="Characters" type="Node2D" parent="YSort" unique_id=1174942420]
 y_sort_enabled = true
 
@@ -174,7 +279,7 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_7mel7")
 
 [node name="Character" parent="YSort/Characters" unique_id=424702170 instance=ExtResource("5_s058u")]
-position = Vector2(1603, 1865)
+position = Vector2(1061, 1140)
 
 [node name="Loot" type="Node2D" parent="YSort" unique_id=1827791998]
 y_sort_enabled = true
@@ -184,11 +289,17 @@ position = Vector2(1935, 1067)
 zoom = Vector2(0.57, 0.57)
 
 [node name="ExtractionPoint" parent="." unique_id=1663210596 instance=ExtResource("5_y1v0b")]
-position = Vector2(1600, 1883)
+position = Vector2(1058, 1391)
 
-[node name="Sprite2D" parent="ExtractionPoint/Visuals" parent_id_path=PackedInt32Array(1663210596, 2123251920) index="0" unique_id=1216855650]
-rotation = -1.5656166
-flip_v = true
+[node name="Area2D" parent="ExtractionPoint" index="0" unique_id=642778239]
+position = Vector2(0, -150)
+
+[node name="Visuals" parent="ExtractionPoint" index="1" unique_id=2123251920]
+position = Vector2(0, -8)
+
+[node name="Sprite2D" parent="ExtractionPoint/Visuals" index="0" unique_id=1216855650]
+position = Vector2(0, -150)
+rotation = 4.712389
 
 [editable path="Walls/Rooms/Room"]
 [editable path="Walls/Rooms/Room2"]
