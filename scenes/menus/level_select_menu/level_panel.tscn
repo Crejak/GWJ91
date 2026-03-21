@@ -28,7 +28,8 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rqjxd")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=2022809590]
+[node name="LevelImage" type="TextureRect" parent="MarginContainer" unique_id=2022809590]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 texture = ExtResource("1_4qhor")
