@@ -19,6 +19,7 @@ func _enter_state() -> void:
 func _exit_state() -> void:
 	pnj.audio_player.stream_paused = true
 
+
 func _physics_process(delta: float) -> void:
 	pnj.sprite.flip_h = pnj.body.linear_velocity.x > 0
 	var distance_to_path: float = pnj.body.global_position.distance_squared_to(pnj.global_position)

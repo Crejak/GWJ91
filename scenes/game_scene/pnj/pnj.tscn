@@ -644,7 +644,9 @@ done_on_start = true
 metadata/_custom_type_script = "uid://cy5cvsq5uplwa"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1860260487]
+unique_name_in_owner = true
 stream = ExtResource("6_p2w68")
 autoplay = true
+stream_paused = true
 max_distance = 1500.0
 bus = &"SFX"

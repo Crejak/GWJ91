@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhhfhx3n5d4nr" path="res://scenes/game_scene/character/character.gd" id="1_pi01j"]
 [ext_resource type="Texture2D" uid="uid://coequeusuck5b" path="res://assets/art/characters/player.png" id="2_n57ve"]
-[ext_resource type="Script" path="res://scenes/game_scene/character/reveal_area.gd" id="4_4d22m"]
+[ext_resource type="Script" uid="uid://co6jrdhjo83kh" path="res://scenes/game_scene/character/reveal_area.gd" id="4_4d22m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n57ve"]
 radius = 17.0
@@ -56,5 +56,8 @@ script = ExtResource("4_4d22m")
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_4d22m")
 debug_color = Color(0.72156864, 0, 0.75686276, 0.12156863)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=344111750]
+current = true
 
 [connection signal="inventory_changed" from="." to="." method="_on_inventory_changed"]
