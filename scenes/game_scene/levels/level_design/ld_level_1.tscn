@@ -98,12 +98,13 @@ size = Vector2(422, 551)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2064676817]
 z_index = -3
-offset_right = 1883.0
-offset_bottom = 1066.0
+offset_right = 2642.0
+offset_bottom = 1771.0
 color = Color(0.5689727, 0.56897277, 0.5689727, 1)
 
 [node name="blueprint" type="Sprite2D" parent="." unique_id=1732897430]
 material = ExtResource("1_7my7i")
+position = Vector2(314, 328)
 texture = ExtResource("2_5cd8t")
 centered = false
 
@@ -294,6 +295,7 @@ texture = ExtResource("25_5km4f")
 
 [node name="Props" type="Node2D" parent="." unique_id=1286940041]
 y_sort_enabled = true
+position = Vector2(314, 328)
 
 [node name="Loot" type="Node2D" parent="Props" unique_id=759546519]
 y_sort_enabled = true
@@ -354,7 +356,7 @@ color_preparation = Color(0.69411767, 0.6901961, 0.68235296, 1)
 blueprint_sprite = NodePath("../blueprint")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=646266743]
-position = Vector2(1491, 362)
+position = Vector2(1805, 690)
 curve = SubResource("Curve2D_slkys")
 
 [node name="Dad" parent="Path2D" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("34_jmxgh")]
@@ -364,10 +366,11 @@ timeline = Array[ExtResource("35_13th3")]([SubResource("Resource_r13ha"), SubRes
 
 [node name="ChasePath" type="Path2D" parent="." unique_id=85812913]
 modulate = Color(1, 0, 1, 1)
-position = Vector2(7, 8)
+position = Vector2(321, 336)
 curve = SubResource("Curve2D_o6mwe")
 
 [node name="Rooms" type="Node2D" parent="." unique_id=140754912]
+position = Vector2(314, 328)
 
 [node name="Room" parent="Rooms" unique_id=727033528 instance=ExtResource("36_wubag")]
 position = Vector2(481, 536)
@@ -392,7 +395,7 @@ position = Vector2(9.500015, 72.99999)
 scale = Vector2(0.86328113, 241.99997)
 
 [node name="Room2" parent="Rooms" unique_id=590874805 instance=ExtResource("36_wubag")]
-position = Vector2(1048, 205)
+position = Vector2(1050, 203)
 
 [node name="CollisionShape2D" parent="Rooms/Room2" index="0" unique_id=473306914]
 position = Vector2(-22, 49)
@@ -436,7 +439,10 @@ position = Vector2(-4.4999523, 184.49998)
 scale = Vector2(1.7929688, 591)
 
 [node name="ExtractionPoint" parent="." unique_id=1663210596 instance=ExtResource("37_ms7vj")]
-position = Vector2(181, 582)
+position = Vector2(495, 910)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1320770298]
+position = Vector2(1284, 856)
 
 [editable path="Rooms/Room"]
 [editable path="Rooms/Room6"]
