@@ -6,6 +6,7 @@ extends Control
 
 @onready var danger_bar: ProgressBar = %DangerBar;
 @onready var infiltration_timer: Timer = %InfiltrationTimer;
+@onready var timer_label: Label = %TimerLabel;
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
@@ -19,6 +20,8 @@ func _process(_delta: float) -> void:
 	if !visible:
 		return;
 	danger_bar.value = GameState.get_current_level_state().danger_level;
+	if !infiltration_timer.is_stopped():
+		timer_label.text = ("%.2f" % infiltration_timer.time_left).replace(".", ":");
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.INFILTRATION:
