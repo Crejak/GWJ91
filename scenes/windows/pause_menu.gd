@@ -5,6 +5,7 @@ extends OverlaidWindow
 ## Path to a main menu scene.
 ## Will attempt to read from AppConfig if left empty.
 @export_file("*.tscn") var main_menu_scene_path : String
+@export_file("*.tscn") var level_select_scene_path : String
 @export_node_path(&"ConfirmationOverlaidWindow") var restart_confirmation_node_path : NodePath
 @export_node_path(&"ConfirmationOverlaidWindow") var main_menu_confirmation_node_path : NodePath
 @export_node_path(&"ConfirmationOverlaidWindow") var exit_confirmation_node_path : NodePath
@@ -25,6 +26,11 @@ func get_main_menu_scene_path() -> String:
 	if main_menu_scene_path.is_empty():
 		return AppConfig.main_menu_scene_path
 	return main_menu_scene_path
+
+func get_level_select_scene_path() -> String:
+	if level_select_scene_path.is_empty():
+		return AppConfig.level_select_scene_path
+	return level_select_scene_path
 
 func close_window() -> void:
 	if open_window != null:

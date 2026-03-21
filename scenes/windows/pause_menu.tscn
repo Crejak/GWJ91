@@ -17,6 +17,7 @@ size_flags_vertical = 1
 script = ExtResource("2_00o4m")
 options_menu_scene = ExtResource("3_mdvg7")
 main_menu_scene_path = ""
+level_select_scene_path = null
 restart_confirmation_node_path = NodePath("RestartConfirmation")
 main_menu_confirmation_node_path = NodePath("MainMenuConfirmation")
 exit_confirmation_node_path = NodePath("ExitConfirmation")

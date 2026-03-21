@@ -75,4 +75,5 @@ func _on_panel_container_clicked(level_id: int) -> void:
 	load_game_scene()
 
 func _on_exit_confirmation_confirmed():
-	super._on_exit_confirmation_confirmed()
+	#super._on_exit_confirmation_confirmed()
+	SceneLoader.load_scene(AppConfig.main_menu_scene_path)
