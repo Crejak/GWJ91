@@ -7,6 +7,7 @@ extends Node2D
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
+	SignalBus.character_entered.connect(_on_character_entered);
 	visuals.visible = false;
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
@@ -16,6 +17,9 @@ func _on_phase_started(phase: LevelState.Phase) -> void:
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.PREPARATION:
 		visuals.visible = false;
+
+func _on_character_entered() -> void:
+	visuals.visible = true;
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if GameState.get_current_level_state().current_phase != LevelState.Phase.INFILTRATION:
