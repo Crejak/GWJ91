@@ -64,21 +64,6 @@ visible = false
 position = Vector2(33, 109)
 shape = SubResource("RectangleShape2D_yatoe")
 
-[node name="Dad" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Dad_Path" parent_id_path=PackedInt32Array(274229064, 891349558) index="0" unique_id=786583104]
-max_speed = 100.0
-
-[node name="Geek" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Geek_Path" parent_id_path=PackedInt32Array(274229064, 1584143438) index="0" unique_id=1397355178]
-max_speed = 100.0
-
-[node name="Dog" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Dog_Path" parent_id_path=PackedInt32Array(274229064, 1671234144) index="0" unique_id=605722148]
-max_speed = 100.0
-
-[node name="Wife_Path" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters" parent_id_path=PackedInt32Array(274229064, 1174942420) index="4" unique_id=79069387]
-visible = false
-
-[node name="Wife" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Wife_Path" index="0" unique_id=339559444]
-max_speed = 100.0
-
 [node name="PickablePresent" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot" parent_id_path=PackedInt32Array(274229064, 1827791998) index="0" unique_id=1203108321 instance=ExtResource("5_1i2go")]
 position = Vector2(679, 1256)
 

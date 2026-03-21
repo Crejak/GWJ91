@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cccj6psuw0ie7" path="res://scenes/game_scene/levels/level_design/level_base.tscn" id="1_wqo8v"]
 [ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="2_761ew"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/pnj/pnjs/level_3_dad.tscn" id="2_ibswy"]
+[ext_resource type="PackedScene" uid="uid://cdsljjqeqxfbi" path="res://scenes/game_scene/pnj/pnjs/level_3_dad.tscn" id="2_ibswy"]
 [ext_resource type="PackedScene" uid="uid://sit441ithg7p" path="res://scenes/game_scene/pnj/pnjs/level_3_geek.tscn" id="3_k0tv0"]
 [ext_resource type="Texture2D" uid="uid://b4o33mn3ktsc3" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/couloir.PNG" id="3_xgbm2"]
 [ext_resource type="Texture2D" uid="uid://djjowptriu5tv" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_parents.PNG" id="4_n8m35"]
