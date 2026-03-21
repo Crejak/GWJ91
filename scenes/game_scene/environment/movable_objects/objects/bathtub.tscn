@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c3eq5pjbf8hdv"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_o3tqc"]
+[ext_resource type="Texture2D" uid="uid://dmix8ji62kb4l" path="res://assets/art/props/bathtub.png" id="2_o3tqc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tjpfl"]
+radius = 43.499996
+height = 225.0
+
+[node name="Bathtub" unique_id=1203108321 instance=ExtResource("1_o3tqc")]
+mass = 50.0
+can_move = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(112.99999, -61)
+rotation = -0.018828658
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_o3tqc")
+region_enabled = true
+region_rect = Rect2(0, 200, 1240, 680)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(117.5, -58.5)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_tjpfl")

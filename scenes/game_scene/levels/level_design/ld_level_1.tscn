@@ -26,9 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://ccipxgx5b4nd" path="res://assets/art/props/shower.PNG" id="24_m6q6k"]
 [ext_resource type="Texture2D" uid="uid://bgvg8wqutr5tt" path="res://assets/art/props/tapish.PNG" id="25_5km4f"]
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="26_hj47c"]
+[ext_resource type="Texture2D" uid="uid://cp6onvf6ynlnb" path="res://assets/art/props/paintingue_1.png" id="28_brrr0"]
 [ext_resource type="PackedScene" uid="uid://ba38kxi0rayk8" path="res://scenes/game_scene/environment/movable_objects/objects/table.tscn" id="28_tp5x5"]
 [ext_resource type="PackedScene" uid="uid://dlymfa518gs55" path="res://scenes/game_scene/environment/movable_objects/objects/plant.tscn" id="29_fh2rd"]
+[ext_resource type="Texture2D" uid="uid://d2mqtdg40de00" path="res://assets/art/props/paintingue_2.png" id="29_tnmn2"]
 [ext_resource type="PackedScene" uid="uid://cjfng3oo6ocry" path="res://scenes/game_scene/environment/movable_objects/objects/sofa.tscn" id="30_sen3p"]
+[ext_resource type="Texture2D" uid="uid://b13jtbjiyyj8o" path="res://assets/art/props/paintingue_3.png" id="30_vmn1v"]
 [ext_resource type="PackedScene" uid="uid://dsfk75vd7ub0f" path="res://scenes/game_scene/environment/movable_objects/objects/tv_table.tscn" id="31_ov8k0"]
 [ext_resource type="PackedScene" uid="uid://c1hovdgvwqdl4" path="res://scenes/game_scene/environment/movable_objects/objects/bed.tscn" id="32_3uyum"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="32_w03m8"]
@@ -44,7 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://dl3bhq45kmgkk" path="res://scenes/game_scene/environment/movable_objects/objects/sink.tscn" id="38_x2gux"]
 [ext_resource type="PackedScene" uid="uid://bowmowy62uprw" path="res://scenes/game_scene/environment/movable_objects/objects/toilet.tscn" id="39_ixf6c"]
 [ext_resource type="PackedScene" uid="uid://ckadm23leoi2l" path="res://scenes/game_scene/environment/movable_objects/objects/christmas_tree.tscn" id="40_brrr0"]
-[ext_resource type="PackedScene" uid="uid://c7abt76osnp8e" path="res://scenes/game_scene/pnj/pnjs/mrs_yellow.tscn" id="42_tnmn2"]
+[ext_resource type="PackedScene" uid="uid://c7abt76osnp8e" path="res://scenes/game_scene/pnj/pnjs/level_1_mrs_yellow.tscn" id="42_tnmn2"]
 [ext_resource type="PackedScene" uid="uid://mxd2xxqbwe6y" path="res://scenes/game_scene/environment/movable_objects/objects/lamp.tscn" id="42_x2gux"]
 
 [sub_resource type="Curve2D" id="Curve2D_slkys"]
@@ -318,14 +321,36 @@ position = Vector2(540, 304)
 [node name="painting_kitchen" parent="YSort/Loot" unique_id=1203108321 instance=ExtResource("26_hj47c")]
 position = Vector2(1093, 788)
 
+[node name="Sprite2D" parent="YSort/Loot/painting_kitchen" index="0" unique_id=1306474058]
+position = Vector2(32.999947, -57.999992)
+scale = Vector2(0.08682087, 0.086820886)
+texture = ExtResource("28_brrr0")
+
 [node name="painting_room" parent="YSort/Loot" unique_id=1577084302 instance=ExtResource("26_hj47c")]
 position = Vector2(1416, 669)
+
+[node name="Sprite2D" parent="YSort/Loot/painting_room" index="0" unique_id=1306474058]
+position = Vector2(51.999954, -56.000008)
+rotation = 1.600467
+scale = Vector2(0.12, 0.1)
+skew = -1.0000737
+texture = ExtResource("29_tnmn2")
 
 [node name="painting_bathroom" parent="YSort/Loot" unique_id=1107931385 instance=ExtResource("26_hj47c")]
 position = Vector2(783, 179)
 
+[node name="Sprite2D" parent="YSort/Loot/painting_bathroom" index="0" unique_id=1306474058]
+position = Vector2(34.000046, -89.99999)
+scale = Vector2(0.09874515, 0.09874516)
+texture = ExtResource("30_vmn1v")
+
 [node name="painting_livingroom" parent="YSort/Loot" unique_id=165151667 instance=ExtResource("26_hj47c")]
 position = Vector2(421, 504)
+
+[node name="Sprite2D" parent="YSort/Loot/painting_livingroom" index="0" unique_id=1306474058]
+position = Vector2(37.999977, -70)
+scale = Vector2(0.0971043, 0.097104296)
+texture = ExtResource("29_tnmn2")
 
 [node name="Props" type="Node2D" parent="YSort" unique_id=1286940041]
 y_sort_enabled = true
@@ -489,8 +514,12 @@ position = Vector2(495, 910)
 position = Vector2(1284, 856)
 
 [node name="Lamp" parent="." unique_id=613712462 instance=ExtResource("42_x2gux")]
-position = Vector2(1909, 1304)
+position = Vector2(1951, 1302)
 
+[editable path="YSort/Loot/painting_kitchen"]
+[editable path="YSort/Loot/painting_room"]
+[editable path="YSort/Loot/painting_bathroom"]
+[editable path="YSort/Loot/painting_livingroom"]
 [editable path="Rooms/Room"]
 [editable path="Rooms/Room6"]
 [editable path="Rooms/Room2"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bnma2k7fryed6"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_qev4j"]
+[ext_resource type="Texture2D" uid="uid://ddq2d1wg3akg3" path="res://assets/art/props/shoes_furniture.png" id="2_qev4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q28vf"]
+size = Vector2(48, 31)
+
+[node name="ShoesFurniture" unique_id=1203108321 instance=ExtResource("1_qev4j")]
+mass = 10.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(27.999996, -22.999998)
+scale = Vector2(0.12006435, 0.09119048)
+texture = ExtResource("2_qev4j")
+region_enabled = true
+region_rect = Rect2(80, 100, 460, 500)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(27, -26.5)
+shape = SubResource("RectangleShape2D_q28vf")
