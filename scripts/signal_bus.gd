@@ -46,6 +46,10 @@ func _ready() -> void:
 			print("Noise Detection start: %s, at %s, intensity: %f" % [in_object.name, str(in_position), in_sound_intensity]))
 		detection.on_movable_object_noise_stop.connect(func(in_object: MovableObject) -> void:
 			print("Noise Detection stops: %s" % in_object.name))
+		detection.on_wall_noise_start.connect(func (in_position: Vector2, in_wall: StaticBody2D, in_sound_intensity: float) -> void:
+			print("Wall noise detection start: %s, at %s, intensity: %f" % [in_wall, in_position, in_sound_intensity]))
+		detection.on_wall_noise_stop.connect(func (in_wall: StaticBody2D) -> void:
+			print("Wall noise detection stops: %s" % in_wall))
 		detection.on_player_move.connect(func(_in_position: Vector2, in_sound_intensity: float) -> void:
 			print("Player Move Noise Detection: %f" % in_sound_intensity))
 
@@ -55,6 +59,8 @@ class Detection:
 	signal on_movable_object_noise_start(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float)
 	@warning_ignore("unused_signal")
 	signal on_movable_object_noise_stop(in_object: MovableObject)
+	signal on_wall_noise_start(in_position: Vector2, in_wall: StaticBody2D, in_sound_intensity: float)
+	signal on_wall_noise_stop(in_wall: StaticBody2D)
 	@warning_ignore("unused_signal")
 	signal on_player_move(in_position: Vector2, in_sound_intensity: float)
 

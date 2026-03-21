@@ -32,8 +32,10 @@ signal object_dropped(source: Character, object: MovableObject);
 
 @export_group("Movement/Detection")
 @export var max_silent_speed: float = 26
-
 @export var base_noise_value: float = 5
+## Intensity of wall hit sound. For example, a wall mass of 10 kg means that walking
+## into a wall makes the same noise intensity of walking into a movable object of 10 kg.
+@export var wall_mass: float = 10;
 
 var speed_loss_factor: float = 1.;
 
@@ -145,3 +147,16 @@ func drop_object(index: int) -> void:
 func _on_inventory_changed() -> void:
 	speed_loss_factor = speed_floor_ratio + \
 		(1 - speed_floor_ratio) / (1 + speed_damp * get_total_picked_up_mass());
+
+func _on_body_entered(body: Node) -> void:
+	if body is PhysicsBody2D:
+		if (body as PhysicsBody2D).get_collision_layer_value(3):
+			var wall := body as StaticBody2D;
+			SignalBus.detection.on_wall_noise_start.emit(global_position, wall, wall_mass * linear_velocity.length_squared());
+
+
+func _on_body_exited(body: Node) -> void:
+	if body is PhysicsBody2D:
+		if (body as PhysicsBody2D).get_collision_layer_value(3):
+			var wall := body as StaticBody2D;
+			SignalBus.detection.on_wall_noise_stop.emit(wall);

@@ -45,6 +45,8 @@ func _ready() -> void:
 	SignalBus.phase_started.connect(_on_game_phase_changed)
 	SignalBus.detection.on_movable_object_noise_start.connect(_on_movable_object_noise_start)
 	SignalBus.detection.on_movable_object_noise_stop.connect(_on_movable_object_noise_stop)
+	SignalBus.detection.on_wall_noise_start.connect(_on_wall_noise_start)
+	SignalBus.detection.on_wall_noise_stop.connect(_on_wall_noise_stop)
 	SignalBus.detection.on_player_move.connect(_on_player_move_detection)
 
 func _process(in_delta: float) -> void:
@@ -131,23 +133,30 @@ func try_end_step() -> void:
 
 #region --- Detection ---
 var object_making_noise: Dictionary[MovableObject, float]
+var wall_making_noise: Dictionary[StaticBody2D, float]
 
 func _on_movable_object_noise_start(in_position: Vector2, in_object: MovableObject, in_sound_intensity: float) -> void:
 	object_making_noise[in_object] = in_sound_intensity / body.global_position.distance_squared_to(in_position)
 	add_detection(object_making_noise[in_object] * 0.2)
 
-
 func _on_movable_object_noise_stop(in_object: MovableObject) -> void:
 	object_making_noise.erase(in_object)
 
+func _on_wall_noise_start(in_position: Vector2, in_wall: StaticBody2D, in_sound_intensity: float) -> void:
+	wall_making_noise[in_wall] = in_sound_intensity / body.global_position.distance_squared_to(in_position)
+	add_detection(wall_making_noise[in_wall] * 0.2)
+	
+func _on_wall_noise_stop(in_wall: StaticBody2D) -> void:
+	wall_making_noise.erase(in_wall)
 
 func _on_player_move_detection(in_position: Vector2, in_sound_intensity: float) -> void:
 	add_detection(in_sound_intensity / body.global_position.distance_squared_to(in_position))
 
-
 func _increase_detection(in_delta: float) -> void:
 	for obj: MovableObject in object_making_noise:
 		add_detection(object_making_noise[obj] * in_delta)
+	for wall: StaticBody2D in wall_making_noise:
+		add_detection(wall_making_noise[wall] * in_delta)
 
 var warning_index: int = 0
 func add_detection(in_value: float) -> void:
