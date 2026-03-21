@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c64qhkqwbkyv1"]
+
+[ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_0a1wd"]
+[ext_resource type="Texture2D" uid="uid://dli1sv1iep5h7" path="res://assets/art/props/guitar.PNG" id="2_0a1wd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q28vf"]
+size = Vector2(40, 65)
+
+[node name="Guitare" unique_id=1203108321 instance=ExtResource("1_0a1wd")]
+mass = 5.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1306474058]
+position = Vector2(26, -55.999996)
+scale = Vector2(0.09152722, 0.11586027)
+texture = ExtResource("2_0a1wd")
+region_enabled = true
+region_rect = Rect2(260, 0, 560, 1000)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=815921628]
+position = Vector2(25, -35.5)
+shape = SubResource("RectangleShape2D_q28vf")
