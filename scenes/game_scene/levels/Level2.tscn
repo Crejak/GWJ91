@@ -13,25 +13,25 @@
 
 [sub_resource type="Resource" id="Resource_67g1p"]
 script = ExtResource("2_h5dmj")
-name = "... in the Office"
+name = "Thing in the Office"
 object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/office")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="Resource" id="Resource_5o11u"]
 script = ExtResource("2_h5dmj")
-name = "... in the Bathroom"
+name = "Thing in the Bathroom"
 object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/bathroom")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="Resource" id="Resource_3n6yu"]
 script = ExtResource("2_h5dmj")
-name = "... in the Livingroom"
+name = "Thing in the Livingroom"
 object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/livingroom")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="Resource" id="Resource_18vbk"]
 script = ExtResource("2_h5dmj")
-name = "... in the ex-husband room"
+name = "Thing in the ex-husband room"
 object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/sleepingroom")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
