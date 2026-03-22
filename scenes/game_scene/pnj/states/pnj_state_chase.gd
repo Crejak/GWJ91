@@ -2,7 +2,6 @@ extends PNJ_State
 class_name PNJ_State_Chase
 
 func _enter_state() -> void:
-	
 	pnj.sprite.texture = pnj.walk_texture
 	pnj.status_animations.play("chase")
 	pnj.clear()

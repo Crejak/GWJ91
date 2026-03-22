@@ -41,7 +41,7 @@
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="35_13th3"]
 [ext_resource type="PackedScene" uid="uid://cw8wrc1y3rt08" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_sink.tscn" id="35_j5n74"]
 [ext_resource type="PackedScene" uid="uid://btqi7bxm7od85" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_table.tscn" id="36_jtogj"]
-[ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="36_wubag"]
+[ext_resource type="PackedScene" path="res://scenes/test_room/room.tscn" id="36_wubag"]
 [ext_resource type="PackedScene" uid="uid://lkifrpwii4pk" path="res://scenes/game_scene/environment/movable_objects/objects/shower.tscn" id="37_jtogj"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="37_ms7vj"]
 [ext_resource type="PackedScene" uid="uid://dl3bhq45kmgkk" path="res://scenes/game_scene/environment/movable_objects/objects/sink.tscn" id="38_x2gux"]
@@ -70,13 +70,11 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_xu74q"]
 script = ExtResource("35_13th3")
 duration = 15.0
-path_progress_start = 824.87
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_r571m"]
 script = ExtResource("35_13th3")
-path_progress_start = 824.87
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
