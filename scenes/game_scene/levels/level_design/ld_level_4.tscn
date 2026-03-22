@@ -45,9 +45,6 @@ size = Vector2(1071, 922)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s058u"]
 size = Vector2(438, 311)
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_gdug5"]
-points = PackedVector2Array(809, 0, 809, 584, -487, 584, -487, 353, 0, 353, 0, 0)
-
 [sub_resource type="Gradient" id="Gradient_51dik"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(0.5686275, 0.5686275, 0.5686275, 1)
@@ -171,7 +168,7 @@ position = Vector2(1897, 796)
 
 [node name="CollisionShape2D" parent="Walls/Rooms/Room5" index="0" unique_id=473306914]
 position = Vector2(-464, -142)
-shape = SubResource("ConvexPolygonShape2D_gdug5")
+shape = null
 
 [node name="Sprite2D" parent="Walls/Rooms/Room5" index="1" unique_id=71484989]
 position = Vector2(-56.999916, 154.50002)
@@ -183,6 +180,9 @@ z_index = -1
 position = Vector2(-194.05505, 0.27379093)
 scale = Vector2(0.58256865, 0.45241806)
 texture = SubResource("GradientTexture1D_2c5gh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Rooms/Room5" unique_id=958494997]
+polygon = PackedVector2Array(-951.0908, 446.78772, -948.06055, 211.93921, -463.21216, 210.42407, -472.30298, -141.09106, 353.4546, -148.66675, 353.4546, 446.78772)
 
 [node name="Room6" parent="Walls/Rooms" unique_id=1770754764 instance=ExtResource("4_s058u")]
 position = Vector2(1738, -25)
