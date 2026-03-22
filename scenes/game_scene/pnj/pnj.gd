@@ -128,12 +128,16 @@ func next_timeline_step() -> void:
 		timer.start(timeline[timeline_index].duration)
 
 	# change state
+	var step: int = timeline_index
 	var new_state: State = timeline[timeline_index].pnj_state
 	step_done.connect(func() -> void: 
 		is_waiting_for_step_to_finish = false
 		try_end_step()
 		, CONNECT_ONE_SHOT)
-	state_machine.set_current_state(states[new_state])
+	await state_machine.set_current_state(states[new_state])
+	progress = timeline[step].path_progress_start
+	body.global_position = global_position
+	await get_tree().process_frame
 	state_changed.emit(new_state)
 
 func try_end_step() -> void:

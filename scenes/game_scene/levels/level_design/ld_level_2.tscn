@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="1_p12eh"]
 [ext_resource type="Material" uid="uid://dtidqqbx5o0du" path="res://scenes/interactions/on_hit_shader_material.tres" id="2_wmcum"]
 [ext_resource type="Texture2D" uid="uid://b3a6j2oex7gfk" path="res://assets/art/blueprints/level2.png" id="3_3v8cr"]
-[ext_resource type="PackedScene" path="res://scenes/test_room/room.tscn" id="4_3cp22"]
+[ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="4_3cp22"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="5_lm55j"]
 [ext_resource type="PackedScene" uid="uid://bowmowy62uprw" path="res://scenes/game_scene/environment/movable_objects/objects/toilet.tscn" id="5_w23nl"]
 [ext_resource type="Texture2D" uid="uid://bjbsvho15g7m6" path="res://assets/art/props/carton_demenagement_1.png" id="5_wlexm"]
@@ -28,9 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="22_vg68f"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="23_e4ngl"]
 [ext_resource type="PackedScene" uid="uid://lau0g0i8c6ls" path="res://scenes/game_scene/pnj/pnjs/level_2_ex_husband.tscn" id="23_my3gm"]
-[ext_resource type="PackedScene" uid="uid://c3eq5pjbf8hdv" path="res://scenes/game_scene/environment/movable_objects/objects/bathtub.tscn" id="23_yb1mr"]
-[ext_resource type="PackedScene" uid="uid://bt54nvfg4rsq1" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="24_71v1a"]
-[ext_resource type="PackedScene" uid="uid://c64qhkqwbkyv1" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="25_j564s"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/bathtub.tscn" id="23_yb1mr"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="24_71v1a"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="25_j564s"]
 [ext_resource type="PackedScene" uid="uid://dl3bhq45kmgkk" path="res://scenes/game_scene/environment/movable_objects/objects/sink.tscn" id="26_e0lav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlexm"]
@@ -87,6 +87,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_hvbwg"]
 script = ExtResource("23_e4ngl")
+path_progress_start = 19.55
 path_progress_destination = 2378.05
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
@@ -94,11 +95,13 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_00uv5"]
 script = ExtResource("23_e4ngl")
 duration = 10.0
+path_progress_start = 2378.05
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_vg68f"]
 script = ExtResource("23_e4ngl")
+path_progress_start = 2378.05
 path_progress_destination = 4827.03
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
@@ -106,17 +109,20 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_2u8oe"]
 script = ExtResource("23_e4ngl")
 duration = 10.0
+path_progress_start = 4827.03
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_my3gm"]
 script = ExtResource("23_e4ngl")
+path_progress_start = 4827.03
 path_progress_destination = 6762.1
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_e4ngl"]
 script = ExtResource("23_e4ngl")
+path_progress_start = 6762.1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Curve2D" id="Curve2D_hdldl"]
@@ -145,11 +151,13 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_71v1a"]
 script = ExtResource("23_e4ngl")
 duration = 5.0
+path_progress_start = 982.75
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_j564s"]
 script = ExtResource("23_e4ngl")
+path_progress_start = 982.75
 path_progress_destination = 2939.0
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
@@ -157,17 +165,20 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_e0lav"]
 script = ExtResource("23_e4ngl")
 duration = 10.0
+path_progress_start = 2939.0
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_5ajbe"]
 script = ExtResource("23_e4ngl")
+path_progress_start = 2939.0
 path_progress_destination = 4332.18
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_ekbkn"]
 script = ExtResource("23_e4ngl")
+path_progress_start = 4332.18
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [node name="Level" type="Node2D" unique_id=274229064]

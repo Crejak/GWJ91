@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bdsqyn3o5n3wl"]
 
 [ext_resource type="PackedScene" uid="uid://cccj6psuw0ie7" path="res://scenes/game_scene/levels/level_design/level_base.tscn" id="1_wqo8v"]
-[ext_resource type="PackedScene" path="res://scenes/test_room/room.tscn" id="2_761ew"]
+[ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="2_761ew"]
 [ext_resource type="PackedScene" uid="uid://cdsljjqeqxfbi" path="res://scenes/game_scene/pnj/pnjs/level_3_dad.tscn" id="2_ibswy"]
 [ext_resource type="PackedScene" uid="uid://sit441ithg7p" path="res://scenes/game_scene/pnj/pnjs/level_3_geek.tscn" id="3_k0tv0"]
 [ext_resource type="Texture2D" uid="uid://b4o33mn3ktsc3" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/couloir.PNG" id="3_xgbm2"]
 [ext_resource type="Texture2D" uid="uid://djjowptriu5tv" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_parents.PNG" id="4_n8m35"]
-[ext_resource type="PackedScene" uid="uid://dfoj67snbxe2f" path="res://scenes/game_scene/pnj/pnjs/level_3_teckel.tscn" id="4_v6dri"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/pnj/pnjs/level_3_teckel.tscn" id="4_v6dri"]
 [ext_resource type="Texture2D" uid="uid://dj4w570vn4sce" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_geek.PNG" id="5_xtf2d"]
 [ext_resource type="Texture2D" uid="uid://y0q8f3775l2s" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/sdb.PNG" id="6_56raw"]
 [ext_resource type="PackedScene" uid="uid://b4yqrr2f0upe1" path="res://scenes/game_scene/environment/movable_objects/objects/armchair.tscn" id="6_iit3q"]
@@ -28,7 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://cw8wrc1y3rt08" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_sink.tscn" id="17_rpa6g"]
 [ext_resource type="PackedScene" uid="uid://d0x4h7rmkq1ev" path="res://scenes/game_scene/environment/movable_objects/objects/diner_table.tscn" id="18_8v5l6"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="20_02gqg"]
-[ext_resource type="PackedScene" uid="uid://cqr24ncfv4dhp" path="res://scenes/game_scene/pnj/pnjs/level_3_wife.tscn" id="30_q75u2"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="31_05cdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5t5y"]
@@ -59,6 +58,8 @@ colors = PackedColorArray(0.5686275, 0.5686275, 0.5686275, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_8v5l6"]
 gradient = SubResource("Gradient_51dik")
 
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7v4gg"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8v5l6"]
 size = Vector2(122, 197)
 
@@ -70,7 +71,7 @@ point_count = 9
 
 [sub_resource type="Resource" id="Resource_dengy"]
 script = ExtResource("20_02gqg")
-duration = 30.0
+duration = 45.0
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_5413j"]
@@ -82,11 +83,13 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_3fnj7"]
 script = ExtResource("20_02gqg")
 duration = 10.0
+path_progress_start = 3630.11
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_ud0iy"]
 script = ExtResource("20_02gqg")
+path_progress_start = 3630.11
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -103,7 +106,7 @@ point_count = 33
 
 [sub_resource type="Resource" id="Resource_agi6l"]
 script = ExtResource("20_02gqg")
-duration = 15.0
+duration = 5.0
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
@@ -116,11 +119,13 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_pgckm"]
 script = ExtResource("20_02gqg")
 duration = 15.0
+path_progress_start = 3196.65
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_m2va6"]
 script = ExtResource("20_02gqg")
+path_progress_start = 3196.65
 path_progress_destination = 5721.4
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
@@ -128,11 +133,13 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_bk4qf"]
 script = ExtResource("20_02gqg")
 duration = 15.0
+path_progress_start = 5721.4
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_e736n"]
 script = ExtResource("20_02gqg")
+path_progress_start = 5721.4
 path_progress_destination = 8453.15
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
@@ -140,17 +147,20 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_r6uh3"]
 script = ExtResource("20_02gqg")
 duration = 15.0
+path_progress_start = 8453.15
 pnj_state = 2
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_5imyk"]
 script = ExtResource("20_02gqg")
+path_progress_start = 8453.15
 path_progress_destination = 11926.07
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_8gb7v"]
 script = ExtResource("20_02gqg")
+path_progress_start = 11926.07
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Curve2D" id="Curve2D_2xp0n"]
@@ -168,21 +178,25 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_2hj6u"]
 script = ExtResource("20_02gqg")
 duration = 15.0
+path_progress_start = 3540.05
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_hmn4b"]
 script = ExtResource("20_02gqg")
-path_progress_destination = 6166.04
+path_progress_start = 3540.05
+path_progress_destination = null
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_2k5h8"]
 script = ExtResource("20_02gqg")
 duration = 15.0
+path_progress_start = 6166.04
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_ohvuj"]
 script = ExtResource("20_02gqg")
+path_progress_start = 6166.04
 path_progress_destination = 7280.1
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
@@ -190,67 +204,19 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 [sub_resource type="Resource" id="Resource_mcqk0"]
 script = ExtResource("20_02gqg")
 duration = 15.0
+path_progress_start = 7280.1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_se6ho"]
 script = ExtResource("20_02gqg")
+path_progress_start = 7280.1
 path_progress_destination = 9658.25
 pnj_state = 1
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_pm6ld"]
 script = ExtResource("20_02gqg")
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Curve2D" id="Curve2D_siwb2"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1086, 292, 0, 0, 0, 0, 1381, 236, 0, 0, 0, 0, 1666, 882, 0, 0, 0, 0, 915, 887, 0, 0, 0, 0, 913, 630, 0, 0, 0, 0, 520, 706, 0, 0, 0, 0, 922, 718, 0, 0, 0, 0, 926, 898, 0, 0, 0, 0, 1649, 895, 0, 0, 0, 0, 1659, 690, 0, 0, 0, 0, 2012, 699, 0, 0, 0, 0, 2345, 713, 0, 0, 0, 0, 2548, 393, 0, 0, 0, 0, 2682, 819, 0, 0, 0, 0, 2900, 829, 0, 0, 0, 0, 2909, 2003)
-}
-point_count = 16
-
-[sub_resource type="Resource" id="Resource_3ymgv"]
-script = ExtResource("20_02gqg")
-duration = 15.0
-pnj_state = 2
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_761ew"]
-script = ExtResource("20_02gqg")
-path_progress_destination = 2418.45
-pnj_state = 1
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_t5t5y"]
-script = ExtResource("20_02gqg")
-duration = 20.0
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_4kl0u"]
-script = ExtResource("20_02gqg")
-duration = 5.0
-pnj_state = 2
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_7geqi"]
-script = ExtResource("20_02gqg")
-path_progress_destination = 4943.2
-pnj_state = 1
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_xgbm2"]
-script = ExtResource("20_02gqg")
-duration = 30.0
-pnj_state = 2
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_n8m35"]
-script = ExtResource("20_02gqg")
-path_progress_destination = 6829.33
-pnj_state = 1
-metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
-
-[sub_resource type="Resource" id="Resource_05cdo"]
-script = ExtResource("20_02gqg")
+path_progress_start = 9658.25
 metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [node name="LD_Mrs_Yellow" unique_id=274229064 instance=ExtResource("1_wqo8v")]
@@ -346,7 +312,6 @@ scale = Vector2(4.6289063, 796)
 
 [node name="Room11" parent="Walls/Rooms" parent_id_path=PackedInt32Array(1847597720) index="6" unique_id=506356795 instance=ExtResource("2_761ew")]
 position = Vector2(2496, 240)
-allways_light = true
 
 [node name="CollisionShape2D" parent="Walls/Rooms/Room11" index="0" unique_id=473306914]
 position = Vector2(4.5, 20)
@@ -405,7 +370,7 @@ position = Vector2(-279, 1031)
 
 [node name="CollisionShape2D" parent="Walls/Rooms/Room6" index="0" unique_id=473306914]
 position = Vector2(-362, 43)
-shape = null
+shape = SubResource("ConvexPolygonShape2D_7v4gg")
 
 [node name="Sprite2D" parent="Walls/Rooms/Room6" index="1" unique_id=71484989]
 modulate = Color(0.5686275, 0.5686275, 0.5686275, 1)
@@ -605,16 +570,7 @@ loop = true
 chase_path = NodePath("../../ChasePath")
 timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_w4uva"), SubResource("Resource_2hj6u"), SubResource("Resource_hmn4b"), SubResource("Resource_2k5h8"), SubResource("Resource_ohvuj"), SubResource("Resource_mcqk0"), SubResource("Resource_se6ho"), SubResource("Resource_pm6ld")])
 
-[node name="Wife_Path" type="Path2D" parent="YSort/Characters" parent_id_path=PackedInt32Array(1174942420) index="4" unique_id=79069387]
-y_sort_enabled = true
-curve = SubResource("Curve2D_siwb2")
-
-[node name="Wife" parent="YSort/Characters/Wife_Path" index="0" unique_id=339559444 node_paths=PackedStringArray("chase_path") instance=ExtResource("30_q75u2")]
-position = Vector2(1086, 292)
-chase_path = NodePath("../../ChasePath")
-timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_3ymgv"), SubResource("Resource_761ew"), SubResource("Resource_t5t5y"), SubResource("Resource_4kl0u"), SubResource("Resource_7geqi"), SubResource("Resource_xgbm2"), SubResource("Resource_n8m35"), SubResource("Resource_05cdo")])
-
-[node name="Character" parent="YSort/Characters" parent_id_path=PackedInt32Array(1174942420) index="5" unique_id=424702170 instance=ExtResource("31_05cdo")]
+[node name="Character" parent="YSort/Characters" parent_id_path=PackedInt32Array(1174942420) index="4" unique_id=424702170 instance=ExtResource("31_05cdo")]
 position = Vector2(1681, 1936)
 min_speed = 15.0
 max_speed = 250.0
