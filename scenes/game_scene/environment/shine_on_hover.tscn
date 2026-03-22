@@ -16,6 +16,6 @@ fill_to = Vector2(0.39, 0.085)
 visible = false
 scale = Vector2(1.4049909, 1.4049909)
 color = Color(0.5507628, 0.8889015, 0.5477982, 1)
-energy = 4.22
+energy = 0.0
 texture = SubResource("GradientTexture2D_75gx0")
 script = ExtResource("1_0pogi")
