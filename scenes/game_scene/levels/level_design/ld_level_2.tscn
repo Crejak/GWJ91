@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="1_p12eh"]
 [ext_resource type="Material" uid="uid://dtidqqbx5o0du" path="res://scenes/interactions/on_hit_shader_material.tres" id="2_wmcum"]
 [ext_resource type="Texture2D" uid="uid://b3a6j2oex7gfk" path="res://assets/art/blueprints/level2.png" id="3_3v8cr"]
-[ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="4_3cp22"]
+[ext_resource type="PackedScene" path="res://scenes/test_room/room.tscn" id="4_3cp22"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="5_lm55j"]
 [ext_resource type="PackedScene" uid="uid://bowmowy62uprw" path="res://scenes/game_scene/environment/movable_objects/objects/toilet.tscn" id="5_w23nl"]
 [ext_resource type="Texture2D" uid="uid://bjbsvho15g7m6" path="res://assets/art/props/carton_demenagement_1.png" id="5_wlexm"]
@@ -28,9 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="22_vg68f"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="23_e4ngl"]
 [ext_resource type="PackedScene" uid="uid://lau0g0i8c6ls" path="res://scenes/game_scene/pnj/pnjs/level_2_ex_husband.tscn" id="23_my3gm"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/bathtub.tscn" id="23_yb1mr"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="24_71v1a"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="25_j564s"]
+[ext_resource type="PackedScene" uid="uid://c3eq5pjbf8hdv" path="res://scenes/game_scene/environment/movable_objects/objects/bathtub.tscn" id="23_yb1mr"]
+[ext_resource type="PackedScene" uid="uid://bt54nvfg4rsq1" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="24_71v1a"]
+[ext_resource type="PackedScene" uid="uid://c64qhkqwbkyv1" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="25_j564s"]
 [ext_resource type="PackedScene" uid="uid://dl3bhq45kmgkk" path="res://scenes/game_scene/environment/movable_objects/objects/sink.tscn" id="26_e0lav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlexm"]
@@ -68,7 +68,7 @@ size = Vector2(637, 1146)
 
 [sub_resource type="Curve2D" id="Curve2D_w23nl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2326, 1987, 0, 0, 0, 0, 2499, 2000, 0, 0, 0, 0, 2481, 1604, 0, 0, 0, 0, 2332, 1604, 0, 0, 0, 0, 2349, 1250, 0, 0, 0, 0, 2157, 1250, 0, 0, 0, 0, 2170, 1002, 0, 0, 0, 0, 2486, 1000, 0, 0, 0, 0, 2165, 1152, 0, 0, 0, 0, 2156, 1269, 0, 0, 0, 0, 2924, 1263, 0, 0, 0, 0, 2922, 1470, 0, 0, 0, 0, 2774, 1623, 0, 0, 0, 0, 2900, 1757, 0, 0, 0, 0, 3029, 1638, 0, 0, 0, 0, 2901, 1469, 0, 0, 0, 0, 2943, 1264, 0, 0, 0, 0, 3008, 1261, 0, 0, 0, 0, 3037, 1042, 0, 0, 0, 0, 3602, 1061, 0, 0, 0, 0, 3628, 1264, 0, 0, 0, 0, 3803, 1269, 0, 0, 0, 0, 3797, 1477, 0, 0, 0, 0, 3647, 1718, 0, 0, 0, 0, 3592, 1925, 0, 0, 0, 0, 3766, 1971, 0, 0, 0, 0, 3908, 1815, 0, 0, 0, 0, 4016, 1714, 0, 0, 0, 0, 4418, 1718, 0, 0, 0, 0, 4439, 1467, 0, 0, 0, 0, 4438, 1256, 0, 0, 0, 0, 4438, 1087, 0, 0, 0, 0, 3703, 837, 0, 0, 0, 0, 3402, 857, 0, 0, 0, 0, 3009, 1179, 0, 0, 0, 0, 3008, 1274, 0, 0, 0, 0, 2339, 1284, 0, 0, 0, 0, 2515, 1822, 0, 0, 0, 0, 2492, 2012, 0, 0, 0, 0, 2326, 1987)
+"points": PackedVector2Array(0, 0, 0, 0, 2326, 1987, 0, 0, 0, 0, 2499, 2000, 0, 0, 0, 0, 2481, 1604, 0, 0, 0, 0, 2332, 1604, 0, 0, 0, 0, 2349, 1250, 0, 0, 0, 0, 2157, 1250, 0, 0, 0, 0, 2170, 1002, 0, 0, 0, 0, 2730, 1038, 0, 0, 0, 0, 2167, 1127, 0, 0, 0, 0, 2156, 1269, 0, 0, 0, 0, 2924, 1263, 0, 0, 0, 0, 2922, 1470, 0, 0, 0, 0, 2774, 1623, 0, 0, 0, 0, 2900, 1757, 0, 0, 0, 0, 3029, 1638, 0, 0, 0, 0, 2901, 1469, 0, 0, 0, 0, 2943, 1264, 0, 0, 0, 0, 3008, 1261, 0, 0, 0, 0, 3037, 1042, 0, 0, 0, 0, 3602, 1061, 0, 0, 0, 0, 3628, 1264, 0, 0, 0, 0, 3803, 1269, 0, 0, 0, 0, 3797, 1477, 0, 0, 0, 0, 3647, 1718, 0, 0, 0, 0, 3592, 1925, 0, 0, 0, 0, 3766, 1971, 0, 0, 0, 0, 3908, 1815, 0, 0, 0, 0, 4016, 1714, 0, 0, 0, 0, 4418, 1718, 0, 0, 0, 0, 4439, 1467, 0, 0, 0, 0, 4438, 1256, 0, 0, 0, 0, 4438, 1087, 0, 0, 0, 0, 3703, 837, 0, 0, 0, 0, 3402, 857, 0, 0, 0, 0, 3009, 1179, 0, 0, 0, 0, 3008, 1274, 0, 0, 0, 0, 2339, 1284, 0, 0, 0, 0, 2515, 1822, 0, 0, 0, 0, 2492, 2012, 0, 0, 0, 0, 2326, 1987)
 }
 point_count = 40
 
