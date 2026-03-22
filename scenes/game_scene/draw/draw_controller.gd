@@ -20,6 +20,7 @@ func _input(event: InputEvent) -> void:
 	if !(Level.current.level_state.current_phase == LevelState.Phase.PREPARATION):
 		return
 	if Input.is_action_just_pressed("draw"):
+		SignalBus.start_drawing.emit()
 		AudioBus.play_sfx("SCRIBBLE")
 		current_line = DRAWABLE_LINE_2D.instantiate()
 		add_child(current_line)
@@ -57,14 +58,15 @@ func erase_lines() -> void:
 
 
 func draw_previous_lines() -> void:
-	if !GlobalDrawSave.points.is_empty():
-		var points = GlobalDrawSave.points
-		var line :drawable_line_2d = DRAWABLE_LINE_2D.instantiate()
-		line.points = points
-		add_child(line)
+	if !GlobalDrawSave.lines.is_empty():
+		var lines = GlobalDrawSave.lines
+		for points in lines:
+			var line :drawable_line_2d = DRAWABLE_LINE_2D.instantiate()
+			line.points = points
+			add_child(line)
 
 
 func _save_points():
 	for child: Node in get_children():
 		if child is drawable_line_2d:
-			GlobalDrawSave.save_points(child.points)
+			GlobalDrawSave.save_new_line(child.points)

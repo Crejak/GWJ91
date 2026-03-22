@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dsum6xmh2fxwt" path="res://scenes/game_scene/phases/preparation_phase.gd" id="1_8e7co"]
 [ext_resource type="PackedScene" path="res://scenes/game_scene/phases/crt_filter.tscn" id="2_wxhly"]
 [ext_resource type="PackedScene" uid="uid://dt1bhqumvyrq1" path="res://scenes/game_scene/phases/vcr/VCRControls.tscn" id="3_jxwhb"]
+[ext_resource type="FontFile" uid="uid://bs2i5ahmapuhm" path="res://assets/fonts/paperland/Paperland.ttf" id="4_f84u2"]
+[ext_resource type="PackedScene" uid="uid://cwmyfeuryjcav" path="res://scenes/game_scene/draw/line_draw_example.tscn" id="5_f84u2"]
 
 [node name="PreparationPhase" type="Control" unique_id=1630391834]
 layout_mode = 3
@@ -57,6 +59,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
+offset_left = -272.0
+offset_bottom = 126.0
 grow_horizontal = 0
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
@@ -64,6 +68,49 @@ theme_override_constants/margin_right = 50
 [node name="BtnClearDrawings" type="Button" parent="MarginContainer" unique_id=1857341992]
 layout_mode = 2
 text = "Clear drawings"
+
+[node name="DrawInfoContainer" type="MarginContainer" parent="." unique_id=1453932652]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 133.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 300
+
+[node name="PanelContainer" type="PanelContainer" parent="DrawInfoContainer" unique_id=1797544067]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DrawInfoContainer" unique_id=1604646005]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DrawLabel" type="Label" parent="DrawInfoContainer/VBoxContainer" unique_id=2032631475]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("4_f84u2")
+theme_override_font_sizes/font_size = 80
+text = "DRAW your plans !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="DrawInfoContainer/VBoxContainer" unique_id=1808648179]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="DrawInfoContainer/VBoxContainer/CenterContainer" unique_id=1567495399]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DrawExample" parent="DrawInfoContainer/VBoxContainer/CenterContainer/Control" unique_id=1974917042 instance=ExtResource("5_f84u2")]
+position = Vector2(-960, -87)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="skip_button_pressed" from="VCRControls" to="." method="_on_vcr_controls_skip_button_pressed"]

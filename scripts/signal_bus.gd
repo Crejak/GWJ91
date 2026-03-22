@@ -11,7 +11,7 @@ signal objective_list_updated;
 signal objective_list_cleared;
 signal character_entered;
 
-signal clear_drawings;
+signal start_drawing;
 
 @onready var detection: Detection = Detection.new() 
 

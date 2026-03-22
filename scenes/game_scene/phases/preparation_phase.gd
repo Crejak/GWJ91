@@ -7,8 +7,10 @@ extends Control
 
 @onready var timer: Timer = %Timer;
 @onready var timer_label: Label = %TimerLabel;
+@onready var draw_info_container = %DrawInfoContainer
 
 func _ready() -> void:
+	SignalBus.start_drawing.connect(_on_start_drawing)
 	SignalBus.phase_started.connect(on_phase_started);
 	SignalBus.phase_ended.connect(on_phase_ended);
 	visible = false;
@@ -40,3 +42,7 @@ func _on_vcr_controls_skip_button_pressed() -> void:
 
 func _on_btn_clear_drawings_pressed() -> void:
 	GlobalDrawSave.clear_drawings.emit()
+
+
+func _on_start_drawing() -> void:
+	draw_info_container.visible = false
