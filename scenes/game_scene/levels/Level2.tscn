@@ -35,6 +35,12 @@ name = "... in the ex-husband room"
 object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/sleepingroom")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5dmj"]
+size = Vector2(103.66765, 129.76247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67g1p"]
+size = Vector2(134.79784, 76.99994)
+
 [node name="Level" type="Node" unique_id=442240808 node_paths=PackedStringArray("starting_character")]
 script = ExtResource("1_67g1p")
 level_id = 2
@@ -52,6 +58,31 @@ max_speed = 100.0
 
 [node name="Ex_Husband" parent="PlayableEnvironment/Level/YSort/Characters/ex_husband" parent_id_path=PackedInt32Array(274229064, 425087822) index="0" unique_id=893035030]
 max_speed = 100.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/bathroom/PickableArea2D" parent_id_path=PackedInt32Array(274229064, 1029814026, 1829687385) index="2" unique_id=359946354]
+position = Vector2(8.103027, 6.175049)
+shape = SubResource("RectangleShape2D_h5dmj")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/sleepingroom/PickableArea2D" parent_id_path=PackedInt32Array(274229064, 732385189, 1829687385) index="2" unique_id=1797111084]
+position = Vector2(12.899414, 3.9188232)
+shape = SubResource("RectangleShape2D_h5dmj")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/sleepingroom/PickableArea2D" parent_id_path=PackedInt32Array(274229064, 732385189, 1829687385) index="3" unique_id=1731379874]
+position = Vector2(6.349121, -3.6999512)
+shape = SubResource("RectangleShape2D_67g1p")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/livingroom/PickableArea2D" parent_id_path=PackedInt32Array(274229064, 976257733, 1829687385) index="2" unique_id=1538888392]
+position = Vector2(-1.8837891, 8.1501465)
+shape = SubResource("RectangleShape2D_h5dmj")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/office/PickableArea2D" parent_id_path=PackedInt32Array(274229064, 196321196, 1829687385) index="2" unique_id=879272376]
+position = Vector2(9.5390625, 11.537537)
+shape = SubResource("RectangleShape2D_h5dmj")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=566703648]
 
@@ -92,3 +123,7 @@ offset_bottom = 527.0
 [editable path="PlayableEnvironment/Level/Walls/Rooms/Room8"]
 [editable path="PlayableEnvironment/Level/Walls/Rooms/Room9"]
 [editable path="PlayableEnvironment/Level/Walls/Rooms/Room10"]
+[editable path="PlayableEnvironment/Level/YSort/Loot/bathroom"]
+[editable path="PlayableEnvironment/Level/YSort/Loot/sleepingroom"]
+[editable path="PlayableEnvironment/Level/YSort/Loot/livingroom"]
+[editable path="PlayableEnvironment/Level/YSort/Loot/office"]
