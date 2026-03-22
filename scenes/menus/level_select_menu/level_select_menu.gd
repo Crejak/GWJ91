@@ -48,6 +48,9 @@ func _update_level_panels() -> void:
 func _load_story_event() -> void:
 	var currentStoryProgression :StoryProgressionStats = GlobalState.current.story_progression
 	if currentStoryProgression.has_story_progressed():
+		if currentStoryProgression.story_progression == 4:
+			_open_sub_menu(credits_packed_scene)
+			currentStoryProgression.story_progression += 1
 		currentStoryProgression.event_catch_up()
 		GlobalState.save()
 		var phone :PhoneDialogs = phone_scene.instantiate()
