@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://debtjw0d8klqo" path="res://scenes/game_scene/levels/level_design/ld_level_2.tscn" id="3_h5dmj"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="3_tcbo6"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_h5dmj"]
+[ext_resource type="PackedScene" uid="uid://dky8gjio1yook" path="res://scenes/game_scene/pnj/pnjs/level_2_girl.tscn" id="5_3n6yu"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="6_18vbk"]
 [ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="7_0lrvg"]
+[ext_resource type="PackedScene" uid="uid://lau0g0i8c6ls" path="res://scenes/game_scene/pnj/pnjs/level_2_ex_husband.tscn" id="7_p0206"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="8_tcbo6"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="11_67g1p"]
 
@@ -35,6 +38,92 @@ name = "Thing in the ex-husband room"
 object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/sleepingroom")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
+[sub_resource type="Resource" id="Resource_vgith"]
+script = ExtResource("6_18vbk")
+duration = 15.0
+path_progress_destination = 19.55
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_hvbwg"]
+script = ExtResource("6_18vbk")
+path_progress_destination = 2378.05
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_00uv5"]
+script = ExtResource("6_18vbk")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_vg68f"]
+script = ExtResource("6_18vbk")
+path_progress_destination = 4827.03
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_2u8oe"]
+script = ExtResource("6_18vbk")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_my3gm"]
+script = ExtResource("6_18vbk")
+path_progress_destination = 6762.1
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_e4ngl"]
+script = ExtResource("6_18vbk")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_wlexm"]
+script = ExtResource("6_18vbk")
+duration = 10.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_8h2sk"]
+script = ExtResource("6_18vbk")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_yb1mr"]
+script = ExtResource("6_18vbk")
+path_progress_destination = 982.75
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_71v1a"]
+script = ExtResource("6_18vbk")
+duration = 5.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_j564s"]
+script = ExtResource("6_18vbk")
+path_progress_destination = 2939.0
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_e0lav"]
+script = ExtResource("6_18vbk")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_5ajbe"]
+script = ExtResource("6_18vbk")
+path_progress_destination = 4332.18
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_ekbkn"]
+script = ExtResource("6_18vbk")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5dmj"]
 size = Vector2(103.66765, 129.76247)
 
@@ -56,8 +145,22 @@ prop_container_node = NodePath("Level/YSort/Props")
 [node name="Girl" parent="PlayableEnvironment/Level/YSort/Characters/girl" parent_id_path=PackedInt32Array(274229064, 371436523) index="0" unique_id=786583104]
 max_speed = 100.0
 
+[node name="Girl2" parent="PlayableEnvironment/Level/YSort/Characters/girl" parent_id_path=PackedInt32Array(274229064, 371436523) index="1" unique_id=1530325599 node_paths=PackedStringArray("chase_path") instance=ExtResource("5_3n6yu")]
+position = Vector2(2805, 1018)
+active_phase = 3
+chase_path = NodePath("../../ChasePath")
+max_speed = 100.0
+timeline = Array[ExtResource("6_18vbk")]([SubResource("Resource_vgith"), SubResource("Resource_hvbwg"), SubResource("Resource_00uv5"), SubResource("Resource_vg68f"), SubResource("Resource_2u8oe"), SubResource("Resource_my3gm"), SubResource("Resource_e4ngl")])
+
 [node name="Ex_Husband" parent="PlayableEnvironment/Level/YSort/Characters/ex_husband" parent_id_path=PackedInt32Array(274229064, 425087822) index="0" unique_id=893035030]
 max_speed = 100.0
+
+[node name="Ex_Husband2" parent="PlayableEnvironment/Level/YSort/Characters/ex_husband" parent_id_path=PackedInt32Array(274229064, 425087822) index="1" unique_id=906142428 node_paths=PackedStringArray("chase_path") instance=ExtResource("7_p0206")]
+position = Vector2(3611, 1637)
+active_phase = 3
+chase_path = NodePath("../../ChasePath")
+max_speed = 100.0
+timeline = Array[ExtResource("6_18vbk")]([SubResource("Resource_wlexm"), SubResource("Resource_8h2sk"), SubResource("Resource_yb1mr"), SubResource("Resource_71v1a"), SubResource("Resource_j564s"), SubResource("Resource_e0lav"), SubResource("Resource_5ajbe"), SubResource("Resource_ekbkn")])
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/bathroom/PickableArea2D" parent_id_path=PackedInt32Array(274229064, 1029814026, 1829687385) index="2" unique_id=359946354]
 position = Vector2(8.103027, 6.175049)

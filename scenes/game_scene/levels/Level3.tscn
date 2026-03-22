@@ -8,9 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="4_yatoe"]
 [ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="5_1i2go"]
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="5_bej4l"]
+[ext_resource type="PackedScene" uid="uid://cdsljjqeqxfbi" path="res://scenes/game_scene/pnj/pnjs/level_3_dad.tscn" id="5_x43lq"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="6_1i2go"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="6_jk3j4"]
 [ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="7_6ekos"]
+[ext_resource type="PackedScene" uid="uid://sit441ithg7p" path="res://scenes/game_scene/pnj/pnjs/level_3_geek.tscn" id="7_b2lv5"]
+[ext_resource type="PackedScene" uid="uid://dfoj67snbxe2f" path="res://scenes/game_scene/pnj/pnjs/level_3_teckel.tscn" id="8_0eabk"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="8_dlj1a"]
+[ext_resource type="PackedScene" uid="uid://cqr24ncfv4dhp" path="res://scenes/game_scene/pnj/pnjs/level_3_wife.tscn" id="9_1ua8v"]
 
 [sub_resource type="Resource" id="Resource_6ekos"]
 script = ExtResource("2_yatoe")
@@ -39,6 +44,173 @@ metadata/_custom_type_script = "uid://c5k5adpjo4151"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yatoe"]
 size = Vector2(692, 580)
 
+[sub_resource type="Resource" id="Resource_dengy"]
+script = ExtResource("6_jk3j4")
+duration = 30.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_5413j"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 3630.11
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_3fnj7"]
+script = ExtResource("6_jk3j4")
+duration = 10.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_ud0iy"]
+script = ExtResource("6_jk3j4")
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_xsx5d"]
+script = ExtResource("6_jk3j4")
+duration = 30.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_agi6l"]
+script = ExtResource("6_jk3j4")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_gsa50"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 3196.65
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_pgckm"]
+script = ExtResource("6_jk3j4")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_m2va6"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 5721.4
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_bk4qf"]
+script = ExtResource("6_jk3j4")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_e736n"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 8453.15
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_r6uh3"]
+script = ExtResource("6_jk3j4")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_5imyk"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 11926.07
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_8gb7v"]
+script = ExtResource("6_jk3j4")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_w4uva"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 3540.05
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_2hj6u"]
+script = ExtResource("6_jk3j4")
+duration = 15.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_hmn4b"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 6166.04
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_2k5h8"]
+script = ExtResource("6_jk3j4")
+duration = 15.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_ohvuj"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 7280.1
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_mcqk0"]
+script = ExtResource("6_jk3j4")
+duration = 15.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_se6ho"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 9658.25
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_pm6ld"]
+script = ExtResource("6_jk3j4")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_3ymgv"]
+script = ExtResource("6_jk3j4")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_761ew"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 2418.45
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_t5t5y"]
+script = ExtResource("6_jk3j4")
+duration = 20.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_4kl0u"]
+script = ExtResource("6_jk3j4")
+duration = 5.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_7geqi"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 4943.2
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_xgbm2"]
+script = ExtResource("6_jk3j4")
+duration = 30.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_n8m35"]
+script = ExtResource("6_jk3j4")
+path_progress_destination = 6829.33
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_05cdo"]
+script = ExtResource("6_jk3j4")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
 [node name="Level" type="Node" unique_id=1156998486 node_paths=PackedStringArray("starting_character")]
 script = ExtResource("1_uauh1")
 level_id = 2
@@ -63,6 +235,32 @@ visible = false
 [node name="CollisionShape2D" parent="PlayableEnvironment/LD_Mrs_Yellow/Walls/Rooms/Room" parent_id_path=PackedInt32Array(274229064, 727033528) index="0" unique_id=473306914]
 position = Vector2(33, 109)
 shape = SubResource("RectangleShape2D_yatoe")
+
+[node name="Dad2" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Dad_Path" parent_id_path=PackedInt32Array(274229064, 891349558) index="1" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("5_x43lq")]
+y_sort_enabled = true
+position = Vector2(92, 229)
+active_phase = 3
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("6_jk3j4")]([SubResource("Resource_dengy"), SubResource("Resource_5413j"), SubResource("Resource_3fnj7"), SubResource("Resource_ud0iy"), SubResource("Resource_xsx5d")])
+
+[node name="Geek2" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Geek_Path" parent_id_path=PackedInt32Array(274229064, 1584143438) index="1" unique_id=1202961859 node_paths=PackedStringArray("chase_path") instance=ExtResource("7_b2lv5")]
+position = Vector2(644, 1352)
+active_phase = 3
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("6_jk3j4")]([SubResource("Resource_agi6l"), SubResource("Resource_gsa50"), SubResource("Resource_pgckm"), SubResource("Resource_m2va6"), SubResource("Resource_bk4qf"), SubResource("Resource_e736n"), SubResource("Resource_r6uh3"), SubResource("Resource_5imyk"), SubResource("Resource_8gb7v")])
+
+[node name="Dog2" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Dog_Path" parent_id_path=PackedInt32Array(274229064, 1671234144) index="1" unique_id=883617873 node_paths=PackedStringArray("chase_path") instance=ExtResource("8_0eabk")]
+position = Vector2(2848, 334)
+loop = true
+active_phase = 3
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("6_jk3j4")]([SubResource("Resource_w4uva"), SubResource("Resource_2hj6u"), SubResource("Resource_hmn4b"), SubResource("Resource_2k5h8"), SubResource("Resource_ohvuj"), SubResource("Resource_mcqk0"), SubResource("Resource_se6ho"), SubResource("Resource_pm6ld")])
+
+[node name="Wife2" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Wife_Path" parent_id_path=PackedInt32Array(274229064, 79069387) index="1" unique_id=1627996507 node_paths=PackedStringArray("chase_path") instance=ExtResource("9_1ua8v")]
+position = Vector2(1086, 292)
+active_phase = 3
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("6_jk3j4")]([SubResource("Resource_3ymgv"), SubResource("Resource_761ew"), SubResource("Resource_t5t5y"), SubResource("Resource_4kl0u"), SubResource("Resource_7geqi"), SubResource("Resource_xgbm2"), SubResource("Resource_n8m35"), SubResource("Resource_05cdo")])
 
 [node name="PickablePresent" parent="PlayableEnvironment/LD_Mrs_Yellow/YSort/Loot" parent_id_path=PackedInt32Array(274229064, 1827791998) index="0" unique_id=1203108321 instance=ExtResource("5_1i2go")]
 position = Vector2(679, 1256)

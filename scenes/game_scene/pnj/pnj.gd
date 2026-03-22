@@ -11,6 +11,8 @@ enum State {SLEEP, MOVE, WAIT, CHASE}
 }
 signal state_changed(in_state: State)
 
+@export var active_phase: LevelState.Phase = LevelState.Phase.PREPARATION;
+
 @export_group("Detection")
 var detection: float = 0.0
 @export var chase_threshold: float = 50.0
@@ -53,17 +55,25 @@ var is_waiting_for_step_to_finish: bool
 
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_game_phase_changed)
-	SignalBus.phase_ended.connect(func(_in_phase: LevelState.Phase) -> void: reset())
+	SignalBus.phase_ended.connect(func(_in_phase: LevelState.Phase) -> void:
+		reset()
+		if _in_phase == active_phase:
+			queue_free()
+	)
 	SignalBus.detection.on_movable_object_noise_start.connect(_on_movable_object_noise_start)
 	SignalBus.detection.on_movable_object_noise_stop.connect(_on_movable_object_noise_stop)
 	SignalBus.detection.on_wall_noise_start.connect(_on_wall_noise_start)
 	SignalBus.detection.on_wall_noise_stop.connect(_on_wall_noise_stop)
 	SignalBus.detection.on_player_move.connect(_on_player_move_detection)
+	visible = false;
 
 func _process(in_delta: float) -> void:
 	_increase_detection(in_delta)
 
 func _on_game_phase_changed(in_phase: LevelState.Phase) -> void:
+	if active_phase != in_phase:
+		return;
+	visible = true;
 	match in_phase:
 		LevelState.Phase.PREPARATION:
 			start_game_timer()
