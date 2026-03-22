@@ -3,7 +3,7 @@ class_name drawable_line_2d
 
 @export var color: Color
 
-const min_step = 20
+const min_step = 5
 var last_point: Vector2
 
 func add_new_point(mouse_pos: Vector2) -> void:
