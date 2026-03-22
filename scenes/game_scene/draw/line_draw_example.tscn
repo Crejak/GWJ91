@@ -21,6 +21,6 @@ metadata/_custom_type_script = "uid://bx5iub8ismy5l"
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=1064550308]
 unique_name_in_owner = true
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_0lwkn")
-offset = Vector2(120, 50)
+offset = Vector2(60, 28)
