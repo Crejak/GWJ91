@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bhpo861bqxu3d"]
 
-[ext_resource type="Script" path="res://scenes/test_room/light_system.gd" id="1_gakxn"]
+[ext_resource type="Script" uid="uid://cj7sgnktyegym" path="res://scenes/test_room/light_system.gd" id="1_gakxn"]
 [ext_resource type="Material" uid="uid://dtidqqbx5o0du" path="res://scenes/interactions/on_hit_shader_material.tres" id="2_02vq3"]
 [ext_resource type="Texture2D" uid="uid://sdbo761twmui" path="res://assets/art/blueprints/level4.png" id="3_02vq3"]
-[ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="4_s058u"]
+[ext_resource type="PackedScene" path="res://scenes/test_room/room.tscn" id="4_s058u"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="5_s058u"]
 [ext_resource type="PackedScene" uid="uid://bnpln63x4cwud" path="res://scenes/game_scene/environment/ExtractionPoint.tscn" id="5_y1v0b"]
 [ext_resource type="PackedScene" uid="uid://bowmowy62uprw" path="res://scenes/game_scene/environment/movable_objects/objects/toilet.tscn" id="7_7mel7"]
@@ -22,10 +22,13 @@
 [ext_resource type="PackedScene" uid="uid://d0x4h7rmkq1ev" path="res://scenes/game_scene/environment/movable_objects/objects/diner_table.tscn" id="19_lhm52"]
 [ext_resource type="PackedScene" uid="uid://dn11gy1m085yy" path="res://scenes/game_scene/environment/movable_objects/objects/fridge.tscn" id="20_bbp4a"]
 [ext_resource type="PackedScene" uid="uid://mxd2xxqbwe6y" path="res://scenes/game_scene/environment/movable_objects/objects/lamp.tscn" id="21_6osdg"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/stove.tscn" id="21_fc5qq"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="22_67lip"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/shoes_furniture.tscn" id="23_o08ws"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="24_wr2dr"]
+[ext_resource type="PackedScene" uid="uid://cfxmvgsdfr5gl" path="res://scenes/game_scene/environment/movable_objects/objects/stove.tscn" id="21_fc5qq"]
+[ext_resource type="PackedScene" uid="uid://bt54nvfg4rsq1" path="res://scenes/game_scene/environment/movable_objects/objects/furniture.tscn" id="22_67lip"]
+[ext_resource type="PackedScene" uid="uid://bnma2k7fryed6" path="res://scenes/game_scene/environment/movable_objects/objects/shoes_furniture.tscn" id="23_o08ws"]
+[ext_resource type="PackedScene" uid="uid://c64qhkqwbkyv1" path="res://scenes/game_scene/environment/movable_objects/objects/guitare.tscn" id="24_wr2dr"]
+[ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="26_67lip"]
+[ext_resource type="PackedScene" uid="uid://dxgur7u2ptrls" path="res://scenes/game_scene/pnj/pnjs/level_4_mr_brown.tscn" id="26_o08ws"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="27_wr2dr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc5qq"]
 size = Vector2(222.1212, 42.424133)
@@ -60,15 +63,27 @@ size = Vector2(1316, 182)
 
 [sub_resource type="Curve2D" id="Curve2D_7mel7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1434, 906, 0, 0, 0, 0, 1440, 722, 0, 0, 0, 0, 1060, 727, 0, 0, 0, 0, 1042, 1078, 0, 0, 0, 0, 1045, 724, 0, 0, 0, 0, 841, 736, 0, 0, 0, 0, 782, 953, 0, 0, 0, 0, 823, 736, 0, 0, 0, 0, 999, 691, 0, 0, 0, 0, 1011, 486, 0, 0, 0, 0, 1106, 326, 0, 0, 0, 0, 1310, 336, 0, 0, 0, 0, 1704, 487, 0, 0, 0, 0, 1698, 715, 0, 0, 0, 0, 1996, 719, 0, 0, 0, 0, 1988, 893, 0, 0, 0, 0, 1705, 893, 0, 0, 0, 0, 1982, 920, 0, 0, 0, 0, 1985, 723, 0, 0, 0, 0, 1454, 718, 0, 0, 0, 0, 1434, 905)
+"points": PackedVector2Array(0, 0, 0, 0, 1434, 906, 0, 0, 0, 0, 1440, 722, 0, 0, 0, 0, 1060, 727, 0, 0, 0, 0, 1042, 1078, 0, 0, 0, 0, 1045, 724, 0, 0, 0, 0, 841, 736, 0, 0, 0, 0, 782, 953, 0, 0, 0, 0, 823, 736, 0, 0, 0, 0, 999, 691, 0, 0, 0, 0, 1011, 486, 0, 0, 0, 0, 1106, 326, 0, 0, 0, 0, 1310, 336, 0, 0, 0, 0, 1704, 487, 0, 0, 0, 0, 1698, 715, 0, 0, 0, 0, 1996, 719, 0, 0, 0, 0, 1956, 1060, 0, 0, 0, 0, 1800, 1050, 0, 0, 0, 0, 1960, 1066, 0, 0, 0, 0, 1985, 723, 0, 0, 0, 0, 1454, 718, 0, 0, 0, 0, 1434, 905)
 }
 point_count = 21
 
+[sub_resource type="Curve2D" id="Curve2D_wr2dr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1820, 979)
+}
+point_count = 1
+
+[sub_resource type="Resource" id="Resource_prh3k"]
+script = ExtResource("27_wr2dr")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
 [node name="Level" type="Node2D" unique_id=274229064]
 
-[node name="LightSystem" type="Node" parent="." unique_id=1509984193]
+[node name="LightSystem" type="Node" parent="." unique_id=1509984193 node_paths=PackedStringArray("back_ground_color", "blueprint_sprite")]
 script = ExtResource("1_gakxn")
+back_ground_color = NodePath("../ColorRect")
 color_preparation = Color(0.69411767, 0.6901961, 0.68235296, 1)
+blueprint_sprite = NodePath("../Walls/Blueprint")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=832066561]
 z_index = -3
@@ -224,8 +239,9 @@ position = Vector2(1761, 516)
 position = Vector2(1069, 579)
 
 [node name="Bed" parent="YSort/Props" unique_id=893324872 instance=ExtResource("12_k5aea")]
-position = Vector2(1843, 1009)
+position = Vector2(1893, 832)
 rotation = -3.1415925
+flip_v = true
 
 [node name="Armchair" parent="YSort/Props" unique_id=555611662 instance=ExtResource("12_bj7is")]
 position = Vector2(710, 543)
@@ -245,11 +261,11 @@ flip_v = true
 position = Vector2(483, 521)
 
 [node name="BedTable" parent="YSort/Props" unique_id=491838161 instance=ExtResource("16_bj7is")]
-position = Vector2(1579, 1191)
+position = Vector2(1636, 874)
 flip_v = true
 
 [node name="BedTable2" parent="YSort/Props" unique_id=1614875274 instance=ExtResource("16_bj7is")]
-position = Vector2(1884, 1194)
+position = Vector2(1713, 1201)
 flip_v = true
 
 [node name="Plant" parent="YSort/Props" unique_id=1017045055 instance=ExtResource("17_wed56")]
@@ -266,7 +282,7 @@ position = Vector2(1288, 1210)
 rotation = -1.5707964
 
 [node name="TV_Table3" parent="YSort/Props" unique_id=2040575230 instance=ExtResource("13_lhm52")]
-position = Vector2(1359, 1115)
+position = Vector2(1384, 1116)
 
 [node name="TV_Table5" parent="YSort/Props" unique_id=646732425 instance=ExtResource("13_lhm52")]
 position = Vector2(1207, 450)
@@ -278,7 +294,7 @@ position = Vector2(2004, 320)
 rotation = 1.5707964
 
 [node name="Lamp" parent="YSort/Props" unique_id=173458865 instance=ExtResource("21_6osdg")]
-position = Vector2(2019, 1184)
+position = Vector2(1919, 1170)
 
 [node name="Lamp2" parent="YSort/Props" unique_id=1596087055 instance=ExtResource("21_6osdg")]
 position = Vector2(1123, 1201)
@@ -290,7 +306,7 @@ position = Vector2(1708, 288)
 position = Vector2(1543, 855)
 
 [node name="Furniture3" parent="YSort/Props" unique_id=1189666486 instance=ExtResource("22_67lip")]
-position = Vector2(1629, 856)
+position = Vector2(1984, 997)
 
 [node name="ShoesFurniture" parent="YSort/Props" unique_id=2053364356 instance=ExtResource("23_o08ws")]
 position = Vector2(928, 1136)
@@ -313,9 +329,23 @@ curve = SubResource("Curve2D_7mel7")
 
 [node name="Character" parent="YSort/Characters" unique_id=424702170 instance=ExtResource("5_s058u")]
 position = Vector2(1061, 1140)
+min_speed = 15.0
+max_speed = 250.0
+
+[node name="Path2D" type="Path2D" parent="YSort/Characters" unique_id=972562628]
+y_sort_enabled = true
+curve = SubResource("Curve2D_wr2dr")
+
+[node name="Dad" parent="YSort/Characters/Path2D" unique_id=786583104 node_paths=PackedStringArray("chase_path") instance=ExtResource("26_o08ws")]
+position = Vector2(1805, 1014)
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("27_wr2dr")]([SubResource("Resource_prh3k")])
 
 [node name="Loot" type="Node2D" parent="YSort" unique_id=1827791998]
 y_sort_enabled = true
+
+[node name="PickablePresent" parent="YSort/Loot" unique_id=1081384291 instance=ExtResource("26_67lip")]
+position = Vector2(1303, 1117)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1772549326]
 position = Vector2(1278, 708)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjvmg8xol8bml"]
 
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_bj5a1"]
+[ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_ep5fq"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="2_ynnvv"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="3_ep5fq"]
 [ext_resource type="PackedScene" uid="uid://bhpo861bqxu3d" path="res://scenes/game_scene/levels/level_design/ld_level_4.tscn" id="3_ynnvv"]
@@ -10,8 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="7_wkgin"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="8_200x2"]
 
-[node name="Level" type="Node" unique_id=442240808]
+[sub_resource type="Resource" id="Resource_a8qyc"]
+script = ExtResource("2_ep5fq")
+name = "Mr Brown's belongings"
+object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/PickablePresent")
+metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[node name="Level" type="Node" unique_id=442240808 node_paths=PackedStringArray("starting_character")]
 script = ExtResource("1_bj5a1")
+level_id = 4
+starting_character = NodePath("PlayableEnvironment/Level/YSort/Characters/Character")
+objectives = Array[ExtResource("2_ep5fq")]([SubResource("Resource_a8qyc")])
 
 [node name="PlayableEnvironment" type="Node2D" parent="." unique_id=771673376]
 script = ExtResource("2_ynnvv")
@@ -28,13 +38,14 @@ Please read it to understand all the lore. I promise it's really cool."
 
 [node name="PreparationPhase" parent="UI" unique_id=1630391834 instance=ExtResource("4_a8qyc")]
 visible = false
-preparation_time = 35.0
+preparation_time = 20.0
 
 [node name="ConclusionPhase" parent="UI" unique_id=1435576337 instance=ExtResource("5_lefn0")]
 visible = false
 
 [node name="InfiltrationPhaseUI" parent="UI" unique_id=1199558180 instance=ExtResource("6_eomli")]
 visible = false
+infiltration_phase_time = 60.0
 
 [node name="ObjectiveListUi" parent="UI" unique_id=1932395075 instance=ExtResource("7_wkgin")]
 visible = false
@@ -44,3 +55,13 @@ offset_left = 193.0
 offset_top = 527.0
 offset_right = 193.0
 offset_bottom = 527.0
+
+[editable path="PlayableEnvironment/Level"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room2"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room3"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room4"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room5"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room6"]
+[editable path="PlayableEnvironment/Level/Walls/Rooms/Room7"]
+[editable path="PlayableEnvironment/Level/ExtractionPoint"]
