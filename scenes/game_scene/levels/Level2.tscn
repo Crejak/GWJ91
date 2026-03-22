@@ -130,7 +130,7 @@ size = Vector2(103.66765, 129.76247)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67g1p"]
 size = Vector2(134.79784, 76.99994)
 
-[node name="Level" type="Node" unique_id=442240808 node_paths=PackedStringArray("starting_character")]
+[node name="Level2" type="Node" unique_id=442240808 node_paths=PackedStringArray("starting_character")]
 script = ExtResource("1_67g1p")
 level_id = 2
 starting_character = NodePath("PlayableEnvironment/Level/YSort/Characters/Character")

@@ -213,7 +213,7 @@ metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [node name="Level" type="Node" unique_id=1156998486 node_paths=PackedStringArray("starting_character")]
 script = ExtResource("1_uauh1")
-level_id = 2
+level_id = 3
 starting_character = NodePath("PlayableEnvironment/LD_Mrs_Yellow/YSort/Characters/Character")
 objectives = Array[ExtResource("2_yatoe")]([SubResource("Resource_6ekos"), SubResource("Resource_dlj1a"), SubResource("Resource_cquup"), SubResource("Resource_lvub2")])
 
