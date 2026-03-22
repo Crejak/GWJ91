@@ -1,5 +1,17 @@
 # Attribution
-## Collaborators
+## Rob Roberts the Robber
+
+A game by :
+
+Mario Giraud
+Brice Maussang
+Yvan Roux
+Raphaël Bonneval
+Valentin Rigolle
+
+Made for Godot Wild Jame #91
+
+Thank you for playing !
 
 ### VHS CRT Broadcast Shader
 Author : [banwarfarms](https://godotshaders.com/author/banwarfarms/)
@@ -40,3 +52,5 @@ License: [MIT License](https://github.com/microsoft/vscode/blob/main/LICENSE.txt
 Author: [Linus Torvalds](https://github.com/torvalds)  
 Source: [git-scm.com](https://git-scm.com/downloads)  
 License: [GNU General Public License version 2](https://opensource.org/licenses/GPL-2.0)
+
+## Thank you for playing !
