@@ -13,7 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_a8qyc"]
 script = ExtResource("2_ep5fq")
-name = "Mr Brown's belongings"
+name = "Mr Brown's resent"
 object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/PickablePresent")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
