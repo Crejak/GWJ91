@@ -600,6 +600,7 @@ frame_progress = 1.0
 
 [node name="DetectionProgressBar" type="ProgressBar" parent="RigidBody2D/Visual" unique_id=1443591310]
 unique_name_in_owner = true
+visible = false
 offset_left = -50.0
 offset_top = 35.0
 offset_right = 63.0
