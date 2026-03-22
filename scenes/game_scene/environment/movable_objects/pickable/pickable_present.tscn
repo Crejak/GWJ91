@@ -34,4 +34,5 @@ collision_layer = 64
 monitoring = true
 
 [node name="ShineOnHover" parent="PickableArea2D" index="2" unique_id=1840421436 instance=ExtResource("3_1nej1")]
-position = Vector2(-37.050003, 36.8)
+visible = true
+position = Vector2(-0.050006866, -0.19999695)
