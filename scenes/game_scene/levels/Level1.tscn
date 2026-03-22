@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://qi4qdfy4cte8" path="res://scenes/game_scene/levels/level.gd" id="1_7yctp"]
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
-[ext_resource type="Script" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
+[ext_resource type="Script" uid="uid://c5k5adpjo4151" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
+[ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="PackedScene" uid="uid://t08dk1rxi2kr" path="res://scenes/game_scene/levels/level_design/ld_level_1.tscn" id="4_ktfe1"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
+[ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 [ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
+[ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
 
 [sub_resource type="Resource" id="Resource_ktfe1"]
 script = ExtResource("2_armk4")
@@ -35,6 +35,9 @@ script = ExtResource("2_armk4")
 name = "Painting in the bath room"
 object_path = NodePath("PlayableEnvironment/Level/YSort/Loot/painting_bathroom")
 metadata/_custom_type_script = "uid://c5k5adpjo4151"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktfe1"]
+size = Vector2(96.099976, 113.599976)
 
 [sub_resource type="Resource" id="Resource_wfa5e"]
 script = ExtResource("14_1e6rb")
@@ -63,6 +66,22 @@ script = ExtResource("4_pv3ef")
 
 [node name="Level" parent="PlayableEnvironment" unique_id=1878490932 instance=ExtResource("4_ktfe1")]
 position = Vector2(13, 5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/painting_kitchen/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 1203108321, 1829687385) index="2" unique_id=640770942]
+shape = SubResource("RectangleShape2D_ktfe1")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/painting_room/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 1577084302, 1829687385) index="2" unique_id=165022802]
+shape = SubResource("RectangleShape2D_ktfe1")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/painting_bathroom/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 1107931385, 1829687385) index="2" unique_id=1978216253]
+shape = SubResource("RectangleShape2D_ktfe1")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/painting_livingroom/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 165151667, 1829687385) index="2" unique_id=68333024]
+shape = SubResource("RectangleShape2D_ktfe1")
+debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
 
 [node name="MrsYellow" parent="PlayableEnvironment/Level/YSort/Characters/Path2D" parent_id_path=PackedInt32Array(1878490932, 646266743) index="0" unique_id=786583104]
 position = Vector2(130, -72)
