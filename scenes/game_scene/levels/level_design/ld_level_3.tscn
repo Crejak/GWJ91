@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bdsqyn3o5n3wl"]
 
 [ext_resource type="PackedScene" uid="uid://cccj6psuw0ie7" path="res://scenes/game_scene/levels/level_design/level_base.tscn" id="1_wqo8v"]
-[ext_resource type="PackedScene" uid="uid://sew38c8nl2du" path="res://scenes/test_room/room.tscn" id="2_761ew"]
+[ext_resource type="PackedScene" path="res://scenes/test_room/room.tscn" id="2_761ew"]
 [ext_resource type="PackedScene" uid="uid://cdsljjqeqxfbi" path="res://scenes/game_scene/pnj/pnjs/level_3_dad.tscn" id="2_ibswy"]
 [ext_resource type="PackedScene" uid="uid://sit441ithg7p" path="res://scenes/game_scene/pnj/pnjs/level_3_geek.tscn" id="3_k0tv0"]
 [ext_resource type="Texture2D" uid="uid://b4o33mn3ktsc3" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/couloir.PNG" id="3_xgbm2"]
 [ext_resource type="Texture2D" uid="uid://djjowptriu5tv" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_parents.PNG" id="4_n8m35"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/pnj/pnjs/level_3_teckel.tscn" id="4_v6dri"]
+[ext_resource type="PackedScene" uid="uid://dfoj67snbxe2f" path="res://scenes/game_scene/pnj/pnjs/level_3_teckel.tscn" id="4_v6dri"]
 [ext_resource type="Texture2D" uid="uid://dj4w570vn4sce" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/chambre_geek.PNG" id="5_xtf2d"]
 [ext_resource type="Texture2D" uid="uid://y0q8f3775l2s" path="res://assets/art/blueprints/rooms_mrs_yellow/mrs_yellow/sdb.PNG" id="6_56raw"]
 [ext_resource type="PackedScene" uid="uid://b4yqrr2f0upe1" path="res://scenes/game_scene/environment/movable_objects/objects/armchair.tscn" id="6_iit3q"]
@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://cw8wrc1y3rt08" path="res://scenes/game_scene/environment/movable_objects/objects/kitchen_sink.tscn" id="17_rpa6g"]
 [ext_resource type="PackedScene" uid="uid://d0x4h7rmkq1ev" path="res://scenes/game_scene/environment/movable_objects/objects/diner_table.tscn" id="18_8v5l6"]
 [ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="20_02gqg"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/pnj/pnjs/level_3_wife.tscn" id="30_q75u2"]
+[ext_resource type="PackedScene" uid="uid://cqr24ncfv4dhp" path="res://scenes/game_scene/pnj/pnjs/level_3_wife.tscn" id="30_q75u2"]
 [ext_resource type="PackedScene" uid="uid://yrcct0ibsfea" path="res://scenes/game_scene/character/Character.tscn" id="31_05cdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5t5y"]
@@ -58,21 +58,6 @@ colors = PackedColorArray(0.5686275, 0.5686275, 0.5686275, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_8v5l6"]
 gradient = SubResource("Gradient_51dik")
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7geqi"]
-points = PackedVector2Array(-46, -110, -45, 484, 110, 491, 172, -25, 641, -37, 650, 193, 754, 185, 753, -198, 191, -177, 191, -116)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_rpa6g"]
-points = PackedVector2Array(-152, -321, -150, 52, 248, 52, 249, 846, 675, 858, 669, -339)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_8v5l6"]
-points = PackedVector2Array(133, -648, 135, 410, 751, 413, 750, -16, 507, -16, 501, -647)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_02gqg"]
-points = PackedVector2Array(59, -312, 55, 223, 719, 220, 721, 2, 521, 10, 519, -314)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dengy"]
-points = PackedVector2Array(-164, 50, -161, 262, 533, 251, 536, 369, 785, 344, 790, -360, 17, -369, 12, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8v5l6"]
 size = Vector2(122, 197)
@@ -388,7 +373,7 @@ position = Vector2(1065, 477)
 
 [node name="CollisionShape2D" parent="Walls/Rooms/Room4" index="0" unique_id=473306914]
 position = Vector2(-362, 43)
-shape = SubResource("ConvexPolygonShape2D_7geqi")
+shape = null
 
 [node name="Sprite2D" parent="Walls/Rooms/Room4" index="1" unique_id=71484989]
 modulate = Color(0.5686275, 0.5686275, 0.5686275, 1)
@@ -396,12 +381,15 @@ position = Vector2(-8, 200.00005)
 scale = Vector2(2.08, 2.08)
 texture = ExtResource("3_xgbm2")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Rooms/Room4" index="2" unique_id=1096660866]
+polygon = PackedVector2Array(-402, 531, -402, -63, -161, -73, -166, -143, 387, -151, 397, 233, 291, 227, 278, 10, -197, 25, -259, 528)
+
 [node name="Room5" parent="Walls/Rooms" parent_id_path=PackedInt32Array(1847597720) index="9" unique_id=1239629828 instance=ExtResource("2_761ew")]
 position = Vector2(2015, 604)
 
 [node name="CollisionShape2D" parent="Walls/Rooms/Room5" index="0" unique_id=473306914]
 position = Vector2(-362, 43)
-shape = SubResource("ConvexPolygonShape2D_rpa6g")
+shape = null
 
 [node name="Sprite2D" parent="Walls/Rooms/Room5" index="1" unique_id=71484989]
 modulate = Color(0.5686275, 0.5686275, 0.5686275, 1)
@@ -409,12 +397,15 @@ position = Vector2(-84, 303.00006)
 scale = Vector2(2.08, 2.08)
 texture = ExtResource("4_n8m35")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Rooms/Room5" index="2" unique_id=1351528306]
+polygon = PackedVector2Array(-514, -269, 312, -297, 309, 871, -99, 874, -118, 89, -511, 98)
+
 [node name="Room6" parent="Walls/Rooms" parent_id_path=PackedInt32Array(1847597720) index="10" unique_id=1581456103 instance=ExtResource("2_761ew")]
 position = Vector2(-279, 1031)
 
 [node name="CollisionShape2D" parent="Walls/Rooms/Room6" index="0" unique_id=473306914]
 position = Vector2(-362, 43)
-shape = SubResource("ConvexPolygonShape2D_8v5l6")
+shape = null
 
 [node name="Sprite2D" parent="Walls/Rooms/Room6" index="1" unique_id=71484989]
 modulate = Color(0.5686275, 0.5686275, 0.5686275, 1)
@@ -422,14 +413,21 @@ position = Vector2(77, -71.99994)
 scale = Vector2(2.08, 2.08)
 texture = ExtResource("5_xtf2d")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Rooms/Room6" index="2" unique_id=543502399]
+polygon = PackedVector2Array(-234, -611, 148, -608, 148, 26, 393, 26, 391, 453, -222, 453)
+
 [node name="Room7" parent="Walls/Rooms" parent_id_path=PackedInt32Array(1847597720) index="11" unique_id=209312138 instance=ExtResource("2_761ew")]
 position = Vector2(-209, -79)
 
 [node name="CollisionShape2D" parent="Walls/Rooms/Room7" index="0" unique_id=473306914]
 position = Vector2(-362, 43)
-shape = SubResource("ConvexPolygonShape2D_02gqg")
+shape = null
 
-[node name="Sprite2D" parent="Walls/Rooms/Room7" index="1" unique_id=71484989]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Rooms/Room7" index="1" unique_id=1148303638]
+position = Vector2(935, -43)
+polygon = PackedVector2Array(-1235, -236, -775, -235, -774, 83, -576, 82, -576, 311, -1241, 307)
+
+[node name="Sprite2D" parent="Walls/Rooms/Room7" index="2" unique_id=71484989]
 modulate = Color(0.5686275, 0.5686275, 0.5686275, 1)
 position = Vector2(31, -8)
 scale = Vector2(2.08, 2.08)
@@ -438,11 +436,15 @@ texture = ExtResource("6_56raw")
 [node name="Room13" parent="Walls/Rooms" parent_id_path=PackedInt32Array(1847597720) index="12" unique_id=1516209129 instance=ExtResource("2_761ew")]
 position = Vector2(726, -122)
 
-[node name="CollisionShape2D" parent="Walls/Rooms/Room13" index="0" unique_id=473306914]
-position = Vector2(-362, 43)
-shape = SubResource("ConvexPolygonShape2D_dengy")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/Rooms/Room13" index="0" unique_id=1663901452]
+position = Vector2(-935, 43)
+polygon = PackedVector2Array(414, 265, 404, 43, 590, 43, 590, -366, 1366, -373, 1363, 356, 1110, 358, 1105, 264)
 
-[node name="Sprite2D" parent="Walls/Rooms/Room13" index="1" unique_id=71484989]
+[node name="CollisionShape2D" parent="Walls/Rooms/Room13" index="1" unique_id=473306914]
+position = Vector2(-362, 43)
+shape = null
+
+[node name="Sprite2D" parent="Walls/Rooms/Room13" index="2" unique_id=71484989]
 modulate = Color(0.5686275, 0.5686275, 0.5686275, 1)
 position = Vector2(-38, 33)
 scale = Vector2(2.08, 2.08)
