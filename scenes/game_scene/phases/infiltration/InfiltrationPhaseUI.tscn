@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cabp7qygfdjux" path="res://scenes/game_scene/phases/infiltration/effects/ObjectiveFoundEffect.tscn" id="2_6nfhw"]
 [ext_resource type="PackedScene" uid="uid://dx6xc08knusx0" path="res://scenes/game_scene/phases/infiltration/InfiltrationFailureUI.tscn" id="2_yrnet"]
 [ext_resource type="PackedScene" uid="uid://bpaar2l5gq1kk" path="res://scenes/game_scene/phases/infiltration/effects/FloatingTextEffect.tscn" id="3_cbgwk"]
-[ext_resource type="FontFile" uid="uid://brgq8qx6hqkvv" path="res://assets/fonts/7segment/7segments.ttf" id="5_rxbxc"]
 
 [node name="InfiltrationPhaseUI" type="Control" unique_id=1199558180]
 layout_mode = 3
@@ -67,7 +66,6 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("5_rxbxc")
 theme_override_font_sizes/font_size = 40
 text = "00:00"
 

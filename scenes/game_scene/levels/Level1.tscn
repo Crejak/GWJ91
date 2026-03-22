@@ -41,7 +41,7 @@ size = Vector2(96.099976, 113.599976)
 
 [sub_resource type="Resource" id="Resource_wfa5e"]
 script = ExtResource("14_1e6rb")
-title = "Robber advice #1"
+title = "Robber advice 1"
 content = "A good robber is always prepared ! Make sure to study your target. Take note of the location, of their habits, and of course, of where the good stuff is.
 
 From Robber Magazine #75"
@@ -49,7 +49,7 @@ metadata/_custom_type_script = "uid://bdoq5lkse2kiw"
 
 [sub_resource type="Resource" id="Resource_7j52u"]
 script = ExtResource("14_1e6rb")
-title = "Robber advice #2"
+title = "Robber advice 2"
 content = "To maximize stealth, you should intrude during the night, even if that makes you blind. Be careful, if you make too much noise, you'll get caught ! Be sure to not bump into furnitures !
 
 From Robber Magazine #102"
