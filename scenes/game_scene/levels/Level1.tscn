@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="PackedScene" uid="uid://t08dk1rxi2kr" path="res://scenes/game_scene/levels/level_design/ld_level_1.tscn" id="4_ktfe1"]
 [ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
+[ext_resource type="PackedScene" uid="uid://c7abt76osnp8e" path="res://scenes/game_scene/pnj/pnjs/level_1_mrs_yellow.tscn" id="5_armk4"]
+[ext_resource type="Script" uid="uid://1cwpjrtfc6jt" path="res://scenes/game_scene/pnj/step.gd" id="6_sh55l"]
 [ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 [ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
@@ -38,6 +40,32 @@ metadata/_custom_type_script = "uid://c5k5adpjo4151"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktfe1"]
 size = Vector2(96.099976, 113.599976)
+
+[sub_resource type="Resource" id="Resource_r13ha"]
+script = ExtResource("6_sh55l")
+duration = 10.0
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_qcgpc"]
+script = ExtResource("6_sh55l")
+path_progress_destination = 824.87
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_xu74q"]
+script = ExtResource("6_sh55l")
+duration = 15.0
+pnj_state = 2
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_r571m"]
+script = ExtResource("6_sh55l")
+pnj_state = 1
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
+
+[sub_resource type="Resource" id="Resource_dolxl"]
+script = ExtResource("6_sh55l")
+metadata/_custom_type_script = "uid://1cwpjrtfc6jt"
 
 [sub_resource type="Resource" id="Resource_wfa5e"]
 script = ExtResource("14_1e6rb")
@@ -102,6 +130,12 @@ energy = 0.0
 [node name="MrsYellow" parent="PlayableEnvironment/Level/YSort/Characters/Path2D" parent_id_path=PackedInt32Array(1878490932, 646266743) index="0" unique_id=786583104]
 position = Vector2(130, -72)
 progress = 0.0
+
+[node name="MrsYellowInfiltration" parent="PlayableEnvironment/Level/YSort/Characters/Path2D" parent_id_path=PackedInt32Array(1878490932, 646266743) index="1" unique_id=250850076 node_paths=PackedStringArray("chase_path") instance=ExtResource("5_armk4")]
+position = Vector2(130, -72)
+active_phase = 3
+chase_path = NodePath("../../ChasePath")
+timeline = Array[ExtResource("6_sh55l")]([SubResource("Resource_r13ha"), SubResource("Resource_qcgpc"), SubResource("Resource_xu74q"), SubResource("Resource_r571m"), SubResource("Resource_dolxl")])
 
 [node name="Rooms" parent="PlayableEnvironment/Level" index="6" unique_id=140754912]
 visible = true
