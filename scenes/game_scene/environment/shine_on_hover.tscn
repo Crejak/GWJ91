@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://gt5li6ilofer"]
+
+[ext_resource type="Script" uid="uid://dco4a3lgyp5ng" path="res://scenes/game_scene/environment/shine_on_hover.gd" id="1_0pogi"]
+
+[sub_resource type="Gradient" id="Gradient_ktfe1"]
+offsets = PackedFloat32Array(0.75301206, 1)
+colors = PackedColorArray(1, 1, 1, 0.101960786, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_75gx0"]
+gradient = SubResource("Gradient_ktfe1")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.39, 0.085)
+
+[node name="ShineOnHover" type="PointLight2D" unique_id=1840421436]
+visible = false
+scale = Vector2(1.4049909, 1.4049909)
+color = Color(0.5507628, 0.8889015, 0.5477982, 1)
+energy = 4.22
+texture = SubResource("GradientTexture2D_75gx0")
+script = ExtResource("1_0pogi")

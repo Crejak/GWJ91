@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://3t1a81yrp8e5"]
+
+[ext_resource type="PackedScene" uid="uid://b074ck27621gy" path="res://scenes/game_scene/environment/movable_objects/pickable/pickable_present.tscn" id="1_d1ldy"]
+
+[node name="DeleteMePlease" type="Node2D" unique_id=1507651090]
+
+[node name="PickablePresent" parent="." unique_id=1203108321 instance=ExtResource("1_d1ldy")]
+position = Vector2(464, 280)
+
+[editable path="PickablePresent"]

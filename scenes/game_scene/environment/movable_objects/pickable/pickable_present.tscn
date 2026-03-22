@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://crkldk5p4brma" path="res://scenes/game_scene/environment/movable_objects/base_movable_object.tscn" id="1_7qmhr"]
 [ext_resource type="Texture2D" uid="uid://oyl7moeq1yjf" path="res://assets/art/props/christmas_present.PNG" id="2_r1t5m"]
+[ext_resource type="PackedScene" uid="uid://gt5li6ilofer" path="res://scenes/game_scene/environment/shine_on_hover.tscn" id="3_1nej1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r1t5m"]
 radius = 35.0
@@ -29,4 +30,8 @@ position = Vector2(37.050003, -36.8)
 [node name="PickableArea2D" parent="." index="3" unique_id=1829687385]
 visible = true
 position = Vector2(37.050003, -36.8)
+collision_layer = 64
 monitoring = true
+
+[node name="ShineOnHover" parent="PickableArea2D" index="2" unique_id=1840421436 instance=ExtResource("3_1nej1")]
+position = Vector2(-37.050003, 36.8)
