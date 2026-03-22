@@ -71,17 +71,33 @@ position = Vector2(13, 5)
 shape = SubResource("RectangleShape2D_ktfe1")
 debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
 
+[node name="ShineOnHover" parent="PlayableEnvironment/Level/YSort/Loot/painting_kitchen/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 1203108321, 1829687385) index="3" unique_id=1840421436]
+position = Vector2(-0.050006866, -15.199995)
+energy = 0.0
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/painting_room/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 1577084302, 1829687385) index="2" unique_id=165022802]
 shape = SubResource("RectangleShape2D_ktfe1")
 debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="ShineOnHover" parent="PlayableEnvironment/Level/YSort/Loot/painting_room/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 1577084302, 1829687385) index="3" unique_id=1840421436]
+position = Vector2(8.949992, -17.199995)
+energy = 0.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/painting_bathroom/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 1107931385, 1829687385) index="2" unique_id=1978216253]
 shape = SubResource("RectangleShape2D_ktfe1")
 debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
 
+[node name="ShineOnHover" parent="PlayableEnvironment/Level/YSort/Loot/painting_bathroom/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 1107931385, 1829687385) index="3" unique_id=1840421436]
+position = Vector2(-0.050006866, -53.19999)
+energy = 0.0
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayableEnvironment/Level/YSort/Loot/painting_livingroom/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 165151667, 1829687385) index="2" unique_id=68333024]
 shape = SubResource("RectangleShape2D_ktfe1")
 debug_color = Color(1.92523e-06, 0.6429764, 0.31381807, 0.41960785)
+
+[node name="ShineOnHover" parent="PlayableEnvironment/Level/YSort/Loot/painting_livingroom/PickableArea2D" parent_id_path=PackedInt32Array(1878490932, 165151667, 1829687385) index="3" unique_id=1840421436]
+position = Vector2(0.949993, -28.199993)
+energy = 0.0
 
 [node name="MrsYellow" parent="PlayableEnvironment/Level/YSort/Characters/Path2D" parent_id_path=PackedInt32Array(1878490932, 646266743) index="0" unique_id=786583104]
 position = Vector2(130, -72)

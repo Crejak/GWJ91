@@ -7,4 +7,7 @@
 [node name="PickablePresent" parent="." unique_id=1203108321 instance=ExtResource("1_d1ldy")]
 position = Vector2(464, 280)
 
+[node name="ShineOnHover" parent="PickablePresent/PickableArea2D" parent_id_path=PackedInt32Array(1203108321, 1829687385) index="2" unique_id=1840421436]
+energy = 0.0
+
 [editable path="PickablePresent"]
