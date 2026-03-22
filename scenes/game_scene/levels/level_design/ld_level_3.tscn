@@ -616,6 +616,8 @@ timeline = Array[ExtResource("20_02gqg")]([SubResource("Resource_3ymgv"), SubRes
 
 [node name="Character" parent="YSort/Characters" parent_id_path=PackedInt32Array(1174942420) index="5" unique_id=424702170 instance=ExtResource("31_05cdo")]
 position = Vector2(1681, 1936)
+min_speed = 15.0
+max_speed = 250.0
 
 [node name="Camera2D" parent="." index="4" unique_id=1772549326]
 position = Vector2(1899, 1107)
