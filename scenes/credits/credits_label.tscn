@@ -14,6 +14,19 @@ size_flags_vertical = 5
 bbcode_enabled = true
 text = "[font_size=48]Collaborators[/font_size]
 
+[font_size=28]
+Drawings stolen to [b]Mario Giraud[/b]
+Narrative & Sound Design stolen by [b]Salti Prod[/b]
+Code stolen by [b]Valentin[/b]
+Game Design stolen by [b]Raphaël Bonneval[/b]
+Doors and Code stolen by [b]Yvan[/b]
+[/font_size]
+
+[font_size=32]VHS CRT Broadcast Shader[/font_size]
+Author : [url=https://godotshaders.com/author/banwarfarms/]banwarfarms[/url]
+Source : [url=https://godotshaders.com/shader/vhs-crt-broadcast/]Godot Shaders : VHS CRT Broadcast[/url]
+License : [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0[/url]
+
 [font_size=32]Godot Game Template[/font_size]
 [img=80]res:///assets/plugin_logo/logo.png[/img]  
 Author: [url=https://github.com/Maaack/Godot-Game-Template/graphs/contributors]Marek Belski and contributors[/url]  
