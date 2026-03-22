@@ -12,6 +12,7 @@ var current_line: drawable_line_2d = null
 func _ready() -> void:
 	SignalBus.phase_started.connect(_on_phase_started);
 	SignalBus.phase_ended.connect(_on_phase_ended);
+	GlobalDrawSave.clear_drawings.connect(erase_lines);
 
 func _input(event: InputEvent) -> void:
 	if !Level.current:
@@ -37,17 +38,33 @@ func _process(delta: float) -> void:
 
 func _on_phase_started(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.PREPARATION:
+		draw_previous_lines()
 		enable_draw = true;
 		visible = true;
 
 func _on_phase_ended(phase: LevelState.Phase) -> void:
 	if phase == LevelState.Phase.PREPARATION:
 		enable_draw = false;
+		_save_points()
 	if phase == LevelState.Phase.INFILTRATION:
 		visible = false;
-		erase_lines();
+		#erase_lines();
 	AudioBus.stop_sfx("SCRIBBLE")
 		
 func erase_lines() -> void:
 	for child: Node in get_children():
 		child.queue_free();
+
+
+func draw_previous_lines() -> void:
+	if !GlobalDrawSave.points.is_empty():
+		var points = GlobalDrawSave.points
+		var line :drawable_line_2d = DRAWABLE_LINE_2D.instantiate()
+		line.points = points
+		add_child(line)
+
+
+func _save_points():
+	for child: Node in get_children():
+		if child is drawable_line_2d:
+			GlobalDrawSave.save_points(child.points)

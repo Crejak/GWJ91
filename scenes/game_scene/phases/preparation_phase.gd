@@ -36,3 +36,7 @@ func _on_timer_timeout() -> void:
 func _on_vcr_controls_skip_button_pressed() -> void:
 	timer.stop();
 	GameState.get_current_level_state().set_phase.call_deferred(LevelState.Phase.INFILTRATION);
+
+
+func _on_btn_clear_drawings_pressed() -> void:
+	GlobalDrawSave.clear_drawings.emit()

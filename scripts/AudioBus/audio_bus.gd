@@ -65,8 +65,6 @@ func play_audio_stream(stream :AudioStream, bus :String):
 
 func play_sfx(soundName :String, useVariants :bool = true, fadeIn :bool = false):
 
-	print("PLAY SFX")
-
 	var sound :SoundRes = sfx_library.get_by_name(soundName)
 
 	if sound == null:

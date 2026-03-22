@@ -24,6 +24,7 @@ ProjectUISoundController="*res://addons/maaacks_game_template/base/nodes/autoloa
 SignalBus="*res://scripts/signal_bus.gd"
 AudioBus="*uid://ymkku7sx2xnp"
 PointerRob="*uid://dqv3p4hpvcic5"
+GlobalDrawSave="*uid://fy4taacfgb5o"
 
 [debug]
 

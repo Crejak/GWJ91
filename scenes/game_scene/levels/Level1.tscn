@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://gv1he4q57gpp" path="res://scenes/game_scene/phases/PreparationPhase.tscn" id="2_7plab"]
 [ext_resource type="Script" path="res://scenes/game_scene/levels/objective.gd" id="2_armk4"]
 [ext_resource type="PackedScene" uid="uid://dxy1c6jiifmmk" path="res://scenes/game_scene/phases/IntroductionPhase.tscn" id="2_r2bnq"]
-[ext_resource type="PackedScene" uid="uid://bir648c2cj6q2" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/phases/ConclusionPhase.tscn" id="4_jwlce"]
 [ext_resource type="PackedScene" uid="uid://t08dk1rxi2kr" path="res://scenes/game_scene/levels/level_design/ld_level_1.tscn" id="4_ktfe1"]
-[ext_resource type="Script" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
-[ext_resource type="PackedScene" uid="uid://djp1efqdx0jxb" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
+[ext_resource type="Script" uid="uid://db7hxcbswd4o" path="res://scenes/game_scene/levels/playable_environment.gd" id="4_pv3ef"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/phases/infiltration/EntryPoint.tscn" id="9_sh55l"]
 [ext_resource type="PackedScene" uid="uid://dvm62ep2q40tt" path="res://scenes/game_scene/phases/infiltration/InfiltrationPhaseUI.tscn" id="12_75gx0"]
 [ext_resource type="Script" uid="uid://bdoq5lkse2kiw" path="res://scenes/game_scene/phases/notepad/notepad_page_content.gd" id="14_1e6rb"]
-[ext_resource type="PackedScene" uid="uid://c6qr8ihac2xwq" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/phases/ObjectiveListUI.tscn" id="14_sh55l"]
 
 [sub_resource type="Resource" id="Resource_ktfe1"]
 script = ExtResource("2_armk4")
