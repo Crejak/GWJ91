@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cqyflgodx7v47" path="res://assets/sounds/light_switch/light-switch-click-on.wav" id="14_rkk81"]
 [ext_resource type="AudioStream" uid="uid://elentujxbxes" path="res://assets/sounds/Unedited/allanzkie-film-camera-lens-on-272596.mp3" id="15_1wilr"]
 [ext_resource type="AudioStream" uid="uid://r0pwrw5kug07" path="res://assets/sounds/hit_wall.wav" id="15_rkk81"]
-[ext_resource type="AudioStream" uid="uid://boo0klmdxhots" path="res://assets/sounds/Unedited/fail-trumpet.mp3" id="16_c1u60"]
+[ext_resource type="AudioStream" uid="uid://bgqmoca82vtxt" path="res://assets/sounds/trumpet-fail.wav" id="16_c1u60"]
 [ext_resource type="AudioStream" uid="uid://514son4x0tc1" path="res://assets/sounds/pick_item.wav" id="16_rkk81"]
 [ext_resource type="AudioStream" uid="uid://dlkaai1qld4a3" path="res://assets/sounds/trumpet-blast.wav" id="17_c1u60"]
 
